@@ -313,6 +313,7 @@ public class MainForm extends javax.swing.JFrame {
             } catch (IOException ex) {
                 logLine(ex.toString());
             }
+            checkLblWarnung();
             btnStarten.setEnabled(true);
         });
         commandLineThread.setDaemon(true);
