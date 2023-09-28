@@ -1,7 +1,6 @@
 package haer.iped.helper;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,6 +16,7 @@ import java.util.logging.Logger;
 public class ConfigHelper {
     
     private static final String IPED_CONFIG_FILE_PATH = "IPEDConfig.txt";
+    private static final String IPED_OCR_CONFIG_FILE_PATH = "conf/OCRConfig.txt";
     private static final String PROPERTIES_FILE_PATH = "IpedGui.properties";
     private static final String PROPERTY_APPEND = "append";
     private static final String PROPERTY_CONTINUE = "continue";
@@ -24,6 +24,7 @@ public class ConfigHelper {
     private static final String PROPERTY_INPUTDIRECTORY = "inputDirectory";
     private static final String PROPERTY_IPED_AUDIOTRANSLATION = "iped_enableAudioTranslation";
     private static final String PROPERTY_IPED_IMAGECLASSIFICATION = "iped_enableImageClassification";
+    private static final String PROPERTY_IPED_OCR = "ocr";
     private static final String PROPERTY_OUTPUTDIRECTORY = "outputDirectory";
     private static final String PROPERTY_PORTABLE = "portable";
 
@@ -51,6 +52,10 @@ public class ConfigHelper {
     
     public static String getInputDirectory() {
         return PROPERTIES.getProperty(PROPERTY_INPUTDIRECTORY);
+    }
+    
+    public static boolean getOcr() {
+        return Boolean.parseBoolean(PROPERTIES.getProperty(PROPERTY_IPED_OCR));
     }
     
     public static String getOutputDirectory() {
@@ -88,6 +93,11 @@ public class ConfigHelper {
     
     public static void setInputDirectory(String value) throws IOException {
         PROPERTIES.setProperty(PROPERTY_INPUTDIRECTORY, value);
+        save();
+    }
+    
+    public static void setOcr(boolean value) throws IOException {
+        PROPERTIES.setProperty(PROPERTY_IPED_OCR, String.valueOf(value));
         save();
     }
     
@@ -163,4 +173,24 @@ public class ConfigHelper {
             fw.write(String.join("\n", configLines));
         }
     }
+    
+    public static void saveOcrConfig() throws IOException {
+        ArrayList<String> configLines = new ArrayList<>();
+        configLines.add("enableOCR = " + String.valueOf(getOcr()));
+        configLines.add("OCRLanguage = eng+deu");
+        configLines.add("pageSegMode = 1");
+        configLines.add("minFileSize2OCR = 1000");
+        configLines.add("maxFileSize2OCR = 200000000");
+        configLines.add("pdfToImgResolution = 250");
+        configLines.add("maxPDFTextSize2OCR = 100");
+        configLines.add("pdfToImgLib = icepdf");
+        configLines.add("externalPdfToImgConv = true");
+        configLines.add("externalConvMaxMem = 512M");
+        configLines.add("processNonStandard = false");
+        configLines.add("maxConvImageSize = 3000");
+        try (FileWriter fw = new FileWriter(IPED_OCR_CONFIG_FILE_PATH)) {
+            fw.write(String.join("\n", configLines));
+        }
+    }
+
 }

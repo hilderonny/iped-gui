@@ -40,8 +40,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="cbAudioTranslation" pref="250" max="32767" attributes="0"/>
-                          <Component id="cbBildKlassifizierung" max="32767" attributes="0"/>
+                          <Component id="cbOcr" pref="285" max="32767" attributes="0"/>
+                          <Component id="cbBildKlassifizierung" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cbAudioTranslation" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -99,7 +100,10 @@
                           <Component id="cbBildKlassifizierung" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cbPortabel" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbPortabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbOcr" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cbInternetdatenLaden" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -264,6 +268,15 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbBildKlassifizierungActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbOcr">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Texterkennung in Bildern und PDFs per OCR"/>
+        <Property name="toolTipText" type="java.lang.String" value="Das kann den Vorgang bei vielen Bildern stark verl&#xe4;ngern"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbOcrActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

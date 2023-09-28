@@ -34,6 +34,7 @@ public class MainForm extends javax.swing.JFrame {
         cbInternetdatenLaden.setSelected(ConfigHelper.getDownloadInternetData());
         cbAudioTranslation.setSelected(ConfigHelper.getAudioTranslation());
         cbBildKlassifizierung.setSelected(ConfigHelper.getImageClassification());
+        cbOcr.setSelected(ConfigHelper.getOcr());
                 
         checkLblWarnung();
     }
@@ -67,6 +68,7 @@ public class MainForm extends javax.swing.JFrame {
         taKonsole = new javax.swing.JTextArea();
         cbAudioTranslation = new javax.swing.JCheckBox();
         cbBildKlassifizierung = new javax.swing.JCheckBox();
+        cbOcr = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,6 +171,14 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
+        cbOcr.setText("Texterkennung in Bildern und PDFs per OCR");
+        cbOcr.setToolTipText("Das kann den Vorgang bei vielen Bildern stark verlängern");
+        cbOcr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOcrActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,8 +198,9 @@ public class MainForm extends javax.swing.JFrame {
                             .addComponent(cbProjektErweitern, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbAudioTranslation, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(cbBildKlassifizierung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cbOcr, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                            .addComponent(cbBildKlassifizierung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbAudioTranslation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +245,9 @@ public class MainForm extends javax.swing.JFrame {
                             .addComponent(cbFortsetzen)
                             .addComponent(cbBildKlassifizierung))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbPortabel)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbPortabel)
+                            .addComponent(cbOcr))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbInternetdatenLaden)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -359,6 +372,7 @@ public class MainForm extends javax.swing.JFrame {
         commandParts.add("-o");
         commandParts.add("\"" + tfAusgabeverzeichnis.getText() + "\"");
         try {
+            ConfigHelper.saveOcrConfig();
             ConfigHelper.saveIpedConfig();
             startProcess(commandParts);
         } catch (IOException ex) {
@@ -397,6 +411,14 @@ public class MainForm extends javax.swing.JFrame {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_cbBildKlassifizierungActionPerformed
+
+    private void cbOcrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOcrActionPerformed
+        try {
+            ConfigHelper.setOcr(cbOcr.isSelected());
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_cbOcrActionPerformed
 
     private void logLine(String text) {
         taKonsole.append(text + "\n");
@@ -511,6 +533,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JCheckBox cbBildKlassifizierung;
     private javax.swing.JCheckBox cbFortsetzen;
     private javax.swing.JCheckBox cbInternetdatenLaden;
+    private javax.swing.JCheckBox cbOcr;
     private javax.swing.JCheckBox cbPortabel;
     private javax.swing.JCheckBox cbProjektErweitern;
     private javax.swing.JLabel lblAusgabeverzeichnis;

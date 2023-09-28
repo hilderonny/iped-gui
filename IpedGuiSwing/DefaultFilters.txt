@@ -1,0 +1,32 @@
+###############################
+# Default Filters
+############################
+
+Filter Known Hashes = *:* -hashDb\:status:known
+Hash Alert = hashDb\:status:alert
+Hash Alert (Child Porn) = hashDb\:status:pedo
+PhotoDNA Alert (Child Porn) = photoDnaDb\:status:pedo
+Encrypted Files = encrypted:true
+Possibly encrypted (entropy) = compressRatioLZ4:[1,0039 TO *] && (parserException:true || X-Parsed-By:(RawStringParser EmptyParser) || contentType:video) && tamanho:[100000000 TO *]
+Parsing Error = parserException:true
+Read Error = ioError:true
+Timeout = timeout:true OR thumbTimeout:true
+Actual Files = subitem:false && carved:false && deleted:false -fileFragment:true
+Deleted Files = deleted:true
+Carved Files = carved:true
+Geo-referenced Files = common\:geo\:locations:*
+Container Subitems = subitem:true
+Containers not Expanded = category:("Mailboxes" "Compressed Archives" "ISO disks" "Other disks" "Virtual disks") -hasSubitem:true -fileFragment:true -isRoot:true
+Explicit Images & Videos = nudityScore:[500 TO *]
+Files with Thumbnails = hasThumb:true
+Gesichter = face_count:[1 TO *]
+Transkription = audio\:translation:*
+Bilder mit Waffen = image\:classification\:classes:("revolver" "tank" "missile" "hatchet" "cleaver" "letter_opener" "power_drill" "hammer" "corkscrew" "can_opener" "screwdriver" "shovel" "chain_saw" "guillotine" "bow" "cannon" "assault_rifle" "rifle" "projectile" "lighter" "pick" "hair_slide" "nail" "ski" "holster" "scabbard" "chain" "bulletproof_vest" "racket" "military_uniform" "chain_mail" "ballpoint" "breastplate")
+Bilder mit Pflanzen = image\:classification\:classes:("strawberry" "Granny_Smith" "orange" "lemon" "fig" "pineapple" "banana" "jackfruit" "custard_apple" "pomegranate" "acorn" "rapeseed" "corn" "buckeye" "daisy" "brambling" "greenhouse" "bell_pepper" "head_cabbage" "broccoli" "cauliflower" "zucchini" "spaghetti_squash" "acorn_squash" "butternut_squash" "cucumber" "artichoke" "cardoon" ""hen-of-the-woods"" "guacamole")
+Bilder mit Fahrzeugen = image\:classification\:classes:("half_track" "tank" "passenger_car" "motor_scooter" "forklift" "electric_locomotive" "steam_locomotive" "amphibian" "ambulance" "cab" "convertible" "jeep" "limousine" "minivan" "Model_T" "racer" "sports_car" ""go-kart"" "golfcart" "moped" "snowplow" "fire_engine" "garbage_truck" "pickup" "tow_truck" "trailer_truck" "moving_van" "police_van" "snowmobile" "tractor" "horse_cart" "jinrikisha" "oxcart" "car_wheel" "gas_pump" "car_mirror" "disk_brake" "bonnet" "trolleybus" "minibus" "school_bus")
+Bilder mit Drogen = image\:classification\:classes:("medicine_chest" "paintbrush" "syringe" "loupe" "hair_slide" "nail" "refrigerator" "spatula" "greenhouse" "mashed_potato" "broccoli" "handkerchief" "ashcan" "tray" "Petri_dish" "face_powder" ""hen-of-the-woods"" "wool" "hay" "mailbag" "mortar" "swab" "dough" "coral_fungus" "pillow" "toilet_tissue" "stinkhorn" "pill_bottle" "agaric" "packet" "saltshaker" "gyromitra" "plastic_bag" "diaper" "Band_Aid" "bolete")
+Bilder mit Dokumenten = image\:classification\:classes:("file" "desk" "notebook" "web_site" "handkerchief" "book_jacket" "shield" "menu" "binder" "pencil_box" "paper_towel" "envelope" "toilet_tissue" "packet" "comic_book" "street_sign")
+Bilder mit IT = image\:classification\:classes:("laptop" "loudspeaker" "microphone" "screen" "mouse" "digital_clock" "digital_watch" "computer_keyboard" "typewriter_keyboard" "abacus" "slide_rule" "desktop_computer" ""hand-held_computer"" "notebook" "printer" "joystick" "hard_disc" "remote_control" "modem" "photocopier" "space_bar" "monitor" "oscilloscope" "cellular_telephone" "television" "tape_player" "iPod" "CD_player")
+Bilder mit Flugzeugen = image\:classification\:classes:("airliner" "warplane" "airship" "balloon" "space_shuttle" "plane")
+Bilder mit Schiffen = image\:classification\:classes:("fireboat" "gondola" "speedboat" "lifeboat" "canoe" "yawl" "catamaran" "trimaran" "container_ship" "liner" "pirate" "aircraft_carrier" "submarine" "wreck")
+Ausweisdokumente = face_count:[1 TO *] && ocrCharCount:[1 TO *]
