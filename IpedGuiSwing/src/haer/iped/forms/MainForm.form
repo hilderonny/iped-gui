@@ -192,6 +192,9 @@
         <Property name="text" type="java.lang.String" value="Portabel"/>
         <Property name="toolTipText" type="java.lang.String" value="Hiermit werden die Dateien der Spuren in das Ausgabeverzeichnis kopiert und somit unabh&#xe4;ngig von der Quelle."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPortabelActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="cbInternetdatenLaden">
       <Properties>
@@ -199,6 +202,9 @@
         <Property name="text" type="java.lang.String" value="Internetdaten laden"/>
         <Property name="toolTipText" type="java.lang.String" value="Hiermit werden bei Bedarf Daten aus den Netz geladen. Das k&#xf6;nnen z.B. in Chats verlinkte Anh&#xe4;nge sein."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbInternetdatenLadenActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnStarten">
       <Properties>

@@ -1,5 +1,6 @@
 package haer.iped.forms;
 
+import haer.iped.helper.ConfigHelper;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.File;
@@ -9,6 +10,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 
@@ -22,6 +25,15 @@ public class MainForm extends javax.swing.JFrame {
         // Den Form-Editor lassen wir außen vor, weil die Tabs dynamisch ein-
         // und ausgeblendet werden sollen
         initComponents();
+        
+        // Ausgangszustand der UI Elemente setzen
+        tfAusgabeverzeichnis.setText(ConfigHelper.getOutputDirectory());
+        cbProjektErweitern.setSelected(ConfigHelper.getAppend());
+        cbFortsetzen.setSelected(ConfigHelper.getContinue());
+        cbPortabel.setSelected(ConfigHelper.getPortable());
+        cbInternetdatenLaden.setSelected(ConfigHelper.getDownloadInternetData());
+                
+        checkLblWarnung();
     }
     
     private List<String> selektierteSpuren = new ArrayList<>();
@@ -108,10 +120,20 @@ public class MainForm extends javax.swing.JFrame {
         cbPortabel.setSelected(true);
         cbPortabel.setText("Portabel");
         cbPortabel.setToolTipText("Hiermit werden die Dateien der Spuren in das Ausgabeverzeichnis kopiert und somit unabhängig von der Quelle.");
+        cbPortabel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPortabelActionPerformed(evt);
+            }
+        });
 
         cbInternetdatenLaden.setSelected(true);
         cbInternetdatenLaden.setText("Internetdaten laden");
         cbInternetdatenLaden.setToolTipText("Hiermit werden bei Bedarf Daten aus den Netz geladen. Das können z.B. in Chats verlinkte Anhänge sein.");
+        cbInternetdatenLaden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbInternetdatenLadenActionPerformed(evt);
+            }
+        });
 
         btnStarten.setText("Starten");
         btnStarten.setEnabled(false);
@@ -226,18 +248,41 @@ public class MainForm extends javax.swing.JFrame {
         if (result == JFileChooser.APPROVE_OPTION) {
             String folderPath = folderChooser.getSelectedFile().getAbsolutePath();
             tfAusgabeverzeichnis.setText(folderPath);
+            try {
+                ConfigHelper.setOutputDirectory(folderPath);
+            } catch (IOException ex) {
+                Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
             checkLblWarnung();
             checkBtnStarten();
         }
     }//GEN-LAST:event_btnAuswaehlenActionPerformed
 
     private void cbProjektErweiternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbProjektErweiternActionPerformed
-        if (cbProjektErweitern.isSelected()) cbFortsetzen.setSelected(false);
+        boolean isSelected = cbProjektErweitern.isSelected();
+        try {
+            if (isSelected) { 
+                cbFortsetzen.setSelected(false);
+                ConfigHelper.setContinue(false);
+            }
+            ConfigHelper.setAppend(isSelected);
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         checkLblWarnung();
     }//GEN-LAST:event_cbProjektErweiternActionPerformed
 
     private void cbFortsetzenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFortsetzenActionPerformed
-        if (cbFortsetzen.isSelected()) cbProjektErweitern.setSelected(false);
+        boolean isSelected = cbFortsetzen.isSelected();
+        try {
+            if (isSelected) {
+                cbProjektErweitern.setSelected(false);
+                ConfigHelper.setAppend(false);
+            }
+            ConfigHelper.setContinue(isSelected);
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         checkLblWarnung();
     }//GEN-LAST:event_cbFortsetzenActionPerformed
 
@@ -287,6 +332,22 @@ public class MainForm extends javax.swing.JFrame {
             logLine(ex.toString());
         }
     }//GEN-LAST:event_btnStartenActionPerformed
+
+    private void cbPortabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPortabelActionPerformed
+        try {
+            ConfigHelper.setPortable(cbPortabel.isSelected());
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_cbPortabelActionPerformed
+
+    private void cbInternetdatenLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbInternetdatenLadenActionPerformed
+        try {
+            ConfigHelper.setDownloadInternetData(cbInternetdatenLaden.isSelected());
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_cbInternetdatenLadenActionPerformed
 
     private void logLine(String text) {
         taKonsole.append(text + "\n");
@@ -382,6 +443,8 @@ public class MainForm extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        ConfigHelper.load();
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
