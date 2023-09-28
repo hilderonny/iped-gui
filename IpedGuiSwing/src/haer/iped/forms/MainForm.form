@@ -38,6 +38,11 @@
                           <Component id="cbFortsetzen" max="32767" attributes="0"/>
                           <Component id="cbProjektErweitern" pref="262" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="cbAudioTranslation" pref="250" max="32767" attributes="0"/>
+                          <Component id="cbBildKlassifizierung" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -84,9 +89,15 @@
                   <Group type="102" attributes="0">
                       <Component id="lblWarnung" min="-2" pref="34" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cbProjektErweitern" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbProjektErweitern" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbAudioTranslation" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cbFortsetzen" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbFortsetzen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbBildKlassifizierung" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cbPortabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -188,7 +199,6 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="cbPortabel">
       <Properties>
-        <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Portabel"/>
         <Property name="toolTipText" type="java.lang.String" value="Hiermit werden die Dateien der Spuren in das Ausgabeverzeichnis kopiert und somit unabh&#xe4;ngig von der Quelle."/>
       </Properties>
@@ -198,7 +208,6 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="cbInternetdatenLaden">
       <Properties>
-        <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Internetdaten laden"/>
         <Property name="toolTipText" type="java.lang.String" value="Hiermit werden bei Bedarf Daten aus den Netz geladen. Das k&#xf6;nnen z.B. in Chats verlinkte Anh&#xe4;nge sein."/>
       </Properties>
@@ -239,5 +248,23 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JCheckBox" name="cbAudioTranslation">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Audio Transkription und &#xdc;bersetzung"/>
+        <Property name="toolTipText" type="java.lang.String" value="F&#xfc;r diese Funktion muss der Hintergrundprozess f&#xfc;r die Audioverarbeitung laufen"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbAudioTranslationActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cbBildKlassifizierung">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bilder klassifizieren"/>
+        <Property name="toolTipText" type="java.lang.String" value="F&#xfc;r diese Funktion muss der Hintergrundprozess f&#xfc;r die Bildklassifizierung laufen"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbBildKlassifizierungActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

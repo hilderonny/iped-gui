@@ -32,6 +32,8 @@ public class MainForm extends javax.swing.JFrame {
         cbFortsetzen.setSelected(ConfigHelper.getContinue());
         cbPortabel.setSelected(ConfigHelper.getPortable());
         cbInternetdatenLaden.setSelected(ConfigHelper.getDownloadInternetData());
+        cbAudioTranslation.setSelected(ConfigHelper.getAudioTranslation());
+        cbBildKlassifizierung.setSelected(ConfigHelper.getImageClassification());
                 
         checkLblWarnung();
     }
@@ -63,6 +65,8 @@ public class MainForm extends javax.swing.JFrame {
         lblWarnung = new javax.swing.JLabel();
         spKonsole = new javax.swing.JScrollPane();
         taKonsole = new javax.swing.JTextArea();
+        cbAudioTranslation = new javax.swing.JCheckBox();
+        cbBildKlassifizierung = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,7 +121,6 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        cbPortabel.setSelected(true);
         cbPortabel.setText("Portabel");
         cbPortabel.setToolTipText("Hiermit werden die Dateien der Spuren in das Ausgabeverzeichnis kopiert und somit unabhängig von der Quelle.");
         cbPortabel.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +129,6 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        cbInternetdatenLaden.setSelected(true);
         cbInternetdatenLaden.setText("Internetdaten laden");
         cbInternetdatenLaden.setToolTipText("Hiermit werden bei Bedarf Daten aus den Netz geladen. Das können z.B. in Chats verlinkte Anhänge sein.");
         cbInternetdatenLaden.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +153,22 @@ public class MainForm extends javax.swing.JFrame {
         taKonsole.setWrapStyleWord(true);
         spKonsole.setViewportView(taKonsole);
 
+        cbAudioTranslation.setText("Audio Transkription und Übersetzung");
+        cbAudioTranslation.setToolTipText("Für diese Funktion muss der Hintergrundprozess für die Audioverarbeitung laufen");
+        cbAudioTranslation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAudioTranslationActionPerformed(evt);
+            }
+        });
+
+        cbBildKlassifizierung.setText("Bilder klassifizieren");
+        cbBildKlassifizierung.setToolTipText("Für diese Funktion muss der Hintergrundprozess für die Bildklassifizierung laufen");
+        cbBildKlassifizierung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbBildKlassifizierungActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,6 +186,10 @@ public class MainForm extends javax.swing.JFrame {
                             .addComponent(cbPortabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbFortsetzen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbProjektErweitern, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbAudioTranslation, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(cbBildKlassifizierung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,9 +226,13 @@ public class MainForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblWarnung, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbProjektErweitern)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbProjektErweitern)
+                            .addComponent(cbAudioTranslation))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbFortsetzen)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbFortsetzen)
+                            .addComponent(cbBildKlassifizierung))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbPortabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -226,7 +252,13 @@ public class MainForm extends javax.swing.JFrame {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         fileChooser.setMultiSelectionEnabled(true);
+        fileChooser.setCurrentDirectory(new File(ConfigHelper.getInputDirectory()));
         int result = fileChooser.showDialog(null, "Hinzufügen");
+        try {
+            ConfigHelper.setInputDirectory(fileChooser.getCurrentDirectory().getPath());
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if (result == JFileChooser.APPROVE_OPTION) {
             DefaultListModel<String> model = (DefaultListModel<String>) lstSpuren.getModel();
             for (File f : fileChooser.getSelectedFiles()) {
@@ -327,6 +359,7 @@ public class MainForm extends javax.swing.JFrame {
         commandParts.add("-o");
         commandParts.add("\"" + tfAusgabeverzeichnis.getText() + "\"");
         try {
+            ConfigHelper.saveIpedConfig();
             startProcess(commandParts);
         } catch (IOException ex) {
             logLine(ex.toString());
@@ -348,6 +381,22 @@ public class MainForm extends javax.swing.JFrame {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_cbInternetdatenLadenActionPerformed
+
+    private void cbAudioTranslationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAudioTranslationActionPerformed
+        try {
+            ConfigHelper.setAudioTranslation(cbAudioTranslation.isSelected());
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_cbAudioTranslationActionPerformed
+
+    private void cbBildKlassifizierungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBildKlassifizierungActionPerformed
+        try {
+            ConfigHelper.setImageClassification(cbBildKlassifizierung.isSelected());
+        } catch (IOException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_cbBildKlassifizierungActionPerformed
 
     private void logLine(String text) {
         taKonsole.append(text + "\n");
@@ -458,6 +507,8 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton btnHinzufuegen;
     private javax.swing.JButton btnLoeschen;
     private javax.swing.JButton btnStarten;
+    private javax.swing.JCheckBox cbAudioTranslation;
+    private javax.swing.JCheckBox cbBildKlassifizierung;
     private javax.swing.JCheckBox cbFortsetzen;
     private javax.swing.JCheckBox cbInternetdatenLaden;
     private javax.swing.JCheckBox cbPortabel;
