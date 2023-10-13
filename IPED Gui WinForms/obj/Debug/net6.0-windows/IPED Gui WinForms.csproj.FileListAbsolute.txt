@@ -3,8 +3,6 @@ D:\github\hilderonny\iped-gui\IPED Gui WinForms\bin\Debug\net6.0-windows\IPED Gu
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\bin\Debug\net6.0-windows\IPED Gui WinForms.runtimeconfig.json
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\bin\Debug\net6.0-windows\IPED Gui WinForms.dll
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\bin\Debug\net6.0-windows\IPED Gui WinForms.pdb
-D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED Gui WinForms.csproj.AssemblyReference.cache
-D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED_Gui_WinForms.Form1.resources
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED Gui WinForms.csproj.GenerateResource.cache
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED Gui WinForms.GeneratedMSBuildEditorConfig.editorconfig
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED Gui WinForms.AssemblyInfoInputs.cache
@@ -15,3 +13,5 @@ D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\refint\
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED Gui WinForms.pdb
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED Gui WinForms.genruntimeconfig.cache
 D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\ref\IPED Gui WinForms.dll
+D:\github\hilderonny\iped-gui\IPED Gui WinForms\bin\Debug\net6.0-windows\IPED Gui WinForms.dll.config
+D:\github\hilderonny\iped-gui\IPED Gui WinForms\obj\Debug\net6.0-windows\IPED_Gui_WinForms.MainForm.resources
