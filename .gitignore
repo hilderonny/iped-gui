@@ -29,4 +29,8 @@ replay_pid*
 
 /Visual Studio IPED GUI/.vs/
 /Visual Studio IPED GUI/obj/
-/Visual Studio IPED GUI/bin/Debug/
+/Visual Studio IPED GUI/bin/
+
+/IPED Gui WinForms/.vs/
+/IPED Gui WinForms/obj/
+/IPED Gui WinForms/bin/
