@@ -8,6 +8,8 @@ von IPED-Programmdurchläufen.
 
 [Hier geht es zu den Release Notes](RELEASENOTES.md)
 
+[![.NET Core Desktop](https://github.com/hilderonny/iped-gui/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/hilderonny/iped-gui/actions/workflows/dotnet-desktop.yml)
+
 ## Quick Start
 
 **TODO** Benutzung erklären
