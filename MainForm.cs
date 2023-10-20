@@ -1,7 +1,6 @@
 using IPED_Gui_WinForms.Properties;
 using System.Diagnostics;
-using System.IO;
-using System.Threading;
+using System.Reflection;
 
 namespace IPED_Gui_WinForms
 {
@@ -13,6 +12,8 @@ namespace IPED_Gui_WinForms
             InitializeComponent();
             LoadSettings();
             CheckForWarning();
+
+            Text += " " + Assembly.GetExecutingAssembly().GetName().Version;
         }
 
         private SynchronizationContext? synchronizationContext;

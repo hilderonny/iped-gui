@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             lblSpuren = new Label();
             lstSpuren = new ListBox();
@@ -48,7 +49,13 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             lblWarnung = new Label();
             btnDateienHinzufuegen = new Button();
+            toolTip1 = new ToolTip(components);
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
             tableLayoutPanel1.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // lblSpuren
@@ -70,14 +77,14 @@
             lstSpuren.Name = "lstSpuren";
             tableLayoutPanel1.SetRowSpan(lstSpuren, 3);
             lstSpuren.SelectionMode = SelectionMode.MultiExtended;
-            lstSpuren.Size = new Size(672, 154);
+            lstSpuren.Size = new Size(658, 154);
             lstSpuren.TabIndex = 1;
             lstSpuren.SelectedIndexChanged += lstSpuren_SelectedIndexChanged;
             // 
             // btnVerzeichnisHinzufuegen
             // 
             btnVerzeichnisHinzufuegen.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnVerzeichnisHinzufuegen.Location = new Point(841, 3);
+            btnVerzeichnisHinzufuegen.Location = new Point(827, 3);
             btnVerzeichnisHinzufuegen.Name = "btnVerzeichnisHinzufuegen";
             btnVerzeichnisHinzufuegen.Size = new Size(154, 23);
             btnVerzeichnisHinzufuegen.TabIndex = 2;
@@ -89,7 +96,7 @@
             // 
             btnEntfernen.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnEntfernen.Enabled = false;
-            btnEntfernen.Location = new Point(841, 63);
+            btnEntfernen.Location = new Point(827, 63);
             btnEntfernen.Name = "btnEntfernen";
             btnEntfernen.Size = new Size(154, 23);
             btnEntfernen.TabIndex = 3;
@@ -113,13 +120,13 @@
             tbAusgabeverzeichnis.Location = new Point(163, 163);
             tbAusgabeverzeichnis.Name = "tbAusgabeverzeichnis";
             tbAusgabeverzeichnis.ReadOnly = true;
-            tbAusgabeverzeichnis.Size = new Size(672, 23);
+            tbAusgabeverzeichnis.Size = new Size(658, 23);
             tbAusgabeverzeichnis.TabIndex = 5;
             // 
             // btnAuswaehlen
             // 
             btnAuswaehlen.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnAuswaehlen.Location = new Point(841, 163);
+            btnAuswaehlen.Location = new Point(827, 163);
             btnAuswaehlen.Name = "btnAuswaehlen";
             btnAuswaehlen.Size = new Size(154, 23);
             btnAuswaehlen.TabIndex = 6;
@@ -174,18 +181,19 @@
             // cbAudioTranslation
             // 
             cbAudioTranslation.AutoSize = true;
-            cbAudioTranslation.Location = new Point(502, 253);
+            cbAudioTranslation.Location = new Point(495, 253);
             cbAudioTranslation.Name = "cbAudioTranslation";
             cbAudioTranslation.Size = new Size(222, 19);
             cbAudioTranslation.TabIndex = 12;
             cbAudioTranslation.Text = "Audio Transkription und Übersetzung";
+            toolTip1.SetToolTip(cbAudioTranslation, "BlahBlubb");
             cbAudioTranslation.UseVisualStyleBackColor = true;
             cbAudioTranslation.CheckedChanged += cbAudioTranslation_CheckedChanged;
             // 
             // cbBildKlassifizierung
             // 
             cbBildKlassifizierung.AutoSize = true;
-            cbBildKlassifizierung.Location = new Point(502, 283);
+            cbBildKlassifizierung.Location = new Point(495, 283);
             cbBildKlassifizierung.Name = "cbBildKlassifizierung";
             cbBildKlassifizierung.Size = new Size(125, 19);
             cbBildKlassifizierung.TabIndex = 13;
@@ -196,7 +204,7 @@
             // cbOcr
             // 
             cbOcr.AutoSize = true;
-            cbOcr.Location = new Point(502, 313);
+            cbOcr.Location = new Point(495, 313);
             cbOcr.Name = "cbOcr";
             cbOcr.Size = new Size(257, 19);
             cbOcr.TabIndex = 14;
@@ -211,13 +219,13 @@
             tbKonsole.Location = new Point(163, 373);
             tbKonsole.Multiline = true;
             tbKonsole.Name = "tbKonsole";
-            tbKonsole.Size = new Size(672, 192);
+            tbKonsole.Size = new Size(658, 158);
             tbKonsole.TabIndex = 15;
             // 
             // btnStarten
             // 
             btnStarten.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnStarten.Location = new Point(841, 542);
+            btnStarten.Location = new Point(827, 508);
             btnStarten.Name = "btnStarten";
             btnStarten.Size = new Size(154, 23);
             btnStarten.TabIndex = 16;
@@ -251,7 +259,7 @@
             tableLayoutPanel1.Controls.Add(lblWarnung, 1, 4);
             tableLayoutPanel1.Controls.Add(btnDateienHinzufuegen, 3, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(5, 5);
+            tableLayoutPanel1.Location = new Point(3, 3);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 10;
@@ -265,7 +273,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(998, 568);
+            tableLayoutPanel1.Size = new Size(984, 534);
             tableLayoutPanel1.TabIndex = 17;
             // 
             // lblWarnung
@@ -276,13 +284,13 @@
             lblWarnung.ForeColor = Color.Red;
             lblWarnung.Location = new Point(163, 190);
             lblWarnung.Name = "lblWarnung";
-            lblWarnung.Size = new Size(672, 60);
+            lblWarnung.Size = new Size(658, 60);
             lblWarnung.TabIndex = 17;
             // 
             // btnDateienHinzufuegen
             // 
             btnDateienHinzufuegen.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnDateienHinzufuegen.Location = new Point(841, 33);
+            btnDateienHinzufuegen.Location = new Point(827, 33);
             btnDateienHinzufuegen.Name = "btnDateienHinzufuegen";
             btnDateienHinzufuegen.Size = new Size(154, 23);
             btnDateienHinzufuegen.TabIndex = 18;
@@ -290,18 +298,52 @@
             btnDateienHinzufuegen.UseVisualStyleBackColor = true;
             btnDateienHinzufuegen.Click += btnDateienHinzufuegen_Click;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(5, 5);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(998, 568);
+            tabControl1.TabIndex = 19;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(tableLayoutPanel1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(990, 540);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Einstellungen";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(990, 540);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 578);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Padding = new Padding(5);
             Text = "IPED GUI";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -326,5 +368,9 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label lblWarnung;
         private Button btnDateienHinzufuegen;
+        private ToolTip toolTip1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }
