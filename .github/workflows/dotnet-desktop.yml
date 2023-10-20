@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        configuration: [Debug, Release]
+        configuration: [Release]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
@@ -28,4 +28,4 @@ jobs:
         # The build configuration to use (defaults to 'Release').
         build-configuration: Release # optional, default is Release
         # The path to the project or solution to build (defaults to the current directory).
-        path: "./IPED GUI.sln" # optional, default is .
+        path: ./IPED_GUI.sln # optional, default is .
