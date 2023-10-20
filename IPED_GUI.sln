@@ -3,12 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPED Gui", "IPED Gui.csproj", "{D883F9CA-A14F-4719-9145-838D50788473}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{53BA7669-2E34-4C2F-BEDB-579CED6E299A}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{4BA23E79-7B42-496B-A971-7ACF9C891C92}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+		RELEASENOTES.md = RELEASENOTES.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPED_Gui", "IPED_Gui\IPED_Gui.csproj", "{A15F508A-3127-4F3F-BD9A-BD7899B217C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPED_Gui_Test", "IPED_Gui_Test\IPED_Gui_Test.csproj", "{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +26,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D883F9CA-A14F-4719-9145-838D50788473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D883F9CA-A14F-4719-9145-838D50788473}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D883F9CA-A14F-4719-9145-838D50788473}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D883F9CA-A14F-4719-9145-838D50788473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A15F508A-3127-4F3F-BD9A-BD7899B217C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A15F508A-3127-4F3F-BD9A-BD7899B217C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A15F508A-3127-4F3F-BD9A-BD7899B217C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A15F508A-3127-4F3F-BD9A-BD7899B217C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

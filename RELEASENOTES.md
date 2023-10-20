@@ -3,7 +3,7 @@
 - Umbenennung lokaler Variablen zur besseren Lesbarkeit
 - Anzeige von Tooltips über UI Elementen
 - Alphabetische Sortierung der Klassenmember
-- 
+- Quellcodedokumentation erstellt
 
 # 1.0
 - Auswahl mehrerer Quellen
