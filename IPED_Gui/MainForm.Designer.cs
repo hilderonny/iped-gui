@@ -29,7 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            TabPage tabPageHome;
+            TabPage tabPageEnvironment;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            tableLayoutPanel2 = new TableLayoutPanel();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            checkBox1 = new CheckBox();
+            textBox1 = new TextBox();
+            checkBox2 = new CheckBox();
+            label3 = new Label();
             label_Spuren = new Label();
             listBox_Spuren = new ListBox();
             button_VerzeichnisHinzufuegen = new Button();
@@ -53,11 +63,133 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            tabPageProcessing = new TabPage();
+            tabPage6 = new TabPage();
+            tabPage7 = new TabPage();
+            tabPage8 = new TabPage();
+            tabPage9 = new TabPage();
+            tabPageHome = new TabPage();
+            tabPageEnvironment = new TabPage();
+            tabPageEnvironment.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             SuspendLayout();
+            // 
+            // tabPageHome
+            // 
+            tabPageHome.Location = new Point(4, 24);
+            tabPageHome.Name = "tabPageHome";
+            tabPageHome.Padding = new Padding(3);
+            tabPageHome.Size = new Size(990, 540);
+            tabPageHome.TabIndex = 2;
+            tabPageHome.Text = "Home";
+            tabPageHome.UseVisualStyleBackColor = true;
+            // 
+            // tabPageEnvironment
+            // 
+            tabPageEnvironment.Controls.Add(tableLayoutPanel2);
+            tabPageEnvironment.Location = new Point(4, 24);
+            tabPageEnvironment.Name = "tabPageEnvironment";
+            tabPageEnvironment.Padding = new Padding(8);
+            tabPageEnvironment.Size = new Size(990, 540);
+            tabPageEnvironment.TabIndex = 3;
+            tabPageEnvironment.Text = "Environment";
+            tabPageEnvironment.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 6;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.56784F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.59799F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.5829144F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.7504177F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.7504177F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.7504177F));
+            tableLayoutPanel2.Controls.Add(comboBox1, 1, 0);
+            tableLayoutPanel2.Controls.Add(label1, 0, 0);
+            tableLayoutPanel2.Controls.Add(label2, 0, 1);
+            tableLayoutPanel2.Controls.Add(checkBox1, 1, 2);
+            tableLayoutPanel2.Controls.Add(textBox1, 1, 1);
+            tableLayoutPanel2.Controls.Add(checkBox2, 1, 3);
+            tableLayoutPanel2.Controls.Add(label3, 0, 2);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(8, 8);
+            tableLayoutPanel2.Margin = new Padding(8);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 7;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel2.Size = new Size(974, 524);
+            tableLayoutPanel2.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(135, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 2;
+            label1.Text = "locale";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 15);
+            label2.TabIndex = 3;
+            label2.Text = "indexTemp";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(135, 59);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(15, 14);
+            checkBox1.TabIndex = 0;
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(135, 31);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(182, 23);
+            textBox1.TabIndex = 4;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(135, 87);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(83, 19);
+            checkBox2.TabIndex = 5;
+            checkBox2.Text = "checkBox2";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 56);
+            label3.Name = "label3";
+            label3.Size = new Size(101, 15);
+            label3.TabIndex = 6;
+            label3.Text = "indexTempOnSSD";
             // 
             // label_Spuren
             // 
@@ -316,6 +448,13 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPageHome);
+            tabControl1.Controls.Add(tabPageEnvironment);
+            tabControl1.Controls.Add(tabPageProcessing);
+            tabControl1.Controls.Add(tabPage6);
+            tabControl1.Controls.Add(tabPage7);
+            tabControl1.Controls.Add(tabPage8);
+            tabControl1.Controls.Add(tabPage9);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(5, 5);
             tabControl1.Name = "tabControl1";
@@ -345,6 +484,56 @@
             tabPage2.Text = "Protokoll";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tabPageProcessing
+            // 
+            tabPageProcessing.Location = new Point(4, 24);
+            tabPageProcessing.Name = "tabPageProcessing";
+            tabPageProcessing.Padding = new Padding(3);
+            tabPageProcessing.Size = new Size(990, 540);
+            tabPageProcessing.TabIndex = 4;
+            tabPageProcessing.Text = "Processing";
+            tabPageProcessing.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            tabPage6.Location = new Point(4, 24);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(990, 540);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "tabPage6";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            tabPage7.Location = new Point(4, 24);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Padding = new Padding(3);
+            tabPage7.Size = new Size(990, 540);
+            tabPage7.TabIndex = 6;
+            tabPage7.Text = "tabPage7";
+            tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            tabPage8.Location = new Point(4, 24);
+            tabPage8.Name = "tabPage8";
+            tabPage8.Padding = new Padding(3);
+            tabPage8.Size = new Size(990, 540);
+            tabPage8.TabIndex = 7;
+            tabPage8.Text = "tabPage8";
+            tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            tabPage9.Location = new Point(4, 24);
+            tabPage9.Name = "tabPage9";
+            tabPage9.Padding = new Padding(3);
+            tabPage9.Size = new Size(990, 540);
+            tabPage9.TabIndex = 8;
+            tabPage9.Text = "tabPage9";
+            tabPage9.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -355,6 +544,9 @@
             Name = "MainForm";
             Padding = new Padding(5);
             Text = "IPED GUI";
+            tabPageEnvironment.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tabControl1.ResumeLayout(false);
@@ -389,5 +581,20 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private TabPage tabPageHome;
+        private TabPage tabPageEnvironment;
+        private TabPage tabPageProcessing;
+        private TabPage tabPage6;
+        private TabPage tabPage7;
+        private TabPage tabPage8;
+        private TabPage tabPage9;
+        private TableLayoutPanel tableLayoutPanel2;
+        private ComboBox comboBox1;
+        private Label label1;
+        private Label label2;
+        private CheckBox checkBox1;
+        private TextBox textBox1;
+        private CheckBox checkBox2;
+        private Label label3;
     }
 }

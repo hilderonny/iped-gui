@@ -2,6 +2,10 @@ using IPED_Gui_WinForms.Properties;
 using System.Diagnostics;
 using System.Reflection;
 
+// Tabs verstecken: Siehe https://stackoverflow.com/questions/552579/how-to-hide-tabpage-from-tabcontrol
+// Tabs und deren Inhalte sollten eigene Controls mit DataBinding werden, die dynmisch durch Datensatzerweiterung erweitert werden können
+// Wie kann man sowas mit Settings synchronisieren? Eigenes Settings-Handling?
+
 namespace IPED_Gui_WinForms
 {
     public partial class MainForm : Form
