@@ -4,8 +4,6 @@ def Win11Checkbox(key, label, description):
     return [
         sg.Frame(
             title='',
-            relief=sg.RELIEF_SOLID,
-            border_width=1,
             expand_x=True,
             layout=[
                 [
@@ -24,8 +22,6 @@ def Win11Combo(key, label, description, values, default_value):
     return [
         sg.Frame(
             title='',
-            relief=sg.RELIEF_SOLID,
-            border_width=1,
             expand_x=True,
             layout=[
                 [
@@ -44,8 +40,6 @@ def Win11FileChooser(key, label, description):
     return [
         sg.Frame(
             title='',
-            relief=sg.RELIEF_SOLID,
-            border_width=1,
             expand_x=True,
             layout=[
                 [
@@ -65,8 +59,6 @@ def Win11FolderChooser(key, label, description):
     return [
         sg.Frame(
             title='',
-            relief=sg.RELIEF_SOLID,
-            border_width=1,
             expand_x=True,
             layout=[
                 [
@@ -86,8 +78,6 @@ def Win11Input(key, label, description, width=None):
     return [
         sg.Frame(
             title='',
-            relief=sg.RELIEF_SOLID,
-            border_width=1,
             expand_x=True,
             layout=[
                 [
@@ -104,7 +94,6 @@ def Win11Input(key, label, description, width=None):
 
 def createHomeTab():
     return sg.Tab(title='Home', layout=[
-        Win11Checkbox(key='KEY', label='Label', description='Description'),
     ])
 
 def createEnvironmentTab():
@@ -167,7 +156,49 @@ def createProcessingTab():
 def createTaskTab():
     return sg.Tab(title='Tasks', layout=[
         [
-            sg.Text('Tasks')
+            sg.Column(expand_x=True,expand_y=True,scrollable=True,vertical_scroll_only=True,layout=[
+                Win11Checkbox(key='iped.engine.task.SkipCommitedTask',label='Skip already commited files',description='Task to ignore already commited files into index. Commited containers without all their subitems commited are not ignored to be processed again. Redefines ids and parentIds of incomming items to be equal of commited items if they have same trackID.'),
+                Win11Checkbox(key='iped.engine.task.IgnoreHardLinkTask',label='Ignore hard links',description='Labels hard links so that they are ignored while hashing in HashTask'),
+                Win11Checkbox(key='iped.engine.task.TempFileTask',label='Create temporary files',description='Task for generating temporary files for items before processing. If indexTemp is on an SSD disk and the image is compressed (e01), it can considerably increase performance as items are no longer decompressed multiple times by libewf, which is not thread safe and synchronizes concurrent decompressions, underutilizing multiprocessing machines.'),
+                Win11Checkbox(key='iped.engine.task.HashTask',label='Calculate hashes',description='Task for calculating and manipulating hashes.'),
+                Win11Checkbox(key='iped.engine.task.SignatureTask',label='Analyze signatures',description='Signature analysis using Apache Tika library.'),
+                Win11Checkbox(key='iped.engine.task.SetTypeTask',label='Media type detection',description='Sets the type (correct extension) of items based on their recognized mediaType.'),
+                Win11Checkbox(key='iped.engine.task.SetCategoryTask',label='Define item category',description='Class that carries the mapping of mimeTypes to Application Category. Additionally, it uses JavaScript rules to define categories based on item properties. It is also responsible for defining the item category.'),
+                Win11Checkbox(key='RefineCategoryTask.js',label='Refine item category',description='Task of Category Specialization based on item properties. Uses javascript language to allow flexibility in definitions.'),
+                Win11Checkbox(key='iped.engine.task.HashDBLookupTask',label='Hash DB Lookup',description='Checks whether an item is contained in the hash database and marks it as to be ignored in further processing.'),
+                Win11Checkbox(key='iped.engine.task.DuplicateTask',label='Handle duplicates',description='Duplicate files check task. Ignores the configured case file.'),
+                Win11Checkbox(key='iped.engine.task.transcript.AudioTranscriptTask',label='Audio transcription',description='Performs transcription of audio files. Please use Audio translation instead.'),
+                Win11Checkbox(key='AudioTranslateTask.py',label='Audio translation',description='Transcribes media files (audio and video), detects the spoken language and translates the text into english and german.'),
+                Win11Checkbox(key='iped.engine.task.video.VideoThumbTask',label='Generate video thumbnails',description='Image generation task with thumbnails (thumbs) of scenes extracted from video files.'),
+                Win11Checkbox(key='iped.engine.task.ParsingTask',label='Parse for text',description='Parsing task for some types of files. Stores the extracted text, if small, for reuse during indexing, so the file is not decoded again. Parsing is executed in another thread, making it possible to monitor and recover from hangs, etc. Parsing is performed in the following cases: - Container type items, for extraction of subitems. - Carving items to ignore corrupted if indexing is disabled. - Categories that may contain encrypted items, so that they can be added to the specific category. Parsing of other items is performed during indexing, so large items do not have their extracted text stored in memory, which could cause boom.'),
+                Win11Checkbox(key='iped.engine.task.QRCodeTask',label='QR Code detection',description='Detect QR codes in images and extract their textual content.'),
+                Win11Checkbox(key='iped.engine.task.regex.RegexTask',label='Regular expressions',description='Searches the extracted text of items for content matching regular expressions'),
+                Win11Checkbox(key='iped.engine.task.LanguageDetectTask',label='Language detection',description='Determines the main language of texts in items'),
+                Win11Checkbox(key='iped.engine.task.NamedEntityTask',label='Named entities',description='Detect named entities in item texts'),
+                Win11Checkbox(key='iped.engine.task.ExportFileTask',label='Export files',description='Responsible for extracting subitems from containers. It also exports active items in cases of automatic data extraction or in cases of extracting selected items after analysis.'),
+                Win11Checkbox(key='iped.engine.task.EmbeddedDiskProcessTask',label='Process embedded disks',description='Process content of images (RAW, EWF, EWF2, VMDK) recursively.'),
+                Win11Checkbox(key='iped.engine.task.MakePreviewTask',label='Make preview',description='Creates HTML previews of supported file types like SQLite databases, WhatsApp chats of Firefox history.'),
+                Win11Checkbox(key='iped.engine.task.ImageThumbTask',label='Image Thumbnails',description='Create thumbnails of images'),
+                Win11Checkbox(key='iped.engine.task.die.DIETask',label='Explicit image detection',description='Detects explicit images by rating the nudity score'),
+                Win11Checkbox(key='iped.engine.task.similarity.ImageSimilarityTask',label='Image similarity',description='Extract features of images for later similarity comparison'),
+                Win11Checkbox(key='iped.engine.task.PhotoDNATask',label='Photo DNA calculation',description='Calculates PhotoDNA features for images'),
+                Win11Checkbox(key='iped.engine.task.PhotoDNALookup',label='Photo DNA Lookup',description='Lookup for previously calculated PhotoDNA features in PhotoDNA hash database'),
+                Win11Checkbox(key='NSFWNudityDetectTask.py',label='NSFW Nudity detection',description='Nudity detection based on yahoo open_nsfw algorithm.'),
+                Win11Checkbox(key='ImageClassificationTask.py',label='Image classification',description='Classifies images into 70 classes based on Tensorflow and Keras'),
+                Win11Checkbox(key='FaceRecognitionTask.py',label='Face recognition',description='Detects and identifies faces in images. The faces can afterwards be compared to each other to find images with similar faces.'),
+                Win11Checkbox(key='SearchHardwareWallets.py',label='Search for hardware wallets',description='Looks for clues about crypto hardwares wallets. Searches the system registry and the setupapi.dev.[0-9_]log file. The ID\'s for the wallets come from Interpol (https://github.com/INTERPOL-Innovation-Centre/HardwareWallets_DF_List).'),
+                Win11Checkbox(key='iped.engine.task.carver.LedCarveTask',label='LED carving',description='Carve files known in LED database'),
+                Win11Checkbox(key='iped.engine.task.carver.CarverTask',label='Data carving',description='Task responsible for Data Carving. It uses the aho-corasick algorithm, which generates a state machine from the patterns to be searched. Thus, the algorithm is independent of the number of signatures searched, being proportional to the volume of input data and the number of patterns discovered.'),
+                Win11Checkbox(key='iped.engine.task.carver.KnownMetCarveTask',label='e-Mule carving',description='Specific task for carving e-Mule known.met files.'),
+                Win11Checkbox(key='iped.engine.task.FragmentLargeBinaryTask',label='Fragment large binaries',description='Breaks large binary files (indexed by strings) into smaller pieces to be indexed.'),
+                Win11Checkbox(key='iped.engine.task.EntropyTask',label='Compression entropy',description='Calculates the compression ratio of compressed files'),
+                Win11Checkbox(key='iped.engine.task.MinIOTask',label='MinIO export',description='Task to export files to MinIO object storage service.'),
+                Win11Checkbox(key='iped.engine.task.index.ElasticSearchIndexTask',label='ElasticSearch indexing',description='Performs indexing to ElasticSearch/OpenSearch clusters.'),
+                Win11Checkbox(key='iped.engine.task.index.IndexTask',label='Index items',description='Item indexing task. Indexes only properties if content indexing is disabled. Reuses the text of items if it was extracted by previous tasks. Indexes large items by dividing them into fragments, as the indexing lib consumes a lot of memory with large documents.'),
+                Win11Checkbox(key='iped.engine.graph.GraphTask',label='Generate graph',description='Generate links graphs of communication and nearby regex hits'),
+                Win11Checkbox(key='iped.engine.task.ExportCSVTask',label='Export CSV overview',description='Responsible for generating CSV file with the properties of the processed items.'),
+                Win11Checkbox(key='iped.engine.task.HTMLReportTask',label='HTML report',description='Report generation task in HTML format for selected items, generated when the processing input is an ".IPED" file. Must be active on first generation to make the templates available in further exports.'),
+            ]),
         ]
     ])
 
@@ -176,7 +207,7 @@ def createmainform(version):
         [
             sg.TabGroup(expand_x=True, expand_y=True, layout=[
                 [
-                    #createHomeTab(),
+                    createHomeTab(),
                     createEnvironmentTab(),
                     createProcessingTab(),
                     createTaskTab()
