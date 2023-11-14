@@ -1,11 +1,5 @@
 import PySimpleGUI as sg
 
-def createCheckBox(label, tooltip):
-    return [
-        sg.Text(text=label, size=(25,1), tooltip=tooltip),
-        sg.Checkbox(key=label, size=(5,1), text='', default=sg.user_settings_get_entry(label, False), enable_events=True)
-    ]
-
 def createTwoCheckBoxes(label1, tooltip1, label2, tooltip2):
     return [
         sg.Text(text=label1, size=(25,1), tooltip=tooltip1),
@@ -14,35 +8,125 @@ def createTwoCheckBoxes(label1, tooltip1, label2, tooltip2):
         sg.Checkbox(key=label2, size=(5,1), text='', default=sg.user_settings_get_entry(label2, False), enable_events=True),
     ]
 
+def Win11Checkbox(key, label, description):
+    return [
+        sg.Frame(
+            title='',
+            relief=sg.RELIEF_SOLID,
+            border_width=1,
+            expand_x=True,
+            layout=[
+                [
+                    sg.Column(layout=[
+                        [ sg.Text(text=label,font='bold') ],
+                        [ sg.Text(text=description,text_color='#666666',size=(80,None)) ]
+                    ]),
+                    sg.Push(),
+                    sg.Checkbox(text='',key=key,enable_events=True,default=sg.user_settings_get_entry(key, False))
+                ]
+            ]
+        )
+    ]
+
+def Win11Combo(key, label, description, values, default_value):
+    return [
+        sg.Frame(
+            title='',
+            relief=sg.RELIEF_SOLID,
+            border_width=1,
+            expand_x=True,
+            layout=[
+                [
+                    sg.Column(layout=[
+                        [ sg.Text(text=label,font='bold') ],
+                        [ sg.Text(text=description,text_color='#666666',size=(100,None)) ]
+                    ]),
+                    sg.Push(),
+                    sg.Combo(key=key,values=values,enable_events=True,default_value=sg.user_settings_get_entry(key, default_value))
+                ]
+            ]
+        )
+    ]
+
+def Win11FileChooser(key, label, description):
+    return [
+        sg.Frame(
+            title='',
+            relief=sg.RELIEF_SOLID,
+            border_width=1,
+            expand_x=True,
+            layout=[
+                [
+                    sg.Column(layout=[
+                        [ sg.Text(text=label,font='bold') ],
+                        [ sg.Input(key=key,default_text=sg.user_settings_get_entry(key, ''),expand_x=True,readonly=True,enable_events=True)],
+                        [ sg.Text(text=description,text_color='#666666',size=(80,None)) ]
+                    ]),
+                    sg.Push(),
+                    sg.FileBrowse(button_text='Select file ...',target=key)
+                ]
+            ]
+        )
+    ]
+
+def Win11FolderChooser(key, label, description):
+    return [
+        sg.Frame(
+            title='',
+            relief=sg.RELIEF_SOLID,
+            border_width=1,
+            expand_x=True,
+            layout=[
+                [
+                    sg.Column(layout=[
+                        [ sg.Text(text=label,font='bold') ],
+                        [ sg.Input(key=key,default_text=sg.user_settings_get_entry(key, ''),expand_x=True,readonly=True,enable_events=True)],
+                        [ sg.Text(text=description,text_color='#666666',size=(80,None)) ]
+                    ]),
+                    sg.Push(),
+                    sg.FolderBrowse(button_text='Select folder ...',target=key)
+                ]
+            ]
+        )
+    ]
+
+def Win11Input(key, label, description, width=None):
+    return [
+        sg.Frame(
+            title='',
+            relief=sg.RELIEF_SOLID,
+            border_width=1,
+            expand_x=True,
+            layout=[
+                [
+                    sg.Column(layout=[
+                        [ sg.Text(text=label,font='bold') ],
+                        [ sg.Text(text=description,text_color='#666666',size=(100,None)) ]
+                    ]),
+                    sg.Push(),
+                    sg.Input(key=key,enable_events=True,default_text=sg.user_settings_get_entry(key,''),size=(width,None))
+                ]
+            ]
+        )
+    ]
+
 def createHomeTab():
-    return sg.Tab(title='Home', layout=[[]])
+    return sg.Tab(title='Home', layout=[
+        Win11Checkbox(key='KEY', label='Label', description='Description'),
+    ])
 
 def createEnvironmentTab():
     return sg.Tab(title='Environment', layout=[
         [
-            sg.Text(text='locale', size=(25,1), tooltip="Defines program localization/language. Currently there are localizations for 'en', 'pt-BR', 'it-IT', 'de-DE' & 'es-AR'"),
-            sg.Combo(key='locale', values=['en', 'pt-BR', 'it-IT', 'de-DE', 'es-AR'], default_value=sg.user_settings_get_entry('locale', 'de-DE'), enable_events=True)
-        ],
-        [
-            sg.Text(text='indexTemp', size=(25,1), tooltip='Temporary directory for processing: "default" uses the system temporary folder. Configure it on a folder free of antivirus, system indexing or restoring. Using a SSD disk is highly recommended.'),
-            sg.Input(key='indexTemp', default_text=sg.user_settings_get_entry('indexTemp', ''), readonly=True, enable_events=True),
-            sg.FolderBrowse(button_text='Choose folder ...', target='indexTemp')
-        ],
-        createCheckBox(label='indexTempOnSSD', tooltip='Enable if indexTemp is on a SSD disk. Optimizations are made that can improve processing speed up to 2x. Do not enable it if indexTemp is NOT on SSD or you will have performance problems.'),
-        createCheckBox(label='outputOnSSD', tooltip='Enable if output/case folder is on SSD. If enabled, index is created directly in case folder, not in indexTemp, so you will need less free space in temp folder.'),
-        [
-            sg.Text(text='numThreads', size=(25,1), tooltip='Number of processing threads/workers: "default" uses the number of CPU logical cores. If you have memory usage problems, you can decrease it or increase java heap memory (-Xms).'),
-            sg.Input(key='numThreads', default_text=sg.user_settings_get_entry('numThreads', 'default'), enable_events=True)
-        ],
-        [
-            sg.Text(text='hashesDB', size=(25,1), tooltip='Full path for IPED hash database. It is highly recommended to store it on a fast disk,  preferably SSD, and not the same used as "indexTemp", if other disk is available.'),
-            sg.Input(key='hashesDB', default_text=sg.user_settings_get_entry('hashesDB', ''), enable_events=True),
-            sg.FileBrowse(button_text='Select file ...', target='hashesDB')
-        ],
-        [
-            sg.Text(text='pluginFolder', size=(25,1), tooltip='Plugin folder for optional libs not embedded because of license restrictions. They will be dynamically loaded at runtime.'),
-            sg.Input(key='pluginFolder', default_text=sg.user_settings_get_entry('pluginFolder', ''), enable_events=True),
-            sg.FolderBrowse(button_text='Choose folder ...', target='pluginFolder')
+            sg.Column(expand_x=True,expand_y=True,scrollable=True,vertical_scroll_only=True,layout=[
+                Win11Combo(key='locale',label='Program language',description="Defines program localization/language. Currently there are localizations for 'en', 'pt-BR', 'it-IT', 'de-DE' & 'es-AR'",values=['en', 'pt-BR', 'it-IT', 'de-DE', 'es-AR'],default_value='de-DE'),
+                Win11FolderChooser(key='indexTemp',label='Temporary directory for processing',description='Configure it on a folder free of antivirus, system indexing or restoring. Using a SSD disk is highly recommended.'),
+                Win11Checkbox(key='indexTempOnSSD', label='Temporary directory is on SSD', description='Enable if indexTemp is on a SSD disk. Optimizations are made that can improve processing speed up to 2x. Do not enable it if indexTemp is NOT on SSD or you will have performance problems.'),
+                Win11Checkbox(key='outputOnSSD', label='Output directory is on SSD', description='Enable if output/case folder is on SSD. If enabled, index is created directly in case folder, not in indexTemp, so you will need less free space in temp folder.'),
+                Win11Input(key='numThreads',label='Number of processing threads/workers',description='"default" uses the number of CPU logical cores. If you have memory usage problems, you can decrease it or increase java heap memory (-Xms).',width=8),
+                Win11FileChooser(key='hashesDB',label='Hash database',description='Full path for IPED hash database. It is highly recommended to store it on a fast disk, preferably SSD, and not the same used as "indexTemp", if other disk is available.'),
+                Win11FolderChooser(key='pluginFolder',label='Plugin folder',description='Plugin folder for optional libs not embedded because of license restrictions. They will be dynamically loaded at runtime.'),
+            ]),
         ],
     ])
 
