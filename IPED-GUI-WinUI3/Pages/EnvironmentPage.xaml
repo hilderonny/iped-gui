@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="IPED_GUI_WinUI3.Pages.EnvironmentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.Resources>
+        <x:Double x:Key="CardSpacing">4</x:Double>
+        <Style x:Key="SectionHeaderTextBlockStyle" BasedOn="{StaticResource BodyStrongTextBlockStyle}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1,30,0,6" />
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <StackPanel MaxWidth="1000" HorizontalAlignment="Stretch" Spacing="{StaticResource CardSpacing}">
+
+                <TextBlock x:Uid="SettingsPaths" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+
+</Page>

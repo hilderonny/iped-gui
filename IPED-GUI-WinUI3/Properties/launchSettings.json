@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IPED-GUI-WinUI3 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "IPED-GUI-WinUI3 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

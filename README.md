@@ -1,10 +1,10 @@
 # IPED Gui
 
-Dieses Programm bietet eine grafische Oberfl‰che f¸r [IPED](https://github.com/sepinf-inc/IPED).
+Dieses Programm bietet eine grafische Oberfl√§che f√ºr [IPED](https://github.com/sepinf-inc/IPED).
 Es dient zur komfortablen Einstellung von IPED-Programmparametern und zum Starten und Protokollieren
-von IPED-Programmdurchl‰ufen.
+von IPED-Programmdurchl√§ufen.
 
-**TODO** Screenshot einf¸gen
+**TODO** Screenshot einf√ºgen
 
 [Hier geht es zu den Release Notes](RELEASENOTES.md)
 
@@ -12,9 +12,9 @@ von IPED-Programmdurchl‰ufen.
 
 ## Quick Start
 
-**TODO** Benutzung erkl‰ren
-- IPED Programmverzeichnis w‰hlen
-- Einstellungen w‰hlen
-- Tab Protokoll erkl‰ren
+**TODO** Benutzung erkl√§ren
+- IPED Programmverzeichnis w√§hlen
+- Einstellungen w√§hlen
+- Tab Protokoll erkl√§ren - Protokolldatei wird live angezeigt
 - Platzierung der Protokolldatei in ./log/IPED_Gui_YYYY_MM_DD__HH_mm_ss.log
 - Bei jedem Start neue Protokolldatei wie bei IPED selbst auch

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="IPED_GUI_WinUI3.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <x:Double x:Key="CardSpacing">4</x:Double>
+        <Style x:Key="SectionHeaderTextBlockStyle" BasedOn="{StaticResource BodyStrongTextBlockStyle}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1,30,0,6" />
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <ScrollView>
+
+        <Grid>
+            <StackPanel MaxWidth="1000" HorizontalAlignment="Stretch" Spacing="{StaticResource CardSpacing}">
+
+                <TextBlock Style="{StaticResource SectionHeaderTextBlockStyle}" x:Uid="HomeCurrentSettings" />
+
+                <Grid BorderThickness="1" BorderBrush="#f0f0f0" CornerRadius="4" Padding="58,16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="HomeInputPath" Grid.Column="0" Grid.Row="0" Margin="0,0,10,0" />
+                    <TextBlock Name="HomeInputPathText" Grid.Column="1" Grid.Row="0" />
+                    <TextBlock x:Uid="HomeProcessingPath" Grid.Column="0" Grid.Row="1" Margin="0,0,10,0" />
+                    <TextBlock Name="HomeProcessingPathText" Grid.Column="1" Grid.Row="1" />
+                    <TextBlock x:Uid="HomeOutputPath" Grid.Column="0" Grid.Row="2" Margin="0,0,10,0" />
+                    <TextBlock Name="HomeOutputPathText" Grid.Column="1" Grid.Row="2" />
+                    <TextBlock x:Uid="HomeTagLanguage" Grid.Column="0" Grid.Row="3" Margin="0,0,10,0" />
+                    <TextBlock Name="HomeTagLanguageText" Grid.Column="1" Grid.Row="3" />
+                </Grid>
+
+                <TextBlock Style="{StaticResource SectionHeaderTextBlockStyle}" x:Uid="HomeBackgroundProcess" />
+
+                <controls:SettingsExpander x:Uid="HomeSettingsExpanderStopped" IsExpanded="True">
+                    <Button x:Uid="HomeStartStopButtonStart" Style="{StaticResource AccentButtonStyle}"></Button>
+
+                    <controls:SettingsExpander.Items>
+
+                        <ScrollView x:Name="ExpandContent" Margin="4,8,4,4" Background="Black" Foreground="White" Height="300" MinHeight="50" MaxHeight="800">
+                            <RichTextBlock Padding="8" FontFamily="Consolas" ScrollViewer.HorizontalScrollMode="Auto">
+                                <Paragraph>
+                                    Linked text containers allow text which does not fit in one element to overflow into a different element on the page.
+                                </Paragraph>
+                                <Paragraph>
+                                    Creative use of linked text containers enables basic multicolumn support and other advanced page layouts.
+    Duis sed nulla metus, id hendrerit velit. Curabitur dolor purus, bibendum eu cursus lacinia, interdum vel augue. Aenean euismod eros et sapien vehicula dictum. Duis ullamcorper, turpis nec feugiat tincidunt, dui erat luctus risus, aliquam accumsan lacus est vel quam. Nunc lacus massa, varius eget accumsan id, congue sed orci. Duis dignissim hendrerit egestas. Proin ut turpis magna, sit amet porta erat. Nunc semper metus nec magna imperdiet nec vestibulum dui fringilla. Sed sed ante libero, nec porttitor mi. Ut luctus, neque vitae placerat egestas, urna leo auctor magna, sit amet ultricies ipsum felis quis sapien. Proin eleifend varius dui, at vestibulum nunc consectetur nec. Mauris nulla elit, ultrices a sodales non, aliquam ac est. Quisque sit amet risus nulla. Quisque vestibulum posuere velit, vitae vestibulum eros scelerisque sit amet. In in risus est, at laoreet dolor. Nullam aliquet pellentesque convallis. Ut vel tincidunt nulla. Mauris auctor tincidunt auctor. Aenean orci ante, vulputate ac sagittis sit amet, consequat at mi. Morbi elementum purus consectetur nisi adipiscing vitae blandit sapien placerat. Aliquam adipiscing tortor non sem lobortis consectetur mattis felis rhoncus. Nunc eu nunc rhoncus arcu sollicitudin ultrices. In vulputate eros in mauris aliquam id dignissim nisl laoreet.
+                                </Paragraph>
+                            </RichTextBlock>
+                        </ScrollView>
+
+                        <controls:ContentSizer
+                                   Height="16"
+                                   VerticalAlignment="Top"
+                                   Orientation="Horizontal"
+                                   TargetControl="{x:Bind ExpandContent}" />
+
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
+            </StackPanel>
+        </Grid>
+
+    </ScrollView>
+
+</Page>
