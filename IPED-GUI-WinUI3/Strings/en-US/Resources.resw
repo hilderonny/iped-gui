@@ -120,8 +120,23 @@
   <data name="EnvironmentMenuItem.Content" xml:space="preserve">
     <value>Environment</value>
   </data>
+  <data name="HomeCurrentProfile.Header" xml:space="preserve">
+    <value>Current profile</value>
+  </data>
+  <data name="HomeLoadProfileButton.Content" xml:space="preserve">
+    <value>Load profile ...</value>
+  </data>
   <data name="HomeMenuItem.Content" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="HomeProfiles.Text" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="HomeSaveCurrentProfile.Header" xml:space="preserve">
+    <value>Save profile</value>
+  </data>
+  <data name="HomeSaveCurrentProfileButton.Content" xml:space="preserve">
+    <value>Save as ...</value>
   </data>
   <data name="ProcessingMenuItem.Content" xml:space="preserve">
     <value>Processing</value>
