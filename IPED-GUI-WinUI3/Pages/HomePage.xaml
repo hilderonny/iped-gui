@@ -29,7 +29,7 @@
                     <Button x:Uid="HomeLoadProfileButton" Click="HomeLoadProfileButton_Click" />
                     <controls:SettingsExpander.Items>
                         <controls:SettingsCard x:Uid="HomeSaveCurrentProfile">
-                            <Button x:Uid="HomeSaveCurrentProfileButton" />
+                            <Button x:Uid="HomeSaveCurrentProfileButton" Click="HomeSaveCurrentProfileButton_Click" />
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>

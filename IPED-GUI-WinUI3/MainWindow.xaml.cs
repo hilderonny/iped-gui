@@ -1,9 +1,10 @@
+using IPED_GUI_WinUI3.Helpers;
 using IPED_GUI_WinUI3.Pages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Linq;
-using Windows.UI.ApplicationSettings;
+using Windows.Storage;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -15,9 +16,21 @@ namespace IPED_GUI_WinUI3
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             this.InitializeComponent();
+            // Load settings
+            ApplicationDataContainer appSettings = ApplicationData.Current.LocalSettings;
+            if (appSettings.Values["CurrentProfileFile"] is string currentProfileFile)
+            {
+                Settings.LoadFromFile(currentProfileFile);
+            }
+            else
+            {
+                Settings.Create();
+            }
+            // Show Home tab
             var homeMenuItem = (NavigationViewItem)NavView.MenuItems.First();
             NavView.Header = homeMenuItem.Content;
             NavView.SelectedItem = homeMenuItem;

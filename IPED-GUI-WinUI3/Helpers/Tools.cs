@@ -3,16 +3,18 @@ using System.Threading.Tasks;
 using Windows.Storage.Pickers;
 using Windows.Storage;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using System.Collections.Generic;
 
 namespace IPED_GUI_WinUI3.Helpers
 {
     internal class Tools
     {
-
-        public static async Task<string> SelectFile()
+        // ".exe"
+        public static async Task<string> SelectFile(string filterType)
         {
             FileOpenPicker filePicker = new();
-            filePicker.FileTypeFilter.Add(".exe");
+            filePicker.FileTypeFilter.Add(filterType);
             var window = (Application.Current as App)?.m_window as MainWindow;
             var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
             WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hWnd);
