@@ -24,7 +24,7 @@ namespace IPED_GUI_WinUI3.Pages
 
         private async void HomeLoadProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            if (await Tools.SelectFile(".ipedprofile") is string selectedFile)
+            if (await Tools.SelectFile(".ipedguiprofile") is string selectedFile)
             {
                 ApplicationDataContainer appSettings = ApplicationData.Current.LocalSettings;
                 Settings.LoadFromFile(selectedFile);
@@ -33,10 +33,16 @@ namespace IPED_GUI_WinUI3.Pages
             }
         }
 
-        private async void HomeSaveCurrentProfileButton_Click(object sender, RoutedEventArgs e)
+        private void HomeSaveCurrentProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Current.Save(Settings.Current.FilePath);
+            HomeProfileSavedTeachingTip.IsOpen = true;
+        }
+
+        private async void HomeSaveCurrentProfileAsButton_Click(object sender, RoutedEventArgs e)
         {
             FileSavePicker filePicker = new();
-            filePicker.FileTypeChoices.Add("IPED profile", new List<string>() { ".ipedprofile" });
+            filePicker.FileTypeChoices.Add("IPED GUI profile", new List<string>() { ".ipedguiprofile" });
             var window = (Application.Current as App)?.m_window as MainWindow;
             var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
             WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hWnd);
@@ -46,6 +52,7 @@ namespace IPED_GUI_WinUI3.Pages
                 ApplicationDataContainer appSettings = ApplicationData.Current.LocalSettings;
                 appSettings.Values["CurrentProfileFile"] = selectedFile.Path;
                 HomeCurrentProfile.Description = selectedFile.Path;
+                HomeProfileSavedTeachingTip.IsOpen = true;
             }
         }
     }

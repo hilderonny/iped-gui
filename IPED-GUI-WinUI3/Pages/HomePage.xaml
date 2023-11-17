@@ -29,7 +29,12 @@
                     <Button x:Uid="HomeLoadProfileButton" Click="HomeLoadProfileButton_Click" />
                     <controls:SettingsExpander.Items>
                         <controls:SettingsCard x:Uid="HomeSaveCurrentProfile">
-                            <Button x:Uid="HomeSaveCurrentProfileButton" Click="HomeSaveCurrentProfileButton_Click" />
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Uid="HomeSaveCurrentProfileButton" Name="HomeSaveCurrentProfileButton" Style="{StaticResource AccentButtonStyle}" Click="HomeSaveCurrentProfileButton_Click" />
+                                <Button x:Uid="HomeSaveCurrentProfileAsButton" Click="HomeSaveCurrentProfileAsButton_Click" />
+                                <TeachingTip x:Uid="HomeProfileSavedTeachingTip" Name="HomeProfileSavedTeachingTip" PreferredPlacement="Auto" PlacementMargin="20" IsLightDismissEnabled="True" />
+
+                            </StackPanel>
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>

@@ -37,6 +37,31 @@
                     <ComboBox Name="SettingsLocaleComboBox" ItemsSource="{x:Bind Languages}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectionChanged="SettingsLocaleComboBox_SelectionChanged" />
                 </controls:SettingsCard>
 
+                <controls:SettingsCard x:Uid="SettingsIndexTemp" Name="SettingsIndexTemp" HeaderIcon="{ui:FontIcon Glyph=&#xE8B7;}">
+                    <Button x:Uid="SettingsSelectIndexTempButton" Click="SettingsSelectIndexTempButton_Click" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="SettingsIndexTempOnSSD" Name="SettingsIndexTempOnSSD" HeaderIcon="{ui:FontIcon Glyph=&#xEDA2;}">
+                    <ToggleSwitch Name="SettingsIndexTempOnSSDToggleSwitch" Toggled="SettingsIndexTempOnSSDToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="SettingsOutputOnSSD" Name="SettingsOutputOnSSD" HeaderIcon="{ui:FontIcon Glyph=&#xEDA2;}">
+                    <ToggleSwitch Name="SettingsOutputOnSSDToggleSwitch" Toggled="SettingsOutputOnSSDToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="SettingsNumThreads" Name="SettingsNumThreads" HeaderIcon="{ui:FontIcon Glyph=&#xE9F5;}">
+                    <TextBox Name="SettingsNumThreadsTextBox" TextChanged="SettingsNumThreadsTextBox_TextChanged" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="SettingsHashesDB" Name="SettingsHashesDB" HeaderIcon="{ui:FontIcon Glyph=&#xE82D;}">
+                    <Button x:Uid="SettingsSelectHashesDBButton" Click="SettingsSelectHashesDBButton_Click" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="SettingsPluginFolder" Name="SettingsPluginFolder" HeaderIcon="{ui:FontIcon Glyph=&#xED0E;}">
+                    <Button x:Uid="SettingsSelectPluginFolderButton" Click="SettingsSelectPluginFolderButton_Click" />
+                </controls:SettingsCard>
+
+
 
 
                 <TextBlock Style="{StaticResource SectionHeaderTextBlockStyle}" Text="About" />

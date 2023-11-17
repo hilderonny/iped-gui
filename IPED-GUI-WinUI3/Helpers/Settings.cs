@@ -7,6 +7,12 @@ namespace IPED_GUI_WinUI3.Helpers
     {
         public string SETTINGS_IPEDEXEPATH;
         public string SETTINGS_LOCALE;
+        public string SETTINGS_INDEXTEMP;
+        public bool SETTINGS_INDEXTEMPONSSD;
+        public bool SETTINGS_OUTPUTONSSD;
+        public string SETTINGS_NUMTHREADS;
+        public string SETTINGS_HASHESDB;
+        public string SETTINGS_PLUGINFOLDER;
 
 
         public static Settings Current { get; private set; }

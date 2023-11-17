@@ -132,17 +132,44 @@
   <data name="HomeProfiles.Text" xml:space="preserve">
     <value>Profiles</value>
   </data>
+  <data name="HomeProfileSavedTeachingTip.CloseButtonContent" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="HomeProfileSavedTeachingTip.Title" xml:space="preserve">
+    <value>Profile saved.</value>
+  </data>
   <data name="HomeSaveCurrentProfile.Header" xml:space="preserve">
     <value>Save profile</value>
   </data>
-  <data name="HomeSaveCurrentProfileButton.Content" xml:space="preserve">
+  <data name="HomeSaveCurrentProfileAsButton.Content" xml:space="preserve">
     <value>Save as ...</value>
+  </data>
+  <data name="HomeSaveCurrentProfileButton.Content" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="ProcessingMenuItem.Content" xml:space="preserve">
     <value>Processing</value>
   </data>
   <data name="SettingsEnvironment.Text" xml:space="preserve">
     <value>Environment</value>
+  </data>
+  <data name="SettingsHashesDB.Description" xml:space="preserve">
+    <value>Full path for IPED hash database. It is highly recommended to store it on a fast disk, preferably SSD, and not the same used as "indexTemp", if other disk is available.</value>
+  </data>
+  <data name="SettingsHashesDB.Header" xml:space="preserve">
+    <value>Hash database</value>
+  </data>
+  <data name="SettingsIndexTemp.Description" xml:space="preserve">
+    <value>Choose a folder for temporary data. Configure it on a folder free of antivirus, system indexing or restoring. Using a SSD disk is highly recommended.</value>
+  </data>
+  <data name="SettingsIndexTemp.Header" xml:space="preserve">
+    <value>Temporary directory for processing</value>
+  </data>
+  <data name="SettingsIndexTempOnSSD.Description" xml:space="preserve">
+    <value>Enable if indexTemp is on a SSD disk. Optimizations are made that can improve processing speed up to 2x. Do not enable it if indexTemp is NOT on SSD or you will have performance problems.</value>
+  </data>
+  <data name="SettingsIndexTempOnSSD.Header" xml:space="preserve">
+    <value>Temporary directory is on SSD</value>
   </data>
   <data name="SettingsIpedExePath.Description" xml:space="preserve">
     <value>Please select the path where the IPED program is located.</value>
@@ -156,11 +183,38 @@
   <data name="SettingsLocale.Header" xml:space="preserve">
     <value>Program language</value>
   </data>
+  <data name="SettingsNumThreads.Description" xml:space="preserve">
+    <value>"default" uses the number of CPU logical cores. If you have memory usage problems, you can decrease it or increase java heap memory (-Xms).</value>
+  </data>
+  <data name="SettingsNumThreads.Header" xml:space="preserve">
+    <value>Number of processing threads/workers</value>
+  </data>
+  <data name="SettingsOutputOnSSD.Description" xml:space="preserve">
+    <value>Enable if output/case folder is on SSD. If enabled, index is created directly in case folder, not in indexTemp, so you will need less free space in temp folder.</value>
+  </data>
+  <data name="SettingsOutputOnSSD.Header" xml:space="preserve">
+    <value>Output directory is on SSD</value>
+  </data>
   <data name="SettingsPaths.Text" xml:space="preserve">
     <value>Paths</value>
   </data>
+  <data name="SettingsPluginFolder.Description" xml:space="preserve">
+    <value>Plugin folder for optional libs not embedded because of license restrictions. They will be dynamically loaded at runtime.</value>
+  </data>
+  <data name="SettingsPluginFolder.Header" xml:space="preserve">
+    <value>Plugin folder</value>
+  </data>
+  <data name="SettingsSelectHashesDBButton.Content" xml:space="preserve">
+    <value>Select file ...</value>
+  </data>
+  <data name="SettingsSelectIndexTempButton.Content" xml:space="preserve">
+    <value>Select folder ...</value>
+  </data>
   <data name="SettingsSelectIpedExePathButton.Content" xml:space="preserve">
     <value>Select file ...</value>
+  </data>
+  <data name="SettingsSelectPluginFolderButton.Content" xml:space="preserve">
+    <value>Select folder ...</value>
   </data>
   <data name="TasksMenuItem.Content" xml:space="preserve">
     <value>Tasks</value>

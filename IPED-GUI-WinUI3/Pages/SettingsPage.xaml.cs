@@ -36,12 +36,38 @@ namespace IPED_GUI_WinUI3.Pages
                 Settings.Current.SETTINGS_LOCALE = selectedLanguage;
             }
             SettingsLocaleComboBox.SelectedIndex = Languages.Keys.ToList().IndexOf(selectedLanguage);
+            if (Settings.Current.SETTINGS_INDEXTEMP is string indexTemp)
+            {
+                SettingsIndexTemp.Description = indexTemp;
+            }
+            if (Settings.Current.SETTINGS_INDEXTEMPONSSD is bool indexTempOnSSD)
+            {
+                SettingsIndexTempOnSSDToggleSwitch.IsOn = indexTempOnSSD;
+            }
+            if (Settings.Current.SETTINGS_OUTPUTONSSD is bool outputOnSSD)
+            {
+                SettingsOutputOnSSDToggleSwitch.IsOn = outputOnSSD;
+            }
+            if (Settings.Current.SETTINGS_NUMTHREADS is not string numThreads)
+            {
+                numThreads = "default";
+                Settings.Current.SETTINGS_NUMTHREADS = numThreads;
+            }
+            SettingsNumThreadsTextBox.Text = numThreads;
+            if (Settings.Current.SETTINGS_HASHESDB is string hashesDb)
+            {
+                SettingsHashesDB.Description = hashesDb;
+            }
+            SettingsLocaleComboBox.SelectedIndex = Languages.Keys.ToList().IndexOf(selectedLanguage);
+            if (Settings.Current.SETTINGS_PLUGINFOLDER is string pluginFolder)
+            {
+                SettingsPluginFolder.Description = pluginFolder;
+            }
         }
 
         private async void SettingsSelectIpedExePathButton_Click(object sender, RoutedEventArgs e)
         {
-            string selectedFile = await Tools.SelectFile(".exe");
-            if (selectedFile != null)
+            if (await Tools.SelectFile(".exe") is string selectedFile)
             {
                 Settings.Current.SETTINGS_IPEDEXEPATH = selectedFile;
                 SettingsIpedExePath.Description = selectedFile;
@@ -51,6 +77,48 @@ namespace IPED_GUI_WinUI3.Pages
         private void SettingsLocaleComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Settings.Current.SETTINGS_LOCALE = SettingsLocaleComboBox.SelectedValue as string;
+        }
+
+        private async void SettingsSelectIndexTempButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (await Tools.SelectFolder() is string selectedFolder)
+            {
+                Settings.Current.SETTINGS_INDEXTEMP = selectedFolder;
+                SettingsIndexTemp.Description = selectedFolder;
+            }
+        }
+
+        private void SettingsIndexTempOnSSDToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            Settings.Current.SETTINGS_INDEXTEMPONSSD = SettingsIndexTempOnSSDToggleSwitch.IsOn;
+        }
+
+        private void SettingsOutputOnSSDToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            Settings.Current.SETTINGS_OUTPUTONSSD = SettingsOutputOnSSDToggleSwitch.IsOn;
+        }
+
+        private void SettingsNumThreadsTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Settings.Current.SETTINGS_NUMTHREADS = SettingsNumThreadsTextBox.Text;
+        }
+
+        private async void SettingsSelectHashesDBButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (await Tools.SelectFile(".db") is string selectedFile)
+            {
+                Settings.Current.SETTINGS_HASHESDB = selectedFile;
+                SettingsHashesDB.Description = selectedFile;
+            }
+        }
+
+        private async void SettingsSelectPluginFolderButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (await Tools.SelectFolder() is string selectedFolder)
+            {
+                Settings.Current.SETTINGS_PLUGINFOLDER = selectedFolder;
+                SettingsPluginFolder.Description = selectedFolder;
+            }
         }
 
     }
