@@ -8,14 +8,18 @@ namespace IPED_GUI_WinUI3.Pages
     public sealed partial class ProcessingPage : Page
     {
 
+        Settings CurrentSettings { get; }
+
         public ProcessingPage()
         {
             InitializeComponent();
             Load();
+            CurrentSettings = Settings.Current;
         }
 
         private void Load()
         {
+            /*
             ProcessingEnableHashToggleSwitch.IsOn = Settings.Current.PROCESSING_ENABLEHASH;
             ProcessingEnablePhotoDNAToggleSwitch.IsOn = Settings.Current.PROCESSING_ENABLEHASH;
             ProcessingEnableHashDBLookupToggleSwitch.IsOn = Settings.Current.PROCESSING_ENABLEHASH;
@@ -50,11 +54,12 @@ namespace IPED_GUI_WinUI3.Pages
             ProcessingEnableHTMLReportToggleSwitch.IsOn = Settings.Current.PROCESSING_ENABLEHASH;
             ProcessingEnableAudioTranslationToggleSwitch.IsOn = Settings.Current.PROCESSING_ENABLEHASH;
             ProcessingEnableImageClassificationToggleSwitch.IsOn = Settings.Current.PROCESSING_ENABLEHASH;
+            */
         }
 
         private void ProcessingEnableHashToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {
-            Settings.Current.PROCESSING_ENABLEHASH = ProcessingEnableHashToggleSwitch.IsOn;
+            //Settings.Current.PROCESSING_ENABLEHASH = ProcessingEnableHashToggleSwitch.IsOn;
         }
 
         private void ProcessingEnablePhotoDNAToggleSwitch_Toggled(object sender, RoutedEventArgs e)
@@ -214,12 +219,13 @@ namespace IPED_GUI_WinUI3.Pages
 
         private void ProcessingEnableAudioTranslationToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {
-            Settings.Current.PROCESSING_ENABLEHASH = ProcessingEnableAudioTranslationToggleSwitch.IsOn;
+            //Settings.Current.PROCESSING_ENABLEHASH = ProcessingEnableAudioTranslationToggleSwitch.IsOn;
+            //((Application.Current as App)?.m_window as MainWindow).UpdateAudioTranslationVisibility();
         }
 
         private void ProcessingEnableImageClassificationToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {
-            Settings.Current.PROCESSING_ENABLEHASH = ProcessingEnableImageClassificationToggleSwitch.IsOn;
+            //Settings.Current.PROCESSING_ENABLEHASH = ProcessingEnableImageClassificationToggleSwitch.IsOn;
         }
     }
 

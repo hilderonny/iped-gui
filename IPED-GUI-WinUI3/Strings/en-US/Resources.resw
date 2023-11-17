@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AudioTranslationInputDirectory.Description" xml:space="preserve">
+    <value>Directory where the task puts the audio files to process.</value>
+  </data>
+  <data name="AudioTranslationInputDirectory.Header" xml:space="preserve">
+    <value>Input directory</value>
+  </data>
+  <data name="AudioTranslationMenuItem.Content" xml:space="preserve">
+    <value>Audio translation</value>
+  </data>
+  <data name="AudioTranslationOptions.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="AudioTranslationOutputDirectory.Description" xml:space="preserve">
+    <value>Directory where the background task puts the results and where the tasks fetches them.</value>
+  </data>
+  <data name="AudioTranslationOutputDirectory.Header" xml:space="preserve">
+    <value>Output directory</value>
+  </data>
+  <data name="AudioTranslationPaths.Text" xml:space="preserve">
+    <value>Paths</value>
+  </data>
+  <data name="AudioTranslationProcessVideo.Description" xml:space="preserve">
+    <value>Use video processing with caution. It can take very long if you analyze full length cinema movies.</value>
+  </data>
+  <data name="AudioTranslationProcessVideo.Header" xml:space="preserve">
+    <value>Process video files</value>
+  </data>
   <data name="EnvironmentMenuItem.Content" xml:space="preserve">
     <value>Environment</value>
   </data>

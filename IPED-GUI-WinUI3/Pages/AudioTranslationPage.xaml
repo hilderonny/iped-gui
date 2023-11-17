@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="IPED_GUI_WinUI3.Pages.AudioTranslationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <x:Double x:Key="CardSpacing">4</x:Double>
+        <Style x:Key="SectionHeaderTextBlockStyle" BasedOn="{StaticResource BodyStrongTextBlockStyle}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1,30,0,6" />
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <StackPanel MaxWidth="1000" HorizontalAlignment="Stretch" Spacing="{StaticResource CardSpacing}">
+
+                <TextBlock x:Uid="AudioTranslationPaths" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+
+                <controls:SettingsCard x:Uid="AudioTranslationInputDirectory" Name="AudioTranslationInputDirectory" HeaderIcon="{ui:FontIcon Glyph=&#xE898;}">
+                    <Button x:Uid="AudioTranslationSelectInputDirectoryButton" Click="AudioTranslationSelectInputDirectoryButton_Click" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="AudioTranslationOutputDirectory" Name="AudioTranslationOutputDirectory" HeaderIcon="{ui:FontIcon Glyph=&#xE896;}">
+                    <Button x:Uid="AudioTranslationSelectOutputDirectoryButton" Click="AudioTranslationSelectOutputDirectoryButton_Click" />
+                </controls:SettingsCard>
+
+                <TextBlock x:Uid="AudioTranslationOptions" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+
+                <controls:SettingsCard x:Uid="AudioTranslationProcessVideo" Name="AudioTranslationProcessVideo" HeaderIcon="{ui:FontIcon Glyph=&#xE714;}">
+                    <ToggleSwitch Name="AudioTranslationProcessVideoToggleSwitch" Toggled="AudioTranslationProcessVideoToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+
+</Page>

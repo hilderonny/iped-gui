@@ -50,6 +50,10 @@ namespace IPED_GUI_WinUI3.Helpers
         public bool PROCESSING_ENABLEAUDIOTRANSLATION = false;
         public bool PROCESSING_ENABLEIMAGECLASSIFICATION = false;
 
+        public string AUDIOTRANSLATION_INPUTDIRECTORY = null;
+        public string AUDIOTRANSLATION_OUTPUTDIRECTORY = null;
+        public bool AUDIOTRANSLATION_PROCESSVIDEO = false;
+
         public static Settings Current { get; private set; }
 
         public string FilePath;
@@ -83,6 +87,7 @@ namespace IPED_GUI_WinUI3.Helpers
             Directory.CreateDirectory(configDirectory);
             CreateLocalConfig(Path.Join(profileDirectory, "LocalConfig.txt"));
             CreateIPEDConfig(Path.Join(profileDirectory, "IPEDConfig.txt"));
+            CreateAudioTranslationConfig(Path.Join(configDirectory, "AudioTranslation.txt"));
         }
 
         private void CreateLocalConfig(string filePath)
@@ -135,6 +140,15 @@ namespace IPED_GUI_WinUI3.Helpers
                 $"enableHTMLReport = {(PROCESSING_ENABLEHTMLREPORT ? "true" : "false")}",
                 $"enableAudioTranslation = {(PROCESSING_ENABLEAUDIOTRANSLATION ? "true" : "false")}",
                 $"enableImageClassification = {(PROCESSING_ENABLEIMAGECLASSIFICATION ? "true" : "false")}"
+            }));
+        }
+
+        private void CreateAudioTranslationConfig(string filePath)
+        {
+            File.WriteAllText(filePath, string.Join(System.Environment.NewLine, new List<string>() {
+                $"inputDirectory = {AUDIOTRANSLATION_INPUTDIRECTORY}",
+                $"outputDirectory = {AUDIOTRANSLATION_OUTPUTDIRECTORY}",
+                $"processVideo = {(AUDIOTRANSLATION_PROCESSVIDEO ? "true" : "false")}"
             }));
         }
 

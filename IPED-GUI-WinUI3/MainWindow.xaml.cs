@@ -17,9 +17,10 @@ namespace IPED_GUI_WinUI3
     public sealed partial class MainWindow : Window
     {
 
+        Settings CurrentSettings { get; }
+
         public MainWindow()
         {
-            this.InitializeComponent();
             // Load settings
             ApplicationDataContainer appSettings = ApplicationData.Current.LocalSettings;
             if (appSettings.Values["CurrentProfileFile"] is string currentProfileFile)
@@ -30,6 +31,11 @@ namespace IPED_GUI_WinUI3
             {
                 Settings.Create();
             }
+            CurrentSettings = Settings.Current;
+            // Now initialize components. They depend on the settings
+            InitializeComponent();
+            // Enable / disable config tabs
+            //UpdateAudioTranslationVisibility();
             // Show Home tab
             var homeMenuItem = (NavigationViewItem)NavView.MenuItems.First();
             NavView.Header = homeMenuItem.Content;
@@ -51,5 +57,16 @@ namespace IPED_GUI_WinUI3
                 ContentFrame.Navigate(navPageType);
             }
         }
+
+        private void UpdateMenuItemVisibility(string menuItemTag, bool isVisible)
+        {
+            ((NavigationViewItem)NavView.MenuItems.First(menuItem => ((NavigationViewItem)menuItem).Tag.ToString() == menuItemTag)).Visibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public void UpdateAudioTranslationVisibility()
+        {
+            UpdateMenuItemVisibility("IPED_GUI_WinUI3.Pages.AudioTranslationPage", Settings.Current.PROCESSING_ENABLEAUDIOTRANSLATION);
+        }
+
     }
 }
