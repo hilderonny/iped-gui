@@ -39,6 +39,8 @@
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
 
+                <Button x:Uid="HomeStartButton" Name="HomeStartButton" Style="{StaticResource AccentButtonStyle}" Click="HomeStartButton_Click" />
+
             </StackPanel>
         </Grid>
     </ScrollViewer>

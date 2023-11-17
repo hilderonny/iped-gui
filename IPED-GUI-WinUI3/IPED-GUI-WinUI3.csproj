@@ -12,8 +12,8 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Pages\EnvironmentPage.xaml" />
     <None Remove="Pages\HomePage.xaml" />
+    <None Remove="Pages\ProcessingPage.xaml" />
     <None Remove="Pages\SettingsPage.xaml" />
   </ItemGroup>
 
@@ -45,7 +45,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\EnvironmentPage.xaml">
+    <Page Update="Pages\ProcessingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

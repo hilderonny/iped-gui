@@ -55,5 +55,10 @@ namespace IPED_GUI_WinUI3.Pages
                 HomeProfileSavedTeachingTip.IsOpen = true;
             }
         }
+
+        private void HomeStartButton_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Current.CreateProfile();
+        }
     }
 }

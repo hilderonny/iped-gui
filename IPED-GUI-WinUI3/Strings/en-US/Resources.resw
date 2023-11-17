@@ -147,8 +147,215 @@
   <data name="HomeSaveCurrentProfileButton.Content" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="HomeStartButton.Content" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ProcessingEnableAudioTranscription.Description" xml:space="preserve">
+    <value>[Deprecated] Enable audio transcription. Default implementation uses VOSK transcription [EXPERIMENTAL] on local CPU (slow and medium quality). We include Vosk portable models for 'en' and 'pt-BR', the lang model is taken from 'locale' in LocalConfig.txt. You can change it from Vosk to Microsoft Azure or Google Cloud services (faster and better quality). Configure it in conf/AudioTranscriptConfig.txt.</value>
+  </data>
+  <data name="ProcessingEnableAudioTranscription.Header" xml:space="preserve">
+    <value>Audio transcription</value>
+  </data>
+  <data name="ProcessingEnableAudioTranslation.Description" xml:space="preserve">
+    <value>Transcribes and translates all audio and video files using Faster-Whisper and Argos-Translate.</value>
+  </data>
+  <data name="ProcessingEnableAudioTranslation.Header" xml:space="preserve">
+    <value>Audio translation</value>
+  </data>
+  <data name="ProcessingEnableAutomaticExportFiles.Description" xml:space="preserve">
+    <value>Enables automatic file exporting to case folder based on categories or keywords. If enabled, just the exported files are included in case, others are ignored, and the case becomes datasource independent. Relevant categories and keywords can be configured in CategoriesToExport.txt and KeywordsToExport.txt.</value>
+  </data>
+  <data name="ProcessingEnableAutomaticExportFiles.Header" xml:space="preserve">
+    <value>Automatic file export</value>
+  </data>
+  <data name="ProcessingEnableCarving.Description" xml:space="preserve">
+    <value>Enables carving. "addUnallocated" must be enabled to unallocated area be searched. By default carving runs on almost every item in the case. File types to be searched and retrieved can be set in file "conf/CarvingConfig.txt".</value>
+  </data>
+  <data name="ProcessingEnableCarving.Header" xml:space="preserve">
+    <value>Enable carving</value>
+  </data>
+  <data name="ProcessingEnableDocThumbs.Description" xml:space="preserve">
+    <value>[Experimental] Enables thumbnail creation for PDFs and many formats supported by LibreOffice. Advanced configurations can be found at conf/DocThumbsConfig.txt.</value>
+  </data>
+  <data name="ProcessingEnableDocThumbs.Header" xml:space="preserve">
+    <value>Document thumbnails</value>
+  </data>
+  <data name="ProcessingEnableFaceRecognition.Description" xml:space="preserve">
+    <value>Enables face recognition feature. You may install python and some dependencies, see https://github.com/sepinf-inc/IPED/wiki/User-Manual#facerecognition. Advanced configuration options can be found in conf/FaceRecognitionConfig.txt. If enabled, you can search for faces from the analysis interface, check the options menu.</value>
+  </data>
+  <data name="ProcessingEnableFaceRecognition.Header" xml:space="preserve">
+    <value>Face recognition</value>
+  </data>
+  <data name="ProcessingEnableFileParsing.Description" xml:space="preserve">
+    <value>Enables parsing of files contents. It's necessary for several functions like containers expansion, detection of encrypted content, metadata indexing, previews generation, etc.</value>
+  </data>
+  <data name="ProcessingEnableFileParsing.Header" xml:space="preserve">
+    <value>Parse file contents</value>
+  </data>
+  <data name="ProcessingEnableGraphGeneration.Description" xml:space="preserve">
+    <value>Feature to create link graphs of communications (calls, messages, emails...) Optionally it can create entities and links based on nearby regex hits (experimental). It could be enabled in conf/GraphConfig.json.</value>
+  </data>
+  <data name="ProcessingEnableGraphGeneration.Header" xml:space="preserve">
+    <value>Generate graphs</value>
+  </data>
+  <data name="ProcessingEnableHash.Description" xml:space="preserve">
+    <value>Enables file hashes calculation.</value>
+  </data>
+  <data name="ProcessingEnableHash.Header" xml:space="preserve">
+    <value>Create file hashes</value>
+  </data>
+  <data name="ProcessingEnableHashDBLookup.Description" xml:space="preserve">
+    <value>Enables hash lookup on IPED database.</value>
+  </data>
+  <data name="ProcessingEnableHashDBLookup.Header" xml:space="preserve">
+    <value>Lookup hashes</value>
+  </data>
+  <data name="ProcessingEnableHTMLReport.Description" xml:space="preserve">
+    <value>Enables HTML report generation on automatic extractions or from selected items. Generation settings can be modified in file "conf/HTMLReportConfig.txt".</value>
+  </data>
+  <data name="ProcessingEnableHTMLReport.Header" xml:space="preserve">
+    <value>HTML report</value>
+  </data>
+  <data name="ProcessingEnableImageClassification.Description" xml:space="preserve">
+    <value>Classifies the content of images into 70 different classes using TensorFlow and Keras.</value>
+  </data>
+  <data name="ProcessingEnableImageClassification.Header" xml:space="preserve">
+    <value>Image classification</value>
+  </data>
+  <data name="ProcessingEnableImageSimilarity.Description" xml:space="preserve">
+    <value>Enables the generation of images features during processing, allowing the search for visually similar images. "enableImageThumbs" must be enabled.</value>
+  </data>
+  <data name="ProcessingEnableImageSimilarity.Header" xml:space="preserve">
+    <value>Image similarity</value>
+  </data>
+  <data name="ProcessingEnableImageThumbs.Description" xml:space="preserve">
+    <value>Enables the generation of images thumbnails during processing. It can slow down processing, but strongly speeds up image preview in the gallery.</value>
+  </data>
+  <data name="ProcessingEnableImageThumbs.Header" xml:space="preserve">
+    <value>Image thumbnails</value>
+  </data>
+  <data name="ProcessingEnableIndexToElasticSearch.Description" xml:space="preserve">
+    <value>Enables indexing to an ElasticSearch/OpenSearch cluster. You must configure at least host/port options in conf/ElasticSearchConfig.txt.</value>
+  </data>
+  <data name="ProcessingEnableIndexToElasticSearch.Header" xml:space="preserve">
+    <value>ElasticSearch indexing</value>
+  </data>
+  <data name="ProcessingEnableKnownMetCarving.Description" xml:space="preserve">
+    <value>Enables specific carving of e-Mule "known.met" files. "addUnallocated" must be enabled.</value>
+  </data>
+  <data name="ProcessingEnableKnownMetCarving.Header" xml:space="preserve">
+    <value>e-Mule carving</value>
+  </data>
+  <data name="ProcessingEnableLanguageDetect.Description" xml:space="preserve">
+    <value>Enables detection of more than 70 idioms in document files.</value>
+  </data>
+  <data name="ProcessingEnableLanguageDetect.Header" xml:space="preserve">
+    <value>Language detection</value>
+  </data>
+  <data name="ProcessingEnableLedCarving.Description" xml:space="preserve">
+    <value>Enables carving that retrieves known files from the LED base, based on the beginning (64K) of the file. It\'s necessary to enable "addUnallocated" and to configure "hashesDB" (with LED hashes data imported).</value>
+  </data>
+  <data name="ProcessingEnableLedCarving.Header" xml:space="preserve">
+    <value>Carve files known in LED database</value>
+  </data>
+  <data name="ProcessingEnableLedDie.Description" xml:space="preserve">
+    <value>Enables nudity detection. For each image it creates attributes "nudityScore" (1 to 1000) and "nudityClass" (1 to 5) for ranking and/or filtering.</value>
+  </data>
+  <data name="ProcessingEnableLedDie.Header" xml:space="preserve">
+    <value>Nudity detection</value>
+  </data>
+  <data name="ProcessingEnableMinIO.Description" xml:space="preserve">
+    <value>Enable exporting files to MinIO object storage cluster. You must configure at least host/port options in conf/MinIOConfig.txt.</value>
+  </data>
+  <data name="ProcessingEnableMinIO.Header" xml:space="preserve">
+    <value>MinIO export</value>
+  </data>
+  <data name="ProcessingEnableNamedEntityRecogniton.Description" xml:space="preserve">
+    <value>Feature to recognize named entities: people, organizations or places. StanfordCoreNLP 3.8 language models must be downloaded from https://stanfordnlp.github.io/CoreNLP/history.html and put in plugins folder. This feature is CPU heavy, it can increase processing time by 4x. Advanced settings can be modified in "conf/NamedEntityRecognitionConfig.txt" file.</value>
+  </data>
+  <data name="ProcessingEnableNamedEntityRecogniton.Header" xml:space="preserve">
+    <value>Recognize named entities</value>
+  </data>
+  <data name="ProcessingEnablePhotoDNA.Description" xml:space="preserve">
+    <value>Enables photoDNA hash calculation. If you have rights to use it (law enforcement that fight against child exploitation) and have received the library, you must put it into plugins folder.</value>
+  </data>
+  <data name="ProcessingEnablePhotoDNA.Header" xml:space="preserve">
+    <value>Create PhotoDNA hashes</value>
+  </data>
+  <data name="ProcessingEnablePhotoDNALookup.Description" xml:space="preserve">
+    <value>Enables photoDNA lookup on IPED hash database.</value>
+  </data>
+  <data name="ProcessingEnablePhotoDNALookup.Header" xml:space="preserve">
+    <value>Lookup PhotoDNA hashes</value>
+  </data>
+  <data name="ProcessingEnableQRCode.Description" xml:space="preserve">
+    <value>Enables QRcode detection and decoding.</value>
+  </data>
+  <data name="ProcessingEnableQRCode.Header" xml:space="preserve">
+    <value>QR Code detection</value>
+  </data>
+  <data name="ProcessingEnableRegexSearch.Description" xml:space="preserve">
+    <value>Searches texts extracted from items by regular expressions like social numbers, emails, URLs, credit cards, money values, etc. New expressions can be configured in file "conf/RegexConfig.txt"</value>
+  </data>
+  <data name="ProcessingEnableRegexSearch.Header" xml:space="preserve">
+    <value>Regular expressions</value>
+  </data>
+  <data name="ProcessingEnableVideoThumbs.Description" xml:space="preserve">
+    <value>Enables extraction of image frames from video files. Extraction settings can be modified in file "conf/VideoThumbsConfig.txt".</value>
+  </data>
+  <data name="ProcessingEnableVideoThumbs.Header" xml:space="preserve">
+    <value>Video thumbnails</value>
+  </data>
+  <data name="ProcessingEnableYahooNSFWDetection.Description" xml:space="preserve">
+    <value>[Experimental] Enables nudity detection using Yahoo OpenNSFW deeplearning algorithm. You may install python and some dependencies to enable it, see https://github.com/sepinf-inc/IPED/wiki/User-Manual#python-modules. This is more than 1 order of magnitude slower than LedDie algorithm on the CPU, using a good GPU is highly recommended. It gives higher scores than LedDie algorithm for images/videos with genitals or explicit sex, mainly because of training dataset differences. An attribute nsfw_nudity_score from 0 to 100 will be created.</value>
+  </data>
+  <data name="ProcessingEnableYahooNSFWDetection.Header" xml:space="preserve">
+    <value>Nudity detection via Yahoo OpenNSFW</value>
+  </data>
+  <data name="ProcessingEntropyTest.Description" xml:space="preserve">
+    <value>Perform test for randomness of binary items and unknown file types. This is used to detect possible encrypted items. Also makes indexing faster and reduces index size, specially when indexing unallocated space. May cause loss of hits surrounded by "random" content.</value>
+  </data>
+  <data name="ProcessingEntropyTest.Header" xml:space="preserve">
+    <value>Entropy tests</value>
+  </data>
+  <data name="ProcessingExpandContainers.Description" xml:space="preserve">
+    <value>Expands containers, like compressed files, e-mail boxes, emails e MS-Office documents. File types to be expanded can be modified in file "conf/CategoriesToExpand.txt"</value>
+  </data>
+  <data name="ProcessingExpandContainers.Header" xml:space="preserve">
+    <value>Expand containers</value>
+  </data>
+  <data name="ProcessingExportFileProps.Description" xml:space="preserve">
+    <value>Exports the properties of all files in the case to file "Lista de Arquivos.csv".</value>
+  </data>
+  <data name="ProcessingExportFileProps.Header" xml:space="preserve">
+    <value>Export file properties</value>
+  </data>
+  <data name="ProcessingIgnoreDuplicates.Description" xml:space="preserve">
+    <value>Ignore and exclude duplicated files with same hash from the processing and from the case. WARNING: This feature is inherently DANGEROUS, as it could exclude from the case duplicated files with different metadata (name, path, dates) like email attachments or files in relevant folders. See #574 and #931.</value>
+  </data>
+  <data name="ProcessingIgnoreDuplicates.Header" xml:space="preserve">
+    <value>Ignore duplicates</value>
+  </data>
+  <data name="ProcessingIndexFileContents.Description" xml:space="preserve">
+    <value>If disabled, indexes only the properties of files.</value>
+  </data>
+  <data name="ProcessingIndexFileContents.Header" xml:space="preserve">
+    <value>Index file contents</value>
+  </data>
   <data name="ProcessingMenuItem.Content" xml:space="preserve">
     <value>Processing</value>
+  </data>
+  <data name="ProcessingProcessEmbeddedDisks.Description" xml:space="preserve">
+    <value>Process supported disk images (like dd, e01, vhd, vmdk) contained in the main evidence recursively. Splitted images and snapshots are not supported for now.</value>
+  </data>
+  <data name="ProcessingProcessEmbeddedDisks.Header" xml:space="preserve">
+    <value>Process embedded disks</value>
+  </data>
+  <data name="ProcessingProcessFileSignatures.Description" xml:space="preserve">
+    <value>Processes the signatures of files.</value>
+  </data>
+  <data name="ProcessingProcessFileSignatures.Header" xml:space="preserve">
+    <value>Process file signatures</value>
   </data>
   <data name="SettingsEnvironment.Text" xml:space="preserve">
     <value>Environment</value>

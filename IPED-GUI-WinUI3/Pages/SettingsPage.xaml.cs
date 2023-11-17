@@ -3,7 +3,6 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
 using System.Linq;
-using Windows.Storage;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -30,35 +29,18 @@ namespace IPED_GUI_WinUI3.Pages
             {
                 SettingsIpedExePath.Description = ipedexepath;
             }
-            if (Settings.Current.SETTINGS_LOCALE is not string selectedLanguage)
-            {
-                selectedLanguage = "de-DE";
-                Settings.Current.SETTINGS_LOCALE = selectedLanguage;
-            }
-            SettingsLocaleComboBox.SelectedIndex = Languages.Keys.ToList().IndexOf(selectedLanguage);
+            SettingsLocaleComboBox.SelectedIndex = Languages.Keys.ToList().IndexOf(Settings.Current.SETTINGS_LOCALE);
             if (Settings.Current.SETTINGS_INDEXTEMP is string indexTemp)
             {
                 SettingsIndexTemp.Description = indexTemp;
             }
-            if (Settings.Current.SETTINGS_INDEXTEMPONSSD is bool indexTempOnSSD)
-            {
-                SettingsIndexTempOnSSDToggleSwitch.IsOn = indexTempOnSSD;
-            }
-            if (Settings.Current.SETTINGS_OUTPUTONSSD is bool outputOnSSD)
-            {
-                SettingsOutputOnSSDToggleSwitch.IsOn = outputOnSSD;
-            }
-            if (Settings.Current.SETTINGS_NUMTHREADS is not string numThreads)
-            {
-                numThreads = "default";
-                Settings.Current.SETTINGS_NUMTHREADS = numThreads;
-            }
-            SettingsNumThreadsTextBox.Text = numThreads;
+            SettingsIndexTempOnSSDToggleSwitch.IsOn = Settings.Current.SETTINGS_INDEXTEMPONSSD;
+            SettingsOutputOnSSDToggleSwitch.IsOn = Settings.Current.SETTINGS_OUTPUTONSSD;
+            SettingsNumThreadsTextBox.Text = Settings.Current.SETTINGS_NUMTHREADS;
             if (Settings.Current.SETTINGS_HASHESDB is string hashesDb)
             {
                 SettingsHashesDB.Description = hashesDb;
             }
-            SettingsLocaleComboBox.SelectedIndex = Languages.Keys.ToList().IndexOf(selectedLanguage);
             if (Settings.Current.SETTINGS_PLUGINFOLDER is string pluginFolder)
             {
                 SettingsPluginFolder.Description = pluginFolder;

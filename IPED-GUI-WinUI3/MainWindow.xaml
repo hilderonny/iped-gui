@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI"
     mc:Ignorable="d">
 
     <Page>
@@ -18,6 +19,7 @@
             >
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="HomeMenuItem" Tag="IPED_GUI_WinUI3.Pages.HomePage" Icon="Home" />
+                <NavigationViewItem x:Uid="ProcessingMenuItem" Tag="IPED_GUI_WinUI3.Pages.ProcessingPage" Icon="{ui:FontIcon Glyph=&#xE9F5;}" />
             </NavigationView.MenuItems>
 
             <Frame x:Name="ContentFrame"/>

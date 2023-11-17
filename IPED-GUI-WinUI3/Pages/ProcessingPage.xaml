@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="IPED_GUI_WinUI3.Pages.ProcessingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.Resources>
+        <x:Double x:Key="CardSpacing">4</x:Double>
+        <Style x:Key="SectionHeaderTextBlockStyle" BasedOn="{StaticResource BodyStrongTextBlockStyle}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1,30,0,6" />
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <StackPanel MaxWidth="1000" HorizontalAlignment="Stretch" Spacing="{StaticResource CardSpacing}">
+
+                <controls:SettingsCard x:Uid="ProcessingEnableHash" Name="ProcessingEnableHash" HeaderIcon="{ui:FontIcon Glyph=&#xE75F;}">
+                    <ToggleSwitch Name="ProcessingEnableHashToggleSwitch" Toggled="ProcessingEnableHashToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnablePhotoDNA" Name="ProcessingEnablePhotoDNA" HeaderIcon="{ui:FontIcon Glyph=&#xE91B;}">
+                    <ToggleSwitch Name="ProcessingEnablePhotoDNAToggleSwitch" Toggled="ProcessingEnablePhotoDNAToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableHashDBLookup" Name="ProcessingEnableHashDBLookup" HeaderIcon="{ui:FontIcon Glyph=&#xE75F;}">
+                    <ToggleSwitch Name="ProcessingEnableHashDBLookupToggleSwitch" Toggled="ProcessingEnableHashDBLookupToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnablePhotoDNALookup" Name="ProcessingEnablePhotoDNALookup" HeaderIcon="{ui:FontIcon Glyph=&#xE91B;}">
+                    <ToggleSwitch Name="ProcessingEnablePhotoDNALookupToggleSwitch" Toggled="ProcessingEnablePhotoDNALookupToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableLedDie" Name="ProcessingEnableLedDie" HeaderIcon="{ui:FontIcon Glyph=&#xE716;}">
+                    <ToggleSwitch Name="ProcessingEnableLedDieToggleSwitch" Toggled="ProcessingEnableLedDieToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableYahooNSFWDetection" Name="ProcessingEnableYahooNSFWDetection" HeaderIcon="{ui:FontIcon Glyph=&#xE716;}">
+                    <ToggleSwitch Name="ProcessingEnableYahooNSFWDetectionToggleSwitch" Toggled="ProcessingEnableYahooNSFWDetectionToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableQRCode" Name="ProcessingEnableQRCode" HeaderIcon="{ui:FontIcon Glyph=&#xED14;}">
+                    <ToggleSwitch Name="ProcessingEnableQRCodeToggleSwitch" Toggled="ProcessingEnableQRCodeToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingIgnoreDuplicates" Name="ProcessingIgnoreDuplicates" HeaderIcon="{ui:FontIcon Glyph=&#xE8C8;}">
+                    <ToggleSwitch Name="ProcessingIgnoreDuplicatesToggleSwitch" Toggled="ProcessingIgnoreDuplicatesToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingExportFileProps" Name="ProcessingExportFileProps" HeaderIcon="{ui:FontIcon Glyph=&#xEC50;}">
+                    <ToggleSwitch Name="ProcessingExportFilePropsToggleSwitch" Toggled="ProcessingExportFilePropsToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingProcessFileSignatures" Name="ProcessingProcessFileSignatures" HeaderIcon="{ui:FontIcon Glyph=&#xEC50;}">
+                    <ToggleSwitch Name="ProcessingProcessFileSignaturesToggleSwitch" Toggled="ProcessingProcessFileSignaturesToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableFileParsing" Name="ProcessingEnableFileParsing" HeaderIcon="{ui:FontIcon Glyph=&#xED2B;}">
+                    <ToggleSwitch Name="ProcessingEnableFileParsingToggleSwitch" Toggled="ProcessingEnableFileParsingToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingExpandContainers" Name="ProcessingExpandContainers" HeaderIcon="{ui:FontIcon Glyph=&#xED25;}">
+                    <ToggleSwitch Name="ProcessingExpandContainersToggleSwitch" Toggled="ProcessingExpandContainersToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingProcessEmbeddedDisks" Name="ProcessingProcessEmbeddedDisks" HeaderIcon="{ui:FontIcon Glyph=&#xE8F4;}">
+                    <ToggleSwitch Name="ProcessingProcessEmbeddedDisksToggleSwitch" Toggled="ProcessingProcessEmbeddedDisksToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableRegexSearch" Name="ProcessingEnableRegexSearch" HeaderIcon="{ui:FontIcon Glyph=&#xE721;}">
+                    <ToggleSwitch Name="ProcessingEnableRegexSearchToggleSwitch" Toggled="ProcessingEnableRegexSearchToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableAutomaticExportFiles" Name="ProcessingEnableAutomaticExportFiles" HeaderIcon="{ui:FontIcon Glyph=&#xE8E5;}">
+                    <ToggleSwitch Name="ProcessingEnableAutomaticExportFilesToggleSwitch" Toggled="ProcessingEnableAutomaticExportFilesToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableLanguageDetect" Name="ProcessingEnableLanguageDetect" HeaderIcon="{ui:FontIcon Glyph=&#xF2B7;}">
+                    <ToggleSwitch Name="ProcessingEnableLanguageDetectToggleSwitch" Toggled="ProcessingEnableLanguageDetectToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableNamedEntityRecogniton" Name="ProcessingEnableNamedEntityRecogniton" HeaderIcon="{ui:FontIcon Glyph=&#xE71D;}">
+                    <ToggleSwitch Name="ProcessingEnableNamedEntityRecognitonToggleSwitch" Toggled="ProcessingEnableNamedEntityRecognitonToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableGraphGeneration" Name="ProcessingEnableGraphGeneration" HeaderIcon="{ui:FontIcon Glyph=&#xEBD2;}">
+                    <ToggleSwitch Name="ProcessingEnableGraphGenerationToggleSwitch" Toggled="ProcessingEnableGraphGenerationToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEntropyTest" Name="ProcessingEntropyTest" HeaderIcon="{ui:FontIcon Glyph=&#xEF20;}">
+                    <ToggleSwitch Name="ProcessingEntropyTestToggleSwitch" Toggled="ProcessingEntropyTestToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingIndexFileContents" Name="ProcessingIndexFileContents" HeaderIcon="{ui:FontIcon Glyph=&#xF164;}">
+                    <ToggleSwitch Name="ProcessingIndexFileContentsToggleSwitch" Toggled="ProcessingIndexFileContentsToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableIndexToElasticSearch" Name="ProcessingEnableIndexToElasticSearch" HeaderIcon="{ui:FontIcon Glyph=&#xF164;}">
+                    <ToggleSwitch Name="ProcessingEnableIndexToElasticSearchToggleSwitch" Toggled="ProcessingEnableIndexToElasticSearchToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableMinIO" Name="ProcessingEnableMinIO" HeaderIcon="{ui:FontIcon Glyph=&#xE753;}">
+                    <ToggleSwitch Name="ProcessingEnableMinIOToggleSwitch" Toggled="ProcessingEnableMinIOToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableAudioTranscription" Name="ProcessingEnableAudioTranscription" HeaderIcon="{ui:FontIcon Glyph=&#xED1F;}">
+                    <ToggleSwitch Name="ProcessingEnableAudioTranscriptionToggleSwitch" Toggled="ProcessingEnableAudioTranscriptionToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableCarving" Name="ProcessingEnableCarving" HeaderIcon="{ui:FontIcon Glyph=&#xED5F;}">
+                    <ToggleSwitch Name="ProcessingEnableCarvingToggleSwitch" Toggled="ProcessingEnableCarvingToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableLedCarving" Name="ProcessingEnableLedCarving" HeaderIcon="{ui:FontIcon Glyph=&#xED5F;}">
+                    <ToggleSwitch Name="ProcessingEnableLedCarvingToggleSwitch" Toggled="ProcessingEnableLedCarvingToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableKnownMetCarving" Name="ProcessingEnableKnownMetCarving" HeaderIcon="{ui:FontIcon Glyph=&#xED5F;}">
+                    <ToggleSwitch Name="ProcessingEnableKnownMetCarvingToggleSwitch" Toggled="ProcessingEnableKnownMetCarvingToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableImageThumbs" Name="ProcessingEnableImageThumbs" HeaderIcon="{ui:FontIcon Glyph=&#xE91B;}">
+                    <ToggleSwitch Name="ProcessingEnableImageThumbsToggleSwitch" Toggled="ProcessingEnableImageThumbsToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableImageSimilarity" Name="ProcessingEnableImageSimilarity" HeaderIcon="{ui:FontIcon Glyph=&#xE8B9;}">
+                    <ToggleSwitch Name="ProcessingEnableImageSimilarityToggleSwitch" Toggled="ProcessingEnableImageSimilarityToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableFaceRecognition" Name="ProcessingEnableFaceRecognition" HeaderIcon="{ui:FontIcon Glyph=&#xEB68;}">
+                    <ToggleSwitch Name="ProcessingEnableFaceRecognitionToggleSwitch" Toggled="ProcessingEnableFaceRecognitionToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableVideoThumbs" Name="ProcessingEnableVideoThumbs" HeaderIcon="{ui:FontIcon Glyph=&#xF7EE;}">
+                    <ToggleSwitch Name="ProcessingEnableVideoThumbsToggleSwitch" Toggled="ProcessingEnableVideoThumbsToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableDocThumbs" Name="ProcessingEnableDocThumbs" HeaderIcon="{ui:FontIcon Glyph=&#xE8A5;}">
+                    <ToggleSwitch Name="ProcessingEnableDocThumbsToggleSwitch" Toggled="ProcessingEnableDocThumbsToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableHTMLReport" Name="ProcessingEnableHTMLReport" HeaderIcon="{ui:FontIcon Glyph=&#xE9F9;}">
+                    <ToggleSwitch Name="ProcessingEnableHTMLReportToggleSwitch" Toggled="ProcessingEnableHTMLReportToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableAudioTranslation" Name="ProcessingEnableAudioTranslation" HeaderIcon="{ui:FontIcon Glyph=&#xED1F;}">
+                    <ToggleSwitch Name="ProcessingEnableAudioTranslationToggleSwitch" Toggled="ProcessingEnableAudioTranslationToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="ProcessingEnableImageClassification" Name="ProcessingEnableImageClassification" HeaderIcon="{ui:FontIcon Glyph=&#xE7C5;}">
+                    <ToggleSwitch Name="ProcessingEnableImageClassificationToggleSwitch" Toggled="ProcessingEnableImageClassificationToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+
+</Page>
