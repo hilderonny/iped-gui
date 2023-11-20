@@ -144,6 +144,12 @@
   <data name="AudioTranslationProcessVideo.Header" xml:space="preserve">
     <value>Process video files</value>
   </data>
+  <data name="AudioTranslationSelectInputDirectoryButton.Content" xml:space="preserve">
+    <value>Select folder ...</value>
+  </data>
+  <data name="AudioTranslationSelectOutputDirectoryButton.Content" xml:space="preserve">
+    <value>Select folder ...</value>
+  </data>
   <data name="EnvironmentMenuItem.Content" xml:space="preserve">
     <value>Environment</value>
   </data>

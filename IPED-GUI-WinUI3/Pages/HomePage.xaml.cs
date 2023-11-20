@@ -18,7 +18,7 @@ namespace IPED_GUI_WinUI3.Pages
     {
         public HomePage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             HomeCurrentProfile.Description = Settings.Current.FilePath;
         }
 

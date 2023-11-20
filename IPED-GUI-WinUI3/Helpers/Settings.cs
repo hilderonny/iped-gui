@@ -85,6 +85,7 @@ namespace IPED_GUI_WinUI3.Helpers
             string profileDirectory = Path.Join(ipedDirectory, "profiles", "ipedgui");
             string configDirectory = Path.Join(profileDirectory, "conf");
             Directory.CreateDirectory(configDirectory);
+
             CreateLocalConfig(Path.Join(profileDirectory, "LocalConfig.txt"));
             CreateIPEDConfig(Path.Join(profileDirectory, "IPEDConfig.txt"));
             CreateAudioTranslationConfig(Path.Join(configDirectory, "AudioTranslation.txt"));
