@@ -25,9 +25,7 @@
             <StackPanel MaxWidth="1000" HorizontalAlignment="Stretch" Spacing="{StaticResource CardSpacing}">
 
                 <controls:SettingsCard x:Uid="ProcessingEnableHash" Name="ProcessingEnableHash" HeaderIcon="{ui:FontIcon Glyph=&#xE75F;}">
-                    <ToggleSwitch IsOn="{x:Bind CurrentSettings.PROCESSING_ENABLEHASH, Mode=TwoWay}" />
-                    <!-- TODO: Alle Eigenschaften auf Two-Way-Binding umstellen, das ist weniger Code und ist einfacher zu handhaben -->
-                    <!--<ToggleSwitch Name="ProcessingEnableHashToggleSwitch" Toggled="ProcessingEnableHashToggleSwitch_Toggled" />-->
+                    <ToggleSwitch Name="ProcessingEnableHashToggleSwitch" Toggled="ProcessingEnableHashToggleSwitch_Toggled" />
                 </controls:SettingsCard>
 
                 <controls:SettingsCard x:Uid="ProcessingEnablePhotoDNA" Name="ProcessingEnablePhotoDNA" HeaderIcon="{ui:FontIcon Glyph=&#xE91B;}">
@@ -155,8 +153,7 @@
                 </controls:SettingsCard>
 
                 <controls:SettingsCard x:Uid="ProcessingEnableAudioTranslation" Name="ProcessingEnableAudioTranslation" HeaderIcon="{ui:FontIcon Glyph=&#xED1F;}">
-                    <ToggleSwitch IsOn="{x:Bind CurrentSettings.PROCESSING_ENABLEAUDIOTRANSLATION, Mode=TwoWay}" />
-                    <!--<ToggleSwitch Name="ProcessingEnableAudioTranslationToggleSwitch" Toggled="ProcessingEnableAudioTranslationToggleSwitch_Toggled" />-->
+                    <ToggleSwitch Name="ProcessingEnableAudioTranslationToggleSwitch" Toggled="ProcessingEnableAudioTranslationToggleSwitch_Toggled" />
                 </controls:SettingsCard>
 
                 <controls:SettingsCard x:Uid="ProcessingEnableImageClassification" Name="ProcessingEnableImageClassification" HeaderIcon="{ui:FontIcon Glyph=&#xE7C5;}">

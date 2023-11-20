@@ -21,8 +21,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="HomeMenuItem" Tag="IPED_GUI_WinUI3.Pages.HomePage" Icon="Home" />
                 <NavigationViewItem x:Uid="ProcessingMenuItem" Tag="IPED_GUI_WinUI3.Pages.ProcessingPage" Icon="{ui:FontIcon Glyph=&#xE9F5;}" />
-                <!-- Weiter siehe https://docs.devexpress.com/WPF/17361/mvvm-framework/converters -->
-                <NavigationViewItem x:Uid="AudioTranslationMenuItem" Tag="IPED_GUI_WinUI3.Pages.AudioTranslationPage" Icon="{ui:FontIcon Glyph=&#xED1F;}" Visibility="{x:Bind CurrentSettings.PROCESSING_ENABLEAUDIOTRANSLATION, , Converter={mvvm:BooleanToVisibilityConverter}}" />
+                <NavigationViewItem x:Uid="AudioTranslationMenuItem" Tag="IPED_GUI_WinUI3.Pages.AudioTranslationPage" Icon="{ui:FontIcon Glyph=&#xED1F;}" />
             </NavigationView.MenuItems>
 
             <Frame x:Name="ContentFrame"/>

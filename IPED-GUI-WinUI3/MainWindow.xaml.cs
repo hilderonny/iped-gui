@@ -17,8 +17,6 @@ namespace IPED_GUI_WinUI3
     public sealed partial class MainWindow : Window
     {
 
-        Settings CurrentSettings { get; }
-
         public MainWindow()
         {
             // Load settings
@@ -31,11 +29,10 @@ namespace IPED_GUI_WinUI3
             {
                 Settings.Create();
             }
-            CurrentSettings = Settings.Current;
             // Now initialize components. They depend on the settings
             InitializeComponent();
             // Enable / disable config tabs
-            //UpdateAudioTranslationVisibility();
+            UpdateAudioTranslationVisibility();
             // Show Home tab
             var homeMenuItem = (NavigationViewItem)NavView.MenuItems.First();
             NavView.Header = homeMenuItem.Content;
