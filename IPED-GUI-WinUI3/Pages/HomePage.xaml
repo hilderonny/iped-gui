@@ -6,7 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:uiControls="using:CommunityToolkit.WinUI.UI.Controls"
     xmlns:ui="using:CommunityToolkit.WinUI"
+    xmlns:data="using:IPED_GUI_WinUI3.Data"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -38,6 +40,53 @@
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
+
+                <TextBlock Text="Beweismittel hinzufügen" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+
+                <StackPanel Orientation="Horizontal">
+                    <Button>
+                        <StackPanel>
+                            <FontIcon Glyph="&#xEEA3;"/>
+                            <TextBlock Text="Abbild"/>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel>
+                            <FontIcon Glyph="&#xE8CC;"/>
+                            <TextBlock Text="UFED"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Click="HomeAddFolderButton_Click">
+                        <StackPanel>
+                            <FontIcon Glyph="&#xE8B7;"/>
+                            <TextBlock Text="Verzeichnis"/>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel>
+                            <FontIcon Glyph="&#xE8A5;"/>
+                            <TextBlock Text="Datei"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <TextBlock Text="Beweismittel" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+
+                <uiControls:DataGrid Name="SourcesGrid" AutoGenerateColumns="False" ItemsSource="{x:Bind data:Source.Sources, Mode=TwoWay}">
+                    <uiControls:DataGrid.Columns>
+                        <uiControls:DataGridTextColumn Header="Quelle" Binding="{Binding Path}" Width="5*"/>
+                        <uiControls:DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="5*"/>
+                        <uiControls:DataGridTemplateColumn Header="Aktion" Width="1*">
+                            <uiControls:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="HomeDeleteRowButton_Click"><FontIcon Glyph="&#xE74D;"/></Button>
+                                </DataTemplate>
+                            </uiControls:DataGridTemplateColumn.CellTemplate>
+                        </uiControls:DataGridTemplateColumn>
+                    </uiControls:DataGrid.Columns>
+                </uiControls:DataGrid>
+
+                <TextBlock Text="Prozess" Style="{StaticResource SectionHeaderTextBlockStyle}" />
 
                 <Button x:Uid="HomeStartButton" Name="HomeStartButton" Style="{StaticResource AccentButtonStyle}" Click="HomeStartButton_Click" />
 

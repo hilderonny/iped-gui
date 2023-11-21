@@ -24,12 +24,16 @@ namespace IPED_GUI_WinUI3.Helpers
 
         public static async Task<string> SelectFolder()
         {
+            return (await SelectFolderPath())?.Path;
+        }
+
+        public static async Task<StorageFolder> SelectFolderPath()
+        {
             FolderPicker folderPicker = new();
             var window = (Application.Current as App)?.m_window as MainWindow;
             var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
             WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hWnd);
-            StorageFolder selectedFolder = await folderPicker.PickSingleFolderAsync();
-            return selectedFolder?.Path;
+            return await folderPicker.PickSingleFolderAsync();
         }
 
     }

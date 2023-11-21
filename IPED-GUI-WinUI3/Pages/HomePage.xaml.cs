@@ -1,8 +1,10 @@
+using IPED_GUI_WinUI3.Data;
 using IPED_GUI_WinUI3.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 
@@ -16,6 +18,7 @@ namespace IPED_GUI_WinUI3.Pages
     /// </summary>
     public sealed partial class HomePage : Page
     {
+
         public HomePage()
         {
             InitializeComponent();
@@ -59,6 +62,20 @@ namespace IPED_GUI_WinUI3.Pages
         private void HomeStartButton_Click(object sender, RoutedEventArgs e)
         {
             Settings.Current.CreateProfile();
+        }
+
+        private async void HomeAddFolderButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (await Tools.SelectFolderPath() is StorageFolder selectedFolder)
+            {
+                Source.Sources.Add(new(selectedFolder.Path, selectedFolder.Name));
+            }
+        }
+
+        private void HomeDeleteRowButton_Click(object sender, RoutedEventArgs e)
+        {
+            var source = ((FrameworkElement)sender).DataContext as Source;
+            Source.Sources.Remove(source);
         }
     }
 }
