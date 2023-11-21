@@ -114,6 +114,10 @@
 
                 <TextBlock x:Uid="HomeOptions" Style="{StaticResource SectionHeaderTextBlockStyle}" />
 
+                <controls:SettingsCard x:Uid="HomeOutputDirectory" Name="HomeOutputDirectory" HeaderIcon="{ui:FontIcon Glyph=&#xE896;}">
+                    <Button x:Uid="HomeOutputDirectoryButton" Click="HomeOutputDirectoryButton_Click" />
+                </controls:SettingsCard>
+
                 <controls:SettingsCard x:Uid="HomeAppend" HeaderIcon="{ui:FontIcon Glyph=&#xE710;}">
                     <ToggleSwitch Name="HomeAppendToggleSwitch" Toggled="HomeAppendToggleSwitch_Toggled" />
                 </controls:SettingsCard>

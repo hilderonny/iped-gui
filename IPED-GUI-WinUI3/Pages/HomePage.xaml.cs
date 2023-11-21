@@ -87,6 +87,15 @@ namespace IPED_GUI_WinUI3.Pages
             Source.Sources.Remove(source);
         }
 
+        private async void HomeOutputDirectoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (await Tools.SelectFolder() is string selectedFolder)
+            {
+                Config.OutputDirectory = selectedFolder;
+                HomeOutputDirectory.Description = selectedFolder;
+            }
+        }
+
         private void HomeAppendToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {
             Config.Append = HomeAppendToggleSwitch.IsOn;
@@ -115,6 +124,16 @@ namespace IPED_GUI_WinUI3.Pages
         private void HomeDownloadInternetDataToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {
             Config.DownloadInternetData = HomeDownloadInternetDataToggleSwitch.IsOn;
+        }
+
+        private string CreateCommandLineArguments()
+        {
+            List<string> arguments = new();
+            foreach (var source in Source.Sources)
+            {
+                arguments.Add("-d \"" + source.Path + "\" -dname \"" + source.Name + "\"");
+            }
+            return string.Join(" ", arguments);
         }
 
     }

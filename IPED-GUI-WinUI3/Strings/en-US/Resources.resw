@@ -192,6 +192,15 @@
   <data name="HomeOptions.Text" xml:space="preserve">
     <value>Options</value>
   </data>
+  <data name="HomeOutputDirectory.Description" xml:space="preserve">
+    <value>Please select an existing empty directory, preferrable on SSD.</value>
+  </data>
+  <data name="HomeOutputDirectory.Header" xml:space="preserve">
+    <value>Output directory</value>
+  </data>
+  <data name="HomeOutputDirectoryButton.Content" xml:space="preserve">
+    <value>Select folder ...</value>
+  </data>
   <data name="HomePath.Text" xml:space="preserve">
     <value>Path</value>
   </data>
