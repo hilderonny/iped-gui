@@ -153,14 +153,35 @@
   <data name="EnvironmentMenuItem.Content" xml:space="preserve">
     <value>Environment</value>
   </data>
+  <data name="HomeAction.Text" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="HomeAddSources.Text" xml:space="preserve">
+    <value>Add sources</value>
+  </data>
   <data name="HomeCurrentProfile.Header" xml:space="preserve">
     <value>Current profile</value>
+  </data>
+  <data name="HomeFile.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="HomeFolder.Text" xml:space="preserve">
+    <value>Folder</value>
   </data>
   <data name="HomeLoadProfileButton.Content" xml:space="preserve">
     <value>Load profile ...</value>
   </data>
   <data name="HomeMenuItem.Content" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="HomeName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="HomePath.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="HomeProcess.Text" xml:space="preserve">
+    <value>Process</value>
   </data>
   <data name="HomeProfiles.Text" xml:space="preserve">
     <value>Profiles</value>
@@ -179,6 +200,9 @@
   </data>
   <data name="HomeSaveCurrentProfileButton.Content" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="HomeSources.Text" xml:space="preserve">
+    <value>Sources</value>
   </data>
   <data name="HomeStartButton.Content" xml:space="preserve">
     <value>Start</value>

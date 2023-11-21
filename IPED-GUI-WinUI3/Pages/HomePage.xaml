@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:uiControls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:uiPrimitives="using:CommunityToolkit.WinUI.UI.Controls.Primitives"
     xmlns:ui="using:CommunityToolkit.WinUI"
     xmlns:data="using:IPED_GUI_WinUI3.Data"
     mc:Ignorable="d"
@@ -41,40 +42,77 @@
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
 
-                <TextBlock Text="Beweismittel hinzufügen" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+                <TextBlock x:Uid="HomeAddSources" Style="{StaticResource SectionHeaderTextBlockStyle}" />
 
                 <StackPanel Orientation="Horizontal">
                     <Button Click="HomeAddFileButton_Click">
                         <StackPanel>
                             <FontIcon Glyph="&#xE8A5;"/>
-                            <TextBlock Text="Datei"/>
+                            <TextBlock x:Uid="HomeFile" />
                         </StackPanel>
                     </Button>
                     <Button Click="HomeAddFolderButton_Click">
                         <StackPanel>
                             <FontIcon Glyph="&#xE8B7;"/>
-                            <TextBlock Text="Verzeichnis"/>
+                            <TextBlock x:Uid="HomeFolder" />
                         </StackPanel>
                     </Button>
                 </StackPanel>
 
-                <TextBlock Text="Beweismittel" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+                <TextBlock x:Uid="HomeSources" Style="{StaticResource SectionHeaderTextBlockStyle}" />
 
                 <uiControls:DataGrid Name="SourcesGrid" AutoGenerateColumns="False" ItemsSource="{x:Bind data:Source.Sources, Mode=TwoWay}">
                     <uiControls:DataGrid.Columns>
-                        <uiControls:DataGridTextColumn Header="Quelle" Binding="{Binding Path}" Width="5*"/>
-                        <uiControls:DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="5*"/>
-                        <uiControls:DataGridTemplateColumn Header="Aktion" Width="1*">
+                        <uiControls:DataGridTextColumn Binding="{Binding Path}" Width="5*">
+                            <uiControls:DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="uiPrimitives:DataGridColumnHeader">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="uiPrimitives:DataGridColumnHeader">
+                                                <TextBlock x:Uid="HomePath" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </uiControls:DataGridTextColumn.HeaderStyle>
+                        </uiControls:DataGridTextColumn>
+                        <uiControls:DataGridTextColumn Binding="{Binding Name}" Width="5*">
+                            <uiControls:DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="uiPrimitives:DataGridColumnHeader">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="uiPrimitives:DataGridColumnHeader">
+                                                <TextBlock x:Uid="HomeName" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </uiControls:DataGridTextColumn.HeaderStyle>
+                        </uiControls:DataGridTextColumn>
+                        <uiControls:DataGridTemplateColumn Width="1*">
+                            <uiControls:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="uiPrimitives:DataGridColumnHeader">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="uiPrimitives:DataGridColumnHeader">
+                                                <TextBlock x:Uid="HomeAction" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </uiControls:DataGridTemplateColumn.HeaderStyle>
                             <uiControls:DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Click="HomeDeleteRowButton_Click"><FontIcon Glyph="&#xE74D;"/></Button>
+                                    <Button Click="HomeDeleteRowButton_Click">
+                                        <FontIcon Glyph="&#xE74D;"/>
+                                    </Button>
                                 </DataTemplate>
                             </uiControls:DataGridTemplateColumn.CellTemplate>
                         </uiControls:DataGridTemplateColumn>
                     </uiControls:DataGrid.Columns>
                 </uiControls:DataGrid>
 
-                <TextBlock Text="Prozess" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+                <TextBlock x:Uid="HomeProcess" Style="{StaticResource SectionHeaderTextBlockStyle}" />
 
                 <Button x:Uid="HomeStartButton" Name="HomeStartButton" Style="{StaticResource AccentButtonStyle}" Click="HomeStartButton_Click" />
 
