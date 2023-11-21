@@ -138,6 +138,12 @@
 
                 <Button x:Uid="HomeStartButton" Name="HomeStartButton" Style="{StaticResource AccentButtonStyle}" Click="HomeStartButton_Click" />
 
+                <TextBlock x:Uid="HomeLog" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+
+                <ScrollViewer Height="600" Background="Black" HorizontalScrollMode="Disabled" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Visible">
+                    <TextBlock Name="LogTextBlock" FontFamily="Courier New" Foreground="White" IsTextSelectionEnabled="True" TextWrapping="Wrap"></TextBlock>
+                </ScrollViewer>
+
             </StackPanel>
         </Grid>
     </ScrollViewer>

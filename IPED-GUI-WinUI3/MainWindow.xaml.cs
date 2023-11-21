@@ -1,9 +1,11 @@
+using IPED_GUI_WinUI3.Data;
 using IPED_GUI_WinUI3.Helpers;
 using IPED_GUI_WinUI3.Pages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Linq;
+using System.Reflection;
 using Windows.Storage;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -31,6 +33,12 @@ namespace IPED_GUI_WinUI3
             }
             // Now initialize components. They depend on the settings
             InitializeComponent();
+            // Show version in title bar
+            Version version = Assembly.GetExecutingAssembly().GetName().Version;
+            if (version != null)
+            {
+                Title += " " + version?.Major + "." + version?.Minor + "." + version?.Build;
+            }
             // Enable / disable config tabs
             UpdateAudioTranslationVisibility();
             // Show Home tab

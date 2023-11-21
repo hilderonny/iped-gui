@@ -4,7 +4,8 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Diagnostics;
+using System.Threading;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 
@@ -19,10 +20,18 @@ namespace IPED_GUI_WinUI3.Pages
     public sealed partial class HomePage : Page
     {
 
+        private readonly SynchronizationContext synchronizationContext = null;
+
         public HomePage()
         {
+            synchronizationContext = SynchronizationContext.Current;
             InitializeComponent();
             HomeCurrentProfile.Description = Settings.Current.FilePath;
+            HomeOutputDirectory.Description = Config.OutputDirectory;
+            HomeAppendToggleSwitch.IsOn = Config.Append;
+            HomeContinueToggleSwitch.IsOn = Config.Continue;
+            HomePortableToggleSwitch.IsOn = Config.Portable;
+            HomeDownloadInternetDataToggleSwitch.IsOn = Config.DownloadInternetData;
         }
 
         private async void HomeLoadProfileButton_Click(object sender, RoutedEventArgs e)
@@ -61,7 +70,34 @@ namespace IPED_GUI_WinUI3.Pages
 
         private void HomeStartButton_Click(object sender, RoutedEventArgs e)
         {
+            LogTextBlock.Text = "";
             Settings.Current.CreateProfile();
+            string arguments = CreateCommandLineArguments();
+            WriteToConsole(Settings.Current.SETTINGS_IPEDEXEPATH + " " + arguments);
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = Settings.Current.SETTINGS_IPEDEXEPATH,
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    Arguments = arguments,
+                }
+            };
+            process.OutputDataReceived += (sender, args) => synchronizationContext?.Post(_ => WriteToConsole(args.Data), null);
+            process.ErrorDataReceived += (sender, args) => synchronizationContext?.Post(_ => WriteToConsole(args.Data), null);
+
+            process.Start();
+            process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
+        }
+
+        private void WriteToConsole(string line)
+        {
+            if (line != null) LogTextBlock.Text += line + Environment.NewLine;
+            ScrollViewer scrollViewer = (ScrollViewer)LogTextBlock.Parent;
+            scrollViewer.ScrollToVerticalOffset(scrollViewer.ScrollableHeight);
         }
 
         private async void HomeAddFileButton_Click(object sender, RoutedEventArgs e)
@@ -133,6 +169,12 @@ namespace IPED_GUI_WinUI3.Pages
             {
                 arguments.Add("-d \"" + source.Path + "\" -dname \"" + source.Name + "\"");
             }
+            arguments.Add("--nologfile");
+            if (Config.Append) arguments.Add("--append");
+            if (Config.Continue) arguments.Add("--continue");
+            if (Config.Portable) arguments.Add("--portable");
+            if (Config.DownloadInternetData) arguments.Add("--downloadInternetData");
+            arguments.Add("-o \"" + Config.OutputDirectory + "\"");
             return string.Join(" ", arguments);
         }
 

@@ -183,6 +183,9 @@
   <data name="HomeLoadProfileButton.Content" xml:space="preserve">
     <value>Load profile ...</value>
   </data>
+  <data name="HomeLog.Text" xml:space="preserve">
+    <value>Log</value>
+  </data>
   <data name="HomeMenuItem.Content" xml:space="preserve">
     <value>Home</value>
   </data>
