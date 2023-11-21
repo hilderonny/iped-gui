@@ -112,6 +112,24 @@
                     </uiControls:DataGrid.Columns>
                 </uiControls:DataGrid>
 
+                <TextBlock x:Uid="HomeOptions" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+
+                <controls:SettingsCard x:Uid="HomeAppend" HeaderIcon="{ui:FontIcon Glyph=&#xE710;}">
+                    <ToggleSwitch Name="HomeAppendToggleSwitch" Toggled="HomeAppendToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="HomeContinue" HeaderIcon="{ui:FontIcon Glyph=&#xF83E;}">
+                    <ToggleSwitch Name="HomeContinueToggleSwitch" Toggled="HomeContinueToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="HomePortable" HeaderIcon="{ui:FontIcon Glyph=&#xE805;}">
+                    <ToggleSwitch Name="HomePortableToggleSwitch" Toggled="HomePortableToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
+                <controls:SettingsCard x:Uid="HomeDownloadInternetData" HeaderIcon="{ui:FontIcon Glyph=&#xEBD3;}">
+                    <ToggleSwitch Name="HomeDownloadInternetDataToggleSwitch" Toggled="HomeDownloadInternetDataToggleSwitch_Toggled" />
+                </controls:SettingsCard>
+
                 <TextBlock x:Uid="HomeProcess" Style="{StaticResource SectionHeaderTextBlockStyle}" />
 
                 <Button x:Uid="HomeStartButton" Name="HomeStartButton" Style="{StaticResource AccentButtonStyle}" Click="HomeStartButton_Click" />

@@ -86,5 +86,36 @@ namespace IPED_GUI_WinUI3.Pages
             var source = ((FrameworkElement)sender).DataContext as Source;
             Source.Sources.Remove(source);
         }
+
+        private void HomeAppendToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            Config.Append = HomeAppendToggleSwitch.IsOn;
+            if (Config.Append)
+            {
+                HomeContinueToggleSwitch.IsOn = false;
+                Config.Continue = false;
+            }
+        }
+
+        private void HomeContinueToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            Config.Continue = HomeContinueToggleSwitch.IsOn;
+            if (Config.Continue)
+            {
+                HomeAppendToggleSwitch.IsOn = false;
+                Config.Append = false;
+            }
+        }
+
+        private void HomePortableToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            Config.Portable = HomePortableToggleSwitch.IsOn;
+        }
+
+        private void HomeDownloadInternetDataToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            Config.DownloadInternetData = HomeDownloadInternetDataToggleSwitch.IsOn;
+        }
+
     }
 }

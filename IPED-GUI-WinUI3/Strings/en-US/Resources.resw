@@ -159,8 +159,20 @@
   <data name="HomeAddSources.Text" xml:space="preserve">
     <value>Add sources</value>
   </data>
+  <data name="HomeAppend.Header" xml:space="preserve">
+    <value>Append existing project</value>
+  </data>
+  <data name="HomeContinue.Header" xml:space="preserve">
+    <value>Continue processing after cancellation</value>
+  </data>
   <data name="HomeCurrentProfile.Header" xml:space="preserve">
     <value>Current profile</value>
+  </data>
+  <data name="HomeDownloadInternetData.Description" xml:space="preserve">
+    <value>Download Internet data to enrich evidence data processing. E.g. media files still available in WhatsApp servers and not found in the evidence.</value>
+  </data>
+  <data name="HomeDownloadInternetData.Header" xml:space="preserve">
+    <value>Download internet data</value>
   </data>
   <data name="HomeFile.Text" xml:space="preserve">
     <value>File</value>
@@ -177,8 +189,17 @@
   <data name="HomeName.Text" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="HomeOptions.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
   <data name="HomePath.Text" xml:space="preserve">
     <value>Path</value>
+  </data>
+  <data name="HomePortable.Description" xml:space="preserve">
+    <value>Use relative references to forensic images, so case can be moved to other machines if the images are on the same volume.</value>
+  </data>
+  <data name="HomePortable.Header" xml:space="preserve">
+    <value>Portable</value>
   </data>
   <data name="HomeProcess.Text" xml:space="preserve">
     <value>Process</value>
