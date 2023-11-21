@@ -64,6 +64,15 @@ namespace IPED_GUI_WinUI3.Pages
             Settings.Current.CreateProfile();
         }
 
+        private async void HomeAddFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            string[] extensions = { ".DD", ".001", ".E01", ".Ex01", ".VHD", ".VHDX", ".VMDK", ".ISO", ".AFF", ".AD1", ".UFDR" , "*" };
+            if (await Tools.SelectFilePath(extensions) is StorageFile selectedFile)
+            {
+                Source.Sources.Add(new(selectedFile.Path, selectedFile.Name));
+            }
+        }
+
         private async void HomeAddFolderButton_Click(object sender, RoutedEventArgs e)
         {
             if (await Tools.SelectFolderPath() is StorageFolder selectedFolder)

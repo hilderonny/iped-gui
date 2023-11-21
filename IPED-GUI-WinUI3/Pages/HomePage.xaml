@@ -44,28 +44,16 @@
                 <TextBlock Text="Beweismittel hinzufügen" Style="{StaticResource SectionHeaderTextBlockStyle}" />
 
                 <StackPanel Orientation="Horizontal">
-                    <Button>
+                    <Button Click="HomeAddFileButton_Click">
                         <StackPanel>
-                            <FontIcon Glyph="&#xEEA3;"/>
-                            <TextBlock Text="Abbild"/>
-                        </StackPanel>
-                    </Button>
-                    <Button>
-                        <StackPanel>
-                            <FontIcon Glyph="&#xE8CC;"/>
-                            <TextBlock Text="UFED"/>
+                            <FontIcon Glyph="&#xE8A5;"/>
+                            <TextBlock Text="Datei"/>
                         </StackPanel>
                     </Button>
                     <Button Click="HomeAddFolderButton_Click">
                         <StackPanel>
                             <FontIcon Glyph="&#xE8B7;"/>
                             <TextBlock Text="Verzeichnis"/>
-                        </StackPanel>
-                    </Button>
-                    <Button>
-                        <StackPanel>
-                            <FontIcon Glyph="&#xE8A5;"/>
-                            <TextBlock Text="Datei"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
