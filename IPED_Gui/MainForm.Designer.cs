@@ -29,7 +29,25 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            GroupBox groupBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            GroupBox groupBox1;
+            Button buttonAudioTranslationInputDirectory;
+            Button buttonAudioTranslationOutputDirectory;
+            Label label3;
+            Button buttonImageClassificationOutputDirectory;
+            Button buttonImageClassificationInputDirectory;
+            Label label4;
+            Button buttonSettingsIpedExePath;
+            Button buttonSettingsIndexTemp;
+            Button buttonSettingsHashesDB;
+            Button buttonSettingsPluginFolder;
+            checkBox_ProjektErweitern = new CheckBox();
+            checkBox_Fortsetzen = new CheckBox();
+            checkBox_Portabel = new CheckBox();
+            checkBox_InternetdatenLaden = new CheckBox();
+            checkBoxIPEDConfigEnableAudioTranslation = new CheckBox();
+            checkBoxIPEDConfigEnableImageClassification = new CheckBox();
             label_Spuren = new Label();
             listBox_Spuren = new ListBox();
             button_VerzeichnisHinzufuegen = new Button();
@@ -37,27 +55,270 @@
             label_Ausgabeverzeichnis = new Label();
             textBox_Ausgabeverzeichnis = new TextBox();
             button_Auswaehlen = new Button();
-            checkBox_ProjektErweitern = new CheckBox();
-            checkBox_Fortsetzen = new CheckBox();
-            checkBox_Portabel = new CheckBox();
-            checkBox_InternetdatenLaden = new CheckBox();
-            checkBox_AudioTranslation = new CheckBox();
-            checkBox_BildKlassifizierung = new CheckBox();
-            checkBox_Ocr = new CheckBox();
-            textBox_Konsole = new TextBox();
+            textBoxConsole = new TextBox();
             button_Starten = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             label_Warnung = new Label();
             button_DateienHinzufuegen = new Button();
             toolTip1 = new ToolTip(components);
+            label1 = new Label();
+            label2 = new Label();
+            checkBoxAudioTranslationProcessVideos = new CheckBox();
             tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            tabPageOverview = new TabPage();
+            tabPageSettings = new TabPage();
+            label10 = new Label();
+            textBoxSettingsPluginFolder = new TextBox();
+            label9 = new Label();
+            textBoxSettingsHashesDB = new TextBox();
+            label8 = new Label();
+            textBoxSettingsNumThreads = new TextBox();
+            checkBoxSettingsOutputOnSSD = new CheckBox();
+            checkBoxSettingsIndexTempOnSSD = new CheckBox();
+            label7 = new Label();
+            textBoxSettingsIndexTemp = new TextBox();
+            label6 = new Label();
+            comboBoxSettingsLocale = new ComboBox();
+            textBoxSettingsIpedExePath = new TextBox();
+            label5 = new Label();
+            tabPageAudioTranslation = new TabPage();
+            textBoxAudioTranslationOutputDirectory = new TextBox();
+            textBoxAudioTranslationInputDirectory = new TextBox();
+            tabPageImageClassification = new TabPage();
+            textBoxImageClassificationOutputDirectory = new TextBox();
+            textBoxImageClassificationInputDirectory = new TextBox();
+            tabPageProtocol = new TabPage();
+            openFileDialogSettingsIpedExePath = new OpenFileDialog();
+            folderBrowserDialog = new FolderBrowserDialog();
+            openFileDialogSettingsHashesDB = new OpenFileDialog();
+            groupBox2 = new GroupBox();
+            groupBox1 = new GroupBox();
+            buttonAudioTranslationInputDirectory = new Button();
+            buttonAudioTranslationOutputDirectory = new Button();
+            label3 = new Label();
+            buttonImageClassificationOutputDirectory = new Button();
+            buttonImageClassificationInputDirectory = new Button();
+            label4 = new Label();
+            buttonSettingsIpedExePath = new Button();
+            buttonSettingsIndexTemp = new Button();
+            buttonSettingsHashesDB = new Button();
+            buttonSettingsPluginFolder = new Button();
+            groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            tabPageOverview.SuspendLayout();
+            tabPageSettings.SuspendLayout();
+            tabPageAudioTranslation.SuspendLayout();
+            tabPageImageClassification.SuspendLayout();
+            tabPageProtocol.SuspendLayout();
             SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(checkBox_ProjektErweitern);
+            groupBox2.Controls.Add(checkBox_Fortsetzen);
+            groupBox2.Controls.Add(checkBox_Portabel);
+            groupBox2.Controls.Add(checkBox_InternetdatenLaden);
+            groupBox2.Dock = DockStyle.Fill;
+            groupBox2.Location = new Point(163, 253);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(326, 246);
+            groupBox2.TabIndex = 20;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Optionen";
+            // 
+            // checkBox_ProjektErweitern
+            // 
+            checkBox_ProjektErweitern.AutoSize = true;
+            checkBox_ProjektErweitern.Location = new Point(6, 22);
+            checkBox_ProjektErweitern.Name = "checkBox_ProjektErweitern";
+            checkBox_ProjektErweitern.Size = new Size(184, 19);
+            checkBox_ProjektErweitern.TabIndex = 8;
+            checkBox_ProjektErweitern.Text = "Bestehendes Projekt erweitern";
+            toolTip1.SetToolTip(checkBox_ProjektErweitern, "Falls sich in dem Ausgabeverzeichnis bereits ein IPED-Projekt befindet, wird dieses hiermit um die angegebenen Spuren erweitert");
+            checkBox_ProjektErweitern.UseVisualStyleBackColor = true;
+            checkBox_ProjektErweitern.CheckedChanged += checkBox_ProjektErweitern_CheckedChanged;
+            // 
+            // checkBox_Fortsetzen
+            // 
+            checkBox_Fortsetzen.AutoSize = true;
+            checkBox_Fortsetzen.Location = new Point(6, 47);
+            checkBox_Fortsetzen.Name = "checkBox_Fortsetzen";
+            checkBox_Fortsetzen.Size = new Size(158, 19);
+            checkBox_Fortsetzen.TabIndex = 9;
+            checkBox_Fortsetzen.Text = "Nach Abbruch fortsetzen";
+            toolTip1.SetToolTip(checkBox_Fortsetzen, resources.GetString("checkBox_Fortsetzen.ToolTip"));
+            checkBox_Fortsetzen.UseVisualStyleBackColor = true;
+            checkBox_Fortsetzen.CheckedChanged += checkBox_Fortsetzen_CheckedChanged;
+            // 
+            // checkBox_Portabel
+            // 
+            checkBox_Portabel.AutoSize = true;
+            checkBox_Portabel.Location = new Point(6, 72);
+            checkBox_Portabel.Name = "checkBox_Portabel";
+            checkBox_Portabel.Size = new Size(70, 19);
+            checkBox_Portabel.TabIndex = 10;
+            checkBox_Portabel.Text = "Portabel";
+            toolTip1.SetToolTip(checkBox_Portabel, "Kopiert alle Beweismitteldateien in das Ausgabeverzeichnis. Damit kann dessen Inhalt an Ermittler ohne die ursprünglichen Spuren weitergegeben werden");
+            checkBox_Portabel.UseVisualStyleBackColor = true;
+            checkBox_Portabel.CheckedChanged += checkBox_Portabel_CheckedChanged;
+            // 
+            // checkBox_InternetdatenLaden
+            // 
+            checkBox_InternetdatenLaden.AutoSize = true;
+            checkBox_InternetdatenLaden.Location = new Point(6, 97);
+            checkBox_InternetdatenLaden.Name = "checkBox_InternetdatenLaden";
+            checkBox_InternetdatenLaden.Size = new Size(129, 19);
+            checkBox_InternetdatenLaden.TabIndex = 11;
+            checkBox_InternetdatenLaden.Text = "Internetdaten laden";
+            toolTip1.SetToolTip(checkBox_InternetdatenLaden, "Falls in bestimmten Dateien Verweise auf Internetdaten existieren (z.B. Chats mit Bildlinks), werden diese heruntergeladen und offline bereitgestellt.");
+            checkBox_InternetdatenLaden.UseVisualStyleBackColor = true;
+            checkBox_InternetdatenLaden.CheckedChanged += checkBox_InternetdatenLaden_CheckedChanged;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(checkBoxIPEDConfigEnableAudioTranslation);
+            groupBox1.Controls.Add(checkBoxIPEDConfigEnableImageClassification);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Location = new Point(495, 253);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(326, 246);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Funktionen";
+            // 
+            // checkBoxIPEDConfigEnableAudioTranslation
+            // 
+            checkBoxIPEDConfigEnableAudioTranslation.AutoSize = true;
+            checkBoxIPEDConfigEnableAudioTranslation.Location = new Point(6, 22);
+            checkBoxIPEDConfigEnableAudioTranslation.Name = "checkBoxIPEDConfigEnableAudioTranslation";
+            checkBoxIPEDConfigEnableAudioTranslation.Size = new Size(222, 19);
+            checkBoxIPEDConfigEnableAudioTranslation.TabIndex = 12;
+            checkBoxIPEDConfigEnableAudioTranslation.Text = "Audio Transkription und Übersetzung";
+            toolTip1.SetToolTip(checkBoxIPEDConfigEnableAudioTranslation, "Führt bei Audio- und Videodateien Transkriptionen und Übersetzung ins Deutsche mit Hilfe des Auswerteservers durch.");
+            checkBoxIPEDConfigEnableAudioTranslation.UseVisualStyleBackColor = true;
+            checkBoxIPEDConfigEnableAudioTranslation.CheckedChanged += checkBoxIPEDConfigEnabelAudioTranslation_CheckedChanged;
+            // 
+            // checkBoxIPEDConfigEnableImageClassification
+            // 
+            checkBoxIPEDConfigEnableImageClassification.AutoSize = true;
+            checkBoxIPEDConfigEnableImageClassification.Location = new Point(6, 47);
+            checkBoxIPEDConfigEnableImageClassification.Name = "checkBoxIPEDConfigEnableImageClassification";
+            checkBoxIPEDConfigEnableImageClassification.Size = new Size(125, 19);
+            checkBoxIPEDConfigEnableImageClassification.TabIndex = 13;
+            checkBoxIPEDConfigEnableImageClassification.Text = "Bilder klassifizieren";
+            toolTip1.SetToolTip(checkBoxIPEDConfigEnableImageClassification, "Führt eine Klassifizierung von Bilddateien mit Hilfe des Auswerteservers durch.");
+            checkBoxIPEDConfigEnableImageClassification.UseVisualStyleBackColor = true;
+            checkBoxIPEDConfigEnableImageClassification.CheckedChanged += checkBoxIPEDConfigEnableImageClassification_CheckedChanged;
+            // 
+            // buttonAudioTranslationInputDirectory
+            // 
+            buttonAudioTranslationInputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAudioTranslationInputDirectory.Location = new Point(827, 39);
+            buttonAudioTranslationInputDirectory.Name = "buttonAudioTranslationInputDirectory";
+            buttonAudioTranslationInputDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationInputDirectory.TabIndex = 9;
+            buttonAudioTranslationInputDirectory.Text = "Auswählen ...";
+            buttonAudioTranslationInputDirectory.UseVisualStyleBackColor = true;
+            buttonAudioTranslationInputDirectory.Click += buttonAudioTranslationInputDirectory_Click;
+            // 
+            // buttonAudioTranslationOutputDirectory
+            // 
+            buttonAudioTranslationOutputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAudioTranslationOutputDirectory.Location = new Point(827, 69);
+            buttonAudioTranslationOutputDirectory.Name = "buttonAudioTranslationOutputDirectory";
+            buttonAudioTranslationOutputDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationOutputDirectory.TabIndex = 12;
+            buttonAudioTranslationOutputDirectory.Text = "Auswählen ...";
+            buttonAudioTranslationOutputDirectory.UseVisualStyleBackColor = true;
+            buttonAudioTranslationOutputDirectory.Click += buttonAudioTranslationOutputDirectory_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(43, 72);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 15);
+            label3.TabIndex = 16;
+            label3.Text = "Ausgabeverzeichnis";
+            toolTip1.SetToolTip(label3, "Aus diesem Verzeichnis werden die Ergebnisse abgeholt");
+            // 
+            // buttonImageClassificationOutputDirectory
+            // 
+            buttonImageClassificationOutputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonImageClassificationOutputDirectory.Location = new Point(827, 69);
+            buttonImageClassificationOutputDirectory.Name = "buttonImageClassificationOutputDirectory";
+            buttonImageClassificationOutputDirectory.Size = new Size(120, 23);
+            buttonImageClassificationOutputDirectory.TabIndex = 18;
+            buttonImageClassificationOutputDirectory.Text = "Auswählen ...";
+            buttonImageClassificationOutputDirectory.UseVisualStyleBackColor = true;
+            buttonImageClassificationOutputDirectory.Click += buttonImageClassificationOutputDirectory_Click_1;
+            // 
+            // buttonImageClassificationInputDirectory
+            // 
+            buttonImageClassificationInputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonImageClassificationInputDirectory.Location = new Point(827, 40);
+            buttonImageClassificationInputDirectory.Name = "buttonImageClassificationInputDirectory";
+            buttonImageClassificationInputDirectory.Size = new Size(120, 23);
+            buttonImageClassificationInputDirectory.TabIndex = 15;
+            buttonImageClassificationInputDirectory.Text = "Auswählen ...";
+            buttonImageClassificationInputDirectory.UseVisualStyleBackColor = true;
+            buttonImageClassificationInputDirectory.Click += buttonImageClassificationInputDirectory_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(43, 43);
+            label4.Name = "label4";
+            label4.Size = new Size(107, 15);
+            label4.TabIndex = 19;
+            label4.Text = "Eingabeverzeichnis";
+            toolTip1.SetToolTip(label4, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
+            // 
+            // buttonSettingsIpedExePath
+            // 
+            buttonSettingsIpedExePath.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonSettingsIpedExePath.Location = new Point(827, 43);
+            buttonSettingsIpedExePath.Name = "buttonSettingsIpedExePath";
+            buttonSettingsIpedExePath.Size = new Size(120, 23);
+            buttonSettingsIpedExePath.TabIndex = 10;
+            buttonSettingsIpedExePath.Text = "Auswählen ...";
+            buttonSettingsIpedExePath.UseVisualStyleBackColor = true;
+            buttonSettingsIpedExePath.Click += buttonSettingsIpedExePath_Click;
+            // 
+            // buttonSettingsIndexTemp
+            // 
+            buttonSettingsIndexTemp.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonSettingsIndexTemp.Location = new Point(827, 101);
+            buttonSettingsIndexTemp.Name = "buttonSettingsIndexTemp";
+            buttonSettingsIndexTemp.Size = new Size(120, 23);
+            buttonSettingsIndexTemp.TabIndex = 14;
+            buttonSettingsIndexTemp.Text = "Auswählen ...";
+            buttonSettingsIndexTemp.UseVisualStyleBackColor = true;
+            buttonSettingsIndexTemp.Click += buttonSettingsIndexTemp_Click;
+            // 
+            // buttonSettingsHashesDB
+            // 
+            buttonSettingsHashesDB.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonSettingsHashesDB.Location = new Point(827, 209);
+            buttonSettingsHashesDB.Name = "buttonSettingsHashesDB";
+            buttonSettingsHashesDB.Size = new Size(120, 23);
+            buttonSettingsHashesDB.TabIndex = 21;
+            buttonSettingsHashesDB.Text = "Auswählen ...";
+            buttonSettingsHashesDB.UseVisualStyleBackColor = true;
+            buttonSettingsHashesDB.Click += buttonSettingsHashesDB_Click;
+            // 
+            // buttonSettingsPluginFolder
+            // 
+            buttonSettingsPluginFolder.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonSettingsPluginFolder.Location = new Point(827, 238);
+            buttonSettingsPluginFolder.Name = "buttonSettingsPluginFolder";
+            buttonSettingsPluginFolder.Size = new Size(120, 23);
+            buttonSettingsPluginFolder.TabIndex = 24;
+            buttonSettingsPluginFolder.Text = "Auswählen ...";
+            buttonSettingsPluginFolder.UseVisualStyleBackColor = true;
+            buttonSettingsPluginFolder.Click += buttonSettingsPluginFolder_Click;
             // 
             // label_Spuren
             // 
@@ -138,102 +399,20 @@
             button_Auswaehlen.Text = "Auswählen ...";
             toolTip1.SetToolTip(button_Auswaehlen, "Auswahl des Ausgabeverzeichnisses für das IPED-Projekt");
             button_Auswaehlen.UseVisualStyleBackColor = true;
-            button_Auswaehlen.Click += button_Auswaehlen_Click;
+            button_Auswaehlen.Click += button_GeneralOutputDirectory_Click;
             // 
-            // checkBox_ProjektErweitern
+            // textBoxConsole
             // 
-            checkBox_ProjektErweitern.AutoSize = true;
-            checkBox_ProjektErweitern.Location = new Point(163, 253);
-            checkBox_ProjektErweitern.Name = "checkBox_ProjektErweitern";
-            checkBox_ProjektErweitern.Size = new Size(184, 19);
-            checkBox_ProjektErweitern.TabIndex = 8;
-            checkBox_ProjektErweitern.Text = "Bestehendes Projekt erweitern";
-            toolTip1.SetToolTip(checkBox_ProjektErweitern, "Falls sich in dem Ausgabeverzeichnis bereits ein IPED-Projekt befindet, wird dieses hiermit um die angegebenen Spuren erweitert");
-            checkBox_ProjektErweitern.UseVisualStyleBackColor = true;
-            checkBox_ProjektErweitern.CheckedChanged += checkBox_ProjektErweitern_CheckedChanged;
-            // 
-            // checkBox_Fortsetzen
-            // 
-            checkBox_Fortsetzen.AutoSize = true;
-            checkBox_Fortsetzen.Location = new Point(163, 283);
-            checkBox_Fortsetzen.Name = "checkBox_Fortsetzen";
-            checkBox_Fortsetzen.Size = new Size(158, 19);
-            checkBox_Fortsetzen.TabIndex = 9;
-            checkBox_Fortsetzen.Text = "Nach Abbruch fortsetzen";
-            toolTip1.SetToolTip(checkBox_Fortsetzen, resources.GetString("checkBox_Fortsetzen.ToolTip"));
-            checkBox_Fortsetzen.UseVisualStyleBackColor = true;
-            checkBox_Fortsetzen.CheckedChanged += checkBox_Fortsetzen_CheckedChanged;
-            // 
-            // checkBox_Portabel
-            // 
-            checkBox_Portabel.AutoSize = true;
-            checkBox_Portabel.Location = new Point(163, 313);
-            checkBox_Portabel.Name = "checkBox_Portabel";
-            checkBox_Portabel.Size = new Size(70, 19);
-            checkBox_Portabel.TabIndex = 10;
-            checkBox_Portabel.Text = "Portabel";
-            toolTip1.SetToolTip(checkBox_Portabel, "Kopiert alle Beweismitteldateien in das Ausgabeverzeichnis. Damit kann dessen Inhalt an Ermittler ohne die ursprünglichen Spuren weitergegeben werden");
-            checkBox_Portabel.UseVisualStyleBackColor = true;
-            checkBox_Portabel.CheckedChanged += checkBox_Portabel_CheckedChanged;
-            // 
-            // checkBox_InternetdatenLaden
-            // 
-            checkBox_InternetdatenLaden.AutoSize = true;
-            checkBox_InternetdatenLaden.Location = new Point(163, 343);
-            checkBox_InternetdatenLaden.Name = "checkBox_InternetdatenLaden";
-            checkBox_InternetdatenLaden.Size = new Size(129, 19);
-            checkBox_InternetdatenLaden.TabIndex = 11;
-            checkBox_InternetdatenLaden.Text = "Internetdaten laden";
-            toolTip1.SetToolTip(checkBox_InternetdatenLaden, "Falls in bestimmten Dateien Verweise auf Internetdaten existieren (z.B. Chats mit Bildlinks), werden diese heruntergeladen und offline bereitgestellt.");
-            checkBox_InternetdatenLaden.UseVisualStyleBackColor = true;
-            checkBox_InternetdatenLaden.CheckedChanged += checkBox_InternetdatenLaden_CheckedChanged;
-            // 
-            // checkBox_AudioTranslation
-            // 
-            checkBox_AudioTranslation.AutoSize = true;
-            checkBox_AudioTranslation.Location = new Point(495, 253);
-            checkBox_AudioTranslation.Name = "checkBox_AudioTranslation";
-            checkBox_AudioTranslation.Size = new Size(222, 19);
-            checkBox_AudioTranslation.TabIndex = 12;
-            checkBox_AudioTranslation.Text = "Audio Transkription und Übersetzung";
-            toolTip1.SetToolTip(checkBox_AudioTranslation, "Führt bei Audio- und Videodateien Transkriptionen und Übersetzung ins Deutsche mit Hilfe des Auswerteservers durch.");
-            checkBox_AudioTranslation.UseVisualStyleBackColor = true;
-            checkBox_AudioTranslation.CheckedChanged += checkBox_AudioTranslation_CheckedChanged;
-            // 
-            // checkBox_BildKlassifizierung
-            // 
-            checkBox_BildKlassifizierung.AutoSize = true;
-            checkBox_BildKlassifizierung.Location = new Point(495, 283);
-            checkBox_BildKlassifizierung.Name = "checkBox_BildKlassifizierung";
-            checkBox_BildKlassifizierung.Size = new Size(125, 19);
-            checkBox_BildKlassifizierung.TabIndex = 13;
-            checkBox_BildKlassifizierung.Text = "Bilder klassifizieren";
-            toolTip1.SetToolTip(checkBox_BildKlassifizierung, "Führt eine Klassifizierung von Bilddateien mit Hilfe des Auswerteservers durch.");
-            checkBox_BildKlassifizierung.UseVisualStyleBackColor = true;
-            checkBox_BildKlassifizierung.CheckedChanged += checkBox_BildKlassifizierung_CheckedChanged;
-            // 
-            // checkBox_Ocr
-            // 
-            checkBox_Ocr.AutoSize = true;
-            checkBox_Ocr.Location = new Point(495, 313);
-            checkBox_Ocr.Name = "checkBox_Ocr";
-            checkBox_Ocr.Size = new Size(257, 19);
-            checkBox_Ocr.TabIndex = 14;
-            checkBox_Ocr.Text = "Texterkennung in Bildern und PDFs per OCR";
-            toolTip1.SetToolTip(checkBox_Ocr, "Führt auf Bildern und PDF-Dateien eine Texterkennung per OCR durch");
-            checkBox_Ocr.UseVisualStyleBackColor = true;
-            checkBox_Ocr.CheckedChanged += checkBox_Ocr_CheckedChanged;
-            // 
-            // textBox_Konsole
-            // 
-            textBox_Konsole.AcceptsReturn = true;
-            textBox_Konsole.Dock = DockStyle.Fill;
-            textBox_Konsole.Location = new Point(3, 3);
-            textBox_Konsole.Multiline = true;
-            textBox_Konsole.Name = "textBox_Konsole";
-            textBox_Konsole.Size = new Size(984, 534);
-            textBox_Konsole.TabIndex = 15;
-            toolTip1.SetToolTip(textBox_Konsole, "Ausgabe des IPED-Programmdurchlaufs");
+            textBoxConsole.AcceptsReturn = true;
+            textBoxConsole.Dock = DockStyle.Fill;
+            textBoxConsole.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxConsole.Location = new Point(3, 3);
+            textBoxConsole.Multiline = true;
+            textBoxConsole.Name = "textBoxConsole";
+            textBoxConsole.ScrollBars = ScrollBars.Vertical;
+            textBoxConsole.Size = new Size(984, 534);
+            textBoxConsole.TabIndex = 15;
+            toolTip1.SetToolTip(textBoxConsole, "Ausgabe des IPED-Programmdurchlaufs");
             // 
             // button_Starten
             // 
@@ -255,37 +434,32 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 160F));
             tableLayoutPanel1.Controls.Add(label_Spuren, 0, 0);
-            tableLayoutPanel1.Controls.Add(checkBox_Ocr, 2, 7);
-            tableLayoutPanel1.Controls.Add(checkBox_BildKlassifizierung, 2, 6);
-            tableLayoutPanel1.Controls.Add(checkBox_AudioTranslation, 2, 5);
             tableLayoutPanel1.Controls.Add(listBox_Spuren, 1, 0);
-            tableLayoutPanel1.Controls.Add(checkBox_InternetdatenLaden, 1, 8);
             tableLayoutPanel1.Controls.Add(button_VerzeichnisHinzufuegen, 3, 0);
-            tableLayoutPanel1.Controls.Add(checkBox_Portabel, 1, 7);
             tableLayoutPanel1.Controls.Add(button_Entfernen, 3, 2);
-            tableLayoutPanel1.Controls.Add(checkBox_Fortsetzen, 1, 6);
             tableLayoutPanel1.Controls.Add(label_Ausgabeverzeichnis, 0, 3);
-            tableLayoutPanel1.Controls.Add(checkBox_ProjektErweitern, 1, 5);
             tableLayoutPanel1.Controls.Add(textBox_Ausgabeverzeichnis, 1, 3);
             tableLayoutPanel1.Controls.Add(button_Auswaehlen, 3, 3);
-            tableLayoutPanel1.Controls.Add(button_Starten, 3, 9);
+            tableLayoutPanel1.Controls.Add(button_Starten, 3, 6);
             tableLayoutPanel1.Controls.Add(label_Warnung, 1, 4);
             tableLayoutPanel1.Controls.Add(button_DateienHinzufuegen, 3, 1);
+            tableLayoutPanel1.Controls.Add(groupBox2, 1, 5);
+            tableLayoutPanel1.Controls.Add(groupBox1, 2, 5);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 3);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 10;
+            tableLayoutPanel1.RowCount = 7;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 252F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(984, 534);
             tableLayoutPanel1.TabIndex = 17;
             // 
@@ -312,10 +486,45 @@
             button_DateienHinzufuegen.UseVisualStyleBackColor = true;
             button_DateienHinzufuegen.Click += button_DateienHinzufuegen_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(43, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(107, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Eingabeverzeichnis";
+            toolTip1.SetToolTip(label1, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(43, 72);
+            label2.Name = "label2";
+            label2.Size = new Size(111, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Ausgabeverzeichnis";
+            toolTip1.SetToolTip(label2, "Aus diesem Verzeichnis werden die Ergebnisse abgeholt");
+            // 
+            // checkBoxAudioTranslationProcessVideos
+            // 
+            checkBoxAudioTranslationProcessVideos.AutoSize = true;
+            checkBoxAudioTranslationProcessVideos.Location = new Point(200, 98);
+            checkBoxAudioTranslationProcessVideos.Name = "checkBoxAudioTranslationProcessVideos";
+            checkBoxAudioTranslationProcessVideos.Size = new Size(123, 19);
+            checkBoxAudioTranslationProcessVideos.TabIndex = 13;
+            checkBoxAudioTranslationProcessVideos.Text = "Videos verarbeiten";
+            toolTip1.SetToolTip(checkBoxAudioTranslationProcessVideos, "Die Videoverarbeitung kann sehr lange dauern, wenn sich auf der Spur Kinofilme befinden");
+            checkBoxAudioTranslationProcessVideos.UseVisualStyleBackColor = true;
+            checkBoxAudioTranslationProcessVideos.CheckedChanged += checkBoxAudioTranslationProcessVideos_CheckedChanged;
+            // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPageOverview);
+            tabControl1.Controls.Add(tabPageSettings);
+            tabControl1.Controls.Add(tabPageAudioTranslation);
+            tabControl1.Controls.Add(tabPageImageClassification);
+            tabControl1.Controls.Add(tabPageProtocol);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(5, 5);
             tabControl1.Name = "tabControl1";
@@ -323,27 +532,254 @@
             tabControl1.Size = new Size(998, 568);
             tabControl1.TabIndex = 19;
             // 
-            // tabPage1
+            // tabPageOverview
             // 
-            tabPage1.Controls.Add(tableLayoutPanel1);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(990, 540);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Verarbeitung";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabPageOverview.Controls.Add(tableLayoutPanel1);
+            tabPageOverview.Location = new Point(4, 24);
+            tabPageOverview.Name = "tabPageOverview";
+            tabPageOverview.Padding = new Padding(3);
+            tabPageOverview.Size = new Size(990, 540);
+            tabPageOverview.TabIndex = 0;
+            tabPageOverview.Text = "Übersicht";
+            tabPageOverview.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabPageSettings
             // 
-            tabPage2.Controls.Add(textBox_Konsole);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(990, 540);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Protokoll";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPageSettings.Controls.Add(label10);
+            tabPageSettings.Controls.Add(buttonSettingsPluginFolder);
+            tabPageSettings.Controls.Add(textBoxSettingsPluginFolder);
+            tabPageSettings.Controls.Add(label9);
+            tabPageSettings.Controls.Add(buttonSettingsHashesDB);
+            tabPageSettings.Controls.Add(textBoxSettingsHashesDB);
+            tabPageSettings.Controls.Add(label8);
+            tabPageSettings.Controls.Add(textBoxSettingsNumThreads);
+            tabPageSettings.Controls.Add(checkBoxSettingsOutputOnSSD);
+            tabPageSettings.Controls.Add(checkBoxSettingsIndexTempOnSSD);
+            tabPageSettings.Controls.Add(label7);
+            tabPageSettings.Controls.Add(buttonSettingsIndexTemp);
+            tabPageSettings.Controls.Add(textBoxSettingsIndexTemp);
+            tabPageSettings.Controls.Add(label6);
+            tabPageSettings.Controls.Add(comboBoxSettingsLocale);
+            tabPageSettings.Controls.Add(buttonSettingsIpedExePath);
+            tabPageSettings.Controls.Add(textBoxSettingsIpedExePath);
+            tabPageSettings.Controls.Add(label5);
+            tabPageSettings.Location = new Point(4, 24);
+            tabPageSettings.Name = "tabPageSettings";
+            tabPageSettings.Padding = new Padding(40);
+            tabPageSettings.Size = new Size(990, 540);
+            tabPageSettings.TabIndex = 10;
+            tabPageSettings.Text = "Einstellungen";
+            tabPageSettings.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(43, 241);
+            label10.Name = "label10";
+            label10.Size = new Size(125, 15);
+            label10.TabIndex = 25;
+            label10.Text = "Verzeichnis für Plugins";
+            // 
+            // textBoxSettingsPluginFolder
+            // 
+            textBoxSettingsPluginFolder.Location = new Point(250, 238);
+            textBoxSettingsPluginFolder.Name = "textBoxSettingsPluginFolder";
+            textBoxSettingsPluginFolder.ReadOnly = true;
+            textBoxSettingsPluginFolder.Size = new Size(571, 23);
+            textBoxSettingsPluginFolder.TabIndex = 23;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(43, 212);
+            label9.Name = "label9";
+            label9.Size = new Size(94, 15);
+            label9.TabIndex = 22;
+            label9.Text = "Hash Datenbank";
+            // 
+            // textBoxSettingsHashesDB
+            // 
+            textBoxSettingsHashesDB.Location = new Point(250, 209);
+            textBoxSettingsHashesDB.Name = "textBoxSettingsHashesDB";
+            textBoxSettingsHashesDB.ReadOnly = true;
+            textBoxSettingsHashesDB.Size = new Size(571, 23);
+            textBoxSettingsHashesDB.TabIndex = 20;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(43, 183);
+            label8.Name = "label8";
+            label8.Size = new Size(87, 15);
+            label8.TabIndex = 19;
+            label8.Text = "Anzahl Threads";
+            // 
+            // textBoxSettingsNumThreads
+            // 
+            textBoxSettingsNumThreads.Location = new Point(250, 180);
+            textBoxSettingsNumThreads.Name = "textBoxSettingsNumThreads";
+            textBoxSettingsNumThreads.Size = new Size(100, 23);
+            textBoxSettingsNumThreads.TabIndex = 18;
+            textBoxSettingsNumThreads.TextChanged += textBoxSettingsNumThreads_TextChanged;
+            // 
+            // checkBoxSettingsOutputOnSSD
+            // 
+            checkBoxSettingsOutputOnSSD.AutoSize = true;
+            checkBoxSettingsOutputOnSSD.Location = new Point(250, 155);
+            checkBoxSettingsOutputOnSSD.Name = "checkBoxSettingsOutputOnSSD";
+            checkBoxSettingsOutputOnSSD.Size = new Size(298, 19);
+            checkBoxSettingsOutputOnSSD.TabIndex = 17;
+            checkBoxSettingsOutputOnSSD.Text = "Ausgabeverzeichnis befindet sich auf SSD Festplatte";
+            checkBoxSettingsOutputOnSSD.UseVisualStyleBackColor = true;
+            checkBoxSettingsOutputOnSSD.CheckedChanged += checkBoxSettingsOutputOnSSD_CheckedChanged;
+            // 
+            // checkBoxSettingsIndexTempOnSSD
+            // 
+            checkBoxSettingsIndexTempOnSSD.AutoSize = true;
+            checkBoxSettingsIndexTempOnSSD.Location = new Point(250, 130);
+            checkBoxSettingsIndexTempOnSSD.Name = "checkBoxSettingsIndexTempOnSSD";
+            checkBoxSettingsIndexTempOnSSD.Size = new Size(316, 19);
+            checkBoxSettingsIndexTempOnSSD.TabIndex = 16;
+            checkBoxSettingsIndexTempOnSSD.Text = "Temporäres Verzeichnis befindet sich auf SSD Festplatte";
+            checkBoxSettingsIndexTempOnSSD.UseVisualStyleBackColor = true;
+            checkBoxSettingsIndexTempOnSSD.CheckedChanged += checkBoxSettingsIndexTempOnSSD_CheckedChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(43, 104);
+            label7.Name = "label7";
+            label7.Size = new Size(184, 15);
+            label7.TabIndex = 15;
+            label7.Text = "Verzeichnis für temporäre Dateien";
+            // 
+            // textBoxSettingsIndexTemp
+            // 
+            textBoxSettingsIndexTemp.Location = new Point(250, 101);
+            textBoxSettingsIndexTemp.Name = "textBoxSettingsIndexTemp";
+            textBoxSettingsIndexTemp.ReadOnly = true;
+            textBoxSettingsIndexTemp.Size = new Size(571, 23);
+            textBoxSettingsIndexTemp.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(43, 75);
+            label6.Name = "label6";
+            label6.Size = new Size(130, 15);
+            label6.TabIndex = 12;
+            label6.Text = "Sprache der Oberfläche";
+            // 
+            // comboBoxSettingsLocale
+            // 
+            comboBoxSettingsLocale.FormattingEnabled = true;
+            comboBoxSettingsLocale.Items.AddRange(new object[] { "en", "pt-BR", "it-IT", "de-DE", "es-AR" });
+            comboBoxSettingsLocale.Location = new Point(250, 72);
+            comboBoxSettingsLocale.Name = "comboBoxSettingsLocale";
+            comboBoxSettingsLocale.Size = new Size(100, 23);
+            comboBoxSettingsLocale.TabIndex = 11;
+            comboBoxSettingsLocale.SelectedIndexChanged += comboBoxSettingsLocale_SelectedIndexChanged;
+            // 
+            // textBoxSettingsIpedExePath
+            // 
+            textBoxSettingsIpedExePath.Location = new Point(250, 43);
+            textBoxSettingsIpedExePath.Name = "textBoxSettingsIpedExePath";
+            textBoxSettingsIpedExePath.ReadOnly = true;
+            textBoxSettingsIpedExePath.Size = new Size(571, 23);
+            textBoxSettingsIpedExePath.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(43, 46);
+            label5.Name = "label5";
+            label5.Size = new Size(93, 15);
+            label5.TabIndex = 0;
+            label5.Text = "Pfad zu iped.exe";
+            // 
+            // tabPageAudioTranslation
+            // 
+            tabPageAudioTranslation.Controls.Add(checkBoxAudioTranslationProcessVideos);
+            tabPageAudioTranslation.Controls.Add(label2);
+            tabPageAudioTranslation.Controls.Add(textBoxAudioTranslationOutputDirectory);
+            tabPageAudioTranslation.Controls.Add(buttonAudioTranslationOutputDirectory);
+            tabPageAudioTranslation.Controls.Add(label1);
+            tabPageAudioTranslation.Controls.Add(textBoxAudioTranslationInputDirectory);
+            tabPageAudioTranslation.Controls.Add(buttonAudioTranslationInputDirectory);
+            tabPageAudioTranslation.Location = new Point(4, 24);
+            tabPageAudioTranslation.Name = "tabPageAudioTranslation";
+            tabPageAudioTranslation.Padding = new Padding(40);
+            tabPageAudioTranslation.Size = new Size(990, 540);
+            tabPageAudioTranslation.TabIndex = 8;
+            tabPageAudioTranslation.Text = "Audioübersetzung";
+            tabPageAudioTranslation.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAudioTranslationOutputDirectory
+            // 
+            textBoxAudioTranslationOutputDirectory.Location = new Point(200, 69);
+            textBoxAudioTranslationOutputDirectory.Name = "textBoxAudioTranslationOutputDirectory";
+            textBoxAudioTranslationOutputDirectory.ReadOnly = true;
+            textBoxAudioTranslationOutputDirectory.Size = new Size(621, 23);
+            textBoxAudioTranslationOutputDirectory.TabIndex = 11;
+            // 
+            // textBoxAudioTranslationInputDirectory
+            // 
+            textBoxAudioTranslationInputDirectory.Location = new Point(200, 40);
+            textBoxAudioTranslationInputDirectory.Name = "textBoxAudioTranslationInputDirectory";
+            textBoxAudioTranslationInputDirectory.ReadOnly = true;
+            textBoxAudioTranslationInputDirectory.Size = new Size(621, 23);
+            textBoxAudioTranslationInputDirectory.TabIndex = 8;
+            // 
+            // tabPageImageClassification
+            // 
+            tabPageImageClassification.Controls.Add(label4);
+            tabPageImageClassification.Controls.Add(label3);
+            tabPageImageClassification.Controls.Add(textBoxImageClassificationOutputDirectory);
+            tabPageImageClassification.Controls.Add(buttonImageClassificationOutputDirectory);
+            tabPageImageClassification.Controls.Add(textBoxImageClassificationInputDirectory);
+            tabPageImageClassification.Controls.Add(buttonImageClassificationInputDirectory);
+            tabPageImageClassification.Location = new Point(4, 24);
+            tabPageImageClassification.Name = "tabPageImageClassification";
+            tabPageImageClassification.Padding = new Padding(40);
+            tabPageImageClassification.Size = new Size(990, 540);
+            tabPageImageClassification.TabIndex = 9;
+            tabPageImageClassification.Text = "Bildklassifizierung";
+            tabPageImageClassification.UseVisualStyleBackColor = true;
+            // 
+            // textBoxImageClassificationOutputDirectory
+            // 
+            textBoxImageClassificationOutputDirectory.Location = new Point(200, 69);
+            textBoxImageClassificationOutputDirectory.Name = "textBoxImageClassificationOutputDirectory";
+            textBoxImageClassificationOutputDirectory.ReadOnly = true;
+            textBoxImageClassificationOutputDirectory.Size = new Size(621, 23);
+            textBoxImageClassificationOutputDirectory.TabIndex = 17;
+            // 
+            // textBoxImageClassificationInputDirectory
+            // 
+            textBoxImageClassificationInputDirectory.Location = new Point(200, 40);
+            textBoxImageClassificationInputDirectory.Name = "textBoxImageClassificationInputDirectory";
+            textBoxImageClassificationInputDirectory.ReadOnly = true;
+            textBoxImageClassificationInputDirectory.Size = new Size(621, 23);
+            textBoxImageClassificationInputDirectory.TabIndex = 14;
+            // 
+            // tabPageProtocol
+            // 
+            tabPageProtocol.Controls.Add(textBoxConsole);
+            tabPageProtocol.Location = new Point(4, 24);
+            tabPageProtocol.Name = "tabPageProtocol";
+            tabPageProtocol.Padding = new Padding(3);
+            tabPageProtocol.Size = new Size(990, 540);
+            tabPageProtocol.TabIndex = 1;
+            tabPageProtocol.Text = "Protokoll";
+            tabPageProtocol.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialogSettingsIpedExePath
+            // 
+            openFileDialogSettingsIpedExePath.Filter = "IPED|iped.exe";
+            // 
+            // openFileDialogSettingsHashesDB
+            // 
+            openFileDialogSettingsHashesDB.Filter = "IPED Hash Datenbankl|iped-hashes.db";
             // 
             // MainForm
             // 
@@ -355,12 +791,22 @@
             Name = "MainForm";
             Padding = new Padding(5);
             Text = "IPED GUI";
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            tabPageOverview.ResumeLayout(false);
+            tabPageSettings.ResumeLayout(false);
+            tabPageSettings.PerformLayout();
+            tabPageAudioTranslation.ResumeLayout(false);
+            tabPageAudioTranslation.PerformLayout();
+            tabPageImageClassification.ResumeLayout(false);
+            tabPageImageClassification.PerformLayout();
+            tabPageProtocol.ResumeLayout(false);
+            tabPageProtocol.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -377,17 +823,43 @@
         private CheckBox checkBox_Fortsetzen;
         private CheckBox checkBox_Portabel;
         private CheckBox checkBox_InternetdatenLaden;
-        private CheckBox checkBox_AudioTranslation;
-        private CheckBox checkBox_BildKlassifizierung;
-        private CheckBox checkBox_Ocr;
-        private TextBox textBox_Konsole;
+        private TextBox textBoxConsole;
         private Button button_Starten;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label_Warnung;
         private Button button_DateienHinzufuegen;
         private ToolTip toolTip1;
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tabPageOverview;
+        private TabPage tabPageProtocol;
+        private TabPage tabPageAudioTranslation;
+        private TabPage tabPageImageClassification;
+        private CheckBox checkBoxIPEDConfigEnableAudioTranslation;
+        private CheckBox checkBoxIPEDConfigEnableImageClassification;
+        private Label label2;
+        private TextBox textBoxAudioTranslationOutputDirectory;
+        private Label label1;
+        private TextBox textBoxAudioTranslationInputDirectory;
+        private CheckBox checkBoxAudioTranslationProcessVideos;
+        private TextBox textBoxImageClassificationInputDirectory;
+        private TextBox textBoxImageClassificationOutputDirectory;
+        private TabPage tabPageSettings;
+        private TextBox textBoxSettingsIndexTemp;
+        private Label label6;
+        private ComboBox comboBoxSettingsLocale;
+        private TextBox textBoxSettingsIpedExePath;
+        private Label label5;
+        private Label label10;
+        private TextBox textBoxSettingsPluginFolder;
+        private Label label9;
+        private TextBox textBoxSettingsHashesDB;
+        private Label label8;
+        private TextBox textBoxSettingsNumThreads;
+        private CheckBox checkBoxSettingsOutputOnSSD;
+        private CheckBox checkBoxSettingsIndexTempOnSSD;
+        private Label label7;
+        private OpenFileDialog openFileDialogSettingsIpedExePath;
+        private FolderBrowserDialog folderBrowserDialog;
+        private OpenFileDialog openFileDialogSettingsHashesDB;
     }
 }

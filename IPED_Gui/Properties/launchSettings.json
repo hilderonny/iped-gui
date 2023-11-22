@@ -1,8 +1,7 @@
 {
   "profiles": {
     "IPED Gui WinForms": {
-      "commandName": "Project",
-      "workingDirectory": "D:\\IPED\\iped-4.1.4_faster_whisper"
+      "commandName": "Project"
     }
   }
 }

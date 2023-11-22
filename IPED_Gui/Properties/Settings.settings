@@ -2,15 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IPED_Gui_WinForms.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="General_Iped_Exe_Path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">.\</Value>
-    </Setting>
-    <Setting Name="General_Relative_IPEDConfig_File_Path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">IPEDConfig.txt</Value>
-    </Setting>
-    <Setting Name="General_Relative_OCRConfig_File_Path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">conf/OCRConfig.txt</Value>
-    </Setting>
     <Setting Name="General_Append" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -20,20 +11,56 @@
     <Setting Name="General_Download_Internet_Data" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="IPEDConfig_enableAudioTranslation" Type="System.Boolean" Scope="User">
+    <Setting Name="IPEDConfigEnableAudioTranslation" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="IPEDConfig_enableImageClassification" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="General_Ocr" Type="System.Boolean" Scope="User">
+    <Setting Name="IPEDConfigEnableImageClassification" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="General_Output_Directory" Type="System.String" Scope="User">
-      <Value Profile="(Default)">.\</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="General_Portable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AudioTranslationInputDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AudioTranslationOutputDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AudioTranslationProcessVideo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ImageClassificationInputDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ImageClassificationOutputDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SettingsIpedExePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SettingsLocale" Type="System.String" Scope="User">
+      <Value Profile="(Default)">de-DE</Value>
+    </Setting>
+    <Setting Name="SettingsIndexTemp" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SettingsIndexTempOnSSD" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SettingsOutputOnSSD" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SettingsNumThreads" Type="System.String" Scope="User">
+      <Value Profile="(Default)">default</Value>
+    </Setting>
+    <Setting Name="SettingsHashesDB" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SettingsPluginFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
