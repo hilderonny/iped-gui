@@ -11,6 +11,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{4BA23E79-7B42-496B-A971-7ACF9C891C92}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		.github\workflows\dotnet-desktop.yml = .github\workflows\dotnet-desktop.yml
 		LICENSE = LICENSE
 		README.md = README.md
 		RELEASENOTES.md = RELEASENOTES.md

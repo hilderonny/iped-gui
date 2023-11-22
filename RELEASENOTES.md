@@ -1,3 +1,8 @@
+# 1.2
+- Tab Audioübersetzung hinzugefügt
+- Tab Bildklassifizierung hinzugefügt
+- Tab Einstellungen erweitert
+
 # 1.1
 - Einführung von Tabs für Einstellungen und Protokoll
 - Umbenennung lokaler Variablen zur besseren Lesbarkeit
