@@ -62,7 +62,7 @@ jobs:
         tag: v${{ steps.version.outputs.version }}
         allowUpdates: true
         name: ${{ steps.version.outputs.version }}
-        bodyFile: CHANGELOG.md
+        bodyFile: RELEASENOTES.md
         removeArtifact: true
         replacesArtifacts: true
         token: ${{ github.token }}
