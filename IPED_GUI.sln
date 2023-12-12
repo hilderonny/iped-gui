@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Pr
 		LICENSE = LICENSE
 		README.md = README.md
 		RELEASENOTES.md = RELEASENOTES.md
+		Screenshot_Overview.png = Screenshot_Overview.png
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPED_Gui", "IPED_Gui\IPED_Gui.csproj", "{A15F508A-3127-4F3F-BD9A-BD7899B217C2}"
