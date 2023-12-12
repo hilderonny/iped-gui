@@ -1,5 +1,7 @@
 using IPED_Gui_WinForms.Properties;
+using System;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 
 // Tabs verstecken: Siehe https://stackoverflow.com/questions/552579/how-to-hide-tabpage-from-tabcontrol
@@ -38,13 +40,11 @@ namespace IPED_Gui_WinForms
             if (outputPath.Length == 0)
             {
                 label_Warnung.Text = "Bitte geben Sie ein Ausgabeverzeichnis an!";
-                button_Starten.Enabled = false;
                 return;
             }
             if (!Directory.Exists(outputPath))
             {
                 label_Warnung.Text = "Das Ausgabeverzeichnis existiert nicht (mehr). Bitte wählen Sie ein existierendes Verzeichnis!";
-                button_Starten.Enabled = false;
                 return;
             }
             if (!checkBox_ProjektErweitern.Checked && !checkBox_Fortsetzen.Checked && Directory.GetFileSystemEntries(outputPath).Any())
@@ -165,8 +165,6 @@ namespace IPED_Gui_WinForms
             checkBox_Fortsetzen.Checked = settings.General_Continue;
             checkBox_Portabel.Checked = settings.General_Portable;
             checkBox_InternetdatenLaden.Checked = settings.General_Download_Internet_Data;
-            checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
-            checkBoxIPEDConfigEnableImageClassification.Checked = settings.IPEDConfigEnableImageClassification;
 
             // Einstellungen
             textBoxSettingsIpedExePath.Text = settings.SettingsIpedExePath;
@@ -179,13 +177,25 @@ namespace IPED_Gui_WinForms
             textBoxSettingsPluginFolder.Text = settings.SettingsPluginFolder;
 
             // Audioübersetzung
+            checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
             textBoxAudioTranslationInputDirectory.Text = settings.AudioTranslationInputDirectory;
             textBoxAudioTranslationOutputDirectory.Text = settings.AudioTranslationOutputDirectory;
             checkBoxAudioTranslationProcessVideos.Checked = settings.AudioTranslationProcessVideo;
+            textBoxAudioTranslationServiceProgram.Text = settings.AudioTranslationServiceProgram;
+            textBoxAudioTranslationProcessingDirectory.Text = settings.AudioTranslationProcessingDirectory;
+            textBoxAudioTranslationFasterWhisperDirectory.Text = settings.AudioTranslationFasterWhisperDirectory;
+            textBoxAudioTranslationArgosTranslateDirectory.Text = settings.AudioTranslationArgosTranslateDirectory;
+            comboBoxAudioTranslationModelSize.SelectedIndex = comboBoxAudioTranslationModelSize.FindStringExact(settings.AudioTranslationModelSize);
+            checkBoxAudioTranslationUseGPU.Checked = settings.AudioTranslationUseGPU;
 
             // Bildklassifizierung
+            checkBoxIPEDConfigEnableImageClassification.Checked = settings.IPEDConfigEnableImageClassification;
             textBoxImageClassificationInputDirectory.Text = settings.ImageClassificationInputDirectory;
             textBoxImageClassificationOutputDirectory.Text = settings.ImageClassificationOutputDirectory;
+            textBoxImageClassificationServiceProgram.Text = settings.ImageClassificationServiceProgram;
+            textBoxImageClassificationProcessingDirectory.Text = settings.ImageClassificationProcessingDirectory;
+            textBoxImageClassificationMobileNetDirectory.Text = settings.ImageClassificationMobileNetDirectory;
+            comboBoxImageClassificationLanguage.SelectedIndex = comboBoxImageClassificationLanguage.FindStringExact(settings.ImageClassificationLanguage);
         }
 
         /// <summary>
@@ -540,5 +550,189 @@ namespace IPED_Gui_WinForms
             }
         }
 
+        private void buttonAudioTranslationServiceProgram_Click(object sender, EventArgs e)
+        {
+            openFileDialogAudioTranslationServiceProgram.FileName = textBoxAudioTranslationServiceProgram.Text;
+            if (openFileDialogAudioTranslationServiceProgram.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = openFileDialogAudioTranslationServiceProgram.FileName;
+                textBoxAudioTranslationServiceProgram.Text = fileName;
+                Settings settings = Settings.Default;
+                settings.AudioTranslationServiceProgram = fileName;
+                settings.Save();
+            }
+        }
+
+        private void buttonAudioTranslationProcessingDirectory_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = textBoxAudioTranslationProcessingDirectory.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                textBoxAudioTranslationProcessingDirectory.Text = selectedFolder;
+                Settings settings = Settings.Default;
+                settings.AudioTranslationProcessingDirectory = selectedFolder;
+                settings.Save();
+            }
+        }
+
+        private void buttonAudioTranslationFasterWhisperDirectory_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = textBoxAudioTranslationFasterWhisperDirectory.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                textBoxAudioTranslationFasterWhisperDirectory.Text = selectedFolder;
+                Settings settings = Settings.Default;
+                settings.AudioTranslationFasterWhisperDirectory = selectedFolder;
+                settings.Save();
+            }
+        }
+
+        private void buttonAudioTranslationArgosTranslateDirectory_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = textBoxAudioTranslationArgosTranslateDirectory.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                textBoxAudioTranslationArgosTranslateDirectory.Text = selectedFolder;
+                Settings settings = Settings.Default;
+                settings.AudioTranslationArgosTranslateDirectory = selectedFolder;
+                settings.Save();
+            }
+        }
+
+        /// <summary>
+        /// Startet den background-service-worker in einem separaten Prozess
+        /// </summary>
+        private void buttonAudioTranslationStartProcess_Click(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+
+            var workingDirectory = Path.GetDirectoryName(settings.AudioTranslationServiceProgram);
+            var pythonCommand = Path.Join(workingDirectory, "python", "python.exe");
+
+            List<string> pythonArgumentList = new()
+            {
+                "\"" + settings.AudioTranslationServiceProgram + "\"",
+                "-i \"" + settings.AudioTranslationInputDirectory + "\"",
+                "-p \"" + settings.AudioTranslationProcessingDirectory + "\"",
+                "-o \"" + settings.AudioTranslationOutputDirectory + "\"",
+                "-w \"" + settings.AudioTranslationFasterWhisperDirectory + "\"",
+                "-a \"" + settings.AudioTranslationArgosTranslateDirectory + "\"",
+                "-m " + settings.AudioTranslationModelSize
+            };
+            if (checkBoxAudioTranslationUseGPU.Checked) pythonArgumentList.Add("-g");
+            var pythonArguments = string.Join(" ", pythonArgumentList);
+
+            WriteToConsole(pythonCommand + " " + pythonArguments + "\n");
+
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = pythonCommand,
+                    WorkingDirectory = workingDirectory,
+                    UseShellExecute = true,
+                    Arguments = pythonArguments,
+                }
+            };
+            process.Start();
+            tabControl1.SelectedTab = tabPageProtocol;
+        }
+
+        private void checkBoxAudioTranslationUseGPU_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.AudioTranslationUseGPU = checkBoxAudioTranslationUseGPU.Checked;
+            settings.Save();
+        }
+
+        private void buttonImageClassificationServiceProgram_Click(object sender, EventArgs e)
+        {
+            openFileDialogImageClassificationServiceProgram.FileName = textBoxImageClassificationServiceProgram.Text;
+            if (openFileDialogImageClassificationServiceProgram.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = openFileDialogImageClassificationServiceProgram.FileName;
+                textBoxImageClassificationServiceProgram.Text = fileName;
+                Settings settings = Settings.Default;
+                settings.ImageClassificationServiceProgram = fileName;
+                settings.Save();
+            }
+        }
+
+        private void buttonImageClassificationProcessingDirectory_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = textBoxImageClassificationProcessingDirectory.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                textBoxImageClassificationProcessingDirectory.Text = selectedFolder;
+                Settings settings = Settings.Default;
+                settings.ImageClassificationProcessingDirectory = selectedFolder;
+                settings.Save();
+            }
+        }
+
+        private void buttonImageClassificationMobileNetDirectory_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = textBoxImageClassificationMobileNetDirectory.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                textBoxImageClassificationMobileNetDirectory.Text = selectedFolder;
+                Settings settings = Settings.Default;
+                settings.ImageClassificationMobileNetDirectory = selectedFolder;
+                settings.Save();
+            }
+        }
+
+        private void comboBoxAudioTranslationModelSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.AudioTranslationModelSize = (string)((ComboBox)sender).SelectedItem;
+            settings.Save();
+        }
+
+        private void comboBoxImageClassificationLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.ImageClassificationLanguage = (string)((ComboBox)sender).SelectedItem;
+            settings.Save();
+        }
+
+        private void buttonImageClassificationStartProcess_Click(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+
+            var workingDirectory = Path.GetDirectoryName(settings.ImageClassificationServiceProgram);
+            var pythonCommand = Path.Join(workingDirectory, "python", "python.exe");
+
+            List<string> pythonArgumentList = new()
+            {
+                "\"" + settings.ImageClassificationServiceProgram + "\"",
+                "-i \"" + settings.ImageClassificationInputDirectory + "\"",
+                "-p \"" + settings.ImageClassificationProcessingDirectory + "\"",
+                "-o \"" + settings.ImageClassificationOutputDirectory + "\"",
+                "-m \"" + settings.ImageClassificationMobileNetDirectory + "\"",
+                "-l " + settings.ImageClassificationLanguage
+            };
+            var pythonArguments = string.Join(" ", pythonArgumentList);
+
+            WriteToConsole(pythonCommand + " " + pythonArguments + "\n");
+
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = pythonCommand,
+                    WorkingDirectory = workingDirectory,
+                    UseShellExecute = true,
+                    Arguments = pythonArguments,
+                }
+            };
+            process.Start();
+            tabControl1.SelectedTab = tabPageProtocol;
+        }
     }
 }

@@ -1,3 +1,8 @@
+# 1.3
+- Funktionen aus Übersicht zu entsprechenden Tabs verschoben
+- Audioübersetzung mit lokalem Prozess möglich, benötigt https://github.com/hilderonny/background-media-translator
+- Bildklassifizierung mit lokalem Prozess möglich, benötigt https://github.com/hilderonny/image-classificator
+
 # 1.2
 - Tab Audioübersetzung hinzugefügt
 - Tab Bildklassifizierung hinzugefügt
