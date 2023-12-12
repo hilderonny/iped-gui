@@ -42,12 +42,28 @@
             Button buttonSettingsIndexTemp;
             Button buttonSettingsHashesDB;
             Button buttonSettingsPluginFolder;
+            GroupBox groupBox3;
+            Button buttonAudioTranslationArgosTranslateDirectory;
+            Button buttonAudioTranslationFasterWhisperDirectory;
+            Button buttonAudioTranslationProcessingDirectory;
+            Label label11;
+            Button buttonAudioTranslationServiceProgram;
             checkBox_ProjektErweitern = new CheckBox();
             checkBox_Fortsetzen = new CheckBox();
             checkBox_Portabel = new CheckBox();
             checkBox_InternetdatenLaden = new CheckBox();
-            checkBoxIPEDConfigEnableAudioTranslation = new CheckBox();
             checkBoxIPEDConfigEnableImageClassification = new CheckBox();
+            checkBoxAudioTranslationUseGPU = new CheckBox();
+            buttonAudioTranslationStartProcess = new Button();
+            comboBoxAudioTranslationModelSize = new ComboBox();
+            label15 = new Label();
+            label14 = new Label();
+            textBoxAudioTranslationArgosTranslateDirectory = new TextBox();
+            label13 = new Label();
+            textBoxAudioTranslationFasterWhisperDirectory = new TextBox();
+            label12 = new Label();
+            textBoxAudioTranslationProcessingDirectory = new TextBox();
+            textBoxAudioTranslationServiceProgram = new TextBox();
             label_Spuren = new Label();
             listBox_Spuren = new ListBox();
             button_VerzeichnisHinzufuegen = new Button();
@@ -64,6 +80,7 @@
             label1 = new Label();
             label2 = new Label();
             checkBoxAudioTranslationProcessVideos = new CheckBox();
+            checkBoxIPEDConfigEnableAudioTranslation = new CheckBox();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
@@ -91,6 +108,7 @@
             openFileDialogSettingsIpedExePath = new OpenFileDialog();
             folderBrowserDialog = new FolderBrowserDialog();
             openFileDialogSettingsHashesDB = new OpenFileDialog();
+            openFileDialogAudioTranslationServiceProgram = new OpenFileDialog();
             groupBox2 = new GroupBox();
             groupBox1 = new GroupBox();
             buttonAudioTranslationInputDirectory = new Button();
@@ -103,8 +121,15 @@
             buttonSettingsIndexTemp = new Button();
             buttonSettingsHashesDB = new Button();
             buttonSettingsPluginFolder = new Button();
+            groupBox3 = new GroupBox();
+            buttonAudioTranslationArgosTranslateDirectory = new Button();
+            buttonAudioTranslationFasterWhisperDirectory = new Button();
+            buttonAudioTranslationProcessingDirectory = new Button();
+            label11 = new Label();
+            buttonAudioTranslationServiceProgram = new Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageOverview.SuspendLayout();
@@ -178,7 +203,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(checkBoxIPEDConfigEnableAudioTranslation);
             groupBox1.Controls.Add(checkBoxIPEDConfigEnableImageClassification);
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(495, 253);
@@ -187,18 +211,6 @@
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
             groupBox1.Text = "Funktionen";
-            // 
-            // checkBoxIPEDConfigEnableAudioTranslation
-            // 
-            checkBoxIPEDConfigEnableAudioTranslation.AutoSize = true;
-            checkBoxIPEDConfigEnableAudioTranslation.Location = new Point(6, 22);
-            checkBoxIPEDConfigEnableAudioTranslation.Name = "checkBoxIPEDConfigEnableAudioTranslation";
-            checkBoxIPEDConfigEnableAudioTranslation.Size = new Size(222, 19);
-            checkBoxIPEDConfigEnableAudioTranslation.TabIndex = 12;
-            checkBoxIPEDConfigEnableAudioTranslation.Text = "Audio Transkription und Übersetzung";
-            toolTip1.SetToolTip(checkBoxIPEDConfigEnableAudioTranslation, "Führt bei Audio- und Videodateien Transkriptionen und Übersetzung ins Deutsche mit Hilfe des Auswerteservers durch.");
-            checkBoxIPEDConfigEnableAudioTranslation.UseVisualStyleBackColor = true;
-            checkBoxIPEDConfigEnableAudioTranslation.CheckedChanged += checkBoxIPEDConfigEnabelAudioTranslation_CheckedChanged;
             // 
             // checkBoxIPEDConfigEnableImageClassification
             // 
@@ -215,7 +227,7 @@
             // buttonAudioTranslationInputDirectory
             // 
             buttonAudioTranslationInputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonAudioTranslationInputDirectory.Location = new Point(827, 39);
+            buttonAudioTranslationInputDirectory.Location = new Point(826, 67);
             buttonAudioTranslationInputDirectory.Name = "buttonAudioTranslationInputDirectory";
             buttonAudioTranslationInputDirectory.Size = new Size(120, 23);
             buttonAudioTranslationInputDirectory.TabIndex = 9;
@@ -226,7 +238,7 @@
             // buttonAudioTranslationOutputDirectory
             // 
             buttonAudioTranslationOutputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonAudioTranslationOutputDirectory.Location = new Point(827, 69);
+            buttonAudioTranslationOutputDirectory.Location = new Point(826, 97);
             buttonAudioTranslationOutputDirectory.Name = "buttonAudioTranslationOutputDirectory";
             buttonAudioTranslationOutputDirectory.Size = new Size(120, 23);
             buttonAudioTranslationOutputDirectory.TabIndex = 12;
@@ -319,6 +331,190 @@
             buttonSettingsPluginFolder.Text = "Auswählen ...";
             buttonSettingsPluginFolder.UseVisualStyleBackColor = true;
             buttonSettingsPluginFolder.Click += buttonSettingsPluginFolder_Click;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(checkBoxAudioTranslationUseGPU);
+            groupBox3.Controls.Add(buttonAudioTranslationStartProcess);
+            groupBox3.Controls.Add(comboBoxAudioTranslationModelSize);
+            groupBox3.Controls.Add(label15);
+            groupBox3.Controls.Add(label14);
+            groupBox3.Controls.Add(textBoxAudioTranslationArgosTranslateDirectory);
+            groupBox3.Controls.Add(buttonAudioTranslationArgosTranslateDirectory);
+            groupBox3.Controls.Add(label13);
+            groupBox3.Controls.Add(textBoxAudioTranslationFasterWhisperDirectory);
+            groupBox3.Controls.Add(buttonAudioTranslationFasterWhisperDirectory);
+            groupBox3.Controls.Add(label12);
+            groupBox3.Controls.Add(textBoxAudioTranslationProcessingDirectory);
+            groupBox3.Controls.Add(buttonAudioTranslationProcessingDirectory);
+            groupBox3.Controls.Add(label11);
+            groupBox3.Controls.Add(textBoxAudioTranslationServiceProgram);
+            groupBox3.Controls.Add(buttonAudioTranslationServiceProgram);
+            groupBox3.Location = new Point(3, 151);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(984, 386);
+            groupBox3.TabIndex = 15;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Lokale Verarbeitung";
+            // 
+            // checkBoxAudioTranslationUseGPU
+            // 
+            checkBoxAudioTranslationUseGPU.AutoSize = true;
+            checkBoxAudioTranslationUseGPU.Location = new Point(196, 167);
+            checkBoxAudioTranslationUseGPU.Name = "checkBoxAudioTranslationUseGPU";
+            checkBoxAudioTranslationUseGPU.Size = new Size(110, 19);
+            checkBoxAudioTranslationUseGPU.TabIndex = 16;
+            checkBoxAudioTranslationUseGPU.Text = "GPU verwenden";
+            toolTip1.SetToolTip(checkBoxAudioTranslationUseGPU, "Verwenden Sie diese Option, wenn Ihr PC über eine Grafikkarte mit mindestens 8GB Video-RAM verfügt");
+            checkBoxAudioTranslationUseGPU.UseVisualStyleBackColor = true;
+            checkBoxAudioTranslationUseGPU.CheckedChanged += checkBoxAudioTranslationUseGPU_CheckedChanged;
+            // 
+            // buttonAudioTranslationStartProcess
+            // 
+            buttonAudioTranslationStartProcess.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAudioTranslationStartProcess.Location = new Point(196, 192);
+            buttonAudioTranslationStartProcess.Name = "buttonAudioTranslationStartProcess";
+            buttonAudioTranslationStartProcess.Size = new Size(154, 23);
+            buttonAudioTranslationStartProcess.TabIndex = 30;
+            buttonAudioTranslationStartProcess.Text = "Prozess starten";
+            toolTip1.SetToolTip(buttonAudioTranslationStartProcess, "Startet IPED und verarbeitet die gegebenen Spuren mit den gegebenen Einstellungen");
+            buttonAudioTranslationStartProcess.UseVisualStyleBackColor = true;
+            buttonAudioTranslationStartProcess.Click += buttonAudioTranslationStartProcess_Click;
+            // 
+            // comboBoxAudioTranslationModelSize
+            // 
+            comboBoxAudioTranslationModelSize.FormattingEnabled = true;
+            comboBoxAudioTranslationModelSize.Items.AddRange(new object[] { "tiny", "base", "small", "medium", "large-v2" });
+            comboBoxAudioTranslationModelSize.Location = new Point(196, 138);
+            comboBoxAudioTranslationModelSize.Name = "comboBoxAudioTranslationModelSize";
+            comboBoxAudioTranslationModelSize.Size = new Size(121, 23);
+            comboBoxAudioTranslationModelSize.TabIndex = 29;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(39, 141);
+            label15.Name = "label15";
+            label15.Size = new Size(75, 15);
+            label15.TabIndex = 28;
+            label15.Text = "Modellgröße";
+            toolTip1.SetToolTip(label15, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(39, 112);
+            label14.Name = "label14";
+            label14.Size = new Size(148, 15);
+            label14.TabIndex = 25;
+            label14.Text = "Argos Translate Verzeichnis";
+            toolTip1.SetToolTip(label14, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
+            // 
+            // textBoxAudioTranslationArgosTranslateDirectory
+            // 
+            textBoxAudioTranslationArgosTranslateDirectory.Location = new Point(196, 109);
+            textBoxAudioTranslationArgosTranslateDirectory.Name = "textBoxAudioTranslationArgosTranslateDirectory";
+            textBoxAudioTranslationArgosTranslateDirectory.ReadOnly = true;
+            textBoxAudioTranslationArgosTranslateDirectory.Size = new Size(621, 23);
+            textBoxAudioTranslationArgosTranslateDirectory.TabIndex = 26;
+            // 
+            // buttonAudioTranslationArgosTranslateDirectory
+            // 
+            buttonAudioTranslationArgosTranslateDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAudioTranslationArgosTranslateDirectory.Location = new Point(823, 108);
+            buttonAudioTranslationArgosTranslateDirectory.Name = "buttonAudioTranslationArgosTranslateDirectory";
+            buttonAudioTranslationArgosTranslateDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationArgosTranslateDirectory.TabIndex = 27;
+            buttonAudioTranslationArgosTranslateDirectory.Text = "Auswählen ...";
+            buttonAudioTranslationArgosTranslateDirectory.UseVisualStyleBackColor = true;
+            buttonAudioTranslationArgosTranslateDirectory.Click += buttonAudioTranslationArgosTranslateDirectory_Click;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(39, 83);
+            label13.Name = "label13";
+            label13.Size = new Size(145, 15);
+            label13.TabIndex = 22;
+            label13.Text = "Faster Whisper Verzeichnis";
+            toolTip1.SetToolTip(label13, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
+            // 
+            // textBoxAudioTranslationFasterWhisperDirectory
+            // 
+            textBoxAudioTranslationFasterWhisperDirectory.Location = new Point(196, 80);
+            textBoxAudioTranslationFasterWhisperDirectory.Name = "textBoxAudioTranslationFasterWhisperDirectory";
+            textBoxAudioTranslationFasterWhisperDirectory.ReadOnly = true;
+            textBoxAudioTranslationFasterWhisperDirectory.Size = new Size(621, 23);
+            textBoxAudioTranslationFasterWhisperDirectory.TabIndex = 23;
+            // 
+            // buttonAudioTranslationFasterWhisperDirectory
+            // 
+            buttonAudioTranslationFasterWhisperDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAudioTranslationFasterWhisperDirectory.Location = new Point(823, 79);
+            buttonAudioTranslationFasterWhisperDirectory.Name = "buttonAudioTranslationFasterWhisperDirectory";
+            buttonAudioTranslationFasterWhisperDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationFasterWhisperDirectory.TabIndex = 24;
+            buttonAudioTranslationFasterWhisperDirectory.Text = "Auswählen ...";
+            buttonAudioTranslationFasterWhisperDirectory.UseVisualStyleBackColor = true;
+            buttonAudioTranslationFasterWhisperDirectory.Click += buttonAudioTranslationFasterWhisperDirectory_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(39, 54);
+            label12.Name = "label12";
+            label12.Size = new Size(137, 15);
+            label12.TabIndex = 19;
+            label12.Text = "Verarbeitungsverzeichnis";
+            toolTip1.SetToolTip(label12, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
+            // 
+            // textBoxAudioTranslationProcessingDirectory
+            // 
+            textBoxAudioTranslationProcessingDirectory.Location = new Point(196, 51);
+            textBoxAudioTranslationProcessingDirectory.Name = "textBoxAudioTranslationProcessingDirectory";
+            textBoxAudioTranslationProcessingDirectory.ReadOnly = true;
+            textBoxAudioTranslationProcessingDirectory.Size = new Size(621, 23);
+            textBoxAudioTranslationProcessingDirectory.TabIndex = 20;
+            // 
+            // buttonAudioTranslationProcessingDirectory
+            // 
+            buttonAudioTranslationProcessingDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAudioTranslationProcessingDirectory.Location = new Point(823, 50);
+            buttonAudioTranslationProcessingDirectory.Name = "buttonAudioTranslationProcessingDirectory";
+            buttonAudioTranslationProcessingDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationProcessingDirectory.TabIndex = 21;
+            buttonAudioTranslationProcessingDirectory.Text = "Auswählen ...";
+            buttonAudioTranslationProcessingDirectory.UseVisualStyleBackColor = true;
+            buttonAudioTranslationProcessingDirectory.Click += buttonAudioTranslationProcessingDirectory_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(39, 25);
+            label11.Name = "label11";
+            label11.Size = new Size(97, 15);
+            label11.TabIndex = 16;
+            label11.Text = "Dienstprogramm";
+            toolTip1.SetToolTip(label11, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
+            // 
+            // textBoxAudioTranslationServiceProgram
+            // 
+            textBoxAudioTranslationServiceProgram.Location = new Point(196, 22);
+            textBoxAudioTranslationServiceProgram.Name = "textBoxAudioTranslationServiceProgram";
+            textBoxAudioTranslationServiceProgram.ReadOnly = true;
+            textBoxAudioTranslationServiceProgram.Size = new Size(621, 23);
+            textBoxAudioTranslationServiceProgram.TabIndex = 17;
+            // 
+            // buttonAudioTranslationServiceProgram
+            // 
+            buttonAudioTranslationServiceProgram.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonAudioTranslationServiceProgram.Location = new Point(823, 21);
+            buttonAudioTranslationServiceProgram.Name = "buttonAudioTranslationServiceProgram";
+            buttonAudioTranslationServiceProgram.Size = new Size(120, 23);
+            buttonAudioTranslationServiceProgram.TabIndex = 18;
+            buttonAudioTranslationServiceProgram.Text = "Auswählen ...";
+            buttonAudioTranslationServiceProgram.UseVisualStyleBackColor = true;
+            buttonAudioTranslationServiceProgram.Click += buttonAudioTranslationServiceProgram_Click;
             // 
             // label_Spuren
             // 
@@ -489,7 +685,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(43, 43);
+            label1.Location = new Point(42, 71);
             label1.Name = "label1";
             label1.Size = new Size(107, 15);
             label1.TabIndex = 7;
@@ -499,7 +695,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(43, 72);
+            label2.Location = new Point(42, 100);
             label2.Name = "label2";
             label2.Size = new Size(111, 15);
             label2.TabIndex = 10;
@@ -509,7 +705,7 @@
             // checkBoxAudioTranslationProcessVideos
             // 
             checkBoxAudioTranslationProcessVideos.AutoSize = true;
-            checkBoxAudioTranslationProcessVideos.Location = new Point(200, 98);
+            checkBoxAudioTranslationProcessVideos.Location = new Point(199, 126);
             checkBoxAudioTranslationProcessVideos.Name = "checkBoxAudioTranslationProcessVideos";
             checkBoxAudioTranslationProcessVideos.Size = new Size(123, 19);
             checkBoxAudioTranslationProcessVideos.TabIndex = 13;
@@ -517,6 +713,18 @@
             toolTip1.SetToolTip(checkBoxAudioTranslationProcessVideos, "Die Videoverarbeitung kann sehr lange dauern, wenn sich auf der Spur Kinofilme befinden");
             checkBoxAudioTranslationProcessVideos.UseVisualStyleBackColor = true;
             checkBoxAudioTranslationProcessVideos.CheckedChanged += checkBoxAudioTranslationProcessVideos_CheckedChanged;
+            // 
+            // checkBoxIPEDConfigEnableAudioTranslation
+            // 
+            checkBoxIPEDConfigEnableAudioTranslation.AutoSize = true;
+            checkBoxIPEDConfigEnableAudioTranslation.Location = new Point(199, 43);
+            checkBoxIPEDConfigEnableAudioTranslation.Name = "checkBoxIPEDConfigEnableAudioTranslation";
+            checkBoxIPEDConfigEnableAudioTranslation.Size = new Size(222, 19);
+            checkBoxIPEDConfigEnableAudioTranslation.TabIndex = 14;
+            checkBoxIPEDConfigEnableAudioTranslation.Text = "Audio Transkription und Übersetzung";
+            toolTip1.SetToolTip(checkBoxIPEDConfigEnableAudioTranslation, "Führt bei Audio- und Videodateien Transkriptionen und Übersetzung ins Deutsche mit Hilfe des Auswerteservers durch.");
+            checkBoxIPEDConfigEnableAudioTranslation.UseVisualStyleBackColor = true;
+            checkBoxIPEDConfigEnableAudioTranslation.CheckedChanged += checkBoxIPEDConfigEnabelAudioTranslation_CheckedChanged;
             // 
             // tabControl1
             // 
@@ -699,6 +907,8 @@
             // 
             // tabPageAudioTranslation
             // 
+            tabPageAudioTranslation.Controls.Add(groupBox3);
+            tabPageAudioTranslation.Controls.Add(checkBoxIPEDConfigEnableAudioTranslation);
             tabPageAudioTranslation.Controls.Add(checkBoxAudioTranslationProcessVideos);
             tabPageAudioTranslation.Controls.Add(label2);
             tabPageAudioTranslation.Controls.Add(textBoxAudioTranslationOutputDirectory);
@@ -716,7 +926,7 @@
             // 
             // textBoxAudioTranslationOutputDirectory
             // 
-            textBoxAudioTranslationOutputDirectory.Location = new Point(200, 69);
+            textBoxAudioTranslationOutputDirectory.Location = new Point(199, 97);
             textBoxAudioTranslationOutputDirectory.Name = "textBoxAudioTranslationOutputDirectory";
             textBoxAudioTranslationOutputDirectory.ReadOnly = true;
             textBoxAudioTranslationOutputDirectory.Size = new Size(621, 23);
@@ -724,7 +934,7 @@
             // 
             // textBoxAudioTranslationInputDirectory
             // 
-            textBoxAudioTranslationInputDirectory.Location = new Point(200, 40);
+            textBoxAudioTranslationInputDirectory.Location = new Point(199, 68);
             textBoxAudioTranslationInputDirectory.Name = "textBoxAudioTranslationInputDirectory";
             textBoxAudioTranslationInputDirectory.ReadOnly = true;
             textBoxAudioTranslationInputDirectory.Size = new Size(621, 23);
@@ -781,6 +991,10 @@
             // 
             openFileDialogSettingsHashesDB.Filter = "IPED Hash Datenbankl|iped-hashes.db";
             // 
+            // openFileDialogAudioTranslationServiceProgram
+            // 
+            openFileDialogAudioTranslationServiceProgram.Filter = "Audiotranskription Dienstprogramml|background-media-translator.py";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -795,6 +1009,8 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tabControl1.ResumeLayout(false);
@@ -834,7 +1050,6 @@
         private TabPage tabPageProtocol;
         private TabPage tabPageAudioTranslation;
         private TabPage tabPageImageClassification;
-        private CheckBox checkBoxIPEDConfigEnableAudioTranslation;
         private CheckBox checkBoxIPEDConfigEnableImageClassification;
         private Label label2;
         private TextBox textBoxAudioTranslationOutputDirectory;
@@ -861,5 +1076,20 @@
         private OpenFileDialog openFileDialogSettingsIpedExePath;
         private FolderBrowserDialog folderBrowserDialog;
         private OpenFileDialog openFileDialogSettingsHashesDB;
+        private CheckBox checkBoxIPEDConfigEnableAudioTranslation;
+        private GroupBox groupBox3;
+        private Label label13;
+        private TextBox textBoxAudioTranslationFasterWhisperDirectory;
+        private Label label12;
+        private TextBox textBoxAudioTranslationProcessingDirectory;
+        private Label label11;
+        private TextBox textBoxAudioTranslationServiceProgram;
+        private ComboBox comboBoxAudioTranslationModelSize;
+        private Label label15;
+        private Label label14;
+        private TextBox textBoxAudioTranslationArgosTranslateDirectory;
+        private Button buttonAudioTranslationStartProcess;
+        private OpenFileDialog openFileDialogAudioTranslationServiceProgram;
+        private CheckBox checkBoxAudioTranslationUseGPU;
     }
 }
