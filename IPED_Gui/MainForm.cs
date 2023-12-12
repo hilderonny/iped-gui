@@ -165,7 +165,6 @@ namespace IPED_Gui_WinForms
             checkBox_Fortsetzen.Checked = settings.General_Continue;
             checkBox_Portabel.Checked = settings.General_Portable;
             checkBox_InternetdatenLaden.Checked = settings.General_Download_Internet_Data;
-            checkBoxIPEDConfigEnableImageClassification.Checked = settings.IPEDConfigEnableImageClassification;
 
             // Einstellungen
             textBoxSettingsIpedExePath.Text = settings.SettingsIpedExePath;
@@ -190,8 +189,13 @@ namespace IPED_Gui_WinForms
             checkBoxAudioTranslationUseGPU.Checked = settings.AudioTranslationUseGPU;
 
             // Bildklassifizierung
+            checkBoxIPEDConfigEnableImageClassification.Checked = settings.IPEDConfigEnableImageClassification;
             textBoxImageClassificationInputDirectory.Text = settings.ImageClassificationInputDirectory;
             textBoxImageClassificationOutputDirectory.Text = settings.ImageClassificationOutputDirectory;
+            textBoxImageClassificationServiceProgram.Text = settings.ImageClassificationServiceProgram;
+            textBoxImageClassificationProcessingDirectory.Text = settings.ImageClassificationProcessingDirectory;
+            textBoxImageClassificationMobileNetDirectory.Text = settings.ImageClassificationMobileNetDirectory;
+            comboBoxImageClassificationLanguage.SelectedIndex = comboBoxImageClassificationLanguage.FindStringExact(settings.ImageClassificationLanguage);
         }
 
         /// <summary>
@@ -633,11 +637,8 @@ namespace IPED_Gui_WinForms
                     Arguments = pythonArguments,
                 }
             };
-
             process.Start();
-
             tabControl1.SelectedTab = tabPageProtocol;
-
         }
 
         private void checkBoxAudioTranslationUseGPU_CheckedChanged(object sender, EventArgs e)
@@ -645,6 +646,93 @@ namespace IPED_Gui_WinForms
             Settings settings = Settings.Default;
             settings.AudioTranslationUseGPU = checkBoxAudioTranslationUseGPU.Checked;
             settings.Save();
+        }
+
+        private void buttonImageClassificationServiceProgram_Click(object sender, EventArgs e)
+        {
+            openFileDialogImageClassificationServiceProgram.FileName = textBoxImageClassificationServiceProgram.Text;
+            if (openFileDialogImageClassificationServiceProgram.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = openFileDialogImageClassificationServiceProgram.FileName;
+                textBoxImageClassificationServiceProgram.Text = fileName;
+                Settings settings = Settings.Default;
+                settings.ImageClassificationServiceProgram = fileName;
+                settings.Save();
+            }
+        }
+
+        private void buttonImageClassificationProcessingDirectory_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = textBoxImageClassificationProcessingDirectory.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                textBoxImageClassificationProcessingDirectory.Text = selectedFolder;
+                Settings settings = Settings.Default;
+                settings.ImageClassificationProcessingDirectory = selectedFolder;
+                settings.Save();
+            }
+        }
+
+        private void buttonImageClassificationMobileNetDirectory_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = textBoxImageClassificationMobileNetDirectory.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                textBoxImageClassificationMobileNetDirectory.Text = selectedFolder;
+                Settings settings = Settings.Default;
+                settings.ImageClassificationMobileNetDirectory = selectedFolder;
+                settings.Save();
+            }
+        }
+
+        private void comboBoxAudioTranslationModelSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.AudioTranslationModelSize = (string)((ComboBox)sender).SelectedItem;
+            settings.Save();
+        }
+
+        private void comboBoxImageClassificationLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.ImageClassificationLanguage = (string)((ComboBox)sender).SelectedItem;
+            settings.Save();
+        }
+
+        private void buttonImageClassificationStartProcess_Click(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+
+            var workingDirectory = Path.GetDirectoryName(settings.ImageClassificationServiceProgram);
+            var pythonCommand = Path.Join(workingDirectory, "python", "python.exe");
+
+            List<string> pythonArgumentList = new()
+            {
+                "\"" + settings.ImageClassificationServiceProgram + "\"",
+                "-i \"" + settings.ImageClassificationInputDirectory + "\"",
+                "-p \"" + settings.ImageClassificationProcessingDirectory + "\"",
+                "-o \"" + settings.ImageClassificationOutputDirectory + "\"",
+                "-m \"" + settings.ImageClassificationMobileNetDirectory + "\"",
+                "-l " + settings.ImageClassificationLanguage
+            };
+            var pythonArguments = string.Join(" ", pythonArgumentList);
+
+            WriteToConsole(pythonCommand + " " + pythonArguments + "\n");
+
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = pythonCommand,
+                    WorkingDirectory = workingDirectory,
+                    UseShellExecute = true,
+                    Arguments = pythonArguments,
+                }
+            };
+            process.Start();
+            tabControl1.SelectedTab = tabPageProtocol;
         }
     }
 }

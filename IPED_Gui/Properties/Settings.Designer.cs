@@ -334,5 +334,53 @@ namespace IPED_Gui_WinForms.Properties {
                 this["AudioTranslationUseGPU"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ImageClassificationServiceProgram {
+            get {
+                return ((string)(this["ImageClassificationServiceProgram"]));
+            }
+            set {
+                this["ImageClassificationServiceProgram"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ImageClassificationProcessingDirectory {
+            get {
+                return ((string)(this["ImageClassificationProcessingDirectory"]));
+            }
+            set {
+                this["ImageClassificationProcessingDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ImageClassificationMobileNetDirectory {
+            get {
+                return ((string)(this["ImageClassificationMobileNetDirectory"]));
+            }
+            set {
+                this["ImageClassificationMobileNetDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("de")]
+        public string ImageClassificationLanguage {
+            get {
+                return ((string)(this["ImageClassificationLanguage"]));
+            }
+            set {
+                this["ImageClassificationLanguage"] = value;
+            }
+        }
     }
 }
