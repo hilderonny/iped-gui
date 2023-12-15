@@ -1,3 +1,8 @@
+# 1.4
+- Funktion zum Aktivieren und Deaktivieren von Datei-Carving implementiert
+- Funktion zur Analyse von unbenutzten Speicherbereichen implementiert
+- Funktion zur Aktivierung der Gesichtserkennung in Bildern implementiert
+
 # 1.3
 - Funktionen aus Übersicht zu entsprechenden Tabs verschoben
 - Audioübersetzung mit lokalem Prozess möglich, benötigt https://github.com/hilderonny/background-media-translator

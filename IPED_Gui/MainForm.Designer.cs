@@ -93,6 +93,9 @@
             checkBoxAudioTranslationProcessVideos = new CheckBox();
             checkBoxIPEDConfigEnableAudioTranslation = new CheckBox();
             checkBoxIPEDConfigEnableImageClassification = new CheckBox();
+            checkBoxSettingsEnableCarving = new CheckBox();
+            checkBoxFileSystemConfigAddUnallocated = new CheckBox();
+            checkBoxSettingsEnableFaceRecognition = new CheckBox();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
@@ -871,6 +874,42 @@
             checkBoxIPEDConfigEnableImageClassification.UseVisualStyleBackColor = true;
             checkBoxIPEDConfigEnableImageClassification.CheckedChanged += checkBoxIPEDConfigEnableImageClassification_CheckedChanged;
             // 
+            // checkBoxSettingsEnableCarving
+            // 
+            checkBoxSettingsEnableCarving.AutoSize = true;
+            checkBoxSettingsEnableCarving.Location = new Point(250, 267);
+            checkBoxSettingsEnableCarving.Name = "checkBoxSettingsEnableCarving";
+            checkBoxSettingsEnableCarving.Size = new Size(121, 19);
+            checkBoxSettingsEnableCarving.TabIndex = 26;
+            checkBoxSettingsEnableCarving.Text = "Carving aktivieren";
+            toolTip1.SetToolTip(checkBoxSettingsEnableCarving, "Durchsucht die Sektoren eines Images nach gelöschten Dateien anhand ihrer Kopfsignaturen.");
+            checkBoxSettingsEnableCarving.UseVisualStyleBackColor = true;
+            checkBoxSettingsEnableCarving.CheckedChanged += checkBoxSettingsEnableCarving_CheckedChanged;
+            // 
+            // checkBoxFileSystemConfigAddUnallocated
+            // 
+            checkBoxFileSystemConfigAddUnallocated.AutoSize = true;
+            checkBoxFileSystemConfigAddUnallocated.Location = new Point(250, 292);
+            checkBoxFileSystemConfigAddUnallocated.Name = "checkBoxFileSystemConfigAddUnallocated";
+            checkBoxFileSystemConfigAddUnallocated.Size = new Size(253, 19);
+            checkBoxFileSystemConfigAddUnallocated.TabIndex = 27;
+            checkBoxFileSystemConfigAddUnallocated.Text = "Unbenutzten Speicherbereich durchsuchen";
+            toolTip1.SetToolTip(checkBoxFileSystemConfigAddUnallocated, "Durchsucht den Speicherbereich eines Images, welcher nicht durch eine Partition belegt ist. Nur sinnvoll in Zusammenhang mit \"Carving aktivieren\"");
+            checkBoxFileSystemConfigAddUnallocated.UseVisualStyleBackColor = true;
+            checkBoxFileSystemConfigAddUnallocated.CheckedChanged += checkBoxFileSystemConfigAddUnallocated_CheckedChanged;
+            // 
+            // checkBoxSettingsEnableFaceRecognition
+            // 
+            checkBoxSettingsEnableFaceRecognition.AutoSize = true;
+            checkBoxSettingsEnableFaceRecognition.Location = new Point(250, 317);
+            checkBoxSettingsEnableFaceRecognition.Name = "checkBoxSettingsEnableFaceRecognition";
+            checkBoxSettingsEnableFaceRecognition.Size = new Size(180, 19);
+            checkBoxSettingsEnableFaceRecognition.TabIndex = 28;
+            checkBoxSettingsEnableFaceRecognition.Text = "Gesichtserkennung in Bildern";
+            toolTip1.SetToolTip(checkBoxSettingsEnableFaceRecognition, "Beinhaltet sowohl Bilder als auch Thumbnails bei Videos. Dazu muss bei Videos die Thumbnail-Generierung eingeschaltet sein");
+            checkBoxSettingsEnableFaceRecognition.UseVisualStyleBackColor = true;
+            checkBoxSettingsEnableFaceRecognition.CheckedChanged += checkBoxSettingsEnableFaceRecognition_CheckedChanged;
+            // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPageOverview);
@@ -898,6 +937,9 @@
             // 
             // tabPageSettings
             // 
+            tabPageSettings.Controls.Add(checkBoxSettingsEnableFaceRecognition);
+            tabPageSettings.Controls.Add(checkBoxFileSystemConfigAddUnallocated);
+            tabPageSettings.Controls.Add(checkBoxSettingsEnableCarving);
             tabPageSettings.Controls.Add(label10);
             tabPageSettings.Controls.Add(buttonSettingsPluginFolder);
             tabPageSettings.Controls.Add(textBoxSettingsPluginFolder);
@@ -1251,5 +1293,8 @@
         private TextBox textBoxImageClassificationProcessingDirectory;
         private TextBox textBoxImageClassificationServiceProgram;
         private OpenFileDialog openFileDialogImageClassificationServiceProgram;
+        private CheckBox checkBoxFileSystemConfigAddUnallocated;
+        private CheckBox checkBoxSettingsEnableCarving;
+        private CheckBox checkBoxSettingsEnableFaceRecognition;
     }
 }

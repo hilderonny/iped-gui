@@ -104,12 +104,12 @@ namespace IPED_Gui_WinForms
                 "enableIndexToElasticSearch = false",
                 "enableMinIO = false",
                 "enableAudioTranscription = false",
-                "enableCarving = true",
+                "enableCarving = " + (settings.SettingsEnableCarving ? "true" : "false"),
                 "enableLedCarving = false",
                 "enableKnownMetCarving = false",
                 "enableImageThumbs = true",
                 "enableImageSimilarity = true",
-                "enableFaceRecognition = true",
+                "enableFaceRecognition = " + (settings.SettingsEnableFaceRecognition ? "true" : "false"),
                 "enableVideoThumbs = true",
                 "enableDocThumbs = true",
                 "enableHTMLReport = true",
@@ -152,6 +152,21 @@ namespace IPED_Gui_WinForms
             });
         }
 
+        private static string CreateFileSystemConfigTxt()
+        {
+            Settings settings = Settings.Default;
+            return string.Join("\n", new List<string> {
+                "robustImageReading = false",
+                "numImageReaders = auto",
+                "addUnallocated = " + (settings.FileSystemConfigAddUnallocated ? "true" : "false"),
+                "addFileSlacks = false",
+                "minOrphanSizeToIgnore = -1",
+                "unallocatedFragSize = 1073741824",
+                "ignoreHardLinks = true",
+                "skipFolderRegex ="
+            });
+        }
+
         /// <summary>
         /// Lädt die zuletzt gültigen Einstellungen und aktualisiert die UI-Elemente entsprechend
         /// </summary>
@@ -175,6 +190,9 @@ namespace IPED_Gui_WinForms
             textBoxSettingsNumThreads.Text = settings.SettingsNumThreads;
             textBoxSettingsHashesDB.Text = settings.SettingsHashesDB;
             textBoxSettingsPluginFolder.Text = settings.SettingsPluginFolder;
+            checkBoxSettingsEnableCarving.Checked = settings.SettingsEnableCarving;
+            checkBoxFileSystemConfigAddUnallocated.Checked = settings.FileSystemConfigAddUnallocated;
+            checkBoxSettingsEnableFaceRecognition.Checked = settings.SettingsEnableFaceRecognition;
 
             // Audioübersetzung
             checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
@@ -358,6 +376,8 @@ namespace IPED_Gui_WinForms
             File.WriteAllText(Path.Join(confDirectory, "AudioTranslation.txt"), CreateAudioTranslationTxt());
             // conf/ImageClassification.txt
             File.WriteAllText(Path.Join(confDirectory, "ImageClassification.txt"), CreateImageClassificationTxt());
+            // conf/FileSystemConfig.txt
+            File.WriteAllText(Path.Join(confDirectory, "FileSystemConfig.txt"), CreateFileSystemConfigTxt());
 
             string ipedCommand = settings.SettingsIpedExePath;
             string ipedArguments = CreateIpedArguments(profileName);
@@ -733,6 +753,27 @@ namespace IPED_Gui_WinForms
             };
             process.Start();
             tabControl1.SelectedTab = tabPageProtocol;
+        }
+
+        private void checkBoxSettingsEnableCarving_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.SettingsEnableCarving = checkBoxSettingsEnableCarving.Checked;
+            settings.Save();
+        }
+
+        private void checkBoxFileSystemConfigAddUnallocated_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.FileSystemConfigAddUnallocated = checkBoxFileSystemConfigAddUnallocated.Checked;
+            settings.Save();
+        }
+
+        private void checkBoxSettingsEnableFaceRecognition_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.SettingsEnableFaceRecognition = checkBoxSettingsEnableFaceRecognition.Checked;
+            settings.Save();
         }
     }
 }

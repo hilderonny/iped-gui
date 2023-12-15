@@ -92,5 +92,14 @@
     <Setting Name="ImageClassificationLanguage" Type="System.String" Scope="User">
       <Value Profile="(Default)">de</Value>
     </Setting>
+    <Setting Name="SettingsEnableCarving" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FileSystemConfigAddUnallocated" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SettingsEnableFaceRecognition" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -382,5 +382,41 @@ namespace IPED_Gui_WinForms.Properties {
                 this["ImageClassificationLanguage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SettingsEnableCarving {
+            get {
+                return ((bool)(this["SettingsEnableCarving"]));
+            }
+            set {
+                this["SettingsEnableCarving"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FileSystemConfigAddUnallocated {
+            get {
+                return ((bool)(this["FileSystemConfigAddUnallocated"]));
+            }
+            set {
+                this["FileSystemConfigAddUnallocated"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SettingsEnableFaceRecognition {
+            get {
+                return ((bool)(this["SettingsEnableFaceRecognition"]));
+            }
+            set {
+                this["SettingsEnableFaceRecognition"] = value;
+            }
+        }
     }
 }
