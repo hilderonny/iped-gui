@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             GroupBox groupBox2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Button buttonAudioTranslationInputDirectory;
             Button buttonAudioTranslationOutputDirectory;
             Label label3;
@@ -52,6 +50,7 @@
             Button buttonImageClassificationProcessingDirectory;
             Label label20;
             Button buttonImageClassificationServiceProgram;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             checkBox_ProjektErweitern = new CheckBox();
             checkBox_Fortsetzen = new CheckBox();
             checkBox_Portabel = new CheckBox();
@@ -87,7 +86,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             label_Warnung = new Label();
             button_DateienHinzufuegen = new Button();
-            toolTip1 = new ToolTip(components);
             label1 = new Label();
             label2 = new Label();
             checkBoxAudioTranslationProcessVideos = new CheckBox();
@@ -182,7 +180,6 @@
             checkBox_ProjektErweitern.Size = new Size(184, 19);
             checkBox_ProjektErweitern.TabIndex = 8;
             checkBox_ProjektErweitern.Text = "Bestehendes Projekt erweitern";
-            toolTip1.SetToolTip(checkBox_ProjektErweitern, "Falls sich in dem Ausgabeverzeichnis bereits ein IPED-Projekt befindet, wird dieses hiermit um die angegebenen Spuren erweitert");
             checkBox_ProjektErweitern.UseVisualStyleBackColor = true;
             checkBox_ProjektErweitern.CheckedChanged += checkBox_ProjektErweitern_CheckedChanged;
             // 
@@ -194,7 +191,6 @@
             checkBox_Fortsetzen.Size = new Size(158, 19);
             checkBox_Fortsetzen.TabIndex = 9;
             checkBox_Fortsetzen.Text = "Nach Abbruch fortsetzen";
-            toolTip1.SetToolTip(checkBox_Fortsetzen, resources.GetString("checkBox_Fortsetzen.ToolTip"));
             checkBox_Fortsetzen.UseVisualStyleBackColor = true;
             checkBox_Fortsetzen.CheckedChanged += checkBox_Fortsetzen_CheckedChanged;
             // 
@@ -206,7 +202,6 @@
             checkBox_Portabel.Size = new Size(70, 19);
             checkBox_Portabel.TabIndex = 10;
             checkBox_Portabel.Text = "Portabel";
-            toolTip1.SetToolTip(checkBox_Portabel, "Kopiert alle Beweismitteldateien in das Ausgabeverzeichnis. Damit kann dessen Inhalt an Ermittler ohne die ursprünglichen Spuren weitergegeben werden");
             checkBox_Portabel.UseVisualStyleBackColor = true;
             checkBox_Portabel.CheckedChanged += checkBox_Portabel_CheckedChanged;
             // 
@@ -218,7 +213,6 @@
             checkBox_InternetdatenLaden.Size = new Size(129, 19);
             checkBox_InternetdatenLaden.TabIndex = 11;
             checkBox_InternetdatenLaden.Text = "Internetdaten laden";
-            toolTip1.SetToolTip(checkBox_InternetdatenLaden, "Falls in bestimmten Dateien Verweise auf Internetdaten existieren (z.B. Chats mit Bildlinks), werden diese heruntergeladen und offline bereitgestellt.");
             checkBox_InternetdatenLaden.UseVisualStyleBackColor = true;
             checkBox_InternetdatenLaden.CheckedChanged += checkBox_InternetdatenLaden_CheckedChanged;
             // 
@@ -252,7 +246,6 @@
             label3.Size = new Size(111, 15);
             label3.TabIndex = 16;
             label3.Text = "Ausgabeverzeichnis";
-            toolTip1.SetToolTip(label3, "Aus diesem Verzeichnis werden die Ergebnisse abgeholt");
             // 
             // buttonImageClassificationOutputDirectory
             // 
@@ -284,7 +277,6 @@
             label4.Size = new Size(107, 15);
             label4.TabIndex = 19;
             label4.Text = "Eingabeverzeichnis";
-            toolTip1.SetToolTip(label4, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // buttonSettingsIpedExePath
             // 
@@ -363,7 +355,6 @@
             checkBoxAudioTranslationUseGPU.Size = new Size(110, 19);
             checkBoxAudioTranslationUseGPU.TabIndex = 16;
             checkBoxAudioTranslationUseGPU.Text = "GPU verwenden";
-            toolTip1.SetToolTip(checkBoxAudioTranslationUseGPU, "Verwenden Sie diese Option, wenn Ihr PC über eine Grafikkarte mit mindestens 8GB Video-RAM verfügt");
             checkBoxAudioTranslationUseGPU.UseVisualStyleBackColor = true;
             checkBoxAudioTranslationUseGPU.CheckedChanged += checkBoxAudioTranslationUseGPU_CheckedChanged;
             // 
@@ -396,7 +387,6 @@
             label15.Size = new Size(75, 15);
             label15.TabIndex = 28;
             label15.Text = "Modellgröße";
-            toolTip1.SetToolTip(label15, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // label14
             // 
@@ -406,7 +396,6 @@
             label14.Size = new Size(148, 15);
             label14.TabIndex = 25;
             label14.Text = "Argos Translate Verzeichnis";
-            toolTip1.SetToolTip(label14, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // textBoxAudioTranslationArgosTranslateDirectory
             // 
@@ -435,7 +424,6 @@
             label13.Size = new Size(145, 15);
             label13.TabIndex = 22;
             label13.Text = "Faster Whisper Verzeichnis";
-            toolTip1.SetToolTip(label13, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // textBoxAudioTranslationFasterWhisperDirectory
             // 
@@ -464,7 +452,6 @@
             label12.Size = new Size(137, 15);
             label12.TabIndex = 19;
             label12.Text = "Verarbeitungsverzeichnis";
-            toolTip1.SetToolTip(label12, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // textBoxAudioTranslationProcessingDirectory
             // 
@@ -493,7 +480,6 @@
             label11.Size = new Size(97, 15);
             label11.TabIndex = 16;
             label11.Text = "Dienstprogramm";
-            toolTip1.SetToolTip(label11, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // textBoxAudioTranslationServiceProgram
             // 
@@ -564,7 +550,6 @@
             label16.Size = new Size(49, 15);
             label16.TabIndex = 28;
             label16.Text = "Sprache";
-            toolTip1.SetToolTip(label16, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // label18
             // 
@@ -574,7 +559,6 @@
             label18.Size = new Size(124, 15);
             label18.TabIndex = 22;
             label18.Text = "MobileNet Verzeichnis";
-            toolTip1.SetToolTip(label18, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // textBoxImageClassificationMobileNetDirectory
             // 
@@ -603,7 +587,6 @@
             label19.Size = new Size(137, 15);
             label19.TabIndex = 19;
             label19.Text = "Verarbeitungsverzeichnis";
-            toolTip1.SetToolTip(label19, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // textBoxImageClassificationProcessingDirectory
             // 
@@ -632,7 +615,6 @@
             label20.Size = new Size(97, 15);
             label20.TabIndex = 16;
             label20.Text = "Dienstprogramm";
-            toolTip1.SetToolTip(label20, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // textBoxImageClassificationServiceProgram
             // 
@@ -674,7 +656,6 @@
             listBox_Spuren.SelectionMode = SelectionMode.MultiExtended;
             listBox_Spuren.Size = new Size(658, 154);
             listBox_Spuren.TabIndex = 1;
-            toolTip1.SetToolTip(listBox_Spuren, "Auflistung aller Spuren, die beim Starten verarbeitet werden. Mehrfachselektion zum Entfernen möglich.");
             listBox_Spuren.SelectedIndexChanged += listBox_Spuren_SelectedIndexChanged;
             // 
             // button_VerzeichnisHinzufuegen
@@ -685,7 +666,6 @@
             button_VerzeichnisHinzufuegen.Size = new Size(154, 23);
             button_VerzeichnisHinzufuegen.TabIndex = 2;
             button_VerzeichnisHinzufuegen.Text = "Verzeichnis hinzufügen";
-            toolTip1.SetToolTip(button_VerzeichnisHinzufuegen, "Auswahl eines Verzeichnisses, deren Inhalt als Spur aufgenommen werden soll");
             button_VerzeichnisHinzufuegen.UseVisualStyleBackColor = true;
             button_VerzeichnisHinzufuegen.Click += button_VerzeichnisHinzufuegen_Click;
             // 
@@ -698,7 +678,6 @@
             button_Entfernen.Size = new Size(154, 23);
             button_Entfernen.TabIndex = 3;
             button_Entfernen.Text = "Entfernen";
-            toolTip1.SetToolTip(button_Entfernen, "Entfernt alle selektierten Spuren aus der Spurenliste");
             button_Entfernen.UseVisualStyleBackColor = true;
             button_Entfernen.Click += button_Entfernen_Click;
             // 
@@ -720,7 +699,6 @@
             textBox_Ausgabeverzeichnis.ReadOnly = true;
             textBox_Ausgabeverzeichnis.Size = new Size(658, 23);
             textBox_Ausgabeverzeichnis.TabIndex = 5;
-            toolTip1.SetToolTip(textBox_Ausgabeverzeichnis, "Verzeichnis, in welchem das IPED-Projekt erstellt bzw. erweitert wird");
             // 
             // button_Auswaehlen
             // 
@@ -730,7 +708,6 @@
             button_Auswaehlen.Size = new Size(154, 23);
             button_Auswaehlen.TabIndex = 6;
             button_Auswaehlen.Text = "Auswählen ...";
-            toolTip1.SetToolTip(button_Auswaehlen, "Auswahl des Ausgabeverzeichnisses für das IPED-Projekt");
             button_Auswaehlen.UseVisualStyleBackColor = true;
             button_Auswaehlen.Click += button_GeneralOutputDirectory_Click;
             // 
@@ -745,7 +722,6 @@
             textBoxConsole.ScrollBars = ScrollBars.Vertical;
             textBoxConsole.Size = new Size(984, 534);
             textBoxConsole.TabIndex = 15;
-            toolTip1.SetToolTip(textBoxConsole, "Ausgabe des IPED-Programmdurchlaufs");
             // 
             // button_Starten
             // 
@@ -755,7 +731,6 @@
             button_Starten.Size = new Size(154, 23);
             button_Starten.TabIndex = 16;
             button_Starten.Text = "Starten";
-            toolTip1.SetToolTip(button_Starten, "Startet IPED und verarbeitet die gegebenen Spuren mit den gegebenen Einstellungen");
             button_Starten.UseVisualStyleBackColor = true;
             button_Starten.Click += button_Starten_Click;
             // 
@@ -814,7 +789,6 @@
             button_DateienHinzufuegen.Size = new Size(154, 23);
             button_DateienHinzufuegen.TabIndex = 18;
             button_DateienHinzufuegen.Text = "Dateien hinzufügen";
-            toolTip1.SetToolTip(button_DateienHinzufuegen, "Auswahl einer Datei als Spur. Das können Container (dd, e01, zip, ,...) oder ganz normale Dateien sein");
             button_DateienHinzufuegen.UseVisualStyleBackColor = true;
             button_DateienHinzufuegen.Click += button_DateienHinzufuegen_Click;
             // 
@@ -826,7 +800,6 @@
             label1.Size = new Size(107, 15);
             label1.TabIndex = 7;
             label1.Text = "Eingabeverzeichnis";
-            toolTip1.SetToolTip(label1, "In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt");
             // 
             // label2
             // 
@@ -836,7 +809,6 @@
             label2.Size = new Size(111, 15);
             label2.TabIndex = 10;
             label2.Text = "Ausgabeverzeichnis";
-            toolTip1.SetToolTip(label2, "Aus diesem Verzeichnis werden die Ergebnisse abgeholt");
             // 
             // checkBoxAudioTranslationProcessVideos
             // 
@@ -846,7 +818,6 @@
             checkBoxAudioTranslationProcessVideos.Size = new Size(123, 19);
             checkBoxAudioTranslationProcessVideos.TabIndex = 13;
             checkBoxAudioTranslationProcessVideos.Text = "Videos verarbeiten";
-            toolTip1.SetToolTip(checkBoxAudioTranslationProcessVideos, "Die Videoverarbeitung kann sehr lange dauern, wenn sich auf der Spur Kinofilme befinden");
             checkBoxAudioTranslationProcessVideos.UseVisualStyleBackColor = true;
             checkBoxAudioTranslationProcessVideos.CheckedChanged += checkBoxAudioTranslationProcessVideos_CheckedChanged;
             // 
@@ -858,7 +829,6 @@
             checkBoxIPEDConfigEnableAudioTranslation.Size = new Size(222, 19);
             checkBoxIPEDConfigEnableAudioTranslation.TabIndex = 14;
             checkBoxIPEDConfigEnableAudioTranslation.Text = "Audio Transkription und Übersetzung";
-            toolTip1.SetToolTip(checkBoxIPEDConfigEnableAudioTranslation, "Führt bei Audio- und Videodateien Transkriptionen und Übersetzung ins Deutsche mit Hilfe des Auswerteservers durch.");
             checkBoxIPEDConfigEnableAudioTranslation.UseVisualStyleBackColor = true;
             checkBoxIPEDConfigEnableAudioTranslation.CheckedChanged += checkBoxIPEDConfigEnabelAudioTranslation_CheckedChanged;
             // 
@@ -870,7 +840,6 @@
             checkBoxIPEDConfigEnableImageClassification.Size = new Size(125, 19);
             checkBoxIPEDConfigEnableImageClassification.TabIndex = 20;
             checkBoxIPEDConfigEnableImageClassification.Text = "Bilder klassifizieren";
-            toolTip1.SetToolTip(checkBoxIPEDConfigEnableImageClassification, "Führt eine Klassifizierung von Bilddateien mit Hilfe des Auswerteservers durch.");
             checkBoxIPEDConfigEnableImageClassification.UseVisualStyleBackColor = true;
             checkBoxIPEDConfigEnableImageClassification.CheckedChanged += checkBoxIPEDConfigEnableImageClassification_CheckedChanged;
             // 
@@ -882,7 +851,6 @@
             checkBoxSettingsEnableCarving.Size = new Size(121, 19);
             checkBoxSettingsEnableCarving.TabIndex = 26;
             checkBoxSettingsEnableCarving.Text = "Carving aktivieren";
-            toolTip1.SetToolTip(checkBoxSettingsEnableCarving, "Durchsucht die Sektoren eines Images nach gelöschten Dateien anhand ihrer Kopfsignaturen.");
             checkBoxSettingsEnableCarving.UseVisualStyleBackColor = true;
             checkBoxSettingsEnableCarving.CheckedChanged += checkBoxSettingsEnableCarving_CheckedChanged;
             // 
@@ -894,7 +862,6 @@
             checkBoxFileSystemConfigAddUnallocated.Size = new Size(253, 19);
             checkBoxFileSystemConfigAddUnallocated.TabIndex = 27;
             checkBoxFileSystemConfigAddUnallocated.Text = "Unbenutzten Speicherbereich durchsuchen";
-            toolTip1.SetToolTip(checkBoxFileSystemConfigAddUnallocated, "Durchsucht den Speicherbereich eines Images, welcher nicht durch eine Partition belegt ist. Nur sinnvoll in Zusammenhang mit \"Carving aktivieren\"");
             checkBoxFileSystemConfigAddUnallocated.UseVisualStyleBackColor = true;
             checkBoxFileSystemConfigAddUnallocated.CheckedChanged += checkBoxFileSystemConfigAddUnallocated_CheckedChanged;
             // 
@@ -906,7 +873,6 @@
             checkBoxSettingsEnableFaceRecognition.Size = new Size(180, 19);
             checkBoxSettingsEnableFaceRecognition.TabIndex = 28;
             checkBoxSettingsEnableFaceRecognition.Text = "Gesichtserkennung in Bildern";
-            toolTip1.SetToolTip(checkBoxSettingsEnableFaceRecognition, "Beinhaltet sowohl Bilder als auch Thumbnails bei Videos. Dazu muss bei Videos die Thumbnail-Generierung eingeschaltet sein");
             checkBoxSettingsEnableFaceRecognition.UseVisualStyleBackColor = true;
             checkBoxSettingsEnableFaceRecognition.CheckedChanged += checkBoxSettingsEnableFaceRecognition_CheckedChanged;
             // 
@@ -1237,7 +1203,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label label_Warnung;
         private Button button_DateienHinzufuegen;
-        private ToolTip toolTip1;
         private TabControl tabControl1;
         private TabPage tabPageOverview;
         private TabPage tabPageProtocol;
