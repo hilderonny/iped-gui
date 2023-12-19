@@ -39,17 +39,17 @@ namespace IPED_Gui_WinForms
             string outputPath = textBox_Ausgabeverzeichnis.Text;
             if (outputPath.Length == 0)
             {
-                label_Warnung.Text = "Bitte geben Sie ein Ausgabeverzeichnis an!";
+                label_Warnung.Text = Resources.WarningEnterOutputDirectory;
                 return;
             }
             if (!Directory.Exists(outputPath))
             {
-                label_Warnung.Text = "Das Ausgabeverzeichnis existiert nicht (mehr). Bitte wählen Sie ein existierendes Verzeichnis!";
+                label_Warnung.Text = Resources.WarningMissingOutputDirectory;
                 return;
             }
             if (!checkBox_ProjektErweitern.Checked && !checkBox_Fortsetzen.Checked && Directory.GetFileSystemEntries(outputPath).Any())
             {
-                label_Warnung.Text = "Das Ausgabeverzeichnis ist nicht leer. Soll das bestehende Projekt erweitert oder ein vorher abgebrochener Vorgang fortgesetzt werden?";
+                label_Warnung.Text = Resources.WarningOutputDirectoryNotEmpty;
                 return;
             }
         }

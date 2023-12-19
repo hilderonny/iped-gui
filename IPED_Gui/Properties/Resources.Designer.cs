@@ -59,5 +59,32 @@ namespace IPED_Gui_WinForms.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bitte geben Sie ein Ausgabeverzeichnis an! ähnelt.
+        /// </summary>
+        internal static string WarningEnterOutputDirectory {
+            get {
+                return ResourceManager.GetString("WarningEnterOutputDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Das Ausgabeverzeichnis existiert nicht (mehr). Bitte wählen Sie ein existierendes Verzeichnis! ähnelt.
+        /// </summary>
+        internal static string WarningMissingOutputDirectory {
+            get {
+                return ResourceManager.GetString("WarningMissingOutputDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Das Ausgabeverzeichnis ist nicht leer. Soll das bestehende Projekt erweitert oder ein vorher abgebrochener Vorgang fortgesetzt werden? ähnelt.
+        /// </summary>
+        internal static string WarningOutputDirectoryNotEmpty {
+            get {
+                return ResourceManager.GetString("WarningOutputDirectoryNotEmpty", resourceCulture);
+            }
+        }
     }
 }

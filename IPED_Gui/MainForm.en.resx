@@ -117,2508 +117,349 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="groupBox2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label_Spuren.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label_Spuren.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="label_Spuren.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 15</value>
-  </data>
-  <data name="label_Spuren.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label_Spuren.Text" xml:space="preserve">
-    <value>Spuren</value>
-  </data>
-  <data name="&gt;&gt;label_Spuren.Name" xml:space="preserve">
-    <value>label_Spuren</value>
-  </data>
-  <data name="&gt;&gt;label_Spuren.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_Spuren.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label_Spuren.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listBox_Spuren.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="listBox_Spuren.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="listBox_Spuren.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 3</value>
-  </data>
-  <data name="listBox_Spuren.Size" type="System.Drawing.Size, System.Drawing">
-    <value>658, 154</value>
-  </data>
-  <data name="listBox_Spuren.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listBox_Spuren.Name" xml:space="preserve">
-    <value>listBox_Spuren</value>
-  </data>
-  <data name="&gt;&gt;listBox_Spuren.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBox_Spuren.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;listBox_Spuren.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="button_VerzeichnisHinzufuegen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="button_VerzeichnisHinzufuegen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 3</value>
-  </data>
-  <data name="button_VerzeichnisHinzufuegen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 23</value>
-  </data>
-  <data name="button_VerzeichnisHinzufuegen.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="button_VerzeichnisHinzufuegen.Text" xml:space="preserve">
-    <value>Verzeichnis hinzufügen</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="button_VerzeichnisHinzufuegen.ToolTip" xml:space="preserve">
-    <value>Auswahl eines Verzeichnisses, deren Inhalt als Spur aufgenommen werden soll</value>
-  </data>
-  <data name="&gt;&gt;button_VerzeichnisHinzufuegen.Name" xml:space="preserve">
-    <value>button_VerzeichnisHinzufuegen</value>
-  </data>
-  <data name="&gt;&gt;button_VerzeichnisHinzufuegen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_VerzeichnisHinzufuegen.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_VerzeichnisHinzufuegen.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="button_Entfernen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="button_Entfernen.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="button_Entfernen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 63</value>
-  </data>
-  <data name="button_Entfernen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 23</value>
-  </data>
-  <data name="button_Entfernen.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="button_Entfernen.Text" xml:space="preserve">
-    <value>Entfernen</value>
-  </data>
-  <data name="button_Entfernen.ToolTip" xml:space="preserve">
-    <value>Entfernt alle selektierten Spuren aus der Spurenliste</value>
-  </data>
-  <data name="&gt;&gt;button_Entfernen.Name" xml:space="preserve">
-    <value>button_Entfernen</value>
-  </data>
-  <data name="&gt;&gt;button_Entfernen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_Entfernen.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_Entfernen.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label_Ausgabeverzeichnis.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_Ausgabeverzeichnis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 160</value>
-  </data>
-  <data name="label_Ausgabeverzeichnis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 15</value>
-  </data>
-  <data name="label_Ausgabeverzeichnis.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label_Ausgabeverzeichnis.Text" xml:space="preserve">
-    <value>Ausgabeverzeichnis</value>
-  </data>
-  <data name="&gt;&gt;label_Ausgabeverzeichnis.Name" xml:space="preserve">
-    <value>label_Ausgabeverzeichnis</value>
-  </data>
-  <data name="&gt;&gt;label_Ausgabeverzeichnis.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_Ausgabeverzeichnis.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label_Ausgabeverzeichnis.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="textBox_Ausgabeverzeichnis.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBox_Ausgabeverzeichnis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 163</value>
-  </data>
-  <data name="textBox_Ausgabeverzeichnis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>658, 23</value>
-  </data>
-  <data name="textBox_Ausgabeverzeichnis.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;textBox_Ausgabeverzeichnis.Name" xml:space="preserve">
-    <value>textBox_Ausgabeverzeichnis</value>
-  </data>
-  <data name="&gt;&gt;textBox_Ausgabeverzeichnis.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_Ausgabeverzeichnis.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;textBox_Ausgabeverzeichnis.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="button_Auswaehlen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="button_Auswaehlen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 163</value>
-  </data>
-  <data name="button_Auswaehlen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 23</value>
-  </data>
-  <data name="button_Auswaehlen.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="button_Auswaehlen.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="button_Auswaehlen.ToolTip" xml:space="preserve">
-    <value>Auswahl des Ausgabeverzeichnisses für das IPED-Projekt</value>
-  </data>
-  <data name="&gt;&gt;button_Auswaehlen.Name" xml:space="preserve">
-    <value>button_Auswaehlen</value>
-  </data>
-  <data name="&gt;&gt;button_Auswaehlen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_Auswaehlen.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_Auswaehlen.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="button_Starten.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="button_Starten.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 508</value>
-  </data>
-  <data name="button_Starten.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 23</value>
-  </data>
-  <data name="button_Starten.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="button_Starten.Text" xml:space="preserve">
-    <value>Starten</value>
-  </data>
-  <data name="button_Starten.ToolTip" xml:space="preserve">
-    <value>Startet IPED und verarbeitet die gegebenen Spuren mit den gegebenen Einstellungen</value>
-  </data>
-  <data name="&gt;&gt;button_Starten.Name" xml:space="preserve">
-    <value>button_Starten</value>
-  </data>
-  <data name="&gt;&gt;button_Starten.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_Starten.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_Starten.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label_Warnung.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_Warnung.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="label_Warnung.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 190</value>
-  </data>
-  <data name="label_Warnung.Size" type="System.Drawing.Size, System.Drawing">
-    <value>658, 60</value>
-  </data>
-  <data name="label_Warnung.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;label_Warnung.Name" xml:space="preserve">
-    <value>label_Warnung</value>
-  </data>
-  <data name="&gt;&gt;label_Warnung.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_Warnung.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label_Warnung.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="button_DateienHinzufuegen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="button_DateienHinzufuegen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 33</value>
-  </data>
-  <data name="button_DateienHinzufuegen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 23</value>
-  </data>
-  <data name="button_DateienHinzufuegen.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="button_DateienHinzufuegen.Text" xml:space="preserve">
-    <value>Dateien hinzufügen</value>
-  </data>
-  <data name="button_DateienHinzufuegen.ToolTip" xml:space="preserve">
-    <value>Auswahl einer Datei als Spur. Das können Container (dd, e01, zip, ,...) oder ganz normale Dateien sein</value>
-  </data>
-  <data name="&gt;&gt;button_DateienHinzufuegen.Name" xml:space="preserve">
-    <value>button_DateienHinzufuegen</value>
-  </data>
-  <data name="&gt;&gt;button_DateienHinzufuegen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_DateienHinzufuegen.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_DateienHinzufuegen.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 534</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>tabPageOverview</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label_Spuren" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="listBox_Spuren" Row="0" RowSpan="3" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="button_VerzeichnisHinzufuegen" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_Entfernen" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label_Ausgabeverzeichnis" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBox_Ausgabeverzeichnis" Row="3" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="button_Auswaehlen" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_Starten" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label_Warnung" Row="4" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="button_DateienHinzufuegen" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="groupBox2" Row="5" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,160,Percent,50,Percent,50,Absolute,160" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,100,Absolute,30,Absolute,60,Absolute,252,Percent,100,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 253</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>658, 246</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <metadata name="buttonAudioTranslationInputDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonAudioTranslationInputDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonAudioTranslationInputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>826, 67</value>
-  </data>
-  <data name="buttonAudioTranslationInputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonAudioTranslationInputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="buttonAudioTranslationInputDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationInputDirectory.Name" xml:space="preserve">
-    <value>buttonAudioTranslationInputDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationInputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationInputDirectory.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationInputDirectory.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <metadata name="buttonAudioTranslationOutputDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonAudioTranslationOutputDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonAudioTranslationOutputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>826, 97</value>
-  </data>
-  <data name="buttonAudioTranslationOutputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonAudioTranslationOutputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>Select ...</value>
   </data>
   <data name="buttonAudioTranslationOutputDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationOutputDirectory.Name" xml:space="preserve">
-    <value>buttonAudioTranslationOutputDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationOutputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationOutputDirectory.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationOutputDirectory.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="label3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 100</value>
+    <value>Select ...</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 15</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>95, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Ausgabeverzeichnis</value>
+    <value>Output directory</value>
   </data>
   <data name="label3.ToolTip" xml:space="preserve">
-    <value>Aus diesem Verzeichnis werden die Ergebnisse abgeholt</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="buttonImageClassificationOutputDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonImageClassificationOutputDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonImageClassificationOutputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>829, 97</value>
-  </data>
-  <data name="buttonImageClassificationOutputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonImageClassificationOutputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value />
   </data>
   <data name="buttonImageClassificationOutputDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationOutputDirectory.Name" xml:space="preserve">
-    <value>buttonImageClassificationOutputDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationOutputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationOutputDirectory.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationOutputDirectory.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="buttonImageClassificationInputDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonImageClassificationInputDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonImageClassificationInputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>829, 68</value>
-  </data>
-  <data name="buttonImageClassificationInputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonImageClassificationInputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>Select ...</value>
   </data>
   <data name="buttonImageClassificationInputDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationInputDirectory.Name" xml:space="preserve">
-    <value>buttonImageClassificationInputDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationInputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationInputDirectory.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationInputDirectory.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="label4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 71</value>
+    <value>Select ...</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 15</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>85, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Eingabeverzeichnis</value>
+    <value>Input directory</value>
   </data>
   <data name="label4.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="buttonSettingsIpedExePath.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonSettingsIpedExePath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonSettingsIpedExePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 43</value>
-  </data>
-  <data name="buttonSettingsIpedExePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonSettingsIpedExePath.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value />
   </data>
   <data name="buttonSettingsIpedExePath.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIpedExePath.Name" xml:space="preserve">
-    <value>buttonSettingsIpedExePath</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIpedExePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIpedExePath.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIpedExePath.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <metadata name="buttonSettingsIndexTemp.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonSettingsIndexTemp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonSettingsIndexTemp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 101</value>
-  </data>
-  <data name="buttonSettingsIndexTemp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonSettingsIndexTemp.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>Select ...</value>
   </data>
   <data name="buttonSettingsIndexTemp.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIndexTemp.Name" xml:space="preserve">
-    <value>buttonSettingsIndexTemp</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIndexTemp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIndexTemp.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsIndexTemp.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <metadata name="buttonSettingsHashesDB.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonSettingsHashesDB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonSettingsHashesDB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 209</value>
-  </data>
-  <data name="buttonSettingsHashesDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonSettingsHashesDB.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>Select ...</value>
   </data>
   <data name="buttonSettingsHashesDB.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsHashesDB.Name" xml:space="preserve">
-    <value>buttonSettingsHashesDB</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsHashesDB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsHashesDB.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsHashesDB.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="buttonSettingsPluginFolder.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonSettingsPluginFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonSettingsPluginFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 238</value>
-  </data>
-  <data name="buttonSettingsPluginFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonSettingsPluginFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>Select ...</value>
   </data>
   <data name="buttonSettingsPluginFolder.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsPluginFolder.Name" xml:space="preserve">
-    <value>buttonSettingsPluginFolder</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsPluginFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsPluginFolder.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;buttonSettingsPluginFolder.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="groupBox3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="checkBoxAudioTranslationUseGPU.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxAudioTranslationUseGPU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 167</value>
-  </data>
-  <data name="checkBoxAudioTranslationUseGPU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 19</value>
-  </data>
-  <data name="checkBoxAudioTranslationUseGPU.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="checkBoxAudioTranslationUseGPU.Text" xml:space="preserve">
-    <value>GPU verwenden</value>
-  </data>
-  <data name="checkBoxAudioTranslationUseGPU.ToolTip" xml:space="preserve">
-    <value>Verwenden Sie diese Option, wenn Ihr PC über eine Grafikkarte mit mindestens 8GB Video-RAM verfügt</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationUseGPU.Name" xml:space="preserve">
-    <value>checkBoxAudioTranslationUseGPU</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationUseGPU.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationUseGPU.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationUseGPU.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonAudioTranslationStartProcess.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="buttonAudioTranslationStartProcess.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 192</value>
-  </data>
-  <data name="buttonAudioTranslationStartProcess.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 23</value>
-  </data>
-  <data name="buttonAudioTranslationStartProcess.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="buttonAudioTranslationStartProcess.Text" xml:space="preserve">
-    <value>Prozess starten</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationStartProcess.Name" xml:space="preserve">
-    <value>buttonAudioTranslationStartProcess</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationStartProcess.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationStartProcess.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationStartProcess.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.Items" xml:space="preserve">
-    <value>tiny</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.Items1" xml:space="preserve">
-    <value>base</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.Items2" xml:space="preserve">
-    <value>small</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.Items3" xml:space="preserve">
-    <value>medium</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.Items4" xml:space="preserve">
-    <value>large-v2</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 138</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="comboBoxAudioTranslationModelSize.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAudioTranslationModelSize.Name" xml:space="preserve">
-    <value>comboBoxAudioTranslationModelSize</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAudioTranslationModelSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAudioTranslationModelSize.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAudioTranslationModelSize.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 141</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 15</value>
-  </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Modellgröße</value>
-  </data>
-  <data name="label15.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 112</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 15</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Argos Translate Verzeichnis</value>
-  </data>
-  <data name="label14.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="textBoxAudioTranslationArgosTranslateDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 109</value>
-  </data>
-  <data name="textBoxAudioTranslationArgosTranslateDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxAudioTranslationArgosTranslateDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationArgosTranslateDirectory.Name" xml:space="preserve">
-    <value>textBoxAudioTranslationArgosTranslateDirectory</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationArgosTranslateDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationArgosTranslateDirectory.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationArgosTranslateDirectory.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="buttonAudioTranslationArgosTranslateDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonAudioTranslationArgosTranslateDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonAudioTranslationArgosTranslateDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 108</value>
-  </data>
-  <data name="buttonAudioTranslationArgosTranslateDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonAudioTranslationArgosTranslateDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="buttonAudioTranslationArgosTranslateDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationArgosTranslateDirectory.Name" xml:space="preserve">
-    <value>buttonAudioTranslationArgosTranslateDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationArgosTranslateDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationArgosTranslateDirectory.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationArgosTranslateDirectory.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 83</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 15</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Faster Whisper Verzeichnis</value>
-  </data>
-  <data name="label13.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="textBoxAudioTranslationFasterWhisperDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 80</value>
-  </data>
-  <data name="textBoxAudioTranslationFasterWhisperDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxAudioTranslationFasterWhisperDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationFasterWhisperDirectory.Name" xml:space="preserve">
-    <value>textBoxAudioTranslationFasterWhisperDirectory</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationFasterWhisperDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationFasterWhisperDirectory.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationFasterWhisperDirectory.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <metadata name="buttonAudioTranslationFasterWhisperDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonAudioTranslationFasterWhisperDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonAudioTranslationFasterWhisperDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 79</value>
-  </data>
-  <data name="buttonAudioTranslationFasterWhisperDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonAudioTranslationFasterWhisperDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="buttonAudioTranslationFasterWhisperDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationFasterWhisperDirectory.Name" xml:space="preserve">
-    <value>buttonAudioTranslationFasterWhisperDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationFasterWhisperDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationFasterWhisperDirectory.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationFasterWhisperDirectory.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 54</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 15</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Verarbeitungsverzeichnis</value>
-  </data>
-  <data name="label12.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="textBoxAudioTranslationProcessingDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 51</value>
-  </data>
-  <data name="textBoxAudioTranslationProcessingDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxAudioTranslationProcessingDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationProcessingDirectory.Name" xml:space="preserve">
-    <value>textBoxAudioTranslationProcessingDirectory</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationProcessingDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationProcessingDirectory.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationProcessingDirectory.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <metadata name="buttonAudioTranslationProcessingDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonAudioTranslationProcessingDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonAudioTranslationProcessingDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 50</value>
-  </data>
-  <data name="buttonAudioTranslationProcessingDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonAudioTranslationProcessingDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="buttonAudioTranslationProcessingDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationProcessingDirectory.Name" xml:space="preserve">
-    <value>buttonAudioTranslationProcessingDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationProcessingDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationProcessingDirectory.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationProcessingDirectory.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <metadata name="label11.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 25</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 15</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Dienstprogramm</value>
-  </data>
-  <data name="label11.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="textBoxAudioTranslationServiceProgram.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 22</value>
-  </data>
-  <data name="textBoxAudioTranslationServiceProgram.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxAudioTranslationServiceProgram.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationServiceProgram.Name" xml:space="preserve">
-    <value>textBoxAudioTranslationServiceProgram</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationServiceProgram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationServiceProgram.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationServiceProgram.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <metadata name="buttonAudioTranslationServiceProgram.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonAudioTranslationServiceProgram.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonAudioTranslationServiceProgram.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 21</value>
-  </data>
-  <data name="buttonAudioTranslationServiceProgram.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="buttonAudioTranslationServiceProgram.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="buttonAudioTranslationServiceProgram.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationServiceProgram.Name" xml:space="preserve">
-    <value>buttonAudioTranslationServiceProgram</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationServiceProgram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationServiceProgram.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;buttonAudioTranslationServiceProgram.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 151</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 386</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>Select ...</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Lokale Verarbeitung</value>
+    <value>Local processing</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="checkBoxAudioTranslationUseGPU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 19</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="checkBoxAudioTranslationUseGPU.Text" xml:space="preserve">
+    <value>Use GPU</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
+  <data name="checkBoxAudioTranslationUseGPU.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="buttonAudioTranslationStartProcess.Text" xml:space="preserve">
+    <value>Start service</value>
   </data>
-  <metadata name="groupBox4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonImageClassificationStartProcess.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 15</value>
   </data>
-  <data name="buttonImageClassificationStartProcess.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 138</value>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Model size</value>
   </data>
-  <data name="buttonImageClassificationStartProcess.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 23</value>
+  <data name="label15.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="buttonImageClassificationStartProcess.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="buttonImageClassificationStartProcess.Text" xml:space="preserve">
-    <value>Prozess starten</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationStartProcess.Name" xml:space="preserve">
-    <value>buttonImageClassificationStartProcess</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationStartProcess.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationStartProcess.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationStartProcess.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="comboBoxImageClassificationLanguage.Items" xml:space="preserve">
-    <value>de</value>
-  </data>
-  <data name="comboBoxImageClassificationLanguage.Items1" xml:space="preserve">
-    <value>en</value>
-  </data>
-  <data name="comboBoxImageClassificationLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 109</value>
-  </data>
-  <data name="comboBoxImageClassificationLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="comboBoxImageClassificationLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;comboBoxImageClassificationLanguage.Name" xml:space="preserve">
-    <value>comboBoxImageClassificationLanguage</value>
-  </data>
-  <data name="&gt;&gt;comboBoxImageClassificationLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxImageClassificationLanguage.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;comboBoxImageClassificationLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 112</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 15</value>
-  </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Sprache</value>
-  </data>
-  <data name="label16.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 83</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 15</value>
-  </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>MobileNet Verzeichnis</value>
-  </data>
-  <data name="label18.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBoxImageClassificationMobileNetDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 80</value>
-  </data>
-  <data name="textBoxImageClassificationMobileNetDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxImageClassificationMobileNetDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationMobileNetDirectory.Name" xml:space="preserve">
-    <value>textBoxImageClassificationMobileNetDirectory</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationMobileNetDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationMobileNetDirectory.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationMobileNetDirectory.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="buttonImageClassificationMobileNetDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonImageClassificationMobileNetDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonImageClassificationMobileNetDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 79</value>
-  </data>
-  <data name="buttonImageClassificationMobileNetDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 23</value>
-  </data>
-  <data name="buttonImageClassificationMobileNetDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="buttonImageClassificationMobileNetDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationMobileNetDirectory.Name" xml:space="preserve">
-    <value>buttonImageClassificationMobileNetDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationMobileNetDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationMobileNetDirectory.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationMobileNetDirectory.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 54</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 15</value>
   </data>
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Argos Translate directory</value>
   </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Verarbeitungsverzeichnis</value>
+  <data name="label14.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="label19.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
+  <data name="buttonAudioTranslationArgosTranslateDirectory.Text" xml:space="preserve">
+    <value>Select ...</value>
   </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 15</value>
   </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Faster Whisper directory</value>
   </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>groupBox4</value>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="buttonAudioTranslationFasterWhisperDirectory.Text" xml:space="preserve">
+    <value>Select ...</value>
   </data>
-  <data name="textBoxImageClassificationProcessingDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 51</value>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 15</value>
   </data>
-  <data name="textBoxImageClassificationProcessingDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Processing directory</value>
   </data>
-  <data name="textBoxImageClassificationProcessingDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;textBoxImageClassificationProcessingDirectory.Name" xml:space="preserve">
-    <value>textBoxImageClassificationProcessingDirectory</value>
+  <data name="buttonAudioTranslationProcessingDirectory.Text" xml:space="preserve">
+    <value>Select ...</value>
   </data>
-  <data name="&gt;&gt;textBoxImageClassificationProcessingDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationProcessingDirectory.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationProcessingDirectory.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="buttonImageClassificationProcessingDirectory.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonImageClassificationProcessingDirectory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonImageClassificationProcessingDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 50</value>
-  </data>
-  <data name="buttonImageClassificationProcessingDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 23</value>
-  </data>
-  <data name="buttonImageClassificationProcessingDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="buttonImageClassificationProcessingDirectory.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationProcessingDirectory.Name" xml:space="preserve">
-    <value>buttonImageClassificationProcessingDirectory</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationProcessingDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationProcessingDirectory.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationProcessingDirectory.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <metadata name="label20.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 25</value>
-  </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 15</value>
-  </data>
-  <data name="label20.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>Dienstprogramm</value>
-  </data>
-  <data name="label20.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="textBoxImageClassificationServiceProgram.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 22</value>
-  </data>
-  <data name="textBoxImageClassificationServiceProgram.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxImageClassificationServiceProgram.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationServiceProgram.Name" xml:space="preserve">
-    <value>textBoxImageClassificationServiceProgram</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationServiceProgram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationServiceProgram.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationServiceProgram.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <metadata name="buttonImageClassificationServiceProgram.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="buttonImageClassificationServiceProgram.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="buttonImageClassificationServiceProgram.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 21</value>
-  </data>
-  <data name="buttonImageClassificationServiceProgram.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 23</value>
-  </data>
-  <data name="buttonImageClassificationServiceProgram.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="buttonImageClassificationServiceProgram.Text" xml:space="preserve">
-    <value>Auswählen ...</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationServiceProgram.Name" xml:space="preserve">
-    <value>buttonImageClassificationServiceProgram</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationServiceProgram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationServiceProgram.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;buttonImageClassificationServiceProgram.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 151</value>
-  </data>
-  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 386</value>
-  </data>
-  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Lokale Verarbeitung</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBox_ProjektErweitern.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_ProjektErweitern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="checkBox_ProjektErweitern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 19</value>
-  </data>
-  <data name="checkBox_ProjektErweitern.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="checkBox_ProjektErweitern.Text" xml:space="preserve">
-    <value>Bestehendes Projekt erweitern</value>
-  </data>
-  <data name="checkBox_ProjektErweitern.ToolTip" xml:space="preserve">
-    <value>Falls sich in dem Ausgabeverzeichnis bereits ein IPED-Projekt befindet, wird dieses hiermit um die angegebenen Spuren erweitert</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ProjektErweitern.Name" xml:space="preserve">
-    <value>checkBox_ProjektErweitern</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ProjektErweitern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBox_Fortsetzen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_Fortsetzen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 72</value>
-  </data>
-  <data name="checkBox_Fortsetzen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 19</value>
-  </data>
-  <data name="checkBox_Fortsetzen.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="checkBox_Fortsetzen.Text" xml:space="preserve">
-    <value>Nach Abbruch fortsetzen</value>
-  </data>
-  <data name="checkBox_Fortsetzen.ToolTip" xml:space="preserve">
-    <value>Falls ein vorangeganger Prozess abgebrochen wurde, kann hiermit angegeben werden, dass der Import nochmal erfolgen soll. Das Ausgabeverzeichnis muss dabei das IPED-Projekt mit dem abgebrochenen Vorgang enthalten.</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Fortsetzen.Name" xml:space="preserve">
-    <value>checkBox_Fortsetzen</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Fortsetzen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBox_Portabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_Portabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 122</value>
-  </data>
-  <data name="checkBox_Portabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
-  </data>
-  <data name="checkBox_Portabel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="checkBox_Portabel.Text" xml:space="preserve">
-    <value>Portabel</value>
-  </data>
-  <data name="checkBox_Portabel.ToolTip" xml:space="preserve">
-    <value>Kopiert alle Beweismitteldateien in das Ausgabeverzeichnis. Damit kann dessen Inhalt an Ermittler ohne die ursprünglichen Spuren weitergegeben werden</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Portabel.Name" xml:space="preserve">
-    <value>checkBox_Portabel</value>
-  </data>
-  <data name="&gt;&gt;checkBox_Portabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBox_InternetdatenLaden.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_InternetdatenLaden.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 147</value>
-  </data>
-  <data name="checkBox_InternetdatenLaden.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 19</value>
-  </data>
-  <data name="checkBox_InternetdatenLaden.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="checkBox_InternetdatenLaden.Text" xml:space="preserve">
-    <value>Internetdaten laden</value>
-  </data>
-  <data name="checkBox_InternetdatenLaden.ToolTip" xml:space="preserve">
-    <value>Falls in bestimmten Dateien Verweise auf Internetdaten existieren (z.B. Chats mit Bildlinks), werden diese heruntergeladen und offline bereitgestellt.</value>
-  </data>
-  <data name="&gt;&gt;checkBox_InternetdatenLaden.Name" xml:space="preserve">
-    <value>checkBox_InternetdatenLaden</value>
-  </data>
-  <data name="&gt;&gt;checkBox_InternetdatenLaden.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="textBoxConsole.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBoxConsole.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9.75pt</value>
-  </data>
-  <data name="textBoxConsole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="textBoxConsole.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxConsole.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="textBoxConsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 534</value>
-  </data>
-  <data name="textBoxConsole.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="textBoxConsole.ToolTip" xml:space="preserve">
-    <value>Ausgabe des IPED-Programmdurchlaufs</value>
-  </data>
-  <data name="&gt;&gt;textBoxConsole.Name" xml:space="preserve">
-    <value>textBoxConsole</value>
-  </data>
-  <data name="&gt;&gt;textBoxConsole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxConsole.Parent" xml:space="preserve">
-    <value>tabPageProtocol</value>
-  </data>
-  <data name="&gt;&gt;textBoxConsole.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 71</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 15</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Eingabeverzeichnis</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value>In diesem Verzeichnis werden die zu verarbeitenden Dateien abgelegt</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 100</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 15</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Ausgabeverzeichnis</value>
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value>Aus diesem Verzeichnis werden die Ergebnisse abgeholt</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="checkBoxAudioTranslationProcessVideos.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxAudioTranslationProcessVideos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 126</value>
-  </data>
-  <data name="checkBoxAudioTranslationProcessVideos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 19</value>
-  </data>
-  <data name="checkBoxAudioTranslationProcessVideos.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="checkBoxAudioTranslationProcessVideos.Text" xml:space="preserve">
-    <value>Videos verarbeiten</value>
-  </data>
-  <data name="checkBoxAudioTranslationProcessVideos.ToolTip" xml:space="preserve">
-    <value>Die Videoverarbeitung kann sehr lange dauern, wenn sich auf der Spur Kinofilme befinden</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationProcessVideos.Name" xml:space="preserve">
-    <value>checkBoxAudioTranslationProcessVideos</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationProcessVideos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationProcessVideos.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAudioTranslationProcessVideos.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableAudioTranslation.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableAudioTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 43</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableAudioTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 19</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableAudioTranslation.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableAudioTranslation.Text" xml:space="preserve">
-    <value>Audio Transkription und Übersetzung</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableAudioTranslation.ToolTip" xml:space="preserve">
-    <value>Führt bei Audio- und Videodateien Transkriptionen und Übersetzung ins Deutsche mit Hilfe des Auswerteservers durch.</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableAudioTranslation.Name" xml:space="preserve">
-    <value>checkBoxIPEDConfigEnableAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableAudioTranslation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableAudioTranslation.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableAudioTranslation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableImageClassification.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableImageClassification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 43</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableImageClassification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 19</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableImageClassification.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableImageClassification.Text" xml:space="preserve">
-    <value>Bilder klassifizieren</value>
-  </data>
-  <data name="checkBoxIPEDConfigEnableImageClassification.ToolTip" xml:space="preserve">
-    <value>Führt eine Klassifizierung von Bilddateien mit Hilfe des Auswerteservers durch.</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableImageClassification.Name" xml:space="preserve">
-    <value>checkBoxIPEDConfigEnableImageClassification</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableImageClassification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableImageClassification.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;checkBoxIPEDConfigEnableImageClassification.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="checkBoxSettingsEnableCarving.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxSettingsEnableCarving.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 267</value>
-  </data>
-  <data name="checkBoxSettingsEnableCarving.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 19</value>
-  </data>
-  <data name="checkBoxSettingsEnableCarving.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="checkBoxSettingsEnableCarving.Text" xml:space="preserve">
-    <value>Carving aktivieren</value>
-  </data>
-  <data name="checkBoxSettingsEnableCarving.ToolTip" xml:space="preserve">
-    <value>Durchsucht die Sektoren eines Images nach gelöschten Dateien anhand ihrer Kopfsignaturen.</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableCarving.Name" xml:space="preserve">
-    <value>checkBoxSettingsEnableCarving</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableCarving.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableCarving.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableCarving.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="checkBoxFileSystemConfigAddUnallocated.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxFileSystemConfigAddUnallocated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 292</value>
-  </data>
-  <data name="checkBoxFileSystemConfigAddUnallocated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 19</value>
-  </data>
-  <data name="checkBoxFileSystemConfigAddUnallocated.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="checkBoxFileSystemConfigAddUnallocated.Text" xml:space="preserve">
-    <value>Unbenutzten Speicherbereich durchsuchen</value>
-  </data>
-  <data name="checkBoxFileSystemConfigAddUnallocated.ToolTip" xml:space="preserve">
-    <value>Durchsucht den Speicherbereich eines Images, welcher nicht durch eine Partition belegt ist. Nur sinnvoll in Zusammenhang mit "Carving aktivieren"</value>
-  </data>
-  <data name="&gt;&gt;checkBoxFileSystemConfigAddUnallocated.Name" xml:space="preserve">
-    <value>checkBoxFileSystemConfigAddUnallocated</value>
-  </data>
-  <data name="&gt;&gt;checkBoxFileSystemConfigAddUnallocated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxFileSystemConfigAddUnallocated.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBoxFileSystemConfigAddUnallocated.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="checkBoxSettingsEnableFaceRecognition.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxSettingsEnableFaceRecognition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 317</value>
-  </data>
-  <data name="checkBoxSettingsEnableFaceRecognition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 19</value>
-  </data>
-  <data name="checkBoxSettingsEnableFaceRecognition.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="checkBoxSettingsEnableFaceRecognition.Text" xml:space="preserve">
-    <value>Gesichtserkennung in Bildern</value>
-  </data>
-  <data name="checkBoxSettingsEnableFaceRecognition.ToolTip" xml:space="preserve">
-    <value>Beinhaltet sowohl Bilder als auch Thumbnails bei Videos. Dazu muss bei Videos die Thumbnail-Generierung eingeschaltet sein</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableFaceRecognition.Name" xml:space="preserve">
-    <value>checkBoxSettingsEnableFaceRecognition</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableFaceRecognition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableFaceRecognition.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsEnableFaceRecognition.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPageOverview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabPageOverview.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPageOverview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 540</value>
-  </data>
-  <data name="tabPageOverview.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPageOverview.Text" xml:space="preserve">
-    <value>Übersicht</value>
-  </data>
-  <data name="&gt;&gt;tabPageOverview.Name" xml:space="preserve">
-    <value>tabPageOverview</value>
-  </data>
-  <data name="&gt;&gt;tabPageOverview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageOverview.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageOverview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 241</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 15</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Verzeichnis für Plugins</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBoxSettingsPluginFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 238</value>
-  </data>
-  <data name="textBoxSettingsPluginFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 23</value>
-  </data>
-  <data name="textBoxSettingsPluginFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsPluginFolder.Name" xml:space="preserve">
-    <value>textBoxSettingsPluginFolder</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsPluginFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsPluginFolder.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsPluginFolder.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 212</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 15</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Hash Datenbank</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="textBoxSettingsHashesDB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 209</value>
-  </data>
-  <data name="textBoxSettingsHashesDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 23</value>
-  </data>
-  <data name="textBoxSettingsHashesDB.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsHashesDB.Name" xml:space="preserve">
-    <value>textBoxSettingsHashesDB</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsHashesDB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsHashesDB.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsHashesDB.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 183</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 15</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Anzahl Threads</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="textBoxSettingsNumThreads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 180</value>
-  </data>
-  <data name="textBoxSettingsNumThreads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="textBoxSettingsNumThreads.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsNumThreads.Name" xml:space="preserve">
-    <value>textBoxSettingsNumThreads</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsNumThreads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsNumThreads.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsNumThreads.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="checkBoxSettingsOutputOnSSD.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxSettingsOutputOnSSD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 155</value>
-  </data>
-  <data name="checkBoxSettingsOutputOnSSD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 19</value>
-  </data>
-  <data name="checkBoxSettingsOutputOnSSD.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="checkBoxSettingsOutputOnSSD.Text" xml:space="preserve">
-    <value>Ausgabeverzeichnis befindet sich auf SSD Festplatte</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsOutputOnSSD.Name" xml:space="preserve">
-    <value>checkBoxSettingsOutputOnSSD</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsOutputOnSSD.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsOutputOnSSD.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsOutputOnSSD.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="checkBoxSettingsIndexTempOnSSD.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxSettingsIndexTempOnSSD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 130</value>
-  </data>
-  <data name="checkBoxSettingsIndexTempOnSSD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 19</value>
-  </data>
-  <data name="checkBoxSettingsIndexTempOnSSD.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="checkBoxSettingsIndexTempOnSSD.Text" xml:space="preserve">
-    <value>Temporäres Verzeichnis befindet sich auf SSD Festplatte</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsIndexTempOnSSD.Name" xml:space="preserve">
-    <value>checkBoxSettingsIndexTempOnSSD</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsIndexTempOnSSD.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsIndexTempOnSSD.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBoxSettingsIndexTempOnSSD.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 104</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 15</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Verzeichnis für temporäre Dateien</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="textBoxSettingsIndexTemp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 101</value>
-  </data>
-  <data name="textBoxSettingsIndexTemp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 23</value>
-  </data>
-  <data name="textBoxSettingsIndexTemp.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIndexTemp.Name" xml:space="preserve">
-    <value>textBoxSettingsIndexTemp</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIndexTemp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIndexTemp.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIndexTemp.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 75</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 15</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Sprache der Oberfläche</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="comboBoxSettingsLocale.Items" xml:space="preserve">
-    <value>en</value>
-  </data>
-  <data name="comboBoxSettingsLocale.Items1" xml:space="preserve">
-    <value>pt-BR</value>
-  </data>
-  <data name="comboBoxSettingsLocale.Items2" xml:space="preserve">
-    <value>it-IT</value>
-  </data>
-  <data name="comboBoxSettingsLocale.Items3" xml:space="preserve">
-    <value>de-DE</value>
-  </data>
-  <data name="comboBoxSettingsLocale.Items4" xml:space="preserve">
-    <value>es-AR</value>
-  </data>
-  <data name="comboBoxSettingsLocale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 72</value>
-  </data>
-  <data name="comboBoxSettingsLocale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="comboBoxSettingsLocale.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSettingsLocale.Name" xml:space="preserve">
-    <value>comboBoxSettingsLocale</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSettingsLocale.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSettingsLocale.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSettingsLocale.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="textBoxSettingsIpedExePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 43</value>
-  </data>
-  <data name="textBoxSettingsIpedExePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 23</value>
-  </data>
-  <data name="textBoxSettingsIpedExePath.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIpedExePath.Name" xml:space="preserve">
-    <value>textBoxSettingsIpedExePath</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIpedExePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIpedExePath.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
-  </data>
-  <data name="&gt;&gt;textBoxSettingsIpedExePath.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 46</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 15</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Service program</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Pfad zu iped.exe</value>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="buttonAudioTranslationServiceProgram.Text" xml:space="preserve">
+    <value>Select ...</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Local processing</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabPageSettings</value>
+  <data name="buttonImageClassificationStartProcess.Text" xml:space="preserve">
+    <value>Start service</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>20</value>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
   </data>
-  <data name="tabPageSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
-  <data name="tabPageSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>40, 40, 40, 40</value>
+  <data name="label16.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="tabPageSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 540</value>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 15</value>
   </data>
-  <data name="tabPageSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="label18.Text" xml:space="preserve">
+    <value>MobileNet directory</value>
+  </data>
+  <data name="label18.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonImageClassificationMobileNetDirectory.Text" xml:space="preserve">
+    <value>Select ...</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 15</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Processing directory</value>
+  </data>
+  <data name="label19.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonImageClassificationProcessingDirectory.Text" xml:space="preserve">
+    <value>Select ...</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 15</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Service program</value>
+  </data>
+  <data name="label20.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonImageClassificationServiceProgram.Text" xml:space="preserve">
+    <value>Select ...</value>
+  </data>
+  <data name="label_Spuren.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 15</value>
+  </data>
+  <data name="label_Spuren.Text" xml:space="preserve">
+    <value>Sources</value>
+  </data>
+  <data name="button_VerzeichnisHinzufuegen.Text" xml:space="preserve">
+    <value>Add directory</value>
+  </data>
+  <data name="button_VerzeichnisHinzufuegen.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_Entfernen.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="button_Entfernen.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_Ausgabeverzeichnis.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 15</value>
+  </data>
+  <data name="label_Ausgabeverzeichnis.Text" xml:space="preserve">
+    <value>Output directory</value>
+  </data>
+  <data name="button_Auswaehlen.Text" xml:space="preserve">
+    <value>Select ...</value>
+  </data>
+  <data name="button_Auswaehlen.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxConsole.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_Starten.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="button_DateienHinzufuegen.Text" xml:space="preserve">
+    <value>Add files</value>
+  </data>
+  <data name="button_DateienHinzufuegen.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 15</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Input directory</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Output directory</value>
+  </data>
+  <data name="checkBoxAudioTranslationProcessVideos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 19</value>
+  </data>
+  <data name="checkBoxAudioTranslationProcessVideos.Text" xml:space="preserve">
+    <value>Process videos</value>
+  </data>
+  <data name="checkBoxAudioTranslationProcessVideos.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxIPEDConfigEnableAudioTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 19</value>
+  </data>
+  <data name="checkBoxIPEDConfigEnableAudioTranslation.Text" xml:space="preserve">
+    <value>Audio transcription and translation</value>
+  </data>
+  <data name="checkBoxIPEDConfigEnableAudioTranslation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxIPEDConfigEnableImageClassification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 19</value>
+  </data>
+  <data name="checkBoxIPEDConfigEnableImageClassification.Text" xml:space="preserve">
+    <value>Classify images</value>
+  </data>
+  <data name="checkBoxIPEDConfigEnableImageClassification.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxSettingsEnableCarving.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 19</value>
+  </data>
+  <data name="checkBoxSettingsEnableCarving.Text" xml:space="preserve">
+    <value>Enable carving</value>
+  </data>
+  <data name="checkBoxSettingsEnableCarving.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxFileSystemConfigAddUnallocated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 19</value>
+  </data>
+  <data name="checkBoxFileSystemConfigAddUnallocated.Text" xml:space="preserve">
+    <value>Process unallocated disk space</value>
+  </data>
+  <data name="checkBoxFileSystemConfigAddUnallocated.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxSettingsEnableFaceRecognition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 19</value>
+  </data>
+  <data name="checkBoxSettingsEnableFaceRecognition.Text" xml:space="preserve">
+    <value>Face recognition in images</value>
+  </data>
+  <data name="checkBoxSettingsEnableFaceRecognition.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageOverview.Text" xml:space="preserve">
+    <value>Overview</value>
   </data>
   <data name="tabPageSettings.Text" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>Settings</value>
   </data>
-  <data name="&gt;&gt;tabPageSettings.Name" xml:space="preserve">
-    <value>tabPageSettings</value>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 15</value>
   </data>
-  <data name="&gt;&gt;tabPageSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Plugins directory</value>
   </data>
-  <data name="&gt;&gt;tabPageSettings.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 15</value>
   </data>
-  <data name="&gt;&gt;tabPageSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Hash database</value>
   </data>
-  <data name="textBoxAudioTranslationOutputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 97</value>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 15</value>
   </data>
-  <data name="textBoxAudioTranslationOutputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Number of threads</value>
   </data>
-  <data name="textBoxAudioTranslationOutputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="checkBoxSettingsOutputOnSSD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 19</value>
   </data>
-  <data name="&gt;&gt;textBoxAudioTranslationOutputDirectory.Name" xml:space="preserve">
-    <value>textBoxAudioTranslationOutputDirectory</value>
+  <data name="checkBoxSettingsOutputOnSSD.Text" xml:space="preserve">
+    <value>Output directory is on SSD</value>
   </data>
-  <data name="&gt;&gt;textBoxAudioTranslationOutputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="checkBoxSettingsIndexTempOnSSD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 19</value>
   </data>
-  <data name="&gt;&gt;textBoxAudioTranslationOutputDirectory.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
+  <data name="checkBoxSettingsIndexTempOnSSD.Text" xml:space="preserve">
+    <value>Temporary directory is on SSD</value>
   </data>
-  <data name="&gt;&gt;textBoxAudioTranslationOutputDirectory.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 15</value>
   </data>
-  <data name="textBoxAudioTranslationInputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 68</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Directory for temporary dfiles</value>
   </data>
-  <data name="textBoxAudioTranslationInputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 15</value>
   </data>
-  <data name="textBoxAudioTranslationInputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>User interface language</value>
   </data>
-  <data name="&gt;&gt;textBoxAudioTranslationInputDirectory.Name" xml:space="preserve">
-    <value>textBoxAudioTranslationInputDirectory</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 15</value>
   </data>
-  <data name="&gt;&gt;textBoxAudioTranslationInputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationInputDirectory.Parent" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;textBoxAudioTranslationInputDirectory.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tabPageAudioTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabPageAudioTranslation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>40, 40, 40, 40</value>
-  </data>
-  <data name="tabPageAudioTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 540</value>
-  </data>
-  <data name="tabPageAudioTranslation.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Path to iped.exe</value>
   </data>
   <data name="tabPageAudioTranslation.Text" xml:space="preserve">
-    <value>Audioübersetzung</value>
-  </data>
-  <data name="&gt;&gt;tabPageAudioTranslation.Name" xml:space="preserve">
-    <value>tabPageAudioTranslation</value>
-  </data>
-  <data name="&gt;&gt;tabPageAudioTranslation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageAudioTranslation.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageAudioTranslation.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="textBoxImageClassificationOutputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 97</value>
-  </data>
-  <data name="textBoxImageClassificationOutputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxImageClassificationOutputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationOutputDirectory.Name" xml:space="preserve">
-    <value>textBoxImageClassificationOutputDirectory</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationOutputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationOutputDirectory.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationOutputDirectory.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="textBoxImageClassificationInputDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 68</value>
-  </data>
-  <data name="textBoxImageClassificationInputDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 23</value>
-  </data>
-  <data name="textBoxImageClassificationInputDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationInputDirectory.Name" xml:space="preserve">
-    <value>textBoxImageClassificationInputDirectory</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationInputDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationInputDirectory.Parent" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;textBoxImageClassificationInputDirectory.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tabPageImageClassification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabPageImageClassification.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>40, 40, 40, 40</value>
-  </data>
-  <data name="tabPageImageClassification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 540</value>
-  </data>
-  <data name="tabPageImageClassification.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>Audio translation</value>
   </data>
   <data name="tabPageImageClassification.Text" xml:space="preserve">
-    <value>Bildklassifizierung</value>
-  </data>
-  <data name="&gt;&gt;tabPageImageClassification.Name" xml:space="preserve">
-    <value>tabPageImageClassification</value>
-  </data>
-  <data name="&gt;&gt;tabPageImageClassification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageImageClassification.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageImageClassification.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabPageProtocol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabPageProtocol.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPageProtocol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>990, 540</value>
-  </data>
-  <data name="tabPageProtocol.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>Image classification</value>
   </data>
   <data name="tabPageProtocol.Text" xml:space="preserve">
-    <value>Protokoll</value>
-  </data>
-  <data name="&gt;&gt;tabPageProtocol.Name" xml:space="preserve">
-    <value>tabPageProtocol</value>
-  </data>
-  <data name="&gt;&gt;tabPageProtocol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageProtocol.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageProtocol.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>998, 568</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="openFileDialogSettingsIpedExePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>109, 14</value>
-  </metadata>
-  <data name="openFileDialogSettingsIpedExePath.Filter" xml:space="preserve">
-    <value>IPED|iped.exe</value>
-  </data>
-  <metadata name="folderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>354, 17</value>
-  </metadata>
-  <metadata name="openFileDialogSettingsHashesDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>506, 17</value>
-  </metadata>
-  <data name="openFileDialogSettingsHashesDB.Filter" xml:space="preserve">
-    <value>IPED Hash Datenbankl|iped-hashes.db</value>
-  </data>
-  <metadata name="openFileDialogAudioTranslationServiceProgram.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>721, 16</value>
-  </metadata>
-  <data name="openFileDialogAudioTranslationServiceProgram.Filter" xml:space="preserve">
-    <value>Audiotranskription Dienstprogramml|background-media-translator.py</value>
-  </data>
-  <metadata name="openFileDialogImageClassificationServiceProgram.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1026, 18</value>
-  </metadata>
-  <data name="openFileDialogImageClassificationServiceProgram.Filter" xml:space="preserve">
-    <value>Bildklassifizierung Dienstprogramml|image-classificator.py</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 578</value>
+    <value>Protocol</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4960,53 +2801,5 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
-  </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>IPED GUI</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogSettingsIpedExePath.Name" xml:space="preserve">
-    <value>openFileDialogSettingsIpedExePath</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogSettingsIpedExePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;folderBrowserDialog.Name" xml:space="preserve">
-    <value>folderBrowserDialog</value>
-  </data>
-  <data name="&gt;&gt;folderBrowserDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogSettingsHashesDB.Name" xml:space="preserve">
-    <value>openFileDialogSettingsHashesDB</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogSettingsHashesDB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogAudioTranslationServiceProgram.Name" xml:space="preserve">
-    <value>openFileDialogAudioTranslationServiceProgram</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogAudioTranslationServiceProgram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogImageClassificationServiceProgram.Name" xml:space="preserve">
-    <value>openFileDialogImageClassificationServiceProgram</value>
-  </data>
-  <data name="&gt;&gt;openFileDialogImageClassificationServiceProgram.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

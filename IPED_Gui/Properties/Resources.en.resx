@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="WarningEnterOutputDirectory" xml:space="preserve">
-    <value>Bitte geben Sie ein Ausgabeverzeichnis an!</value>
+    <value>Please enter an output directory.</value>
   </data>
   <data name="WarningMissingOutputDirectory" xml:space="preserve">
-    <value>Das Ausgabeverzeichnis existiert nicht (mehr). Bitte wählen Sie ein existierendes Verzeichnis!</value>
+    <value>The selected output directory does not exist (anymore).</value>
   </data>
   <data name="WarningOutputDirectoryNotEmpty" xml:space="preserve">
-    <value>Das Ausgabeverzeichnis ist nicht leer. Soll das bestehende Projekt erweitert oder ein vorher abgebrochener Vorgang fortgesetzt werden?</value>
+    <value>The output directory is not empty.</value>
   </data>
 </root>
