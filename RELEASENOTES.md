@@ -1,3 +1,7 @@
+# 1.5
+- Fehlerhafte Tooltips entfernt
+- Funktion zur Graphengenerierung implementiert
+
 # 1.4
 - Funktion zum Aktivieren und Deaktivieren von Datei-Carving implementiert
 - Funktion zur Analyse von unbenutzten Speicherbereichen implementiert

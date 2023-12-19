@@ -97,6 +97,7 @@
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
+            checkBoxSettingsEnableGraphGeneration = new CheckBox();
             label10 = new Label();
             textBoxSettingsPluginFolder = new TextBox();
             label9 = new Label();
@@ -903,6 +904,7 @@
             // 
             // tabPageSettings
             // 
+            tabPageSettings.Controls.Add(checkBoxSettingsEnableGraphGeneration);
             tabPageSettings.Controls.Add(checkBoxSettingsEnableFaceRecognition);
             tabPageSettings.Controls.Add(checkBoxFileSystemConfigAddUnallocated);
             tabPageSettings.Controls.Add(checkBoxSettingsEnableCarving);
@@ -931,6 +933,17 @@
             tabPageSettings.TabIndex = 10;
             tabPageSettings.Text = "Einstellungen";
             tabPageSettings.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSettingsEnableGraphGeneration
+            // 
+            checkBoxSettingsEnableGraphGeneration.AutoSize = true;
+            checkBoxSettingsEnableGraphGeneration.Location = new Point(250, 342);
+            checkBoxSettingsEnableGraphGeneration.Name = "checkBoxSettingsEnableGraphGeneration";
+            checkBoxSettingsEnableGraphGeneration.Size = new Size(189, 19);
+            checkBoxSettingsEnableGraphGeneration.TabIndex = 29;
+            checkBoxSettingsEnableGraphGeneration.Text = "Beziehungsgraphen generieren";
+            checkBoxSettingsEnableGraphGeneration.UseVisualStyleBackColor = true;
+            checkBoxSettingsEnableGraphGeneration.CheckedChanged += checkBoxSettingsEnableGraphGeneration_CheckedChanged;
             // 
             // label10
             // 
@@ -1261,5 +1274,6 @@
         private CheckBox checkBoxFileSystemConfigAddUnallocated;
         private CheckBox checkBoxSettingsEnableCarving;
         private CheckBox checkBoxSettingsEnableFaceRecognition;
+        private CheckBox checkBoxSettingsEnableGraphGeneration;
     }
 }

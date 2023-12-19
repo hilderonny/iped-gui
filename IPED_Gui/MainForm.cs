@@ -98,7 +98,7 @@ namespace IPED_Gui_WinForms
                 "enableAutomaticExportFiles = true",
                 "enableLanguageDetect = true",
                 "enableNamedEntityRecogniton = false",
-                "enableGraphGeneration = true",
+                "enableGraphGeneration = " + (settings.SettingsEnableGraphGeneration ? "true" : "false"),
                 "entropyTest = true",
                 "indexFileContents = true",
                 "enableIndexToElasticSearch = false",
@@ -193,6 +193,7 @@ namespace IPED_Gui_WinForms
             checkBoxSettingsEnableCarving.Checked = settings.SettingsEnableCarving;
             checkBoxFileSystemConfigAddUnallocated.Checked = settings.FileSystemConfigAddUnallocated;
             checkBoxSettingsEnableFaceRecognition.Checked = settings.SettingsEnableFaceRecognition;
+            checkBoxSettingsEnableGraphGeneration.Checked = settings.SettingsEnableGraphGeneration;
 
             // Audioübersetzung
             checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
@@ -773,6 +774,13 @@ namespace IPED_Gui_WinForms
         {
             Settings settings = Settings.Default;
             settings.SettingsEnableFaceRecognition = checkBoxSettingsEnableFaceRecognition.Checked;
+            settings.Save();
+        }
+
+        private void checkBoxSettingsEnableGraphGeneration_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.SettingsEnableGraphGeneration = checkBoxSettingsEnableGraphGeneration.Checked;
             settings.Save();
         }
     }

@@ -418,5 +418,17 @@ namespace IPED_Gui_WinForms.Properties {
                 this["SettingsEnableFaceRecognition"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SettingsEnableGraphGeneration {
+            get {
+                return ((bool)(this["SettingsEnableGraphGeneration"]));
+            }
+            set {
+                this["SettingsEnableGraphGeneration"] = value;
+            }
+        }
     }
 }
