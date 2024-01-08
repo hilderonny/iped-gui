@@ -430,5 +430,17 @@ namespace IPED_Gui_WinForms.Properties {
                 this["SettingsEnableGraphGeneration"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string AudioTranslationMaxVideoLength {
+            get {
+                return ((string)(this["AudioTranslationMaxVideoLength"]));
+            }
+            set {
+                this["AudioTranslationMaxVideoLength"] = value;
+            }
+        }
     }
 }

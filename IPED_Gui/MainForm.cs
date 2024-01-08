@@ -98,7 +98,7 @@ namespace IPED_Gui_WinForms
                 "enableAutomaticExportFiles = true",
                 "enableLanguageDetect = true",
                 "enableNamedEntityRecogniton = false",
-                "enableGraphGeneration = " + (settings.SettingsEnableGraphGeneration ? "true" : "false"),
+                "enableGraphGeneration = true",
                 "entropyTest = true",
                 "indexFileContents = true",
                 "enableIndexToElasticSearch = false",
@@ -139,7 +139,8 @@ namespace IPED_Gui_WinForms
             return string.Join("\n", new List<string> {
                 "inputDirectory = " + settings.AudioTranslationInputDirectory,
                 "outputDirectory = " + settings.AudioTranslationOutputDirectory,
-                "processVideo = " + (settings.AudioTranslationProcessVideo ? "true" : "false")
+                "processVideo = " + (settings.AudioTranslationProcessVideo ? "true" : "false"),
+                "maxVideoLength = " + settings.AudioTranslationMaxVideoLength,
             });
         }
 
@@ -193,7 +194,6 @@ namespace IPED_Gui_WinForms
             checkBoxSettingsEnableCarving.Checked = settings.SettingsEnableCarving;
             checkBoxFileSystemConfigAddUnallocated.Checked = settings.FileSystemConfigAddUnallocated;
             checkBoxSettingsEnableFaceRecognition.Checked = settings.SettingsEnableFaceRecognition;
-            checkBoxSettingsEnableGraphGeneration.Checked = settings.SettingsEnableGraphGeneration;
 
             // Audioübersetzung
             checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
@@ -206,6 +206,7 @@ namespace IPED_Gui_WinForms
             textBoxAudioTranslationArgosTranslateDirectory.Text = settings.AudioTranslationArgosTranslateDirectory;
             comboBoxAudioTranslationModelSize.SelectedIndex = comboBoxAudioTranslationModelSize.FindStringExact(settings.AudioTranslationModelSize);
             checkBoxAudioTranslationUseGPU.Checked = settings.AudioTranslationUseGPU;
+            textBoxAudioTranslationMaxVideoLength.Text = settings.AudioTranslationMaxVideoLength;
 
             // Bildklassifizierung
             checkBoxIPEDConfigEnableImageClassification.Checked = settings.IPEDConfigEnableImageClassification;
@@ -777,10 +778,10 @@ namespace IPED_Gui_WinForms
             settings.Save();
         }
 
-        private void checkBoxSettingsEnableGraphGeneration_CheckedChanged(object sender, EventArgs e)
+        private void textBoxAudioTranslationMaxVideoLength_TextChanged(object sender, EventArgs e)
         {
             Settings settings = Settings.Default;
-            settings.SettingsEnableGraphGeneration = checkBoxSettingsEnableGraphGeneration.Checked;
+            settings.AudioTranslationMaxVideoLength = textBoxAudioTranslationMaxVideoLength.Text;
             settings.Save();
         }
     }
