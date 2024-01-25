@@ -5,48 +5,6 @@ namespace IPED_Gui_WinForms.Helper
     internal class ConfigHelper
     {
 
-        private static string CreateIPEDConfig()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "enableHash = true",
-                "enablePhotoDNA = false",
-                "enableHashDBLookup = true",
-                "enablePhotoDNALookup = false",
-                "enableLedDie = true",
-                "enableYahooNSFWDetection = false",
-                "enableQRCode = true",
-                "ignoreDuplicates = false",
-                "exportFileProps = false",
-                "processFileSignatures = true",
-                "enableFileParsing = true",
-                "expandContainers = true",
-                "processEmbeddedDisks = true",
-                "enableRegexSearch = true",
-                "enableAutomaticExportFiles = true",
-                "enableLanguageDetect = true",
-                "enableNamedEntityRecogniton = false",
-                "enableGraphGeneration = " + (settings.SettingsEnableGraphGeneration ? "true" : "false"),
-                "entropyTest = true",
-                "indexFileContents = true",
-                "enableIndexToElasticSearch = false",
-                "enableMinIO = false",
-                "enableAudioTranscription = false",
-                "enableCarving = " + (settings.SettingsEnableCarving ? "true" : "false"),
-                "enableLedCarving = false",
-                "enableKnownMetCarving = false",
-                "enableImageThumbs = true",
-                "enableImageSimilarity = true",
-                "enableFaceRecognition = " + (settings.SettingsEnableFaceRecognition ? "true" : "false"),
-                "enableVideoThumbs = true",
-                "enableDocThumbs = true",
-                "enableHTMLReport = true",
-                "enableAudioTranslation = " + (settings.IPEDConfigEnableAudioTranslation ? "true" : "false"),
-                "enableTextTranslation = false",
-                "enableImageClassification = " + (settings.IPEDConfigEnableImageClassification ? "true" : "false")
-            });
-        }
-
         private static string CreateLocalConfig()
         {
             Settings settings = Settings.Default;
@@ -88,7 +46,6 @@ namespace IPED_Gui_WinForms.Helper
             var confDirectory = Path.Join(profileDirectory, "conf");
             Directory.CreateDirectory(confDirectory);
 
-            File.WriteAllText(Path.Join(profileDirectory, "IPEDConfig.txt"), CreateIPEDConfig());
             File.WriteAllText(Path.Join(profileDirectory, "LocalConfig.txt"), CreateLocalConfig());
 
             File.WriteAllText(Path.Join(confDirectory, "AudioTranslation.txt"), CreateAudioTranslationTxt());

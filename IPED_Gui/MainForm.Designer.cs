@@ -91,12 +91,9 @@
             checkBoxAudioTranslationProcessVideos = new CheckBox();
             checkBoxIPEDConfigEnableAudioTranslation = new CheckBox();
             checkBoxIPEDConfigEnableImageClassification = new CheckBox();
-            checkBoxSettingsEnableCarving = new CheckBox();
-            checkBoxSettingsEnableFaceRecognition = new CheckBox();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
-            checkBoxSettingsEnableGraphGeneration = new CheckBox();
             label10 = new Label();
             textBoxSettingsPluginFolder = new TextBox();
             label9 = new Label();
@@ -111,6 +108,7 @@
             comboBoxSettingsLocale = new ComboBox();
             textBoxSettingsIpedExePath = new TextBox();
             label5 = new Label();
+            tabPageIPEDConfig = new TabPage();
             tabPageFileSystem = new TabPage();
             tabPageAudioTranslation = new TabPage();
             textBoxAudioTranslationOutputDirectory = new TextBox();
@@ -844,32 +842,11 @@
             checkBoxIPEDConfigEnableImageClassification.UseVisualStyleBackColor = true;
             checkBoxIPEDConfigEnableImageClassification.CheckedChanged += checkBoxIPEDConfigEnableImageClassification_CheckedChanged;
             // 
-            // checkBoxSettingsEnableCarving
-            // 
-            checkBoxSettingsEnableCarving.AutoSize = true;
-            checkBoxSettingsEnableCarving.Location = new Point(250, 267);
-            checkBoxSettingsEnableCarving.Name = "checkBoxSettingsEnableCarving";
-            checkBoxSettingsEnableCarving.Size = new Size(121, 19);
-            checkBoxSettingsEnableCarving.TabIndex = 26;
-            checkBoxSettingsEnableCarving.Text = "Carving aktivieren";
-            checkBoxSettingsEnableCarving.UseVisualStyleBackColor = true;
-            checkBoxSettingsEnableCarving.CheckedChanged += checkBoxSettingsEnableCarving_CheckedChanged;
-            // 
-            // checkBoxSettingsEnableFaceRecognition
-            // 
-            checkBoxSettingsEnableFaceRecognition.AutoSize = true;
-            checkBoxSettingsEnableFaceRecognition.Location = new Point(250, 317);
-            checkBoxSettingsEnableFaceRecognition.Name = "checkBoxSettingsEnableFaceRecognition";
-            checkBoxSettingsEnableFaceRecognition.Size = new Size(180, 19);
-            checkBoxSettingsEnableFaceRecognition.TabIndex = 28;
-            checkBoxSettingsEnableFaceRecognition.Text = "Gesichtserkennung in Bildern";
-            checkBoxSettingsEnableFaceRecognition.UseVisualStyleBackColor = true;
-            checkBoxSettingsEnableFaceRecognition.CheckedChanged += checkBoxSettingsEnableFaceRecognition_CheckedChanged;
-            // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPageOverview);
             tabControl1.Controls.Add(tabPageSettings);
+            tabControl1.Controls.Add(tabPageIPEDConfig);
             tabControl1.Controls.Add(tabPageFileSystem);
             tabControl1.Controls.Add(tabPageAudioTranslation);
             tabControl1.Controls.Add(tabPageImageClassification);
@@ -894,9 +871,6 @@
             // 
             // tabPageSettings
             // 
-            tabPageSettings.Controls.Add(checkBoxSettingsEnableGraphGeneration);
-            tabPageSettings.Controls.Add(checkBoxSettingsEnableFaceRecognition);
-            tabPageSettings.Controls.Add(checkBoxSettingsEnableCarving);
             tabPageSettings.Controls.Add(label10);
             tabPageSettings.Controls.Add(buttonSettingsPluginFolder);
             tabPageSettings.Controls.Add(textBoxSettingsPluginFolder);
@@ -922,17 +896,6 @@
             tabPageSettings.TabIndex = 10;
             tabPageSettings.Text = "Einstellungen";
             tabPageSettings.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxSettingsEnableGraphGeneration
-            // 
-            checkBoxSettingsEnableGraphGeneration.AutoSize = true;
-            checkBoxSettingsEnableGraphGeneration.Location = new Point(250, 342);
-            checkBoxSettingsEnableGraphGeneration.Name = "checkBoxSettingsEnableGraphGeneration";
-            checkBoxSettingsEnableGraphGeneration.Size = new Size(189, 19);
-            checkBoxSettingsEnableGraphGeneration.TabIndex = 29;
-            checkBoxSettingsEnableGraphGeneration.Text = "Beziehungsgraphen generieren";
-            checkBoxSettingsEnableGraphGeneration.UseVisualStyleBackColor = true;
-            checkBoxSettingsEnableGraphGeneration.CheckedChanged += checkBoxSettingsEnableGraphGeneration_CheckedChanged;
             // 
             // label10
             // 
@@ -1059,6 +1022,15 @@
             label5.Size = new Size(93, 15);
             label5.TabIndex = 0;
             label5.Text = "Pfad zu iped.exe";
+            // 
+            // tabPageIPEDConfig
+            // 
+            tabPageIPEDConfig.Location = new Point(4, 24);
+            tabPageIPEDConfig.Name = "tabPageIPEDConfig";
+            tabPageIPEDConfig.Size = new Size(990, 540);
+            tabPageIPEDConfig.TabIndex = 12;
+            tabPageIPEDConfig.Text = "Funktionen";
+            tabPageIPEDConfig.UseVisualStyleBackColor = true;
             // 
             // tabPageFileSystem
             // 
@@ -1267,9 +1239,7 @@
         private TextBox textBoxImageClassificationProcessingDirectory;
         private TextBox textBoxImageClassificationServiceProgram;
         private OpenFileDialog openFileDialogImageClassificationServiceProgram;
-        private CheckBox checkBoxSettingsEnableCarving;
-        private CheckBox checkBoxSettingsEnableFaceRecognition;
-        private CheckBox checkBoxSettingsEnableGraphGeneration;
         private TabPage tabPageFileSystem;
+        private TabPage tabPageIPEDConfig;
     }
 }

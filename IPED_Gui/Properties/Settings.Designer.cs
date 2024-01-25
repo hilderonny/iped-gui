@@ -386,48 +386,12 @@ namespace IPED_Gui_WinForms.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SettingsEnableCarving {
-            get {
-                return ((bool)(this["SettingsEnableCarving"]));
-            }
-            set {
-                this["SettingsEnableCarving"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool FileSystemConfigAddUnallocated {
             get {
                 return ((bool)(this["FileSystemConfigAddUnallocated"]));
             }
             set {
                 this["FileSystemConfigAddUnallocated"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SettingsEnableFaceRecognition {
-            get {
-                return ((bool)(this["SettingsEnableFaceRecognition"]));
-            }
-            set {
-                this["SettingsEnableFaceRecognition"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SettingsEnableGraphGeneration {
-            get {
-                return ((bool)(this["SettingsEnableGraphGeneration"]));
-            }
-            set {
-                this["SettingsEnableGraphGeneration"] = value;
             }
         }
         
@@ -512,6 +476,402 @@ namespace IPED_Gui_WinForms.Properties {
             }
             set {
                 this["FileSystemConfigSkipFolderRegex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableHash {
+            get {
+                return ((bool)(this["IPEDConfigEnableHash"]));
+            }
+            set {
+                this["IPEDConfigEnableHash"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnablePhotoDNA {
+            get {
+                return ((bool)(this["IPEDConfigEnablePhotoDNA"]));
+            }
+            set {
+                this["IPEDConfigEnablePhotoDNA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableHashDBLookup {
+            get {
+                return ((bool)(this["IPEDConfigEnableHashDBLookup"]));
+            }
+            set {
+                this["IPEDConfigEnableHashDBLookup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnablePhotoDNALookup {
+            get {
+                return ((bool)(this["IPEDConfigEnablePhotoDNALookup"]));
+            }
+            set {
+                this["IPEDConfigEnablePhotoDNALookup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableLedDie {
+            get {
+                return ((bool)(this["IPEDConfigEnableLedDie"]));
+            }
+            set {
+                this["IPEDConfigEnableLedDie"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEenableYahooNSFWDetection {
+            get {
+                return ((bool)(this["IPEDConfigEenableYahooNSFWDetection"]));
+            }
+            set {
+                this["IPEDConfigEenableYahooNSFWDetection"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableQRCode {
+            get {
+                return ((bool)(this["IPEDConfigEnableQRCode"]));
+            }
+            set {
+                this["IPEDConfigEnableQRCode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigIgnoreDuplicates {
+            get {
+                return ((bool)(this["IPEDConfigIgnoreDuplicates"]));
+            }
+            set {
+                this["IPEDConfigIgnoreDuplicates"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigExportFileProps {
+            get {
+                return ((bool)(this["IPEDConfigExportFileProps"]));
+            }
+            set {
+                this["IPEDConfigExportFileProps"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigProcessFileSignatures {
+            get {
+                return ((bool)(this["IPEDConfigProcessFileSignatures"]));
+            }
+            set {
+                this["IPEDConfigProcessFileSignatures"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableFileParsing {
+            get {
+                return ((bool)(this["IPEDConfigEnableFileParsing"]));
+            }
+            set {
+                this["IPEDConfigEnableFileParsing"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigExpandContainers {
+            get {
+                return ((bool)(this["IPEDConfigExpandContainers"]));
+            }
+            set {
+                this["IPEDConfigExpandContainers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigProcessEmbeddedDisks {
+            get {
+                return ((bool)(this["IPEDConfigProcessEmbeddedDisks"]));
+            }
+            set {
+                this["IPEDConfigProcessEmbeddedDisks"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableRegexSearch {
+            get {
+                return ((bool)(this["IPEDConfigEnableRegexSearch"]));
+            }
+            set {
+                this["IPEDConfigEnableRegexSearch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableAutomaticExportFiles {
+            get {
+                return ((bool)(this["IPEDConfigEnableAutomaticExportFiles"]));
+            }
+            set {
+                this["IPEDConfigEnableAutomaticExportFiles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableLanguageDetect {
+            get {
+                return ((bool)(this["IPEDConfigEnableLanguageDetect"]));
+            }
+            set {
+                this["IPEDConfigEnableLanguageDetect"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnableNamedEntityRecogniton {
+            get {
+                return ((bool)(this["IPEDConfigEnableNamedEntityRecogniton"]));
+            }
+            set {
+                this["IPEDConfigEnableNamedEntityRecogniton"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableGraphGeneration {
+            get {
+                return ((bool)(this["IPEDConfigEnableGraphGeneration"]));
+            }
+            set {
+                this["IPEDConfigEnableGraphGeneration"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEntropyTest {
+            get {
+                return ((bool)(this["IPEDConfigEntropyTest"]));
+            }
+            set {
+                this["IPEDConfigEntropyTest"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigIndexFileContents {
+            get {
+                return ((bool)(this["IPEDConfigIndexFileContents"]));
+            }
+            set {
+                this["IPEDConfigIndexFileContents"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnableIndexToElasticSearch {
+            get {
+                return ((bool)(this["IPEDConfigEnableIndexToElasticSearch"]));
+            }
+            set {
+                this["IPEDConfigEnableIndexToElasticSearch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnableMinIO {
+            get {
+                return ((bool)(this["IPEDConfigEnableMinIO"]));
+            }
+            set {
+                this["IPEDConfigEnableMinIO"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnableAudioTranscription {
+            get {
+                return ((bool)(this["IPEDConfigEnableAudioTranscription"]));
+            }
+            set {
+                this["IPEDConfigEnableAudioTranscription"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableCarving {
+            get {
+                return ((bool)(this["IPEDConfigEnableCarving"]));
+            }
+            set {
+                this["IPEDConfigEnableCarving"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnableLedCarving {
+            get {
+                return ((bool)(this["IPEDConfigEnableLedCarving"]));
+            }
+            set {
+                this["IPEDConfigEnableLedCarving"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnableKnownMetCarving {
+            get {
+                return ((bool)(this["IPEDConfigEnableKnownMetCarving"]));
+            }
+            set {
+                this["IPEDConfigEnableKnownMetCarving"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableImageThumbs {
+            get {
+                return ((bool)(this["IPEDConfigEnableImageThumbs"]));
+            }
+            set {
+                this["IPEDConfigEnableImageThumbs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableImageSimilarity {
+            get {
+                return ((bool)(this["IPEDConfigEnableImageSimilarity"]));
+            }
+            set {
+                this["IPEDConfigEnableImageSimilarity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableFaceRecognition {
+            get {
+                return ((bool)(this["IPEDConfigEnableFaceRecognition"]));
+            }
+            set {
+                this["IPEDConfigEnableFaceRecognition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableVideoThumbs {
+            get {
+                return ((bool)(this["IPEDConfigEnableVideoThumbs"]));
+            }
+            set {
+                this["IPEDConfigEnableVideoThumbs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableDocThumbs {
+            get {
+                return ((bool)(this["IPEDConfigEnableDocThumbs"]));
+            }
+            set {
+                this["IPEDConfigEnableDocThumbs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IPEDConfigEnableHTMLReport {
+            get {
+                return ((bool)(this["IPEDConfigEnableHTMLReport"]));
+            }
+            set {
+                this["IPEDConfigEnableHTMLReport"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IPEDConfigEnableTextTranslation {
+            get {
+                return ((bool)(this["IPEDConfigEnableTextTranslation"]));
+            }
+            set {
+                this["IPEDConfigEnableTextTranslation"] = value;
             }
         }
     }

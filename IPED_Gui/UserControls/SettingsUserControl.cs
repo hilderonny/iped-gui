@@ -48,6 +48,7 @@ namespace IPED_Gui_WinForms.UserControls
                     textBox.TextChanged += (object? sender, EventArgs e) =>
                     {
                         Settings.Default[configElement.SettingsName] = "" + textBox.Text;
+                        Settings.Default.Save();
                     };
                     horizontalFlowLayoutPanel.Controls.Add(textBox);
                 }
@@ -57,6 +58,7 @@ namespace IPED_Gui_WinForms.UserControls
                     checkBox.CheckedChanged += (object? sender, EventArgs e) =>
                     {
                         Settings.Default[configElement.SettingsName] = checkBox.Checked;
+                        Settings.Default.Save();
                     };
                     horizontalFlowLayoutPanel.Controls.Add(checkBox);
                 }

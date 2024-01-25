@@ -24,6 +24,7 @@ namespace IPED_Gui_WinForms
             synchronizationContext = SynchronizationContext.Current;
             InitializeComponent();
 
+            tabPageIPEDConfig.Controls.Add(new SettingsUserControl(ConfigType.IPEDConfig));
             tabPageFileSystem.Controls.Add(new SettingsUserControl(ConfigType.FileSystemConfig));
 
             LoadSettings();
@@ -102,9 +103,6 @@ namespace IPED_Gui_WinForms
             textBoxSettingsNumThreads.Text = settings.SettingsNumThreads;
             textBoxSettingsHashesDB.Text = settings.SettingsHashesDB;
             textBoxSettingsPluginFolder.Text = settings.SettingsPluginFolder;
-            checkBoxSettingsEnableCarving.Checked = settings.SettingsEnableCarving;
-            checkBoxSettingsEnableFaceRecognition.Checked = settings.SettingsEnableFaceRecognition;
-            checkBoxSettingsEnableGraphGeneration.Checked = settings.SettingsEnableGraphGeneration;
 
             // Audioübersetzung
             checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
@@ -654,27 +652,6 @@ namespace IPED_Gui_WinForms
             };
             process.Start();
             tabControl1.SelectedTab = tabPageProtocol;
-        }
-
-        private void checkBoxSettingsEnableCarving_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsEnableCarving = checkBoxSettingsEnableCarving.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxSettingsEnableFaceRecognition_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsEnableFaceRecognition = checkBoxSettingsEnableFaceRecognition.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxSettingsEnableGraphGeneration_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsEnableGraphGeneration = checkBoxSettingsEnableGraphGeneration.Checked;
-            settings.Save();
         }
     }
 }
