@@ -1,3 +1,4 @@
+using IPED_Gui_WinForms.Helper;
 using IPED_Gui_WinForms.Properties;
 using System;
 using System.Diagnostics;
@@ -72,99 +73,6 @@ namespace IPED_Gui_WinForms
             }
             argumentParts.Add("-o \"" + settings.General_Output_Directory + "\"");
             return string.Join(" ", argumentParts);
-        }
-
-        /// <summary>
-        /// Erstellt den Inhalt der IPEDConfig.txt - Datei anhand der Einstellungen und gibt diesen als Zeichenkette zurück
-        /// </summary>
-        private static string CreateIPEDConfig()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "enableHash = true",
-                "enablePhotoDNA = false",
-                "enableHashDBLookup = true",
-                "enablePhotoDNALookup = false",
-                "enableLedDie = true",
-                "enableYahooNSFWDetection = false",
-                "enableQRCode = true",
-                "ignoreDuplicates = false",
-                "exportFileProps = false",
-                "processFileSignatures = true",
-                "enableFileParsing = true",
-                "expandContainers = true",
-                "processEmbeddedDisks = true",
-                "enableRegexSearch = true",
-                "enableAutomaticExportFiles = true",
-                "enableLanguageDetect = true",
-                "enableNamedEntityRecogniton = false",
-                "enableGraphGeneration = " + (settings.SettingsEnableGraphGeneration ? "true" : "false"),
-                "entropyTest = true",
-                "indexFileContents = true",
-                "enableIndexToElasticSearch = false",
-                "enableMinIO = false",
-                "enableAudioTranscription = false",
-                "enableCarving = " + (settings.SettingsEnableCarving ? "true" : "false"),
-                "enableLedCarving = false",
-                "enableKnownMetCarving = false",
-                "enableImageThumbs = true",
-                "enableImageSimilarity = true",
-                "enableFaceRecognition = " + (settings.SettingsEnableFaceRecognition ? "true" : "false"),
-                "enableVideoThumbs = true",
-                "enableDocThumbs = true",
-                "enableHTMLReport = true",
-                "enableAudioTranslation = " + (settings.IPEDConfigEnableAudioTranslation ? "true" : "false"),
-                "enableTextTranslation = false",
-                "enableImageClassification = " + (settings.IPEDConfigEnableImageClassification ? "true" : "false")
-            });
-        }
-
-        private static string CreateLocalConfig()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "locale = " + settings.SettingsLocale,
-                "indexTemp = " + settings.SettingsIndexTemp.Replace("\\", "/"),
-                "indexTempOnSSD = " + (settings.SettingsIndexTempOnSSD ? "true" : "false"),
-                "outputOnSSD = " + (settings.SettingsOutputOnSSD ? "true" : "false"),
-                "numThreads = " + settings.SettingsNumThreads,
-                "hashesDB = " + settings.SettingsHashesDB.Replace("\\", "/"),
-                "pluginFolder = " + Path.GetRelativePath(Path.GetDirectoryName(settings.SettingsIpedExePath) ?? "", settings.SettingsPluginFolder).Replace("\\", "/")
-            });
-        }
-
-        private static string CreateAudioTranslationTxt()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "inputDirectory = " + settings.AudioTranslationInputDirectory,
-                "outputDirectory = " + settings.AudioTranslationOutputDirectory,
-                "processVideo = " + (settings.AudioTranslationProcessVideo ? "true" : "false")
-            });
-        }
-
-        private static string CreateImageClassificationTxt()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "inputDirectory = " + settings.ImageClassificationInputDirectory,
-                "outputDirectory = " + settings.ImageClassificationOutputDirectory
-            });
-        }
-
-        private static string CreateFileSystemConfigTxt()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "robustImageReading = false",
-                "numImageReaders = auto",
-                "addUnallocated = " + (settings.FileSystemConfigAddUnallocated ? "true" : "false"),
-                "addFileSlacks = false",
-                "minOrphanSizeToIgnore = -1",
-                "unallocatedFragSize = 1073741824",
-                "ignoreHardLinks = true",
-                "skipFolderRegex ="
-            });
         }
 
         /// <summary>
@@ -363,24 +271,9 @@ namespace IPED_Gui_WinForms
         private void button_Starten_Click(object sender, EventArgs e)
         {
             var profileName = "ipedgui";
-            Settings settings = Settings.Default;
+            ConfigHelper.WriteProfileToDisk(profileName);
 
-            var ipedDirectory = Path.GetDirectoryName(settings.SettingsIpedExePath);
-            var profileDirectory = Path.Join(ipedDirectory, "profiles", profileName);
-            var confDirectory = Path.Join(profileDirectory, "conf");
-            Directory.CreateDirectory(confDirectory);
-            // IPEDConfig.txt
-            File.WriteAllText(Path.Join(profileDirectory, "IPEDConfig.txt"), CreateIPEDConfig());
-            // LocalConfig.tyt
-            File.WriteAllText(Path.Join(profileDirectory, "LocalConfig.txt"), CreateLocalConfig());
-            // conf/AudioTranslation.txt
-            File.WriteAllText(Path.Join(confDirectory, "AudioTranslation.txt"), CreateAudioTranslationTxt());
-            // conf/ImageClassification.txt
-            File.WriteAllText(Path.Join(confDirectory, "ImageClassification.txt"), CreateImageClassificationTxt());
-            // conf/FileSystemConfig.txt
-            File.WriteAllText(Path.Join(confDirectory, "FileSystemConfig.txt"), CreateFileSystemConfigTxt());
-
-            string ipedCommand = settings.SettingsIpedExePath;
+            string ipedCommand = Settings.Default.SettingsIpedExePath;
             string ipedArguments = CreateIpedArguments(profileName);
             textBoxConsole.Clear();
             WriteToConsole(ipedCommand + " " + ipedArguments + "\n");
