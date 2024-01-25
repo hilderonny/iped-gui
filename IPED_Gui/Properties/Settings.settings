@@ -113,10 +113,10 @@
     <Setting Name="FileSystemConfigAddFileSlacks" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FileSystemConfigMinOrphanSizeToIgnore" Type="System.Int32" Scope="User">
+    <Setting Name="FileSystemConfigMinOrphanSizeToIgnore" Type="System.String" Scope="User">
       <Value Profile="(Default)">-1</Value>
     </Setting>
-    <Setting Name="FileSystemConfigUnallocatedFragSize" Type="System.Int32" Scope="User">
+    <Setting Name="FileSystemConfigUnallocatedFragSize" Type="System.String" Scope="User">
       <Value Profile="(Default)">1073741824</Value>
     </Setting>
     <Setting Name="FileSystemConfigIgnoreHardLinks" Type="System.Boolean" Scope="User">

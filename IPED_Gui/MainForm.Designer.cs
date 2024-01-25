@@ -92,7 +92,6 @@
             checkBoxIPEDConfigEnableAudioTranslation = new CheckBox();
             checkBoxIPEDConfigEnableImageClassification = new CheckBox();
             checkBoxSettingsEnableCarving = new CheckBox();
-            checkBoxFileSystemConfigAddUnallocated = new CheckBox();
             checkBoxSettingsEnableFaceRecognition = new CheckBox();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
@@ -112,6 +111,7 @@
             comboBoxSettingsLocale = new ComboBox();
             textBoxSettingsIpedExePath = new TextBox();
             label5 = new Label();
+            tabPageFileSystem = new TabPage();
             tabPageAudioTranslation = new TabPage();
             textBoxAudioTranslationOutputDirectory = new TextBox();
             textBoxAudioTranslationInputDirectory = new TextBox();
@@ -855,17 +855,6 @@
             checkBoxSettingsEnableCarving.UseVisualStyleBackColor = true;
             checkBoxSettingsEnableCarving.CheckedChanged += checkBoxSettingsEnableCarving_CheckedChanged;
             // 
-            // checkBoxFileSystemConfigAddUnallocated
-            // 
-            checkBoxFileSystemConfigAddUnallocated.AutoSize = true;
-            checkBoxFileSystemConfigAddUnallocated.Location = new Point(250, 292);
-            checkBoxFileSystemConfigAddUnallocated.Name = "checkBoxFileSystemConfigAddUnallocated";
-            checkBoxFileSystemConfigAddUnallocated.Size = new Size(253, 19);
-            checkBoxFileSystemConfigAddUnallocated.TabIndex = 27;
-            checkBoxFileSystemConfigAddUnallocated.Text = "Unbenutzten Speicherbereich durchsuchen";
-            checkBoxFileSystemConfigAddUnallocated.UseVisualStyleBackColor = true;
-            checkBoxFileSystemConfigAddUnallocated.CheckedChanged += checkBoxFileSystemConfigAddUnallocated_CheckedChanged;
-            // 
             // checkBoxSettingsEnableFaceRecognition
             // 
             checkBoxSettingsEnableFaceRecognition.AutoSize = true;
@@ -881,6 +870,7 @@
             // 
             tabControl1.Controls.Add(tabPageOverview);
             tabControl1.Controls.Add(tabPageSettings);
+            tabControl1.Controls.Add(tabPageFileSystem);
             tabControl1.Controls.Add(tabPageAudioTranslation);
             tabControl1.Controls.Add(tabPageImageClassification);
             tabControl1.Controls.Add(tabPageProtocol);
@@ -906,7 +896,6 @@
             // 
             tabPageSettings.Controls.Add(checkBoxSettingsEnableGraphGeneration);
             tabPageSettings.Controls.Add(checkBoxSettingsEnableFaceRecognition);
-            tabPageSettings.Controls.Add(checkBoxFileSystemConfigAddUnallocated);
             tabPageSettings.Controls.Add(checkBoxSettingsEnableCarving);
             tabPageSettings.Controls.Add(label10);
             tabPageSettings.Controls.Add(buttonSettingsPluginFolder);
@@ -1070,6 +1059,15 @@
             label5.Size = new Size(93, 15);
             label5.TabIndex = 0;
             label5.Text = "Pfad zu iped.exe";
+            // 
+            // tabPageFileSystem
+            // 
+            tabPageFileSystem.Location = new Point(4, 24);
+            tabPageFileSystem.Name = "tabPageFileSystem";
+            tabPageFileSystem.Size = new Size(990, 540);
+            tabPageFileSystem.TabIndex = 11;
+            tabPageFileSystem.Text = "File system";
+            tabPageFileSystem.UseVisualStyleBackColor = true;
             // 
             // tabPageAudioTranslation
             // 
@@ -1247,12 +1245,10 @@
         private FolderBrowserDialog folderBrowserDialog;
         private OpenFileDialog openFileDialogSettingsHashesDB;
         private CheckBox checkBoxIPEDConfigEnableAudioTranslation;
-        private GroupBox groupBox3;
         private Label label13;
         private TextBox textBoxAudioTranslationFasterWhisperDirectory;
         private Label label12;
         private TextBox textBoxAudioTranslationProcessingDirectory;
-        private Label label11;
         private TextBox textBoxAudioTranslationServiceProgram;
         private ComboBox comboBoxAudioTranslationModelSize;
         private Label label15;
@@ -1271,9 +1267,9 @@
         private TextBox textBoxImageClassificationProcessingDirectory;
         private TextBox textBoxImageClassificationServiceProgram;
         private OpenFileDialog openFileDialogImageClassificationServiceProgram;
-        private CheckBox checkBoxFileSystemConfigAddUnallocated;
         private CheckBox checkBoxSettingsEnableCarving;
         private CheckBox checkBoxSettingsEnableFaceRecognition;
         private CheckBox checkBoxSettingsEnableGraphGeneration;
+        private TabPage tabPageFileSystem;
     }
 }

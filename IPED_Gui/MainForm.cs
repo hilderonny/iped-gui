@@ -1,5 +1,6 @@
 using IPED_Gui_WinForms.Helper;
 using IPED_Gui_WinForms.Properties;
+using IPED_Gui_WinForms.UserControls;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -22,6 +23,9 @@ namespace IPED_Gui_WinForms
         {
             synchronizationContext = SynchronizationContext.Current;
             InitializeComponent();
+
+            tabPageFileSystem.Controls.Add(new SettingsUserControl(ConfigType.FileSystemConfig));
+
             LoadSettings();
             CheckForWarning();
 
@@ -99,7 +103,6 @@ namespace IPED_Gui_WinForms
             textBoxSettingsHashesDB.Text = settings.SettingsHashesDB;
             textBoxSettingsPluginFolder.Text = settings.SettingsPluginFolder;
             checkBoxSettingsEnableCarving.Checked = settings.SettingsEnableCarving;
-            checkBoxFileSystemConfigAddUnallocated.Checked = settings.FileSystemConfigAddUnallocated;
             checkBoxSettingsEnableFaceRecognition.Checked = settings.SettingsEnableFaceRecognition;
             checkBoxSettingsEnableGraphGeneration.Checked = settings.SettingsEnableGraphGeneration;
 
@@ -224,8 +227,10 @@ namespace IPED_Gui_WinForms
         /// </summary>
         private void button_GeneralOutputDirectory_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            folderBrowserDialog.InitialDirectory = textBox_Ausgabeverzeichnis.Text;
+            FolderBrowserDialog folderBrowserDialog = new()
+            {
+                InitialDirectory = textBox_Ausgabeverzeichnis.Text
+            };
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 textBox_Ausgabeverzeichnis.Text = folderBrowserDialog.SelectedPath;
@@ -242,8 +247,10 @@ namespace IPED_Gui_WinForms
         /// </summary>
         private void button_DateienHinzufuegen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Multiselect = true;
+            OpenFileDialog fileDialog = new()
+            {
+                Multiselect = true
+            };
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 foreach (string fileName in fileDialog.FileNames)
@@ -308,7 +315,7 @@ namespace IPED_Gui_WinForms
         /// </summary>
         private void button_VerzeichnisHinzufuegen_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            FolderBrowserDialog folderBrowserDialog = new();
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 listBox_Spuren.Items.Add(folderBrowserDialog.SelectedPath);
@@ -653,13 +660,6 @@ namespace IPED_Gui_WinForms
         {
             Settings settings = Settings.Default;
             settings.SettingsEnableCarving = checkBoxSettingsEnableCarving.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxFileSystemConfigAddUnallocated_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.FileSystemConfigAddUnallocated = checkBoxFileSystemConfigAddUnallocated.Checked;
             settings.Save();
         }
 

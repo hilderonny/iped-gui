@@ -1,3 +1,6 @@
+# 1.6
+- Einstellungen für conf/FileSystemConfig.txt hinzugefügt
+
 # 1.5
 - Fehlerhafte Tooltips entfernt
 - Funktion zur Graphengenerierung implementiert

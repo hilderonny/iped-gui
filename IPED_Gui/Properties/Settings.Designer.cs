@@ -470,9 +470,9 @@ namespace IPED_Gui_WinForms.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1")]
-        public int FileSystemConfigMinOrphanSizeToIgnore {
+        public string FileSystemConfigMinOrphanSizeToIgnore {
             get {
-                return ((int)(this["FileSystemConfigMinOrphanSizeToIgnore"]));
+                return ((string)(this["FileSystemConfigMinOrphanSizeToIgnore"]));
             }
             set {
                 this["FileSystemConfigMinOrphanSizeToIgnore"] = value;
@@ -482,9 +482,9 @@ namespace IPED_Gui_WinForms.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1073741824")]
-        public int FileSystemConfigUnallocatedFragSize {
+        public string FileSystemConfigUnallocatedFragSize {
             get {
-                return ((int)(this["FileSystemConfigUnallocatedFragSize"]));
+                return ((string)(this["FileSystemConfigUnallocatedFragSize"]));
             }
             set {
                 this["FileSystemConfigUnallocatedFragSize"] = value;

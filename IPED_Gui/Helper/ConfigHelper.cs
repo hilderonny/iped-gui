@@ -80,21 +80,6 @@ namespace IPED_Gui_WinForms.Helper
             });
         }
 
-        private static string CreateFileSystemConfigTxt()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "robustImageReading = false",
-                "numImageReaders = auto",
-                "addUnallocated = " + (settings.FileSystemConfigAddUnallocated ? "true" : "false"),
-                "addFileSlacks = false",
-                "minOrphanSizeToIgnore = -1",
-                "unallocatedFragSize = 1073741824",
-                "ignoreHardLinks = true",
-                "skipFolderRegex ="
-            });
-        }
-
         internal static void WriteProfileToDisk(string profileName)
         {
             Settings settings = Settings.Default;
@@ -108,7 +93,9 @@ namespace IPED_Gui_WinForms.Helper
 
             File.WriteAllText(Path.Join(confDirectory, "AudioTranslation.txt"), CreateAudioTranslationTxt());
             File.WriteAllText(Path.Join(confDirectory, "ImageClassification.txt"), CreateImageClassificationTxt());
-            File.WriteAllText(Path.Join(confDirectory, "FileSystemConfig.txt"), CreateFileSystemConfigTxt());
+
+            ConfigType.WriteAllToDisk(profileDirectory);
+
         }
 
     }
