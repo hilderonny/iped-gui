@@ -104,5 +104,26 @@
     <Setting Name="SettingsEnableGraphGeneration" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="FileSystemConfigRobustImageReading" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FileSystemConfigNumImageReaders" Type="System.String" Scope="User">
+      <Value Profile="(Default)">auto</Value>
+    </Setting>
+    <Setting Name="FileSystemConfigAddFileSlacks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FileSystemConfigMinOrphanSizeToIgnore" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="FileSystemConfigUnallocatedFragSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1073741824</Value>
+    </Setting>
+    <Setting Name="FileSystemConfigIgnoreHardLinks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FileSystemConfigSkipFolderRegex" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

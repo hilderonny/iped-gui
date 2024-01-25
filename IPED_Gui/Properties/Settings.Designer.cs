@@ -430,5 +430,89 @@ namespace IPED_Gui_WinForms.Properties {
                 this["SettingsEnableGraphGeneration"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FileSystemConfigRobustImageReading {
+            get {
+                return ((bool)(this["FileSystemConfigRobustImageReading"]));
+            }
+            set {
+                this["FileSystemConfigRobustImageReading"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("auto")]
+        public string FileSystemConfigNumImageReaders {
+            get {
+                return ((string)(this["FileSystemConfigNumImageReaders"]));
+            }
+            set {
+                this["FileSystemConfigNumImageReaders"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FileSystemConfigAddFileSlacks {
+            get {
+                return ((bool)(this["FileSystemConfigAddFileSlacks"]));
+            }
+            set {
+                this["FileSystemConfigAddFileSlacks"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int FileSystemConfigMinOrphanSizeToIgnore {
+            get {
+                return ((int)(this["FileSystemConfigMinOrphanSizeToIgnore"]));
+            }
+            set {
+                this["FileSystemConfigMinOrphanSizeToIgnore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1073741824")]
+        public int FileSystemConfigUnallocatedFragSize {
+            get {
+                return ((int)(this["FileSystemConfigUnallocatedFragSize"]));
+            }
+            set {
+                this["FileSystemConfigUnallocatedFragSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FileSystemConfigIgnoreHardLinks {
+            get {
+                return ((bool)(this["FileSystemConfigIgnoreHardLinks"]));
+            }
+            set {
+                this["FileSystemConfigIgnoreHardLinks"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FileSystemConfigSkipFolderRegex {
+            get {
+                return ((string)(this["FileSystemConfigSkipFolderRegex"]));
+            }
+            set {
+                this["FileSystemConfigSkipFolderRegex"] = value;
+            }
+        }
     }
 }
