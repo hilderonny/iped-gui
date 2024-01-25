@@ -24,6 +24,7 @@ namespace IPED_Gui_WinForms
             synchronizationContext = SynchronizationContext.Current;
             InitializeComponent();
 
+            tabPageLocalConfig.Controls.Add(new SettingsUserControl(ConfigType.LocalConfig));
             tabPageIPEDConfig.Controls.Add(new SettingsUserControl(ConfigType.IPEDConfig));
             tabPageFileSystem.Controls.Add(new SettingsUserControl(ConfigType.FileSystemConfig));
 
@@ -96,13 +97,6 @@ namespace IPED_Gui_WinForms
 
             // Einstellungen
             textBoxSettingsIpedExePath.Text = settings.SettingsIpedExePath;
-            comboBoxSettingsLocale.SelectedIndex = comboBoxSettingsLocale.FindStringExact(settings.SettingsLocale);
-            textBoxSettingsIndexTemp.Text = settings.SettingsIndexTemp;
-            checkBoxSettingsIndexTempOnSSD.Checked = settings.SettingsIndexTempOnSSD;
-            checkBoxSettingsOutputOnSSD.Checked = settings.SettingsOutputOnSSD;
-            textBoxSettingsNumThreads.Text = settings.SettingsNumThreads;
-            textBoxSettingsHashesDB.Text = settings.SettingsHashesDB;
-            textBoxSettingsPluginFolder.Text = settings.SettingsPluginFolder;
 
             // Audioübersetzung
             checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
@@ -339,73 +333,6 @@ namespace IPED_Gui_WinForms
                 textBoxSettingsIpedExePath.Text = fileName;
                 Settings settings = Settings.Default;
                 settings.SettingsIpedExePath = fileName;
-                settings.Save();
-            }
-        }
-
-        private void comboBoxSettingsLocale_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsLocale = (string)((ComboBox)sender).SelectedItem;
-            settings.Save();
-        }
-
-        private void buttonSettingsIndexTemp_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxSettingsIndexTemp.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxSettingsIndexTemp.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.SettingsIndexTemp = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void checkBoxSettingsIndexTempOnSSD_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsIndexTempOnSSD = checkBoxSettingsIndexTempOnSSD.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxSettingsOutputOnSSD_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsOutputOnSSD = checkBoxSettingsOutputOnSSD.Checked;
-            settings.Save();
-        }
-
-        private void textBoxSettingsNumThreads_TextChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsNumThreads = textBoxSettingsNumThreads.Text;
-            settings.Save();
-        }
-
-        private void buttonSettingsHashesDB_Click(object sender, EventArgs e)
-        {
-            openFileDialogSettingsHashesDB.FileName = textBoxSettingsHashesDB.Text;
-            if (openFileDialogSettingsHashesDB.ShowDialog() == DialogResult.OK)
-            {
-                var fileName = openFileDialogSettingsHashesDB.FileName;
-                textBoxSettingsHashesDB.Text = fileName;
-                Settings settings = Settings.Default;
-                settings.SettingsHashesDB = fileName;
-                settings.Save();
-            }
-        }
-
-        private void buttonSettingsPluginFolder_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxSettingsPluginFolder.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxSettingsPluginFolder.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.SettingsPluginFolder = selectedFolder;
                 settings.Save();
             }
         }

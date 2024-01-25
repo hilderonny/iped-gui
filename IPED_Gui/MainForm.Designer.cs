@@ -36,9 +36,6 @@
             Button buttonImageClassificationInputDirectory;
             Label label4;
             Button buttonSettingsIpedExePath;
-            Button buttonSettingsIndexTemp;
-            Button buttonSettingsHashesDB;
-            Button buttonSettingsPluginFolder;
             GroupBox groupBox3;
             Button buttonAudioTranslationArgosTranslateDirectory;
             Button buttonAudioTranslationFasterWhisperDirectory;
@@ -94,20 +91,9 @@
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
-            label10 = new Label();
-            textBoxSettingsPluginFolder = new TextBox();
-            label9 = new Label();
-            textBoxSettingsHashesDB = new TextBox();
-            label8 = new Label();
-            textBoxSettingsNumThreads = new TextBox();
-            checkBoxSettingsOutputOnSSD = new CheckBox();
-            checkBoxSettingsIndexTempOnSSD = new CheckBox();
-            label7 = new Label();
-            textBoxSettingsIndexTemp = new TextBox();
-            label6 = new Label();
-            comboBoxSettingsLocale = new ComboBox();
             textBoxSettingsIpedExePath = new TextBox();
             label5 = new Label();
+            tabPageLocalConfig = new TabPage();
             tabPageIPEDConfig = new TabPage();
             tabPageFileSystem = new TabPage();
             tabPageAudioTranslation = new TabPage();
@@ -130,9 +116,6 @@
             buttonImageClassificationInputDirectory = new Button();
             label4 = new Label();
             buttonSettingsIpedExePath = new Button();
-            buttonSettingsIndexTemp = new Button();
-            buttonSettingsHashesDB = new Button();
-            buttonSettingsPluginFolder = new Button();
             groupBox3 = new GroupBox();
             buttonAudioTranslationArgosTranslateDirectory = new Button();
             buttonAudioTranslationFasterWhisperDirectory = new Button();
@@ -287,39 +270,6 @@
             buttonSettingsIpedExePath.Text = "Auswählen ...";
             buttonSettingsIpedExePath.UseVisualStyleBackColor = true;
             buttonSettingsIpedExePath.Click += buttonSettingsIpedExePath_Click;
-            // 
-            // buttonSettingsIndexTemp
-            // 
-            buttonSettingsIndexTemp.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonSettingsIndexTemp.Location = new Point(827, 101);
-            buttonSettingsIndexTemp.Name = "buttonSettingsIndexTemp";
-            buttonSettingsIndexTemp.Size = new Size(120, 23);
-            buttonSettingsIndexTemp.TabIndex = 14;
-            buttonSettingsIndexTemp.Text = "Auswählen ...";
-            buttonSettingsIndexTemp.UseVisualStyleBackColor = true;
-            buttonSettingsIndexTemp.Click += buttonSettingsIndexTemp_Click;
-            // 
-            // buttonSettingsHashesDB
-            // 
-            buttonSettingsHashesDB.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonSettingsHashesDB.Location = new Point(827, 209);
-            buttonSettingsHashesDB.Name = "buttonSettingsHashesDB";
-            buttonSettingsHashesDB.Size = new Size(120, 23);
-            buttonSettingsHashesDB.TabIndex = 21;
-            buttonSettingsHashesDB.Text = "Auswählen ...";
-            buttonSettingsHashesDB.UseVisualStyleBackColor = true;
-            buttonSettingsHashesDB.Click += buttonSettingsHashesDB_Click;
-            // 
-            // buttonSettingsPluginFolder
-            // 
-            buttonSettingsPluginFolder.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonSettingsPluginFolder.Location = new Point(827, 238);
-            buttonSettingsPluginFolder.Name = "buttonSettingsPluginFolder";
-            buttonSettingsPluginFolder.Size = new Size(120, 23);
-            buttonSettingsPluginFolder.TabIndex = 24;
-            buttonSettingsPluginFolder.Text = "Auswählen ...";
-            buttonSettingsPluginFolder.UseVisualStyleBackColor = true;
-            buttonSettingsPluginFolder.Click += buttonSettingsPluginFolder_Click;
             // 
             // groupBox3
             // 
@@ -846,6 +796,7 @@
             // 
             tabControl1.Controls.Add(tabPageOverview);
             tabControl1.Controls.Add(tabPageSettings);
+            tabControl1.Controls.Add(tabPageLocalConfig);
             tabControl1.Controls.Add(tabPageIPEDConfig);
             tabControl1.Controls.Add(tabPageFileSystem);
             tabControl1.Controls.Add(tabPageAudioTranslation);
@@ -871,21 +822,6 @@
             // 
             // tabPageSettings
             // 
-            tabPageSettings.Controls.Add(label10);
-            tabPageSettings.Controls.Add(buttonSettingsPluginFolder);
-            tabPageSettings.Controls.Add(textBoxSettingsPluginFolder);
-            tabPageSettings.Controls.Add(label9);
-            tabPageSettings.Controls.Add(buttonSettingsHashesDB);
-            tabPageSettings.Controls.Add(textBoxSettingsHashesDB);
-            tabPageSettings.Controls.Add(label8);
-            tabPageSettings.Controls.Add(textBoxSettingsNumThreads);
-            tabPageSettings.Controls.Add(checkBoxSettingsOutputOnSSD);
-            tabPageSettings.Controls.Add(checkBoxSettingsIndexTempOnSSD);
-            tabPageSettings.Controls.Add(label7);
-            tabPageSettings.Controls.Add(buttonSettingsIndexTemp);
-            tabPageSettings.Controls.Add(textBoxSettingsIndexTemp);
-            tabPageSettings.Controls.Add(label6);
-            tabPageSettings.Controls.Add(comboBoxSettingsLocale);
             tabPageSettings.Controls.Add(buttonSettingsIpedExePath);
             tabPageSettings.Controls.Add(textBoxSettingsIpedExePath);
             tabPageSettings.Controls.Add(label5);
@@ -896,115 +832,6 @@
             tabPageSettings.TabIndex = 10;
             tabPageSettings.Text = "Einstellungen";
             tabPageSettings.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(43, 241);
-            label10.Name = "label10";
-            label10.Size = new Size(125, 15);
-            label10.TabIndex = 25;
-            label10.Text = "Verzeichnis für Plugins";
-            // 
-            // textBoxSettingsPluginFolder
-            // 
-            textBoxSettingsPluginFolder.Location = new Point(250, 238);
-            textBoxSettingsPluginFolder.Name = "textBoxSettingsPluginFolder";
-            textBoxSettingsPluginFolder.ReadOnly = true;
-            textBoxSettingsPluginFolder.Size = new Size(571, 23);
-            textBoxSettingsPluginFolder.TabIndex = 23;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(43, 212);
-            label9.Name = "label9";
-            label9.Size = new Size(94, 15);
-            label9.TabIndex = 22;
-            label9.Text = "Hash Datenbank";
-            // 
-            // textBoxSettingsHashesDB
-            // 
-            textBoxSettingsHashesDB.Location = new Point(250, 209);
-            textBoxSettingsHashesDB.Name = "textBoxSettingsHashesDB";
-            textBoxSettingsHashesDB.ReadOnly = true;
-            textBoxSettingsHashesDB.Size = new Size(571, 23);
-            textBoxSettingsHashesDB.TabIndex = 20;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(43, 183);
-            label8.Name = "label8";
-            label8.Size = new Size(87, 15);
-            label8.TabIndex = 19;
-            label8.Text = "Anzahl Threads";
-            // 
-            // textBoxSettingsNumThreads
-            // 
-            textBoxSettingsNumThreads.Location = new Point(250, 180);
-            textBoxSettingsNumThreads.Name = "textBoxSettingsNumThreads";
-            textBoxSettingsNumThreads.Size = new Size(100, 23);
-            textBoxSettingsNumThreads.TabIndex = 18;
-            textBoxSettingsNumThreads.TextChanged += textBoxSettingsNumThreads_TextChanged;
-            // 
-            // checkBoxSettingsOutputOnSSD
-            // 
-            checkBoxSettingsOutputOnSSD.AutoSize = true;
-            checkBoxSettingsOutputOnSSD.Location = new Point(250, 155);
-            checkBoxSettingsOutputOnSSD.Name = "checkBoxSettingsOutputOnSSD";
-            checkBoxSettingsOutputOnSSD.Size = new Size(298, 19);
-            checkBoxSettingsOutputOnSSD.TabIndex = 17;
-            checkBoxSettingsOutputOnSSD.Text = "Ausgabeverzeichnis befindet sich auf SSD Festplatte";
-            checkBoxSettingsOutputOnSSD.UseVisualStyleBackColor = true;
-            checkBoxSettingsOutputOnSSD.CheckedChanged += checkBoxSettingsOutputOnSSD_CheckedChanged;
-            // 
-            // checkBoxSettingsIndexTempOnSSD
-            // 
-            checkBoxSettingsIndexTempOnSSD.AutoSize = true;
-            checkBoxSettingsIndexTempOnSSD.Location = new Point(250, 130);
-            checkBoxSettingsIndexTempOnSSD.Name = "checkBoxSettingsIndexTempOnSSD";
-            checkBoxSettingsIndexTempOnSSD.Size = new Size(316, 19);
-            checkBoxSettingsIndexTempOnSSD.TabIndex = 16;
-            checkBoxSettingsIndexTempOnSSD.Text = "Temporäres Verzeichnis befindet sich auf SSD Festplatte";
-            checkBoxSettingsIndexTempOnSSD.UseVisualStyleBackColor = true;
-            checkBoxSettingsIndexTempOnSSD.CheckedChanged += checkBoxSettingsIndexTempOnSSD_CheckedChanged;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(43, 104);
-            label7.Name = "label7";
-            label7.Size = new Size(184, 15);
-            label7.TabIndex = 15;
-            label7.Text = "Verzeichnis für temporäre Dateien";
-            // 
-            // textBoxSettingsIndexTemp
-            // 
-            textBoxSettingsIndexTemp.Location = new Point(250, 101);
-            textBoxSettingsIndexTemp.Name = "textBoxSettingsIndexTemp";
-            textBoxSettingsIndexTemp.ReadOnly = true;
-            textBoxSettingsIndexTemp.Size = new Size(571, 23);
-            textBoxSettingsIndexTemp.TabIndex = 13;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(43, 75);
-            label6.Name = "label6";
-            label6.Size = new Size(130, 15);
-            label6.TabIndex = 12;
-            label6.Text = "Sprache der Oberfläche";
-            // 
-            // comboBoxSettingsLocale
-            // 
-            comboBoxSettingsLocale.FormattingEnabled = true;
-            comboBoxSettingsLocale.Items.AddRange(new object[] { "en", "pt-BR", "it-IT", "de-DE", "es-AR" });
-            comboBoxSettingsLocale.Location = new Point(250, 72);
-            comboBoxSettingsLocale.Name = "comboBoxSettingsLocale";
-            comboBoxSettingsLocale.Size = new Size(100, 23);
-            comboBoxSettingsLocale.TabIndex = 11;
-            comboBoxSettingsLocale.SelectedIndexChanged += comboBoxSettingsLocale_SelectedIndexChanged;
             // 
             // textBoxSettingsIpedExePath
             // 
@@ -1022,6 +849,15 @@
             label5.Size = new Size(93, 15);
             label5.TabIndex = 0;
             label5.Text = "Pfad zu iped.exe";
+            // 
+            // tabPageLocalConfig
+            // 
+            tabPageLocalConfig.Location = new Point(4, 24);
+            tabPageLocalConfig.Name = "tabPageLocalConfig";
+            tabPageLocalConfig.Size = new Size(990, 540);
+            tabPageLocalConfig.TabIndex = 13;
+            tabPageLocalConfig.Text = "Local config";
+            tabPageLocalConfig.UseVisualStyleBackColor = true;
             // 
             // tabPageIPEDConfig
             // 
@@ -1199,20 +1035,8 @@
         private TextBox textBoxImageClassificationInputDirectory;
         private TextBox textBoxImageClassificationOutputDirectory;
         private TabPage tabPageSettings;
-        private TextBox textBoxSettingsIndexTemp;
-        private Label label6;
-        private ComboBox comboBoxSettingsLocale;
         private TextBox textBoxSettingsIpedExePath;
         private Label label5;
-        private Label label10;
-        private TextBox textBoxSettingsPluginFolder;
-        private Label label9;
-        private TextBox textBoxSettingsHashesDB;
-        private Label label8;
-        private TextBox textBoxSettingsNumThreads;
-        private CheckBox checkBoxSettingsOutputOnSSD;
-        private CheckBox checkBoxSettingsIndexTempOnSSD;
-        private Label label7;
         private OpenFileDialog openFileDialogSettingsIpedExePath;
         private FolderBrowserDialog folderBrowserDialog;
         private OpenFileDialog openFileDialogSettingsHashesDB;
@@ -1241,5 +1065,6 @@
         private OpenFileDialog openFileDialogImageClassificationServiceProgram;
         private TabPage tabPageFileSystem;
         private TabPage tabPageIPEDConfig;
+        private TabPage tabPageLocalConfig;
     }
 }

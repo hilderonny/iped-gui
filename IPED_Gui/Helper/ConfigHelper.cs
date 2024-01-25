@@ -9,13 +9,13 @@ namespace IPED_Gui_WinForms.Helper
         {
             Settings settings = Settings.Default;
             return string.Join("\n", new List<string> {
-                "locale = " + settings.SettingsLocale,
-                "indexTemp = " + settings.SettingsIndexTemp.Replace("\\", "/"),
-                "indexTempOnSSD = " + (settings.SettingsIndexTempOnSSD ? "true" : "false"),
-                "outputOnSSD = " + (settings.SettingsOutputOnSSD ? "true" : "false"),
-                "numThreads = " + settings.SettingsNumThreads,
-                "hashesDB = " + settings.SettingsHashesDB.Replace("\\", "/"),
-                "pluginFolder = " + Path.GetRelativePath(Path.GetDirectoryName(settings.SettingsIpedExePath) ?? "", settings.SettingsPluginFolder).Replace("\\", "/")
+                "locale = " + settings.LocalConfigLocale,
+                "indexTemp = " + settings.LocalConfigIndexTemp.Replace("\\", "/"),
+                "indexTempOnSSD = " + (settings.LocalConfigIndexTempOnSSD ? "true" : "false"),
+                "outputOnSSD = " + (settings.LocalConfigOutputOnSSD ? "true" : "false"),
+                "numThreads = " + settings.LocalConfigNumThreads,
+                "hashesDB = " + settings.LocalConfigHashesDB.Replace("\\", "/"),
+                "pluginFolder = " + Path.GetRelativePath(Path.GetDirectoryName(settings.SettingsIpedExePath) ?? "", settings.LocalConfigPluginFolder).Replace("\\", "/")
             });
         }
 

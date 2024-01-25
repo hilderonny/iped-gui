@@ -42,7 +42,7 @@ namespace IPED_Gui_WinForms.UserControls
                     Margin = new Padding(0, 7, 3, 15)
                 };
                 horizontalFlowLayoutPanel.Controls.Add(nameLabel);
-                if (configElement.ElementType == typeof(string))
+                if (configElement.ElementType == ConfigElementType.String)
                 {
                     var textBox = new TextBox { Text = Settings.Default[configElement.SettingsName].ToString() };
                     textBox.TextChanged += (object? sender, EventArgs e) =>
@@ -52,7 +52,7 @@ namespace IPED_Gui_WinForms.UserControls
                     };
                     horizontalFlowLayoutPanel.Controls.Add(textBox);
                 }
-                else if (configElement.ElementType == typeof(bool))
+                else if (configElement.ElementType == ConfigElementType.Boolean)
                 {
                     var checkBox = new CheckBox { Checked = (bool)Settings.Default[configElement.SettingsName] };
                     checkBox.CheckedChanged += (object? sender, EventArgs e) =>
@@ -61,6 +61,80 @@ namespace IPED_Gui_WinForms.UserControls
                         Settings.Default.Save();
                     };
                     horizontalFlowLayoutPanel.Controls.Add(checkBox);
+                }
+                else if (configElement.ElementType == ConfigElementType.Directory)
+                {
+                    var textBox = new TextBox {
+                        Size = new Size(571, 23),
+                        ReadOnly = true,
+                        Text = Settings.Default[configElement.SettingsName].ToString()
+                    };
+                    horizontalFlowLayoutPanel.Controls.Add(textBox);
+                    var folderBrowserDialog = new FolderBrowserDialog
+                    {
+                        SelectedPath = Settings.Default[configElement.SettingsName].ToString()
+                    };
+                    var button = new Button
+                    {
+                        Size = new Size(120, 23),
+                        Text = "Auswählen ...",
+                        UseVisualStyleBackColor = true
+                    };
+                    button.Click += (object? sender, EventArgs e) =>
+                    {
+                        if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            var selectedFolder = folderBrowserDialog.SelectedPath;
+                            textBox.Text = selectedFolder;
+                            Settings.Default[configElement.SettingsName] = selectedFolder;
+                            Settings.Default.Save();
+                        }
+                    };
+                    horizontalFlowLayoutPanel.Controls.Add(button);
+                }
+                else if (configElement.ElementType == ConfigElementType.File)
+                {
+                    var textBox = new TextBox
+                    {
+                        Size = new Size(571, 23),
+                        ReadOnly = true,
+                        Text = Settings.Default[configElement.SettingsName].ToString()
+                    };
+                    horizontalFlowLayoutPanel.Controls.Add(textBox);
+                    var openFileDialog = new OpenFileDialog
+                    {
+                        Filter = configElement.Filter,
+                        FileName = Settings.Default[configElement.SettingsName].ToString()
+                    };
+                    var button = new Button
+                    {
+                        Size = new Size(120, 23),
+                        Text = "Auswählen ...",
+                        UseVisualStyleBackColor = true
+                    };
+                    button.Click += (object? sender, EventArgs e) =>
+                    {
+                        if (openFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            var selectedFile = openFileDialog.FileName;
+                            textBox.Text = selectedFile;
+                            Settings.Default[configElement.SettingsName] = selectedFile;
+                            Settings.Default.Save();
+                        }
+                    };
+                    horizontalFlowLayoutPanel.Controls.Add(button);
+                }
+                else if (configElement.ElementType == ConfigElementType.StringList)
+                {
+                    var comboBox = new ComboBox();
+                    comboBox.Items.AddRange(configElement.ListElements.ToArray());
+                    comboBox.SelectedIndex = comboBox.FindStringExact(Settings.Default[configElement.SettingsName].ToString());
+                    comboBox.SelectedIndexChanged += (object? sender, EventArgs e) =>
+                    {
+                        Settings.Default[configElement.SettingsName] = (string)comboBox.SelectedItem;
+                        Settings.Default.Save();
+                    };
+                    horizontalFlowLayoutPanel.Controls.Add(comboBox);
                 }
             }
         }

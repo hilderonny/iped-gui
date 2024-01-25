@@ -1,5 +1,6 @@
 # 1.6
 - Einstellungen für conf/FileSystemConfig.txt hinzugefügt
+- Einstellungen für IPEDConfig.txt hinzugefügt
 
 # 1.5
 - Fehlerhafte Tooltips entfernt

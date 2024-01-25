@@ -182,84 +182,84 @@ namespace IPED_Gui_WinForms.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("de-DE")]
-        public string SettingsLocale {
+        public string LocalConfigLocale {
             get {
-                return ((string)(this["SettingsLocale"]));
+                return ((string)(this["LocalConfigLocale"]));
             }
             set {
-                this["SettingsLocale"] = value;
+                this["LocalConfigLocale"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SettingsIndexTemp {
+        public string LocalConfigIndexTemp {
             get {
-                return ((string)(this["SettingsIndexTemp"]));
+                return ((string)(this["LocalConfigIndexTemp"]));
             }
             set {
-                this["SettingsIndexTemp"] = value;
+                this["LocalConfigIndexTemp"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SettingsIndexTempOnSSD {
+        public bool LocalConfigIndexTempOnSSD {
             get {
-                return ((bool)(this["SettingsIndexTempOnSSD"]));
+                return ((bool)(this["LocalConfigIndexTempOnSSD"]));
             }
             set {
-                this["SettingsIndexTempOnSSD"] = value;
+                this["LocalConfigIndexTempOnSSD"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SettingsOutputOnSSD {
+        public bool LocalConfigOutputOnSSD {
             get {
-                return ((bool)(this["SettingsOutputOnSSD"]));
+                return ((bool)(this["LocalConfigOutputOnSSD"]));
             }
             set {
-                this["SettingsOutputOnSSD"] = value;
+                this["LocalConfigOutputOnSSD"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("default")]
-        public string SettingsNumThreads {
+        public string LocalConfigNumThreads {
             get {
-                return ((string)(this["SettingsNumThreads"]));
+                return ((string)(this["LocalConfigNumThreads"]));
             }
             set {
-                this["SettingsNumThreads"] = value;
+                this["LocalConfigNumThreads"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SettingsHashesDB {
+        public string LocalConfigHashesDB {
             get {
-                return ((string)(this["SettingsHashesDB"]));
+                return ((string)(this["LocalConfigHashesDB"]));
             }
             set {
-                this["SettingsHashesDB"] = value;
+                this["LocalConfigHashesDB"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SettingsPluginFolder {
+        public string LocalConfigPluginFolder {
             get {
-                return ((string)(this["SettingsPluginFolder"]));
+                return ((string)(this["LocalConfigPluginFolder"]));
             }
             set {
-                this["SettingsPluginFolder"] = value;
+                this["LocalConfigPluginFolder"] = value;
             }
         }
         

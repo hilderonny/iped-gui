@@ -41,25 +41,25 @@
     <Setting Name="SettingsIpedExePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SettingsLocale" Type="System.String" Scope="User">
+    <Setting Name="LocalConfigLocale" Type="System.String" Scope="User">
       <Value Profile="(Default)">de-DE</Value>
     </Setting>
-    <Setting Name="SettingsIndexTemp" Type="System.String" Scope="User">
+    <Setting Name="LocalConfigIndexTemp" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SettingsIndexTempOnSSD" Type="System.Boolean" Scope="User">
+    <Setting Name="LocalConfigIndexTempOnSSD" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="SettingsOutputOnSSD" Type="System.Boolean" Scope="User">
+    <Setting Name="LocalConfigOutputOnSSD" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="SettingsNumThreads" Type="System.String" Scope="User">
+    <Setting Name="LocalConfigNumThreads" Type="System.String" Scope="User">
       <Value Profile="(Default)">default</Value>
     </Setting>
-    <Setting Name="SettingsHashesDB" Type="System.String" Scope="User">
+    <Setting Name="LocalConfigHashesDB" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SettingsPluginFolder" Type="System.String" Scope="User">
+    <Setting Name="LocalConfigPluginFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AudioTranslationServiceProgram" Type="System.String" Scope="User">
