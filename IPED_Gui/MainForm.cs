@@ -27,6 +27,8 @@ namespace IPED_Gui_WinForms
             tabPageLocalConfig.Controls.Add(new SettingsUserControl(ConfigType.LocalConfig));
             tabPageIPEDConfig.Controls.Add(new SettingsUserControl(ConfigType.IPEDConfig));
             tabPageFileSystem.Controls.Add(new SettingsUserControl(ConfigType.FileSystemConfig));
+            panelAudioTranslationConfig.Controls.Add(new SettingsUserControl(ConfigType.AudioTranslation));
+            panelImageClassificationConfig.Controls.Add(new SettingsUserControl(ConfigType.ImageClassification));
 
             LoadSettings();
             CheckForWarning();
@@ -99,10 +101,6 @@ namespace IPED_Gui_WinForms
             textBoxSettingsIpedExePath.Text = settings.SettingsIpedExePath;
 
             // Audioübersetzung
-            checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
-            textBoxAudioTranslationInputDirectory.Text = settings.AudioTranslationInputDirectory;
-            textBoxAudioTranslationOutputDirectory.Text = settings.AudioTranslationOutputDirectory;
-            checkBoxAudioTranslationProcessVideos.Checked = settings.AudioTranslationProcessVideo;
             textBoxAudioTranslationServiceProgram.Text = settings.AudioTranslationServiceProgram;
             textBoxAudioTranslationProcessingDirectory.Text = settings.AudioTranslationProcessingDirectory;
             textBoxAudioTranslationFasterWhisperDirectory.Text = settings.AudioTranslationFasterWhisperDirectory;
@@ -111,9 +109,6 @@ namespace IPED_Gui_WinForms
             checkBoxAudioTranslationUseGPU.Checked = settings.AudioTranslationUseGPU;
 
             // Bildklassifizierung
-            checkBoxIPEDConfigEnableImageClassification.Checked = settings.IPEDConfigEnableImageClassification;
-            textBoxImageClassificationInputDirectory.Text = settings.ImageClassificationInputDirectory;
-            textBoxImageClassificationOutputDirectory.Text = settings.ImageClassificationOutputDirectory;
             textBoxImageClassificationServiceProgram.Text = settings.ImageClassificationServiceProgram;
             textBoxImageClassificationProcessingDirectory.Text = settings.ImageClassificationProcessingDirectory;
             textBoxImageClassificationMobileNetDirectory.Text = settings.ImageClassificationMobileNetDirectory;
@@ -127,28 +122,6 @@ namespace IPED_Gui_WinForms
         {
             textBoxConsole.AppendText(line);
             textBoxConsole.AppendText(Environment.NewLine);
-        }
-
-        /// <summary>
-        /// Wird ausgeführt, wenn die CheckBox AudioTranslation angeklickt wurde.
-        /// Speichert deren Zustand in den Einstellungen unter IPEDConfig_enableAudioTranslation.
-        /// </summary>
-        private void checkBoxIPEDConfigEnabelAudioTranslation_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.IPEDConfigEnableAudioTranslation = checkBoxIPEDConfigEnableAudioTranslation.Checked;
-            settings.Save();
-        }
-
-        /// <summary>
-        /// Wird ausgeführt, wenn die CheckBox BildKlassifizierung angeklickt wurde.
-        /// Speichert deren Zustand in den Einstellungen unter IPEDConfig_enableImageClassification.
-        /// </summary>
-        private void checkBoxIPEDConfigEnableImageClassification_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.IPEDConfigEnableImageClassification = checkBoxIPEDConfigEnableImageClassification.Checked;
-            settings.Save();
         }
 
         /// <summary>
@@ -333,65 +306,6 @@ namespace IPED_Gui_WinForms
                 textBoxSettingsIpedExePath.Text = fileName;
                 Settings settings = Settings.Default;
                 settings.SettingsIpedExePath = fileName;
-                settings.Save();
-            }
-        }
-
-        private void buttonAudioTranslationInputDirectory_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxAudioTranslationInputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxAudioTranslationInputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.AudioTranslationInputDirectory = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void buttonAudioTranslationOutputDirectory_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxAudioTranslationOutputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxAudioTranslationOutputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.AudioTranslationOutputDirectory = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void checkBoxAudioTranslationProcessVideos_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.AudioTranslationProcessVideo = checkBoxAudioTranslationProcessVideos.Checked;
-            settings.Save();
-        }
-
-        private void buttonImageClassificationInputDirectory_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxImageClassificationInputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxImageClassificationInputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.ImageClassificationInputDirectory = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void buttonImageClassificationOutputDirectory_Click_1(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxImageClassificationOutputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxImageClassificationOutputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.ImageClassificationOutputDirectory = selectedFolder;
                 settings.Save();
             }
         }

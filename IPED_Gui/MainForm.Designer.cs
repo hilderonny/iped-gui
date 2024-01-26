@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             GroupBox groupBox2;
-            Button buttonAudioTranslationInputDirectory;
-            Button buttonAudioTranslationOutputDirectory;
-            Label label3;
-            Button buttonImageClassificationOutputDirectory;
-            Button buttonImageClassificationInputDirectory;
-            Label label4;
             Button buttonSettingsIpedExePath;
             GroupBox groupBox3;
             Button buttonAudioTranslationArgosTranslateDirectory;
@@ -83,11 +77,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             label_Warnung = new Label();
             button_DateienHinzufuegen = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            checkBoxAudioTranslationProcessVideos = new CheckBox();
-            checkBoxIPEDConfigEnableAudioTranslation = new CheckBox();
-            checkBoxIPEDConfigEnableImageClassification = new CheckBox();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
@@ -97,11 +86,9 @@
             tabPageIPEDConfig = new TabPage();
             tabPageFileSystem = new TabPage();
             tabPageAudioTranslation = new TabPage();
-            textBoxAudioTranslationOutputDirectory = new TextBox();
-            textBoxAudioTranslationInputDirectory = new TextBox();
+            panelAudioTranslationConfig = new Panel();
             tabPageImageClassification = new TabPage();
-            textBoxImageClassificationOutputDirectory = new TextBox();
-            textBoxImageClassificationInputDirectory = new TextBox();
+            panelImageClassificationConfig = new Panel();
             tabPageProtocol = new TabPage();
             openFileDialogSettingsIpedExePath = new OpenFileDialog();
             folderBrowserDialog = new FolderBrowserDialog();
@@ -109,12 +96,6 @@
             openFileDialogAudioTranslationServiceProgram = new OpenFileDialog();
             openFileDialogImageClassificationServiceProgram = new OpenFileDialog();
             groupBox2 = new GroupBox();
-            buttonAudioTranslationInputDirectory = new Button();
-            buttonAudioTranslationOutputDirectory = new Button();
-            label3 = new Label();
-            buttonImageClassificationOutputDirectory = new Button();
-            buttonImageClassificationInputDirectory = new Button();
-            label4 = new Label();
             buttonSettingsIpedExePath = new Button();
             groupBox3 = new GroupBox();
             buttonAudioTranslationArgosTranslateDirectory = new Button();
@@ -198,68 +179,6 @@
             checkBox_InternetdatenLaden.UseVisualStyleBackColor = true;
             checkBox_InternetdatenLaden.CheckedChanged += checkBox_InternetdatenLaden_CheckedChanged;
             // 
-            // buttonAudioTranslationInputDirectory
-            // 
-            buttonAudioTranslationInputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonAudioTranslationInputDirectory.Location = new Point(826, 67);
-            buttonAudioTranslationInputDirectory.Name = "buttonAudioTranslationInputDirectory";
-            buttonAudioTranslationInputDirectory.Size = new Size(120, 23);
-            buttonAudioTranslationInputDirectory.TabIndex = 9;
-            buttonAudioTranslationInputDirectory.Text = "Auswählen ...";
-            buttonAudioTranslationInputDirectory.UseVisualStyleBackColor = true;
-            buttonAudioTranslationInputDirectory.Click += buttonAudioTranslationInputDirectory_Click;
-            // 
-            // buttonAudioTranslationOutputDirectory
-            // 
-            buttonAudioTranslationOutputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonAudioTranslationOutputDirectory.Location = new Point(826, 97);
-            buttonAudioTranslationOutputDirectory.Name = "buttonAudioTranslationOutputDirectory";
-            buttonAudioTranslationOutputDirectory.Size = new Size(120, 23);
-            buttonAudioTranslationOutputDirectory.TabIndex = 12;
-            buttonAudioTranslationOutputDirectory.Text = "Auswählen ...";
-            buttonAudioTranslationOutputDirectory.UseVisualStyleBackColor = true;
-            buttonAudioTranslationOutputDirectory.Click += buttonAudioTranslationOutputDirectory_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(45, 100);
-            label3.Name = "label3";
-            label3.Size = new Size(111, 15);
-            label3.TabIndex = 16;
-            label3.Text = "Ausgabeverzeichnis";
-            // 
-            // buttonImageClassificationOutputDirectory
-            // 
-            buttonImageClassificationOutputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonImageClassificationOutputDirectory.Location = new Point(829, 97);
-            buttonImageClassificationOutputDirectory.Name = "buttonImageClassificationOutputDirectory";
-            buttonImageClassificationOutputDirectory.Size = new Size(120, 23);
-            buttonImageClassificationOutputDirectory.TabIndex = 18;
-            buttonImageClassificationOutputDirectory.Text = "Auswählen ...";
-            buttonImageClassificationOutputDirectory.UseVisualStyleBackColor = true;
-            buttonImageClassificationOutputDirectory.Click += buttonImageClassificationOutputDirectory_Click_1;
-            // 
-            // buttonImageClassificationInputDirectory
-            // 
-            buttonImageClassificationInputDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonImageClassificationInputDirectory.Location = new Point(829, 68);
-            buttonImageClassificationInputDirectory.Name = "buttonImageClassificationInputDirectory";
-            buttonImageClassificationInputDirectory.Size = new Size(120, 23);
-            buttonImageClassificationInputDirectory.TabIndex = 15;
-            buttonImageClassificationInputDirectory.Text = "Auswählen ...";
-            buttonImageClassificationInputDirectory.UseVisualStyleBackColor = true;
-            buttonImageClassificationInputDirectory.Click += buttonImageClassificationInputDirectory_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(45, 71);
-            label4.Name = "label4";
-            label4.Size = new Size(107, 15);
-            label4.TabIndex = 19;
-            label4.Text = "Eingabeverzeichnis";
-            // 
             // buttonSettingsIpedExePath
             // 
             buttonSettingsIpedExePath.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -289,9 +208,9 @@
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(textBoxAudioTranslationServiceProgram);
             groupBox3.Controls.Add(buttonAudioTranslationServiceProgram);
-            groupBox3.Location = new Point(3, 151);
+            groupBox3.Location = new Point(3, 289);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(984, 386);
+            groupBox3.Size = new Size(984, 248);
             groupBox3.TabIndex = 15;
             groupBox3.TabStop = false;
             groupBox3.Text = "Lokale Verarbeitung";
@@ -463,9 +382,9 @@
             groupBox4.Controls.Add(label20);
             groupBox4.Controls.Add(textBoxImageClassificationServiceProgram);
             groupBox4.Controls.Add(buttonImageClassificationServiceProgram);
-            groupBox4.Location = new Point(3, 151);
+            groupBox4.Location = new Point(3, 327);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(984, 386);
+            groupBox4.Size = new Size(984, 210);
             groupBox4.TabIndex = 21;
             groupBox4.TabStop = false;
             groupBox4.Text = "Lokale Verarbeitung";
@@ -741,57 +660,6 @@
             button_DateienHinzufuegen.UseVisualStyleBackColor = true;
             button_DateienHinzufuegen.Click += button_DateienHinzufuegen_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(42, 71);
-            label1.Name = "label1";
-            label1.Size = new Size(107, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Eingabeverzeichnis";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(42, 100);
-            label2.Name = "label2";
-            label2.Size = new Size(111, 15);
-            label2.TabIndex = 10;
-            label2.Text = "Ausgabeverzeichnis";
-            // 
-            // checkBoxAudioTranslationProcessVideos
-            // 
-            checkBoxAudioTranslationProcessVideos.AutoSize = true;
-            checkBoxAudioTranslationProcessVideos.Location = new Point(199, 126);
-            checkBoxAudioTranslationProcessVideos.Name = "checkBoxAudioTranslationProcessVideos";
-            checkBoxAudioTranslationProcessVideos.Size = new Size(123, 19);
-            checkBoxAudioTranslationProcessVideos.TabIndex = 13;
-            checkBoxAudioTranslationProcessVideos.Text = "Videos verarbeiten";
-            checkBoxAudioTranslationProcessVideos.UseVisualStyleBackColor = true;
-            checkBoxAudioTranslationProcessVideos.CheckedChanged += checkBoxAudioTranslationProcessVideos_CheckedChanged;
-            // 
-            // checkBoxIPEDConfigEnableAudioTranslation
-            // 
-            checkBoxIPEDConfigEnableAudioTranslation.AutoSize = true;
-            checkBoxIPEDConfigEnableAudioTranslation.Location = new Point(199, 43);
-            checkBoxIPEDConfigEnableAudioTranslation.Name = "checkBoxIPEDConfigEnableAudioTranslation";
-            checkBoxIPEDConfigEnableAudioTranslation.Size = new Size(222, 19);
-            checkBoxIPEDConfigEnableAudioTranslation.TabIndex = 14;
-            checkBoxIPEDConfigEnableAudioTranslation.Text = "Audio Transkription und Übersetzung";
-            checkBoxIPEDConfigEnableAudioTranslation.UseVisualStyleBackColor = true;
-            checkBoxIPEDConfigEnableAudioTranslation.CheckedChanged += checkBoxIPEDConfigEnabelAudioTranslation_CheckedChanged;
-            // 
-            // checkBoxIPEDConfigEnableImageClassification
-            // 
-            checkBoxIPEDConfigEnableImageClassification.AutoSize = true;
-            checkBoxIPEDConfigEnableImageClassification.Location = new Point(202, 43);
-            checkBoxIPEDConfigEnableImageClassification.Name = "checkBoxIPEDConfigEnableImageClassification";
-            checkBoxIPEDConfigEnableImageClassification.Size = new Size(125, 19);
-            checkBoxIPEDConfigEnableImageClassification.TabIndex = 20;
-            checkBoxIPEDConfigEnableImageClassification.Text = "Bilder klassifizieren";
-            checkBoxIPEDConfigEnableImageClassification.UseVisualStyleBackColor = true;
-            checkBoxIPEDConfigEnableImageClassification.CheckedChanged += checkBoxIPEDConfigEnableImageClassification_CheckedChanged;
-            // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPageOverview);
@@ -879,15 +747,8 @@
             // 
             // tabPageAudioTranslation
             // 
+            tabPageAudioTranslation.Controls.Add(panelAudioTranslationConfig);
             tabPageAudioTranslation.Controls.Add(groupBox3);
-            tabPageAudioTranslation.Controls.Add(checkBoxIPEDConfigEnableAudioTranslation);
-            tabPageAudioTranslation.Controls.Add(checkBoxAudioTranslationProcessVideos);
-            tabPageAudioTranslation.Controls.Add(label2);
-            tabPageAudioTranslation.Controls.Add(textBoxAudioTranslationOutputDirectory);
-            tabPageAudioTranslation.Controls.Add(buttonAudioTranslationOutputDirectory);
-            tabPageAudioTranslation.Controls.Add(label1);
-            tabPageAudioTranslation.Controls.Add(textBoxAudioTranslationInputDirectory);
-            tabPageAudioTranslation.Controls.Add(buttonAudioTranslationInputDirectory);
             tabPageAudioTranslation.Location = new Point(4, 24);
             tabPageAudioTranslation.Name = "tabPageAudioTranslation";
             tabPageAudioTranslation.Padding = new Padding(40);
@@ -896,32 +757,18 @@
             tabPageAudioTranslation.Text = "Audioübersetzung";
             tabPageAudioTranslation.UseVisualStyleBackColor = true;
             // 
-            // textBoxAudioTranslationOutputDirectory
+            // panelAudioTranslationConfig
             // 
-            textBoxAudioTranslationOutputDirectory.Location = new Point(199, 97);
-            textBoxAudioTranslationOutputDirectory.Name = "textBoxAudioTranslationOutputDirectory";
-            textBoxAudioTranslationOutputDirectory.ReadOnly = true;
-            textBoxAudioTranslationOutputDirectory.Size = new Size(621, 23);
-            textBoxAudioTranslationOutputDirectory.TabIndex = 11;
-            // 
-            // textBoxAudioTranslationInputDirectory
-            // 
-            textBoxAudioTranslationInputDirectory.Location = new Point(199, 68);
-            textBoxAudioTranslationInputDirectory.Name = "textBoxAudioTranslationInputDirectory";
-            textBoxAudioTranslationInputDirectory.ReadOnly = true;
-            textBoxAudioTranslationInputDirectory.Size = new Size(621, 23);
-            textBoxAudioTranslationInputDirectory.TabIndex = 8;
+            panelAudioTranslationConfig.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelAudioTranslationConfig.Location = new Point(3, 3);
+            panelAudioTranslationConfig.Name = "panelAudioTranslationConfig";
+            panelAudioTranslationConfig.Size = new Size(984, 280);
+            panelAudioTranslationConfig.TabIndex = 16;
             // 
             // tabPageImageClassification
             // 
+            tabPageImageClassification.Controls.Add(panelImageClassificationConfig);
             tabPageImageClassification.Controls.Add(groupBox4);
-            tabPageImageClassification.Controls.Add(checkBoxIPEDConfigEnableImageClassification);
-            tabPageImageClassification.Controls.Add(label4);
-            tabPageImageClassification.Controls.Add(label3);
-            tabPageImageClassification.Controls.Add(textBoxImageClassificationOutputDirectory);
-            tabPageImageClassification.Controls.Add(buttonImageClassificationOutputDirectory);
-            tabPageImageClassification.Controls.Add(textBoxImageClassificationInputDirectory);
-            tabPageImageClassification.Controls.Add(buttonImageClassificationInputDirectory);
             tabPageImageClassification.Location = new Point(4, 24);
             tabPageImageClassification.Name = "tabPageImageClassification";
             tabPageImageClassification.Padding = new Padding(40);
@@ -930,21 +777,13 @@
             tabPageImageClassification.Text = "Bildklassifizierung";
             tabPageImageClassification.UseVisualStyleBackColor = true;
             // 
-            // textBoxImageClassificationOutputDirectory
+            // panelImageClassificationConfig
             // 
-            textBoxImageClassificationOutputDirectory.Location = new Point(202, 97);
-            textBoxImageClassificationOutputDirectory.Name = "textBoxImageClassificationOutputDirectory";
-            textBoxImageClassificationOutputDirectory.ReadOnly = true;
-            textBoxImageClassificationOutputDirectory.Size = new Size(621, 23);
-            textBoxImageClassificationOutputDirectory.TabIndex = 17;
-            // 
-            // textBoxImageClassificationInputDirectory
-            // 
-            textBoxImageClassificationInputDirectory.Location = new Point(202, 68);
-            textBoxImageClassificationInputDirectory.Name = "textBoxImageClassificationInputDirectory";
-            textBoxImageClassificationInputDirectory.ReadOnly = true;
-            textBoxImageClassificationInputDirectory.Size = new Size(621, 23);
-            textBoxImageClassificationInputDirectory.TabIndex = 14;
+            panelImageClassificationConfig.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelImageClassificationConfig.Location = new Point(3, 3);
+            panelImageClassificationConfig.Name = "panelImageClassificationConfig";
+            panelImageClassificationConfig.Size = new Size(984, 318);
+            panelImageClassificationConfig.TabIndex = 22;
             // 
             // tabPageProtocol
             // 
@@ -996,9 +835,7 @@
             tabPageSettings.ResumeLayout(false);
             tabPageSettings.PerformLayout();
             tabPageAudioTranslation.ResumeLayout(false);
-            tabPageAudioTranslation.PerformLayout();
             tabPageImageClassification.ResumeLayout(false);
-            tabPageImageClassification.PerformLayout();
             tabPageProtocol.ResumeLayout(false);
             tabPageProtocol.PerformLayout();
             ResumeLayout(false);
@@ -1027,20 +864,12 @@
         private TabPage tabPageProtocol;
         private TabPage tabPageAudioTranslation;
         private TabPage tabPageImageClassification;
-        private Label label2;
-        private TextBox textBoxAudioTranslationOutputDirectory;
-        private Label label1;
-        private TextBox textBoxAudioTranslationInputDirectory;
-        private CheckBox checkBoxAudioTranslationProcessVideos;
-        private TextBox textBoxImageClassificationInputDirectory;
-        private TextBox textBoxImageClassificationOutputDirectory;
         private TabPage tabPageSettings;
         private TextBox textBoxSettingsIpedExePath;
         private Label label5;
         private OpenFileDialog openFileDialogSettingsIpedExePath;
         private FolderBrowserDialog folderBrowserDialog;
         private OpenFileDialog openFileDialogSettingsHashesDB;
-        private CheckBox checkBoxIPEDConfigEnableAudioTranslation;
         private Label label13;
         private TextBox textBoxAudioTranslationFasterWhisperDirectory;
         private Label label12;
@@ -1053,7 +882,6 @@
         private Button buttonAudioTranslationStartProcess;
         private OpenFileDialog openFileDialogAudioTranslationServiceProgram;
         private CheckBox checkBoxAudioTranslationUseGPU;
-        private CheckBox checkBoxIPEDConfigEnableImageClassification;
         private Button buttonImageClassificationStartProcess;
         private ComboBox comboBoxImageClassificationLanguage;
         private Label label16;
@@ -1066,5 +894,7 @@
         private TabPage tabPageFileSystem;
         private TabPage tabPageIPEDConfig;
         private TabPage tabPageLocalConfig;
+        private Panel panelAudioTranslationConfig;
+        private Panel panelImageClassificationConfig;
     }
 }

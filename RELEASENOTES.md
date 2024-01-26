@@ -1,6 +1,8 @@
 # 1.6
 - Einstellungen für conf/FileSystemConfig.txt hinzugefügt
 - Einstellungen für IPEDConfig.txt hinzugefügt
+- Einstellungen für AudioTranslation überarbeitet
+- Einstellungen für ImageClassification überarbeitet
 
 # 1.5
 - Fehlerhafte Tooltips entfernt

@@ -10,6 +10,8 @@ namespace IPED_Gui_WinForms.Helper
             LocalConfig.WriteToDisk(profilePath);
             IPEDConfig.WriteToDisk(profilePath);
             FileSystemConfig.WriteToDisk(profilePath);
+            AudioTranslation.WriteToDisk(profilePath);
+            ImageClassification.WriteToDisk(profilePath);
         }
 
         public static readonly ConfigType LocalConfig = new("LocalConfig.txt", new ConfigElement[] {
@@ -70,6 +72,17 @@ namespace IPED_Gui_WinForms.Helper
             new("unallocatedFragSize", "FileSystemConfigUnallocatedFragSize", ConfigElementType.String, "Size in bytes of the unallocated space segments. In cases where the carving of videos is important, it may be useful to increase this value to minimize missing items that cross segment boundaries, but processing may take longer if this value is too large."),
             new("ignoreHardLinks", "FileSystemConfigIgnoreHardLinks", ConfigElementType.Boolean, "Ignores HFS+ hard links pointing to items already processed. The hard links are added to the case, but their content is not processed (indexed, expanded, carved, etc). Optimizes HFS+ image processing containing millions of hard links (such as Time Machine volumes)."),
             new("skipFolderRegex", "FileSystemConfigSkipFolderRegex", ConfigElementType.String, "Regex pattern to skip matched folder trees when processing. Just works if processing mounted folders currently. Matched folders are ignored and not included in case.")
+        });
+
+        public static readonly ConfigType AudioTranslation = new("conf/AudioTranslation.txt", new ConfigElement[] {
+            new("inputDirectory", "AudioTranslationInputDirectory", ConfigElementType.Directory, "Directory where the task puts the audio files to process"),
+            new("outputDirectory", "AudioTranslationOutputDirectory", ConfigElementType.Directory, "Directory where the background task puts the results and where the tasks fetches them"),
+            new("processVideo", "AudioTranslationProcessVideo", ConfigElementType.Boolean, "Use video processing with caution. It can take very long if you analyze full length cinema movies")
+        });
+
+        public static readonly ConfigType ImageClassification = new("conf/ImageClassification.txt", new ConfigElement[] {
+            new("inputDirectory", "ImageClassificationInputDirectory", ConfigElementType.Directory, "Directory where the task puts the files to process"),
+            new("outputDirectory", "ImageClassificationOutputDirectory", ConfigElementType.Directory, "Directory where the background task puts the results and where the tasks fetches them"),
         });
 
         public readonly string FilePath;
