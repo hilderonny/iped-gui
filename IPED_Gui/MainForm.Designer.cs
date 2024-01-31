@@ -84,6 +84,8 @@
             label5 = new Label();
             tabPageLocalConfig = new TabPage();
             tabPageIPEDConfig = new TabPage();
+            tabPageCategories = new TabPage();
+            categoriesUserControl = new UserControls.CategoriesUserControl();
             tabPageFileSystem = new TabPage();
             tabPageAudioTranslation = new TabPage();
             panelAudioTranslationConfig = new Panel();
@@ -115,6 +117,7 @@
             tabControl1.SuspendLayout();
             tabPageOverview.SuspendLayout();
             tabPageSettings.SuspendLayout();
+            tabPageCategories.SuspendLayout();
             tabPageAudioTranslation.SuspendLayout();
             tabPageImageClassification.SuspendLayout();
             tabPageProtocol.SuspendLayout();
@@ -666,6 +669,7 @@
             tabControl1.Controls.Add(tabPageSettings);
             tabControl1.Controls.Add(tabPageLocalConfig);
             tabControl1.Controls.Add(tabPageIPEDConfig);
+            tabControl1.Controls.Add(tabPageCategories);
             tabControl1.Controls.Add(tabPageFileSystem);
             tabControl1.Controls.Add(tabPageAudioTranslation);
             tabControl1.Controls.Add(tabPageImageClassification);
@@ -735,6 +739,24 @@
             tabPageIPEDConfig.TabIndex = 12;
             tabPageIPEDConfig.Text = "Funktionen";
             tabPageIPEDConfig.UseVisualStyleBackColor = true;
+            // 
+            // tabPageCategories
+            // 
+            tabPageCategories.Controls.Add(categoriesUserControl);
+            tabPageCategories.Location = new Point(4, 24);
+            tabPageCategories.Name = "tabPageCategories";
+            tabPageCategories.Size = new Size(990, 540);
+            tabPageCategories.TabIndex = 14;
+            tabPageCategories.Text = "Kategorien";
+            tabPageCategories.UseVisualStyleBackColor = true;
+            // 
+            // categoriesUserControl
+            // 
+            categoriesUserControl.Dock = DockStyle.Fill;
+            categoriesUserControl.Location = new Point(0, 0);
+            categoriesUserControl.Name = "categoriesUserControl";
+            categoriesUserControl.Size = new Size(990, 540);
+            categoriesUserControl.TabIndex = 0;
             // 
             // tabPageFileSystem
             // 
@@ -834,6 +856,7 @@
             tabPageOverview.ResumeLayout(false);
             tabPageSettings.ResumeLayout(false);
             tabPageSettings.PerformLayout();
+            tabPageCategories.ResumeLayout(false);
             tabPageAudioTranslation.ResumeLayout(false);
             tabPageImageClassification.ResumeLayout(false);
             tabPageProtocol.ResumeLayout(false);
@@ -896,5 +919,7 @@
         private TabPage tabPageLocalConfig;
         private Panel panelAudioTranslationConfig;
         private Panel panelImageClassificationConfig;
+        private TabPage tabPageCategories;
+        private UserControls.CategoriesUserControl categoriesUserControl;
     }
 }

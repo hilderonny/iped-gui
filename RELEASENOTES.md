@@ -3,6 +3,7 @@
 - Einstellungen für IPEDConfig.txt hinzugefügt
 - Einstellungen für AudioTranslation überarbeitet
 - Einstellungen für ImageClassification überarbeitet
+- Einstellungen für Kategorien hinzugefügt
 
 # 1.5
 - Fehlerhafte Tooltips entfernt

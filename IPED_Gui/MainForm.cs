@@ -31,6 +31,7 @@ namespace IPED_Gui_WinForms
             panelImageClassificationConfig.Controls.Add(new SettingsUserControl(ConfigType.ImageClassification));
 
             LoadSettings();
+            categoriesUserControl.LoadCategories();
             CheckForWarning();
 
             Version? version = Assembly.GetExecutingAssembly().GetName().Version;
@@ -307,6 +308,7 @@ namespace IPED_Gui_WinForms
                 Settings settings = Settings.Default;
                 settings.SettingsIpedExePath = fileName;
                 settings.Save();
+                categoriesUserControl.LoadCategories();
             }
         }
 
