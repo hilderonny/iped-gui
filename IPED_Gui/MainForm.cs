@@ -1,4 +1,6 @@
+using IPED_Gui_WinForms.Helper;
 using IPED_Gui_WinForms.Properties;
+using IPED_Gui_WinForms.UserControls;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -21,7 +23,15 @@ namespace IPED_Gui_WinForms
         {
             synchronizationContext = SynchronizationContext.Current;
             InitializeComponent();
+
+            tabPageLocalConfig.Controls.Add(new SettingsUserControl(ConfigType.LocalConfig));
+            tabPageIPEDConfig.Controls.Add(new SettingsUserControl(ConfigType.IPEDConfig));
+            tabPageFileSystem.Controls.Add(new SettingsUserControl(ConfigType.FileSystemConfig));
+            panelAudioTranslationConfig.Controls.Add(new SettingsUserControl(ConfigType.AudioTranslation));
+            panelImageClassificationConfig.Controls.Add(new SettingsUserControl(ConfigType.ImageClassification));
+
             LoadSettings();
+            categoriesUserControl.LoadCategories();
             CheckForWarning();
 
             Version? version = Assembly.GetExecutingAssembly().GetName().Version;
@@ -75,99 +85,6 @@ namespace IPED_Gui_WinForms
         }
 
         /// <summary>
-        /// Erstellt den Inhalt der IPEDConfig.txt - Datei anhand der Einstellungen und gibt diesen als Zeichenkette zurück
-        /// </summary>
-        private static string CreateIPEDConfig()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "enableHash = true",
-                "enablePhotoDNA = false",
-                "enableHashDBLookup = true",
-                "enablePhotoDNALookup = false",
-                "enableLedDie = true",
-                "enableYahooNSFWDetection = false",
-                "enableQRCode = true",
-                "ignoreDuplicates = false",
-                "exportFileProps = false",
-                "processFileSignatures = true",
-                "enableFileParsing = true",
-                "expandContainers = true",
-                "processEmbeddedDisks = true",
-                "enableRegexSearch = true",
-                "enableAutomaticExportFiles = true",
-                "enableLanguageDetect = true",
-                "enableNamedEntityRecogniton = false",
-                "enableGraphGeneration = " + (settings.SettingsEnableGraphGeneration ? "true" : "false"),
-                "entropyTest = true",
-                "indexFileContents = true",
-                "enableIndexToElasticSearch = false",
-                "enableMinIO = false",
-                "enableAudioTranscription = false",
-                "enableCarving = " + (settings.SettingsEnableCarving ? "true" : "false"),
-                "enableLedCarving = false",
-                "enableKnownMetCarving = false",
-                "enableImageThumbs = true",
-                "enableImageSimilarity = true",
-                "enableFaceRecognition = " + (settings.SettingsEnableFaceRecognition ? "true" : "false"),
-                "enableVideoThumbs = true",
-                "enableDocThumbs = true",
-                "enableHTMLReport = true",
-                "enableAudioTranslation = " + (settings.IPEDConfigEnableAudioTranslation ? "true" : "false"),
-                "enableTextTranslation = false",
-                "enableImageClassification = " + (settings.IPEDConfigEnableImageClassification ? "true" : "false")
-            });
-        }
-
-        private static string CreateLocalConfig()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "locale = " + settings.SettingsLocale,
-                "indexTemp = " + settings.SettingsIndexTemp.Replace("\\", "/"),
-                "indexTempOnSSD = " + (settings.SettingsIndexTempOnSSD ? "true" : "false"),
-                "outputOnSSD = " + (settings.SettingsOutputOnSSD ? "true" : "false"),
-                "numThreads = " + settings.SettingsNumThreads,
-                "hashesDB = " + settings.SettingsHashesDB.Replace("\\", "/"),
-                "pluginFolder = " + Path.GetRelativePath(Path.GetDirectoryName(settings.SettingsIpedExePath) ?? "", settings.SettingsPluginFolder).Replace("\\", "/")
-            });
-        }
-
-        private static string CreateAudioTranslationTxt()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "inputDirectory = " + settings.AudioTranslationInputDirectory,
-                "outputDirectory = " + settings.AudioTranslationOutputDirectory,
-                "processVideo = " + (settings.AudioTranslationProcessVideo ? "true" : "false")
-            });
-        }
-
-        private static string CreateImageClassificationTxt()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "inputDirectory = " + settings.ImageClassificationInputDirectory,
-                "outputDirectory = " + settings.ImageClassificationOutputDirectory
-            });
-        }
-
-        private static string CreateFileSystemConfigTxt()
-        {
-            Settings settings = Settings.Default;
-            return string.Join("\n", new List<string> {
-                "robustImageReading = false",
-                "numImageReaders = auto",
-                "addUnallocated = " + (settings.FileSystemConfigAddUnallocated ? "true" : "false"),
-                "addFileSlacks = false",
-                "minOrphanSizeToIgnore = -1",
-                "unallocatedFragSize = 1073741824",
-                "ignoreHardLinks = true",
-                "skipFolderRegex ="
-            });
-        }
-
-        /// <summary>
         /// Lädt die zuletzt gültigen Einstellungen und aktualisiert die UI-Elemente entsprechend
         /// </summary>
         private void LoadSettings()
@@ -183,23 +100,8 @@ namespace IPED_Gui_WinForms
 
             // Einstellungen
             textBoxSettingsIpedExePath.Text = settings.SettingsIpedExePath;
-            comboBoxSettingsLocale.SelectedIndex = comboBoxSettingsLocale.FindStringExact(settings.SettingsLocale);
-            textBoxSettingsIndexTemp.Text = settings.SettingsIndexTemp;
-            checkBoxSettingsIndexTempOnSSD.Checked = settings.SettingsIndexTempOnSSD;
-            checkBoxSettingsOutputOnSSD.Checked = settings.SettingsOutputOnSSD;
-            textBoxSettingsNumThreads.Text = settings.SettingsNumThreads;
-            textBoxSettingsHashesDB.Text = settings.SettingsHashesDB;
-            textBoxSettingsPluginFolder.Text = settings.SettingsPluginFolder;
-            checkBoxSettingsEnableCarving.Checked = settings.SettingsEnableCarving;
-            checkBoxFileSystemConfigAddUnallocated.Checked = settings.FileSystemConfigAddUnallocated;
-            checkBoxSettingsEnableFaceRecognition.Checked = settings.SettingsEnableFaceRecognition;
-            checkBoxSettingsEnableGraphGeneration.Checked = settings.SettingsEnableGraphGeneration;
 
             // Audioübersetzung
-            checkBoxIPEDConfigEnableAudioTranslation.Checked = settings.IPEDConfigEnableAudioTranslation;
-            textBoxAudioTranslationInputDirectory.Text = settings.AudioTranslationInputDirectory;
-            textBoxAudioTranslationOutputDirectory.Text = settings.AudioTranslationOutputDirectory;
-            checkBoxAudioTranslationProcessVideos.Checked = settings.AudioTranslationProcessVideo;
             textBoxAudioTranslationServiceProgram.Text = settings.AudioTranslationServiceProgram;
             textBoxAudioTranslationProcessingDirectory.Text = settings.AudioTranslationProcessingDirectory;
             textBoxAudioTranslationFasterWhisperDirectory.Text = settings.AudioTranslationFasterWhisperDirectory;
@@ -208,9 +110,6 @@ namespace IPED_Gui_WinForms
             checkBoxAudioTranslationUseGPU.Checked = settings.AudioTranslationUseGPU;
 
             // Bildklassifizierung
-            checkBoxIPEDConfigEnableImageClassification.Checked = settings.IPEDConfigEnableImageClassification;
-            textBoxImageClassificationInputDirectory.Text = settings.ImageClassificationInputDirectory;
-            textBoxImageClassificationOutputDirectory.Text = settings.ImageClassificationOutputDirectory;
             textBoxImageClassificationServiceProgram.Text = settings.ImageClassificationServiceProgram;
             textBoxImageClassificationProcessingDirectory.Text = settings.ImageClassificationProcessingDirectory;
             textBoxImageClassificationMobileNetDirectory.Text = settings.ImageClassificationMobileNetDirectory;
@@ -224,28 +123,6 @@ namespace IPED_Gui_WinForms
         {
             textBoxConsole.AppendText(line);
             textBoxConsole.AppendText(Environment.NewLine);
-        }
-
-        /// <summary>
-        /// Wird ausgeführt, wenn die CheckBox AudioTranslation angeklickt wurde.
-        /// Speichert deren Zustand in den Einstellungen unter IPEDConfig_enableAudioTranslation.
-        /// </summary>
-        private void checkBoxIPEDConfigEnabelAudioTranslation_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.IPEDConfigEnableAudioTranslation = checkBoxIPEDConfigEnableAudioTranslation.Checked;
-            settings.Save();
-        }
-
-        /// <summary>
-        /// Wird ausgeführt, wenn die CheckBox BildKlassifizierung angeklickt wurde.
-        /// Speichert deren Zustand in den Einstellungen unter IPEDConfig_enableImageClassification.
-        /// </summary>
-        private void checkBoxIPEDConfigEnableImageClassification_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.IPEDConfigEnableImageClassification = checkBoxIPEDConfigEnableImageClassification.Checked;
-            settings.Save();
         }
 
         /// <summary>
@@ -316,8 +193,10 @@ namespace IPED_Gui_WinForms
         /// </summary>
         private void button_GeneralOutputDirectory_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            folderBrowserDialog.InitialDirectory = textBox_Ausgabeverzeichnis.Text;
+            FolderBrowserDialog folderBrowserDialog = new()
+            {
+                InitialDirectory = textBox_Ausgabeverzeichnis.Text
+            };
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 textBox_Ausgabeverzeichnis.Text = folderBrowserDialog.SelectedPath;
@@ -334,8 +213,10 @@ namespace IPED_Gui_WinForms
         /// </summary>
         private void button_DateienHinzufuegen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Multiselect = true;
+            OpenFileDialog fileDialog = new()
+            {
+                Multiselect = true
+            };
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 foreach (string fileName in fileDialog.FileNames)
@@ -363,24 +244,9 @@ namespace IPED_Gui_WinForms
         private void button_Starten_Click(object sender, EventArgs e)
         {
             var profileName = "ipedgui";
-            Settings settings = Settings.Default;
+            ConfigHelper.WriteProfileToDisk(profileName);
 
-            var ipedDirectory = Path.GetDirectoryName(settings.SettingsIpedExePath);
-            var profileDirectory = Path.Join(ipedDirectory, "profiles", profileName);
-            var confDirectory = Path.Join(profileDirectory, "conf");
-            Directory.CreateDirectory(confDirectory);
-            // IPEDConfig.txt
-            File.WriteAllText(Path.Join(profileDirectory, "IPEDConfig.txt"), CreateIPEDConfig());
-            // LocalConfig.tyt
-            File.WriteAllText(Path.Join(profileDirectory, "LocalConfig.txt"), CreateLocalConfig());
-            // conf/AudioTranslation.txt
-            File.WriteAllText(Path.Join(confDirectory, "AudioTranslation.txt"), CreateAudioTranslationTxt());
-            // conf/ImageClassification.txt
-            File.WriteAllText(Path.Join(confDirectory, "ImageClassification.txt"), CreateImageClassificationTxt());
-            // conf/FileSystemConfig.txt
-            File.WriteAllText(Path.Join(confDirectory, "FileSystemConfig.txt"), CreateFileSystemConfigTxt());
-
-            string ipedCommand = settings.SettingsIpedExePath;
+            string ipedCommand = Settings.Default.SettingsIpedExePath;
             string ipedArguments = CreateIpedArguments(profileName);
             textBoxConsole.Clear();
             WriteToConsole(ipedCommand + " " + ipedArguments + "\n");
@@ -415,7 +281,7 @@ namespace IPED_Gui_WinForms
         /// </summary>
         private void button_VerzeichnisHinzufuegen_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            FolderBrowserDialog folderBrowserDialog = new();
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 listBox_Spuren.Items.Add(folderBrowserDialog.SelectedPath);
@@ -442,132 +308,7 @@ namespace IPED_Gui_WinForms
                 Settings settings = Settings.Default;
                 settings.SettingsIpedExePath = fileName;
                 settings.Save();
-            }
-        }
-
-        private void comboBoxSettingsLocale_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsLocale = (string)((ComboBox)sender).SelectedItem;
-            settings.Save();
-        }
-
-        private void buttonSettingsIndexTemp_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxSettingsIndexTemp.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxSettingsIndexTemp.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.SettingsIndexTemp = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void checkBoxSettingsIndexTempOnSSD_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsIndexTempOnSSD = checkBoxSettingsIndexTempOnSSD.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxSettingsOutputOnSSD_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsOutputOnSSD = checkBoxSettingsOutputOnSSD.Checked;
-            settings.Save();
-        }
-
-        private void textBoxSettingsNumThreads_TextChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsNumThreads = textBoxSettingsNumThreads.Text;
-            settings.Save();
-        }
-
-        private void buttonSettingsHashesDB_Click(object sender, EventArgs e)
-        {
-            openFileDialogSettingsHashesDB.FileName = textBoxSettingsHashesDB.Text;
-            if (openFileDialogSettingsHashesDB.ShowDialog() == DialogResult.OK)
-            {
-                var fileName = openFileDialogSettingsHashesDB.FileName;
-                textBoxSettingsHashesDB.Text = fileName;
-                Settings settings = Settings.Default;
-                settings.SettingsHashesDB = fileName;
-                settings.Save();
-            }
-        }
-
-        private void buttonSettingsPluginFolder_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxSettingsPluginFolder.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxSettingsPluginFolder.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.SettingsPluginFolder = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void buttonAudioTranslationInputDirectory_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxAudioTranslationInputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxAudioTranslationInputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.AudioTranslationInputDirectory = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void buttonAudioTranslationOutputDirectory_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxAudioTranslationOutputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxAudioTranslationOutputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.AudioTranslationOutputDirectory = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void checkBoxAudioTranslationProcessVideos_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.AudioTranslationProcessVideo = checkBoxAudioTranslationProcessVideos.Checked;
-            settings.Save();
-        }
-
-        private void buttonImageClassificationInputDirectory_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxImageClassificationInputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxImageClassificationInputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.ImageClassificationInputDirectory = selectedFolder;
-                settings.Save();
-            }
-        }
-
-        private void buttonImageClassificationOutputDirectory_Click_1(object sender, EventArgs e)
-        {
-            folderBrowserDialog.SelectedPath = textBoxImageClassificationOutputDirectory.Text;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                var selectedFolder = folderBrowserDialog.SelectedPath;
-                textBoxImageClassificationOutputDirectory.Text = selectedFolder;
-                Settings settings = Settings.Default;
-                settings.ImageClassificationOutputDirectory = selectedFolder;
-                settings.Save();
+                categoriesUserControl.LoadCategories();
             }
         }
 
@@ -754,34 +495,6 @@ namespace IPED_Gui_WinForms
             };
             process.Start();
             tabControl1.SelectedTab = tabPageProtocol;
-        }
-
-        private void checkBoxSettingsEnableCarving_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsEnableCarving = checkBoxSettingsEnableCarving.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxFileSystemConfigAddUnallocated_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.FileSystemConfigAddUnallocated = checkBoxFileSystemConfigAddUnallocated.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxSettingsEnableFaceRecognition_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsEnableFaceRecognition = checkBoxSettingsEnableFaceRecognition.Checked;
-            settings.Save();
-        }
-
-        private void checkBoxSettingsEnableGraphGeneration_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings settings = Settings.Default;
-            settings.SettingsEnableGraphGeneration = checkBoxSettingsEnableGraphGeneration.Checked;
-            settings.Save();
         }
     }
 }
