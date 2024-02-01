@@ -22,7 +22,7 @@ namespace IPED_Gui_WinForms.Helper
             new("numThreads", "LocalConfigNumThreads", ConfigElementType.String, "Number of processing threads/workers: \"default\" uses the number of CPU logical cores. If you have memory usage problems, you can decrease it or increase java heap memory (-Xms)."),
             new("hashesDB", "LocalConfigHashesDB", ConfigElementType.File, "Full path for IPED hash database. It is highly recommended to store it on a fast disk, preferably SSD, and not the same used as \"indexTemp\", if other disk is available.", filter: "IPED Hash database|iped-hashes.db"),
             // tskJarPath wird hier nicht aufgenommen, da nur für Linux relevant
-            new("pluginFolder", "LocalConfigPluginFolder", ConfigElementType.Directory, "Plugin folder for optional libs not embedded because of license restrictions. They will be dynamically loaded at runtime.")
+            new("pluginFolder", "LocalConfigPluginFolder", ConfigElementType.DirectoryRelativeToIpedExe, "Plugin folder for optional libs not embedded because of license restrictions. They will be dynamically loaded at runtime.")
         });
 
         public static readonly ConfigType IPEDConfig = new("IPEDConfig.txt", new ConfigElement[] {
@@ -101,13 +101,22 @@ namespace IPED_Gui_WinForms.Helper
             {
                 lines.Add("# " + configElement.Description);
                 var line = configElement.ElementName + " = ";
+                var setting = Settings.Default[configElement.SettingsName];
                 if (configElement.ElementType == ConfigElementType.Boolean)
                 {
-                    line += (bool)Settings.Default[configElement.SettingsName] ? "true" : "false";
+                    line += (bool)setting ? "true" : "false";
+                }
+                else if (configElement.ElementType == ConfigElementType.File || configElement.ElementType == ConfigElementType.Directory)
+                {
+                    line += (setting.ToString() ?? "").Replace("\\", "/");
+                }
+                else if (configElement.ElementType == ConfigElementType.DirectoryRelativeToIpedExe)
+                {
+                    line += Path.GetRelativePath(Path.GetDirectoryName(Settings.Default.SettingsIpedExePath) ?? "", setting.ToString() ?? "").Replace("\\", "/");
                 }
                 else
                 {
-                    line += Settings.Default[configElement.SettingsName].ToString();
+                    line += setting.ToString();
                 }
                 lines.Add(line);
                 lines.Add("");
@@ -149,6 +158,7 @@ namespace IPED_Gui_WinForms.Helper
         Number,
         Boolean,
         Directory,
+        DirectoryRelativeToIpedExe,
         File,
         StringList
     }

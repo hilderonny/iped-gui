@@ -62,7 +62,7 @@ namespace IPED_Gui_WinForms.UserControls
                     };
                     horizontalFlowLayoutPanel.Controls.Add(checkBox);
                 }
-                else if (configElement.ElementType == ConfigElementType.Directory)
+                else if (configElement.ElementType == ConfigElementType.Directory || configElement.ElementType == ConfigElementType.DirectoryRelativeToIpedExe)
                 {
                     var textBox = new TextBox {
                         Size = new Size(571, 23),
