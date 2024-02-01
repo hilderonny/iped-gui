@@ -35,7 +35,7 @@ namespace IPED_Gui_WinForms.Helper
                 return "";
             }
             var lines = File.ReadLines(searchTermFilePath);
-            var regex = $"SEARCHTERMS, true = ({string.Join("|", lines)})";
+            var regex = $"SEARCHTERMS, true = \\b({string.Join("|", lines)})\\b";
             return regex;
         }
 
