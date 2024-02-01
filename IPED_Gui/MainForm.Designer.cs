@@ -142,6 +142,7 @@
             // 
             checkBox_ProjektErweitern.AutoSize = true;
             checkBox_ProjektErweitern.Location = new Point(6, 22);
+            checkBox_ProjektErweitern.Margin = new Padding(0);
             checkBox_ProjektErweitern.Name = "checkBox_ProjektErweitern";
             checkBox_ProjektErweitern.Size = new Size(184, 19);
             checkBox_ProjektErweitern.TabIndex = 8;

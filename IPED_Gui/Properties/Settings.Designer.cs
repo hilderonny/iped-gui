@@ -874,5 +874,53 @@ namespace IPED_Gui_WinForms.Properties {
                 this["IPEDConfigEnableTextTranslation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CategoriesToExportDocuments {
+            get {
+                return ((bool)(this["CategoriesToExportDocuments"]));
+            }
+            set {
+                this["CategoriesToExportDocuments"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CategoriesToExportRTFDocuments {
+            get {
+                return ((bool)(this["CategoriesToExportRTFDocuments"]));
+            }
+            set {
+                this["CategoriesToExportRTFDocuments"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CategoriesToExportPDFDocuments {
+            get {
+                return ((bool)(this["CategoriesToExportPDFDocuments"]));
+            }
+            set {
+                this["CategoriesToExportPDFDocuments"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CategoriesToExportXMLFiles {
+            get {
+                return ((bool)(this["CategoriesToExportXMLFiles"]));
+            }
+            set {
+                this["CategoriesToExportXMLFiles"] = value;
+            }
+        }
     }
 }
