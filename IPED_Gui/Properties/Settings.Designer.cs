@@ -2494,5 +2494,17 @@ namespace IPED_Gui_WinForms.Properties {
                 this["CategoriesToExportSocialMediaActivities"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GeneralSearchTermFilePath {
+            get {
+                return ((string)(this["GeneralSearchTermFilePath"]));
+            }
+            set {
+                this["GeneralSearchTermFilePath"] = value;
+            }
+        }
     }
 }

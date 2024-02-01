@@ -4,6 +4,7 @@
 - Einstellungen für AudioTranslation überarbeitet
 - Einstellungen für ImageClassification überarbeitet
 - Einstellungen für Kategorien hinzugefügt
+- Angabe von Schlagwortlisten hinzugefügt
 
 # 1.5
 - Fehlerhafte Tooltips entfernt

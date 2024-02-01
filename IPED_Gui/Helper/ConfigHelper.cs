@@ -27,6 +27,18 @@ namespace IPED_Gui_WinForms.Helper
             return string.Join("\n", FlattenCategoryNamesToExport(Category.Root));
         }
 
+        private static string CreateRegexConfigTxt()
+        {
+            var searchTermFilePath = Settings.Default.GeneralSearchTermFilePath;
+            if (string.IsNullOrEmpty(searchTermFilePath))
+            {
+                return "";
+            }
+            var lines = File.ReadLines(searchTermFilePath);
+            var regex = $"SEARCHTERMS, true = ({string.Join("|", lines)})";
+            return regex;
+        }
+
         internal static void WriteProfileToDisk(string profileName)
         {
             Settings settings = Settings.Default;
@@ -38,6 +50,7 @@ namespace IPED_Gui_WinForms.Helper
             ConfigType.WriteAllToDisk(profileDirectory);
 
             File.WriteAllText(Path.Join(confDirectory, "CategoriesToExport.txt"), CreateCategoriesToExportTxt());
+            File.WriteAllText(Path.Join(confDirectory, "RegexConfig.txt"), CreateRegexConfigTxt());
 
         }
 
