@@ -42,6 +42,10 @@
             Label label20;
             Button buttonImageClassificationServiceProgram;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            tableLayoutPanel2 = new TableLayoutPanel();
+            buttonSelectSearchTermFile = new Button();
+            textBoxSearchTermFilePath = new TextBox();
+            label1 = new Label();
             checkBox_ProjektErweitern = new CheckBox();
             checkBox_Fortsetzen = new CheckBox();
             checkBox_Portabel = new CheckBox();
@@ -111,6 +115,7 @@
             label20 = new Label();
             buttonImageClassificationServiceProgram = new Button();
             groupBox2.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -126,6 +131,7 @@
             // groupBox2
             // 
             tableLayoutPanel1.SetColumnSpan(groupBox2, 2);
+            groupBox2.Controls.Add(tableLayoutPanel2);
             groupBox2.Controls.Add(checkBox_ProjektErweitern);
             groupBox2.Controls.Add(checkBox_Fortsetzen);
             groupBox2.Controls.Add(checkBox_Portabel);
@@ -137,6 +143,50 @@
             groupBox2.TabIndex = 20;
             groupBox2.TabStop = false;
             groupBox2.Text = "Optionen";
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.91786F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80.08214F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 158F));
+            tableLayoutPanel2.Controls.Add(buttonSelectSearchTermFile, 0, 0);
+            tableLayoutPanel2.Controls.Add(textBoxSearchTermFilePath, 0, 0);
+            tableLayoutPanel2.Controls.Add(label1, 0, 0);
+            tableLayoutPanel2.Location = new Point(6, 172);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.Size = new Size(646, 36);
+            tableLayoutPanel2.TabIndex = 12;
+            // 
+            // buttonSelectSearchTermFile
+            // 
+            buttonSelectSearchTermFile.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonSelectSearchTermFile.Location = new Point(490, 3);
+            buttonSelectSearchTermFile.Name = "buttonSelectSearchTermFile";
+            buttonSelectSearchTermFile.Size = new Size(153, 23);
+            buttonSelectSearchTermFile.TabIndex = 7;
+            buttonSelectSearchTermFile.Text = "Auswählen ...";
+            buttonSelectSearchTermFile.UseVisualStyleBackColor = true;
+            buttonSelectSearchTermFile.Click += buttonSelectSearchTermFile_Click;
+            // 
+            // textBoxSearchTermFilePath
+            // 
+            textBoxSearchTermFilePath.Dock = DockStyle.Fill;
+            textBoxSearchTermFilePath.Location = new Point(100, 3);
+            textBoxSearchTermFilePath.Name = "textBoxSearchTermFilePath";
+            textBoxSearchTermFilePath.Size = new Size(384, 23);
+            textBoxSearchTermFilePath.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(87, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Schlagwortliste";
             // 
             // checkBox_ProjektErweitern
             // 
@@ -847,6 +897,8 @@
             Text = "IPED GUI";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
@@ -922,5 +974,9 @@
         private Panel panelImageClassificationConfig;
         private TabPage tabPageCategories;
         private UserControls.CategoriesUserControl categoriesUserControl;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label1;
+        private Button buttonSelectSearchTermFile;
+        private TextBox textBoxSearchTermFilePath;
     }
 }

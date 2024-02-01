@@ -97,6 +97,7 @@ namespace IPED_Gui_WinForms
             checkBox_Fortsetzen.Checked = settings.General_Continue;
             checkBox_Portabel.Checked = settings.General_Portable;
             checkBox_InternetdatenLaden.Checked = settings.General_Download_Internet_Data;
+            textBoxSearchTermFilePath.Text = settings.GeneralSearchTermFilePath;
 
             // Einstellungen
             textBoxSettingsIpedExePath.Text = settings.SettingsIpedExePath;
@@ -495,6 +496,18 @@ namespace IPED_Gui_WinForms
             };
             process.Start();
             tabControl1.SelectedTab = tabPageProtocol;
+        }
+
+        private void buttonSelectSearchTermFile_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog { };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFile = openFileDialog.FileName;
+                textBoxSearchTermFilePath.Text = selectedFile;
+                Settings.Default.GeneralSearchTermFilePath = selectedFile;
+                Settings.Default.Save();
+            }
         }
     }
 }
