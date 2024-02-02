@@ -246,6 +246,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox3.Controls.Add(checkBoxAudioTranslationUseGPU);
             groupBox3.Controls.Add(buttonAudioTranslationStartProcess);
             groupBox3.Controls.Add(comboBoxAudioTranslationModelSize);
@@ -262,9 +263,9 @@
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(textBoxAudioTranslationServiceProgram);
             groupBox3.Controls.Add(buttonAudioTranslationServiceProgram);
-            groupBox3.Location = new Point(3, 289);
+            groupBox3.Location = new Point(3, 311);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(984, 248);
+            groupBox3.Size = new Size(980, 226);
             groupBox3.TabIndex = 15;
             groupBox3.TabStop = false;
             groupBox3.Text = "Lokale Verarbeitung";
@@ -285,7 +286,7 @@
             buttonAudioTranslationStartProcess.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonAudioTranslationStartProcess.Location = new Point(196, 192);
             buttonAudioTranslationStartProcess.Name = "buttonAudioTranslationStartProcess";
-            buttonAudioTranslationStartProcess.Size = new Size(154, 23);
+            buttonAudioTranslationStartProcess.Size = new Size(146, 23);
             buttonAudioTranslationStartProcess.TabIndex = 30;
             buttonAudioTranslationStartProcess.Text = "Prozess starten";
             buttonAudioTranslationStartProcess.UseVisualStyleBackColor = true;
@@ -329,10 +330,9 @@
             // 
             // buttonAudioTranslationArgosTranslateDirectory
             // 
-            buttonAudioTranslationArgosTranslateDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonAudioTranslationArgosTranslateDirectory.Location = new Point(823, 108);
             buttonAudioTranslationArgosTranslateDirectory.Name = "buttonAudioTranslationArgosTranslateDirectory";
-            buttonAudioTranslationArgosTranslateDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationArgosTranslateDirectory.Size = new Size(112, 23);
             buttonAudioTranslationArgosTranslateDirectory.TabIndex = 27;
             buttonAudioTranslationArgosTranslateDirectory.Text = "Auswählen ...";
             buttonAudioTranslationArgosTranslateDirectory.UseVisualStyleBackColor = true;
@@ -357,10 +357,9 @@
             // 
             // buttonAudioTranslationFasterWhisperDirectory
             // 
-            buttonAudioTranslationFasterWhisperDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonAudioTranslationFasterWhisperDirectory.Location = new Point(823, 79);
             buttonAudioTranslationFasterWhisperDirectory.Name = "buttonAudioTranslationFasterWhisperDirectory";
-            buttonAudioTranslationFasterWhisperDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationFasterWhisperDirectory.Size = new Size(112, 23);
             buttonAudioTranslationFasterWhisperDirectory.TabIndex = 24;
             buttonAudioTranslationFasterWhisperDirectory.Text = "Auswählen ...";
             buttonAudioTranslationFasterWhisperDirectory.UseVisualStyleBackColor = true;
@@ -385,10 +384,9 @@
             // 
             // buttonAudioTranslationProcessingDirectory
             // 
-            buttonAudioTranslationProcessingDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonAudioTranslationProcessingDirectory.Location = new Point(823, 50);
             buttonAudioTranslationProcessingDirectory.Name = "buttonAudioTranslationProcessingDirectory";
-            buttonAudioTranslationProcessingDirectory.Size = new Size(120, 23);
+            buttonAudioTranslationProcessingDirectory.Size = new Size(112, 23);
             buttonAudioTranslationProcessingDirectory.TabIndex = 21;
             buttonAudioTranslationProcessingDirectory.Text = "Auswählen ...";
             buttonAudioTranslationProcessingDirectory.UseVisualStyleBackColor = true;
@@ -413,10 +411,9 @@
             // 
             // buttonAudioTranslationServiceProgram
             // 
-            buttonAudioTranslationServiceProgram.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonAudioTranslationServiceProgram.Location = new Point(823, 21);
             buttonAudioTranslationServiceProgram.Name = "buttonAudioTranslationServiceProgram";
-            buttonAudioTranslationServiceProgram.Size = new Size(120, 23);
+            buttonAudioTranslationServiceProgram.Size = new Size(112, 23);
             buttonAudioTranslationServiceProgram.TabIndex = 18;
             buttonAudioTranslationServiceProgram.Text = "Auswählen ...";
             buttonAudioTranslationServiceProgram.UseVisualStyleBackColor = true;
@@ -424,6 +421,7 @@
             // 
             // groupBox4
             // 
+            groupBox4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox4.Controls.Add(buttonImageClassificationStartProcess);
             groupBox4.Controls.Add(comboBoxImageClassificationLanguage);
             groupBox4.Controls.Add(label16);
@@ -436,16 +434,15 @@
             groupBox4.Controls.Add(label20);
             groupBox4.Controls.Add(textBoxImageClassificationServiceProgram);
             groupBox4.Controls.Add(buttonImageClassificationServiceProgram);
-            groupBox4.Location = new Point(3, 327);
+            groupBox4.Location = new Point(3, 369);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(984, 210);
+            groupBox4.Size = new Size(984, 168);
             groupBox4.TabIndex = 21;
             groupBox4.TabStop = false;
             groupBox4.Text = "Lokale Verarbeitung";
             // 
             // buttonImageClassificationStartProcess
             // 
-            buttonImageClassificationStartProcess.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonImageClassificationStartProcess.Location = new Point(196, 138);
             buttonImageClassificationStartProcess.Name = "buttonImageClassificationStartProcess";
             buttonImageClassificationStartProcess.Size = new Size(154, 23);
@@ -492,7 +489,6 @@
             // 
             // buttonImageClassificationMobileNetDirectory
             // 
-            buttonImageClassificationMobileNetDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonImageClassificationMobileNetDirectory.Location = new Point(823, 79);
             buttonImageClassificationMobileNetDirectory.Name = "buttonImageClassificationMobileNetDirectory";
             buttonImageClassificationMobileNetDirectory.Size = new Size(123, 23);
@@ -520,7 +516,6 @@
             // 
             // buttonImageClassificationProcessingDirectory
             // 
-            buttonImageClassificationProcessingDirectory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonImageClassificationProcessingDirectory.Location = new Point(823, 50);
             buttonImageClassificationProcessingDirectory.Name = "buttonImageClassificationProcessingDirectory";
             buttonImageClassificationProcessingDirectory.Size = new Size(123, 23);
@@ -548,7 +543,6 @@
             // 
             // buttonImageClassificationServiceProgram
             // 
-            buttonImageClassificationServiceProgram.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonImageClassificationServiceProgram.Location = new Point(823, 21);
             buttonImageClassificationServiceProgram.Name = "buttonImageClassificationServiceProgram";
             buttonImageClassificationServiceProgram.Size = new Size(123, 23);
@@ -820,11 +814,10 @@
             // 
             // tabPageAudioTranslation
             // 
-            tabPageAudioTranslation.Controls.Add(panelAudioTranslationConfig);
             tabPageAudioTranslation.Controls.Add(groupBox3);
+            tabPageAudioTranslation.Controls.Add(panelAudioTranslationConfig);
             tabPageAudioTranslation.Location = new Point(4, 24);
             tabPageAudioTranslation.Name = "tabPageAudioTranslation";
-            tabPageAudioTranslation.Padding = new Padding(40);
             tabPageAudioTranslation.Size = new Size(990, 540);
             tabPageAudioTranslation.TabIndex = 8;
             tabPageAudioTranslation.Text = "Audioübersetzung";
@@ -832,10 +825,10 @@
             // 
             // panelAudioTranslationConfig
             // 
-            panelAudioTranslationConfig.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panelAudioTranslationConfig.Location = new Point(3, 3);
+            panelAudioTranslationConfig.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelAudioTranslationConfig.Location = new Point(3, 0);
             panelAudioTranslationConfig.Name = "panelAudioTranslationConfig";
-            panelAudioTranslationConfig.Size = new Size(984, 280);
+            panelAudioTranslationConfig.Size = new Size(980, 305);
             panelAudioTranslationConfig.TabIndex = 16;
             // 
             // tabPageImageClassification
@@ -852,10 +845,10 @@
             // 
             // panelImageClassificationConfig
             // 
-            panelImageClassificationConfig.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelImageClassificationConfig.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelImageClassificationConfig.Location = new Point(3, 3);
             panelImageClassificationConfig.Name = "panelImageClassificationConfig";
-            panelImageClassificationConfig.Size = new Size(984, 318);
+            panelImageClassificationConfig.Size = new Size(984, 360);
             panelImageClassificationConfig.TabIndex = 22;
             // 
             // tabPageProtocol

@@ -2506,5 +2506,77 @@ namespace IPED_Gui_WinForms.Properties {
                 this["GeneralSearchTermFilePath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AudioTranslationUseForensicTaskBridge {
+            get {
+                return ((bool)(this["AudioTranslationUseForensicTaskBridge"]));
+            }
+            set {
+                this["AudioTranslationUseForensicTaskBridge"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AudioTranslationForensicTaskBridgeApiUrl {
+            get {
+                return ((string)(this["AudioTranslationForensicTaskBridgeApiUrl"]));
+            }
+            set {
+                this["AudioTranslationForensicTaskBridgeApiUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AudioTranslationForensicTaskBridgeShareDirectory {
+            get {
+                return ((string)(this["AudioTranslationForensicTaskBridgeShareDirectory"]));
+            }
+            set {
+                this["AudioTranslationForensicTaskBridgeShareDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ImageClassificationUseForensicTaskBridge {
+            get {
+                return ((bool)(this["ImageClassificationUseForensicTaskBridge"]));
+            }
+            set {
+                this["ImageClassificationUseForensicTaskBridge"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ImageClassificationForensicTaskBridgeApiUrl {
+            get {
+                return ((string)(this["ImageClassificationForensicTaskBridgeApiUrl"]));
+            }
+            set {
+                this["ImageClassificationForensicTaskBridgeApiUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ImageClassificationForensicTaskBridgeShareDirectory {
+            get {
+                return ((string)(this["ImageClassificationForensicTaskBridgeShareDirectory"]));
+            }
+            set {
+                this["ImageClassificationForensicTaskBridgeShareDirectory"] = value;
+            }
+        }
     }
 }

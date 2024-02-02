@@ -44,7 +44,7 @@ namespace IPED_Gui_WinForms.UserControls
                 horizontalFlowLayoutPanel.Controls.Add(nameLabel);
                 if (configElement.ElementType == ConfigElementType.String)
                 {
-                    var textBox = new TextBox { Text = Settings.Default[configElement.SettingsName].ToString() };
+                    var textBox = new TextBox { Size = new Size(571, 23), Text = Settings.Default[configElement.SettingsName].ToString() };
                     textBox.TextChanged += (object? sender, EventArgs e) =>
                     {
                         Settings.Default[configElement.SettingsName] = "" + textBox.Text;
