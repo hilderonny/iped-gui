@@ -1,3 +1,12 @@
+# 1.6
+- Einstellungen für conf/FileSystemConfig.txt hinzugefügt
+- Einstellungen für IPEDConfig.txt hinzugefügt
+- Einstellungen für AudioTranslation überarbeitet
+- Einstellungen für ImageClassification überarbeitet
+- Einstellungen für Kategorien hinzugefügt
+- Angabe von Schlagwortlisten hinzugefügt
+- Unterstützung für forensictaskbridge eingebaut, siehe https://github.com/hilderonny/forensictaskbridge
+
 # 1.5
 - Fehlerhafte Tooltips entfernt
 - Funktion zur Graphengenerierung implementiert
