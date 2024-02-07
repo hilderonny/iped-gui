@@ -1,10 +1,13 @@
 using IPED_Gui_WinForms.Helper;
 using IPED_Gui_WinForms.Properties;
 using IPED_Gui_WinForms.UserControls;
-using System;
+using System.Configuration;
 using System.Diagnostics;
-using System.IO;
+using System.Dynamic;
 using System.Reflection;
+using System.Text.Json;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 
 // Tabs verstecken: Siehe https://stackoverflow.com/questions/552579/how-to-hide-tabpage-from-tabcontrol
 // Tabs und deren Inhalte sollten eigene Controls mit DataBinding werden, die dynmisch durch Datensatzerweiterung erweitert werden können
@@ -15,6 +18,11 @@ namespace IPED_Gui_WinForms
     public partial class MainForm : Form
     {
         private readonly SynchronizationContext? synchronizationContext;
+        private readonly SettingsUserControl localConfigSettingsUserControl;
+        private readonly SettingsUserControl ipedConfigSettingsUserControl;
+        private readonly SettingsUserControl fileSystemConfigSettingsUserControl;
+        private readonly SettingsUserControl audioTranslationSettingsUserControl;
+        private readonly SettingsUserControl imageClassificationSettingsUserControl;
 
         /// <summary>
         /// Konstruktor. Erstellt das Hauptfenster
@@ -24,11 +32,16 @@ namespace IPED_Gui_WinForms
             synchronizationContext = SynchronizationContext.Current;
             InitializeComponent();
 
-            tabPageLocalConfig.Controls.Add(new SettingsUserControl(ConfigType.LocalConfig));
-            tabPageIPEDConfig.Controls.Add(new SettingsUserControl(ConfigType.IPEDConfig));
-            tabPageFileSystem.Controls.Add(new SettingsUserControl(ConfigType.FileSystemConfig));
-            panelAudioTranslationConfig.Controls.Add(new SettingsUserControl(ConfigType.AudioTranslation));
-            panelImageClassificationConfig.Controls.Add(new SettingsUserControl(ConfigType.ImageClassification));
+            localConfigSettingsUserControl = new SettingsUserControl(ConfigType.LocalConfig);
+            tabPageLocalConfig.Controls.Add(localConfigSettingsUserControl);
+            ipedConfigSettingsUserControl = new SettingsUserControl(ConfigType.IPEDConfig);
+            tabPageIPEDConfig.Controls.Add(ipedConfigSettingsUserControl);
+            fileSystemConfigSettingsUserControl = new SettingsUserControl(ConfigType.FileSystemConfig);
+            tabPageFileSystem.Controls.Add(fileSystemConfigSettingsUserControl);
+            audioTranslationSettingsUserControl = new SettingsUserControl(ConfigType.AudioTranslation);
+            panelAudioTranslationConfig.Controls.Add(audioTranslationSettingsUserControl);
+            imageClassificationSettingsUserControl = new SettingsUserControl(ConfigType.ImageClassification);
+            panelImageClassificationConfig.Controls.Add(imageClassificationSettingsUserControl);
 
             LoadSettings();
             categoriesUserControl.LoadCategories();
@@ -509,5 +522,72 @@ namespace IPED_Gui_WinForms
                 Settings.Default.Save();
             }
         }
+
+        private void buttonSettingsSaveSettings_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog
+            {
+                AddExtension = true,
+                Filter = "IPED Settings|*.ipedsettings",
+                Title = "Einstellungen speichern"
+            };
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                dynamic settingsObject = new ExpandoObject();
+                foreach (SettingsProperty property in Settings.Default.Properties)
+                {
+                    ((IDictionary<string, object>)settingsObject).Add(property.Name, Settings.Default[property.Name]);
+                }
+                var json = JsonSerializer.Serialize(settingsObject, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(saveFileDialog.FileName, json);
+                MessageBox.Show("Einstellungen gespeichert.");
+            }
+        }
+
+        private void buttonSettingsLoadSettings_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = "IPED Settings|*.ipedsettings",
+                Title = "Einstellungen laden"
+            };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var jsonString = File.ReadAllText(openFileDialog.FileName);
+                var settingsObject = JsonSerializer.Deserialize<ExpandoObject>(jsonString);
+                if (settingsObject == null)
+                {
+                    MessageBox.Show("Lesen der Einstellungen fehlgeschlagen!", "Fehler");
+                    return;
+                }
+                else
+                {
+                    foreach (var kvp in settingsObject)
+                    {
+                        var property = Settings.Default.Properties[kvp.Key];
+                        var valueString = kvp.Value?.ToString();
+                        if (property.PropertyType == typeof(bool))
+                        {
+                            Settings.Default[kvp.Key] = valueString?.Equals("True");
+                        }
+                        else
+                        {
+                            Settings.Default[kvp.Key] = valueString;
+                        }
+                    }
+                    Settings.Default.Save();
+                    LoadSettings();
+                    localConfigSettingsUserControl.Reload();
+                    ipedConfigSettingsUserControl.Reload();
+                    fileSystemConfigSettingsUserControl.Reload();
+                    audioTranslationSettingsUserControl.Reload();
+                    imageClassificationSettingsUserControl.Reload();
+                    categoriesUserControl.LoadCategories();
+                    CheckForWarning();
+                    MessageBox.Show("Einstellungen geladen.");
+                }
+            }
+        }
+
     }
 }

@@ -84,6 +84,8 @@
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
+            buttonSettingsSaveSettings = new Button();
+            buttonSettingsLoadSettings = new Button();
             textBoxSettingsIpedExePath = new TextBox();
             label5 = new Label();
             tabPageLocalConfig = new TabPage();
@@ -739,6 +741,8 @@
             // 
             // tabPageSettings
             // 
+            tabPageSettings.Controls.Add(buttonSettingsSaveSettings);
+            tabPageSettings.Controls.Add(buttonSettingsLoadSettings);
             tabPageSettings.Controls.Add(buttonSettingsIpedExePath);
             tabPageSettings.Controls.Add(textBoxSettingsIpedExePath);
             tabPageSettings.Controls.Add(label5);
@@ -749,6 +753,26 @@
             tabPageSettings.TabIndex = 10;
             tabPageSettings.Text = "Einstellungen";
             tabPageSettings.UseVisualStyleBackColor = true;
+            // 
+            // buttonSettingsSaveSettings
+            // 
+            buttonSettingsSaveSettings.Location = new Point(250, 101);
+            buttonSettingsSaveSettings.Name = "buttonSettingsSaveSettings";
+            buttonSettingsSaveSettings.Size = new Size(213, 23);
+            buttonSettingsSaveSettings.TabIndex = 12;
+            buttonSettingsSaveSettings.Text = "Einstellungen in Datei speichern ...";
+            buttonSettingsSaveSettings.UseVisualStyleBackColor = true;
+            buttonSettingsSaveSettings.Click += buttonSettingsSaveSettings_Click;
+            // 
+            // buttonSettingsLoadSettings
+            // 
+            buttonSettingsLoadSettings.Location = new Point(250, 72);
+            buttonSettingsLoadSettings.Name = "buttonSettingsLoadSettings";
+            buttonSettingsLoadSettings.Size = new Size(213, 23);
+            buttonSettingsLoadSettings.TabIndex = 11;
+            buttonSettingsLoadSettings.Text = "Einstellungen aus Datei laden ...";
+            buttonSettingsLoadSettings.UseVisualStyleBackColor = true;
+            buttonSettingsLoadSettings.Click += buttonSettingsLoadSettings_Click;
             // 
             // textBoxSettingsIpedExePath
             // 
@@ -971,5 +995,7 @@
         private Label label1;
         private Button buttonSelectSearchTermFile;
         private TextBox textBoxSearchTermFilePath;
+        private Button buttonSettingsSaveSettings;
+        private Button buttonSettingsLoadSettings;
     }
 }

@@ -6,12 +6,16 @@ namespace IPED_Gui_WinForms.UserControls
     public partial class SettingsUserControl : UserControl
     {
 
-        public SettingsUserControl(ConfigType configType)
+        private readonly FlowLayoutPanel verticalFlowLayoutPanel;
+        private readonly ConfigType configType;
+
+        public SettingsUserControl(ConfigType ct)
         {
+            configType = ct;
 
             Dock = DockStyle.Fill;
 
-            var verticalFlowLayoutPanel = new FlowLayoutPanel
+            verticalFlowLayoutPanel = new FlowLayoutPanel
             {
                 AutoScroll = true,
                 FlowDirection = FlowDirection.TopDown,
@@ -19,6 +23,14 @@ namespace IPED_Gui_WinForms.UserControls
                 WrapContents = false
             };
             Controls.Add(verticalFlowLayoutPanel);
+
+            Reload();
+
+        }
+
+        public void Reload() {
+
+            verticalFlowLayoutPanel.Controls.Clear();
 
             foreach (var configElement in configType.ConfigElements)
             {

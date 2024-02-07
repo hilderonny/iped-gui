@@ -1,3 +1,6 @@
+# 1.7
+- Speichern und Laden von Einstellungen implementiert
+
 # 1.6
 - Einstellungen für conf/FileSystemConfig.txt hinzugefügt
 - Einstellungen für IPEDConfig.txt hinzugefügt
