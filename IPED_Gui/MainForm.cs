@@ -589,5 +589,10 @@ namespace IPED_Gui_WinForms
             }
         }
 
+        private void textBoxSearchTermFilePath_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.GeneralSearchTermFilePath = textBoxSearchTermFilePath.Text;
+            Settings.Default.Save();
+        }
     }
 }

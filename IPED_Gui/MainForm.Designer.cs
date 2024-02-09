@@ -180,6 +180,7 @@
             textBoxSearchTermFilePath.Name = "textBoxSearchTermFilePath";
             textBoxSearchTermFilePath.Size = new Size(384, 23);
             textBoxSearchTermFilePath.TabIndex = 6;
+            textBoxSearchTermFilePath.TextChanged += textBoxSearchTermFilePath_TextChanged;
             // 
             // label1
             // 

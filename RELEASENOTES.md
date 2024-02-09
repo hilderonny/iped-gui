@@ -1,3 +1,6 @@
+# 1.7.1
+- Fehler beim Abwählen der Schlagwortliste behoben
+
 # 1.7
 - Speichern und Laden von Einstellungen implementiert
 
