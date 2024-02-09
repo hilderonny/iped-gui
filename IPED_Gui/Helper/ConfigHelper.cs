@@ -27,12 +27,12 @@ namespace IPED_Gui_WinForms.Helper
             return string.Join("\n", FlattenCategoryNamesToExport(Category.Root));
         }
 
-        private static string CreateRegexConfigTxt()
+        private static string? CreateRegexConfigTxt()
         {
             var searchTermFilePath = Settings.Default.GeneralSearchTermFilePath;
             if (string.IsNullOrEmpty(searchTermFilePath))
             {
-                return "";
+                return null;
             }
             var lines = File.ReadLines(searchTermFilePath);
             var regex = $"SEARCHTERMS, true = \\b({string.Join("|", lines)})\\b";
@@ -50,8 +50,11 @@ namespace IPED_Gui_WinForms.Helper
             ConfigType.WriteAllToDisk(profileDirectory);
 
             File.WriteAllText(Path.Join(confDirectory, "CategoriesToExport.txt"), CreateCategoriesToExportTxt());
-            File.WriteAllText(Path.Join(confDirectory, "RegexConfig.txt"), CreateRegexConfigTxt());
-
+            var regexConfig = CreateRegexConfigTxt();
+            if (regexConfig != null)
+            {
+                File.WriteAllText(Path.Join(confDirectory, "RegexConfig.txt"), CreateRegexConfigTxt());
+            }
         }
 
     }
