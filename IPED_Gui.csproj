@@ -11,7 +11,7 @@
     <RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <StartupObject></StartupObject>
-    <ApplicationIcon>process.ico</ApplicationIcon>
+    <ApplicationIcon>IPED_Gui.ico</ApplicationIcon>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <AssemblyVersion>1.7.1.0</AssemblyVersion>
     <FileVersion>0.0.0.0</FileVersion>
@@ -32,7 +32,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="process.ico" />
+    <Content Include="IPED_Gui.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
