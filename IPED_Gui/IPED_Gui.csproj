@@ -35,6 +35,12 @@
     <Content Include="process.ico" />
   </ItemGroup>
 
+  <ItemGroup> 
+    <Content Include="AppData\**"> 
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory> 
+    </Content> 
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
