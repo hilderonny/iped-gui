@@ -86,6 +86,8 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
             button3 = new Button();
+            panel1 = new Panel();
+            richTextBox1 = new RichTextBox();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
@@ -686,6 +688,8 @@
             tableLayoutPanel1.Controls.Add(label2, 3, 5);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 3, 4);
             tableLayoutPanel1.Controls.Add(label_Ausgabeverzeichnis, 0, 3);
+            tableLayoutPanel1.Controls.Add(panel1, 0, 4);
+            tableLayoutPanel1.Controls.Add(richTextBox1, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 3);
             tableLayoutPanel1.Margin = new Padding(0);
@@ -776,6 +780,25 @@
             button3.TabIndex = 2;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(3, 193);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(154, 54);
+            panel1.TabIndex = 23;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = SystemColors.HotTrack;
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Location = new Point(3, 63);
+            richTextBox1.Multiline = false;
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.Size = new Size(100, 94);
+            richTextBox1.TabIndex = 24;
+            richTextBox1.Text = "";
             // 
             // tabControl1
             // 
@@ -1070,5 +1093,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Panel panel1;
+        private RichTextBox richTextBox1;
     }
 }

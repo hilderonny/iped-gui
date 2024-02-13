@@ -1,6 +1,4 @@
 ﻿
-using System.Windows.Forms;
-
 namespace IPED_Gui_WinForms.Controls.Fluent2
 {
     public class NavigationButton : UserControl
@@ -9,13 +7,19 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
         private readonly TableLayoutPanel horizontalTable;
         private readonly Label iconLabel;
         private readonly Label textLabel;
-        private Color otherColor = Color.FromArgb(20, Color.Black);
+        private Color originalBackColor = Color.Transparent;
+        public Color HoverColor { get; set; }
+        public override Color BackColor { get => originalBackColor; set {
+                originalBackColor = value;
+                iconLabel.BackColor = value;
+                textLabel.BackColor = value;
+        } }
 
         public NavigationButton(char iconChar, string text)
         {
             iconLabel = new Label
             {
-                BackColor = Color.Transparent,
+                BackColor = BackColor,
                 Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Regular, GraphicsUnit.Point),
                 Margin = Padding.Empty,
                 Padding = Padding.Empty,
@@ -23,10 +27,12 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
                 Text = iconChar.ToString(),
                 TextAlign = ContentAlignment.MiddleCenter
             };
+            iconLabel.MouseEnter += Label_MouseEnter;
+            iconLabel.MouseLeave += Label_MouseLeave;
 
             textLabel = new Label
             {
-                BackColor = Color.Transparent,
+                BackColor = BackColor,
                 Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point),
                 Dock = DockStyle.Fill,
                 Margin = Padding.Empty,
@@ -34,12 +40,12 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
                 Text = text,
                 TextAlign = ContentAlignment.MiddleLeft
             };
-            textLabel.MouseEnter += HorizontalTable_MouseEnter;
-            textLabel.MouseLeave += HorizontalTable_MouseLeave;
+            textLabel.MouseEnter += Label_MouseEnter;
+            textLabel.MouseLeave += Label_MouseLeave;
 
             horizontalTable = new TableLayoutPanel
             {
-                BackColor = Color.DarkRed,
+                BackColor = Color.Transparent,
                 ColumnCount = 2,
                 Height = 44,
                 RowCount = 1
@@ -49,22 +55,24 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             horizontalTable.Controls.Add(iconLabel, 0, 0);
             horizontalTable.Controls.Add(textLabel, 1, 0);
 
+            base.BackColor = Color.Transparent;
             Dock = DockStyle.Fill;
+            HoverColor = Color.FromArgb(20, Color.Black);
             Margin = Padding.Empty;
             Padding = Padding.Empty;
             Controls.Add(horizontalTable);
         }
 
-        private void HorizontalTable_MouseLeave(object? sender, EventArgs e)
+        private void Label_MouseLeave(object? sender, EventArgs e)
         {
-            BackColor = Color.DarkRed;
-            PerformLayout();
+            iconLabel.BackColor = originalBackColor;
+            textLabel.BackColor = originalBackColor;
         }
 
-        private void HorizontalTable_MouseEnter(object? sender, EventArgs e)
+        private void Label_MouseEnter(object? sender, EventArgs e)
         {
-            BackColor = Color.Green;
-            PerformLayout();
+            iconLabel.BackColor = HoverColor;
+            textLabel.BackColor = HoverColor;
         }
     }
 }

@@ -74,12 +74,13 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             navigationTable.Controls.Clear();
             navigationTable.RowStyles.Clear();
             var navigationButtonsToShow = navigationButtons.Where(button => button.Visible).ToList();
-            navigationTable.RowCount = navigationButtonsToShow.Count;
+            navigationTable.RowCount = navigationButtonsToShow.Count + 1;
             for (int i = 0; i < navigationButtonsToShow.Count; i++)
             {
                 navigationTable.Controls.Add(navigationButtonsToShow[i], 0, i);
                 navigationTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
             }
+            navigationTable.RowStyles.Add(new RowStyle());
             navigationTable.ResumeLayout();
         }
         
