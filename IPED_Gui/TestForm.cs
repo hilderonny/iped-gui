@@ -4,38 +4,52 @@ namespace IPED_Gui_WinForms
 {
     public class TestForm : Form
     {
+        private class NavigationInfo
+        {
+            public char Icon { get; set; }
+            public string? Title { get; set; }
 
-        private TableLayoutPanel rootTableLayoutPanel;
-        private NavigationPanel navigationPanel;
-        private ContentPanel contentPanel;
+            public NavigationButton? Button { get; set; }
+
+            public static List<NavigationInfo> NavigationElements { get; } = new List<NavigationInfo>
+            {
+                new NavigationInfo { Icon = '\uE80F', Title = "Home" },
+                new NavigationInfo { Icon = '\uE977', Title = "Local config" },
+                new NavigationInfo { Icon = '\uE734', Title = "Features" },
+                new NavigationInfo { Icon = '\uE762', Title = "Categories" },
+                new NavigationInfo { Icon = '\uEC50', Title = "File system" },
+                new NavigationInfo { Icon = '\uED1F', Title = "Audio translation" },
+                new NavigationInfo { Icon = '\uE8BA', Title = "Image classification" },
+                new NavigationInfo { Icon = '\uEA37', Title = "Protocol" },
+            };
+        }
+
+        private readonly TableLayoutPanel rootTableLayoutPanel;
+        private readonly NavigationPanel navigationPanel;
+        private readonly ContentPanel contentPanel;
+
+        private readonly NavigationButton homeNavigationButton;
 
         public TestForm()
         {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-
-            navigationPanel = new NavigationPanel();
-            navigationPanel.SuspendLayout();
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 1"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 2"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 3"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 4"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 5"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 5"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 5"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 5"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 5"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 5"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 6"));
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 7") { Visible = false });
-            navigationPanel.AddNavigationButton(new NavigationButton('\uE700', "Tolle Wurst 8"));
-            navigationPanel.ResumeLayout();
 
             contentPanel = new ContentPanel();
+
+            navigationPanel = new NavigationPanel();
+
+            NavigationInfo.NavigationElements.ForEach(element => {
+                element.Button = new NavigationButton(element.Icon, element.Title);
+                element.Button.Click += NavigationButton_Click;
+                navigationPanel.AddNavigationButton(element.Button);
+            });
+            navigationPanel.SettingsButton.Click += NavigationButton_Click;
+            var firstNavigationButton = NavigationInfo.NavigationElements[0].Button;
+            if (firstNavigationButton != null)
+            {
+                firstNavigationButton.Selected = true;
+                NavigationButton_Click(firstNavigationButton, EventArgs.Empty);
+            }
+
 
             rootTableLayoutPanel = new TableLayoutPanel();
             rootTableLayoutPanel.SuspendLayout();
@@ -54,8 +68,12 @@ namespace IPED_Gui_WinForms
             ClientSize = new Size(800, 600);
             Controls.Add(rootTableLayoutPanel);
 
-            ResumeLayout();
+        }
 
+        private void NavigationButton_Click(object? sender, EventArgs e)
+        {
+            NavigationButton? button = sender as NavigationButton;
+            contentPanel.Title = button?.Text;
         }
     }
 }

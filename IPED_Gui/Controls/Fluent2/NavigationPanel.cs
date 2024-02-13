@@ -10,8 +10,10 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
         private readonly TableLayoutPanel outerTable;
         private readonly TableLayoutPanel navigationTable;
         private readonly Button hamburgerButton;
-        private readonly NavigationButton settingsButton;
-        private int otherWidth = 44;
+        private int otherWidth = 48;
+        private bool collapsed = false;
+
+        public NavigationButton SettingsButton { get; private set; }
 
         private List<NavigationButton> navigationButtons = new();
 
@@ -24,7 +26,7 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
                 Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Regular, GraphicsUnit.Point),
                 Margin = Padding.Empty,
                 Padding = Padding.Empty,
-                Size = new Size(44, 44),
+                Size = new Size(48, 48),
                 Text = '\uE700'.ToString(),
                 UseVisualStyleBackColor = false
             };
@@ -32,12 +34,12 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             hamburgerButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, Color.Black);
             hamburgerButton.Click += HamburgerButton_Click;
 
-            settingsButton = new NavigationButton('\uE713', "Settings");
+            SettingsButton = new NavigationButton('\uE713', "Settings");
+            SettingsButton.Click += NavigationButton_Click;
 
             navigationTable = new TableLayoutPanel
             {
                 AutoScroll = true,
-                BackColor = Color.Green,
                 ColumnCount = 1,
                 Dock = DockStyle.Fill,
                 Margin = Padding.Empty,
@@ -46,21 +48,19 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
 
             outerTable = new TableLayoutPanel
             {
-                BackColor = Color.Yellow,
                 ColumnCount = 1,
                 Dock = DockStyle.Fill,
                 Margin = Padding.Empty,
                 Padding = Padding.Empty,
                 RowCount = 3
             };
-            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
             outerTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
             outerTable.Controls.Add(hamburgerButton, 0, 0);
             outerTable.Controls.Add(navigationTable, 0, 1);
-            outerTable.Controls.Add(settingsButton, 0, 2);
+            outerTable.Controls.Add(SettingsButton, 0, 2);
 
-            BackColor = Color.Cyan;
             Dock = DockStyle.Fill;
             Margin = Padding.Empty;
             Padding = Padding.Empty;
@@ -78,7 +78,7 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             for (int i = 0; i < navigationButtonsToShow.Count; i++)
             {
                 navigationTable.Controls.Add(navigationButtonsToShow[i], 0, i);
-                navigationTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+                navigationTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
             }
             navigationTable.RowStyles.Add(new RowStyle());
             navigationTable.ResumeLayout();
@@ -86,14 +86,32 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
         
         private void HamburgerButton_Click(object? sender, EventArgs e)
         {
+            navigationTable.SuspendLayout();
             // Variablenwerte tauschen
             (Width, otherWidth) = (otherWidth, Width);
+            collapsed = !collapsed;
+            navigationButtons.Concat(new[] { SettingsButton }).ToList().ForEach(button => {
+                button.Type = collapsed ? NavigationButton.ButtonType.IconOnly : NavigationButton.ButtonType.IconAndText;
+                button.Invalidate();
+            });
+            navigationTable.ResumeLayout();
         }
 
         public void AddNavigationButton(NavigationButton buttonToAdd)
         {
             navigationButtons.Add(buttonToAdd);
+            buttonToAdd.Click += NavigationButton_Click;
             RebuildNavigationTable();
+        }
+
+        private void NavigationButton_Click(object? sender, EventArgs e)
+        {
+            navigationTable.SuspendLayout();
+            navigationButtons.Concat(new[] { SettingsButton }).ToList().ForEach(button => { 
+                button.Selected = button == sender;
+                button.Invalidate();
+            });
+            navigationTable.ResumeLayout();
         }
     }
 }

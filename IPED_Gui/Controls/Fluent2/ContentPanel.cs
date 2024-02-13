@@ -5,17 +5,19 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
 {
     public class ContentPanel : UserControl
     {
+        private Label titleLabel;
+
         public Color BorderColor { get; set; }
         public int CornerRadius { get; set; }
+        public string? Title { get => titleLabel.Text; set => titleLabel.Text = value; }
 
         public ContentPanel()
         {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            SuspendLayout();
+            titleLabel = new Label
+            {
+                BackColor = Color.Transparent,
+                ForeColor = Color.Black,
+            };
 
             BorderColor = Color.FromArgb(30, Color.Black);
             CornerRadius = 7;
@@ -25,8 +27,8 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             Margin = Padding.Empty;
             Padding = new Padding(56, 44, 56, 44);
             ResizeRedraw = true;
+            Controls.Add(titleLabel);
 
-            ResumeLayout();
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
