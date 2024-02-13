@@ -6,61 +6,65 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
     public class NavigationButton : UserControl
     {
 
-        public int HoverTransparency { get; set; }
-        public int SelectedTransparency { get; set; }
-        public Color SelectedColor { get; set; }
-        public char? Icon { get => iconLabel.Text.Length > 0 ? iconLabel.Text[0] : null; set => iconLabel.Text = value.ToString(); }
-        public override string Text { get => textLabel.Text; set =>  textLabel.Text = value; }
-        public bool Collapsed { get; set; }
+        private readonly TableLayoutPanel horizontalTable;
+        private readonly Label iconLabel;
+        private readonly Label textLabel;
+        private Color otherColor = Color.FromArgb(20, Color.Black);
 
-        private TableLayoutPanel tableLayoutPanel;
-        private readonly Label iconLabel = new();
-        private readonly Label textLabel = new();
-
-        public NavigationButton()
+        public NavigationButton(char iconChar, string text)
         {
-            InitializeComponent();
-        }
+            iconLabel = new Label
+            {
+                BackColor = Color.Transparent,
+                Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Regular, GraphicsUnit.Point),
+                Margin = Padding.Empty,
+                Padding = Padding.Empty,
+                Size = new Size(44, 44),
+                Text = iconChar.ToString(),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
 
-        private void InitializeComponent()
-        {
-            SuspendLayout();
+            textLabel = new Label
+            {
+                BackColor = Color.Transparent,
+                Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point),
+                Dock = DockStyle.Fill,
+                Margin = Padding.Empty,
+                Padding = new Padding(4, 0, 0, 0),
+                Text = text,
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            textLabel.MouseEnter += HorizontalTable_MouseEnter;
+            textLabel.MouseLeave += HorizontalTable_MouseLeave;
 
-            iconLabel.SuspendLayout();
-            iconLabel.BackColor = Color.Orchid;
-            iconLabel.Dock = DockStyle.Fill;
-            iconLabel.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconLabel.Margin = Padding.Empty;
-            iconLabel.Padding = Padding.Empty;
-            iconLabel.ResumeLayout();
-
-            textLabel.SuspendLayout();
-            textLabel.BackColor = Color.AliceBlue;
-            textLabel.Dock = DockStyle.Fill;
-            textLabel.Margin = Padding.Empty;
-            textLabel.Padding = Padding.Empty;
-            textLabel.ResumeLayout();
-
-            tableLayoutPanel = new TableLayoutPanel();
-            tableLayoutPanel.SuspendLayout();
-            tableLayoutPanel.BackColor = Color.Green;
-            tableLayoutPanel.ColumnCount = 2;
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 44));
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-            tableLayoutPanel.RowCount = 1;
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
-            tableLayoutPanel.Controls.Add(iconLabel, 0, 0);
-            tableLayoutPanel.Controls.Add(textLabel, 1, 0);
-            tableLayoutPanel.ResumeLayout();
+            horizontalTable = new TableLayoutPanel
+            {
+                BackColor = Color.DarkRed,
+                ColumnCount = 2,
+                Height = 44,
+                RowCount = 1
+            };
+            horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            horizontalTable.Controls.Add(iconLabel, 0, 0);
+            horizontalTable.Controls.Add(textLabel, 1, 0);
 
             Dock = DockStyle.Fill;
             Margin = Padding.Empty;
             Padding = Padding.Empty;
-            Controls.Add(tableLayoutPanel);
-
-            ResumeLayout();
-
+            Controls.Add(horizontalTable);
         }
 
+        private void HorizontalTable_MouseLeave(object? sender, EventArgs e)
+        {
+            BackColor = Color.DarkRed;
+            PerformLayout();
+        }
+
+        private void HorizontalTable_MouseEnter(object? sender, EventArgs e)
+        {
+            BackColor = Color.Green;
+            PerformLayout();
+        }
     }
 }

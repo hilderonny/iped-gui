@@ -79,12 +79,12 @@
             textBoxConsole = new TextBox();
             button_Starten = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
+            button2 = new Button();
             label_Warnung = new Label();
             button_DateienHinzufuegen = new Button();
             label2 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
@@ -563,11 +563,13 @@
             // label_Spuren
             // 
             label_Spuren.AutoSize = true;
+            label_Spuren.Dock = DockStyle.Fill;
             label_Spuren.Location = new Point(3, 0);
             label_Spuren.Name = "label_Spuren";
-            label_Spuren.Size = new Size(44, 15);
+            label_Spuren.Size = new Size(154, 30);
             label_Spuren.TabIndex = 0;
             label_Spuren.Text = "Spuren";
+            label_Spuren.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // listBox_Spuren
             // 
@@ -611,12 +613,13 @@
             // 
             // label_Ausgabeverzeichnis
             // 
-            label_Ausgabeverzeichnis.AutoSize = true;
+            label_Ausgabeverzeichnis.FlatStyle = FlatStyle.Flat;
             label_Ausgabeverzeichnis.Location = new Point(3, 160);
             label_Ausgabeverzeichnis.Name = "label_Ausgabeverzeichnis";
-            label_Ausgabeverzeichnis.Size = new Size(111, 15);
+            label_Ausgabeverzeichnis.Size = new Size(44, 30);
             label_Ausgabeverzeichnis.TabIndex = 4;
             label_Ausgabeverzeichnis.Text = "Ausgabeverzeichnis";
+            label_Ausgabeverzeichnis.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox_Ausgabeverzeichnis
             // 
@@ -670,10 +673,10 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 160F));
             tableLayoutPanel1.Controls.Add(label_Spuren, 0, 0);
+            tableLayoutPanel1.Controls.Add(button2, 0, 5);
             tableLayoutPanel1.Controls.Add(listBox_Spuren, 1, 0);
             tableLayoutPanel1.Controls.Add(button_VerzeichnisHinzufuegen, 3, 0);
             tableLayoutPanel1.Controls.Add(button_Entfernen, 3, 2);
-            tableLayoutPanel1.Controls.Add(label_Ausgabeverzeichnis, 0, 3);
             tableLayoutPanel1.Controls.Add(textBox_Ausgabeverzeichnis, 1, 3);
             tableLayoutPanel1.Controls.Add(button_Auswaehlen, 3, 3);
             tableLayoutPanel1.Controls.Add(button_Starten, 3, 6);
@@ -682,6 +685,7 @@
             tableLayoutPanel1.Controls.Add(groupBox2, 1, 5);
             tableLayoutPanel1.Controls.Add(label2, 3, 5);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 3, 4);
+            tableLayoutPanel1.Controls.Add(label_Ausgabeverzeichnis, 0, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 3);
             tableLayoutPanel1.Margin = new Padding(0);
@@ -699,6 +703,19 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(984, 534);
             tableLayoutPanel1.TabIndex = 17;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.IndianRed;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(3, 253);
+            button2.Name = "button2";
+            button2.Size = new Size(44, 44);
+            button2.TabIndex = 1;
+            button2.Text = "";
+            button2.UseVisualStyleBackColor = false;
             // 
             // label_Warnung
             // 
@@ -735,7 +752,6 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.Location = new Point(827, 193);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -752,18 +768,9 @@
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            button2.Location = new Point(3, 32);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            button3.Location = new Point(3, 61);
+            button3.Location = new Point(3, 32);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 2;

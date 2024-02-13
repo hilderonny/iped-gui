@@ -1,72 +1,98 @@
 ﻿
-using System.Linq.Expressions;
+
 using System.Windows.Forms;
 
 namespace IPED_Gui_WinForms.Controls.Fluent2
 {
     public class NavigationPanel : UserControl
     {
-        public TableLayoutPanel MiddlePanel { get; private set; }
-        public Panel LowerPanel { get; private set; }
 
-        private TableLayoutPanel tableLayoutPanel;
+        private readonly TableLayoutPanel outerTable;
+        private readonly TableLayoutPanel navigationTable;
+        private readonly Button hamburgerButton;
+        private readonly NavigationButton settingsButton;
+        private int otherWidth = 44;
+
+        private List<NavigationButton> navigationButtons = new();
 
         public NavigationPanel()
         {
-            InitializeComponent();
-        }
+            hamburgerButton = new Button
+            {
+                BackColor = Color.Transparent,
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Regular, GraphicsUnit.Point),
+                Margin = Padding.Empty,
+                Padding = Padding.Empty,
+                Size = new Size(44, 44),
+                Text = '\uE700'.ToString(),
+                UseVisualStyleBackColor = false
+            };
+            hamburgerButton.FlatAppearance.BorderSize = 0;
+            hamburgerButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, Color.Black);
+            hamburgerButton.Click += HamburgerButton_Click;
 
-        private void InitializeComponent()
-        {
-            SuspendLayout();
+            settingsButton = new NavigationButton('\uE713', "Settings");
 
-            MiddlePanel = new TableLayoutPanel();
-            MiddlePanel.SuspendLayout();
-            MiddlePanel.BackColor = Color.YellowGreen;
-            MiddlePanel.AutoScroll = true;
-            MiddlePanel.ColumnCount = 1;
-            MiddlePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-            MiddlePanel.Dock = DockStyle.Fill;
-            MiddlePanel.RowCount = 0;
-            MiddlePanel.Margin = Padding.Empty;
-            MiddlePanel.Padding = Padding.Empty;
-            MiddlePanel.ResumeLayout();
+            navigationTable = new TableLayoutPanel
+            {
+                AutoScroll = true,
+                BackColor = Color.Green,
+                ColumnCount = 1,
+                Dock = DockStyle.Fill,
+                Margin = Padding.Empty,
+                Padding = Padding.Empty
+            };
 
-            LowerPanel = new Panel();
-            LowerPanel.SuspendLayout();
-            LowerPanel.Dock = DockStyle.Fill;
-            LowerPanel.BackColor = Color.Blue;
-            LowerPanel.Margin = Padding.Empty;
-            LowerPanel.Padding = Padding.Empty;
-            LowerPanel.ResumeLayout();
+            outerTable = new TableLayoutPanel
+            {
+                BackColor = Color.Yellow,
+                ColumnCount = 1,
+                Dock = DockStyle.Fill,
+                Margin = Padding.Empty,
+                Padding = Padding.Empty,
+                RowCount = 3
+            };
+            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+            outerTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+            outerTable.Controls.Add(hamburgerButton, 0, 0);
+            outerTable.Controls.Add(navigationTable, 0, 1);
+            outerTable.Controls.Add(settingsButton, 0, 2);
 
-            tableLayoutPanel = new TableLayoutPanel();
-            tableLayoutPanel.SuspendLayout();
-            tableLayoutPanel.ColumnCount = 1;
-            tableLayoutPanel.Dock = DockStyle.Fill;
-            tableLayoutPanel.RowCount = 3;
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
-            tableLayoutPanel.Controls.Add(MiddlePanel, 0, 1);
-            tableLayoutPanel.Controls.Add(LowerPanel, 0, 2);
-            tableLayoutPanel.ResumeLayout();
-
+            BackColor = Color.Cyan;
             Dock = DockStyle.Fill;
             Margin = Padding.Empty;
             Padding = Padding.Empty;
-            Controls.Add(tableLayoutPanel);
+            Width = 200;
+            Controls.Add(outerTable);
+        }
 
-            ResumeLayout();
+        private void RebuildNavigationTable()
+        {
+            navigationTable.SuspendLayout();
+            navigationTable.Controls.Clear();
+            navigationTable.RowStyles.Clear();
+            var navigationButtonsToShow = navigationButtons.Where(button => button.Visible).ToList();
+            navigationTable.RowCount = navigationButtonsToShow.Count;
+            for (int i = 0; i < navigationButtonsToShow.Count; i++)
+            {
+                navigationTable.Controls.Add(navigationButtonsToShow[i], 0, i);
+                navigationTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+            }
+            navigationTable.ResumeLayout();
+        }
+        
+        private void HamburgerButton_Click(object? sender, EventArgs e)
+        {
+            // Variablenwerte tauschen
+            (Width, otherWidth) = (otherWidth, Width);
         }
 
         public void AddNavigationButton(NavigationButton buttonToAdd)
         {
-            MiddlePanel.SuspendLayout();
-            MiddlePanel.RowCount++;
-            MiddlePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
-            MiddlePanel.Controls.Add(buttonToAdd, 0, MiddlePanel.RowCount - 1);
-            MiddlePanel.ResumeLayout();
+            navigationButtons.Add(buttonToAdd);
+            RebuildNavigationTable();
         }
     }
 }
