@@ -81,6 +81,11 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             label_Warnung = new Label();
             button_DateienHinzufuegen = new Button();
+            label2 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
@@ -121,6 +126,7 @@
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageOverview.SuspendLayout();
             tabPageSettings.SuspendLayout();
@@ -592,6 +598,9 @@
             // 
             button_Entfernen.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             button_Entfernen.Enabled = false;
+            button_Entfernen.FlatAppearance.BorderSize = 0;
+            button_Entfernen.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
+            button_Entfernen.FlatStyle = FlatStyle.Flat;
             button_Entfernen.Location = new Point(827, 63);
             button_Entfernen.Name = "button_Entfernen";
             button_Entfernen.Size = new Size(154, 23);
@@ -671,6 +680,8 @@
             tableLayoutPanel1.Controls.Add(label_Warnung, 1, 4);
             tableLayoutPanel1.Controls.Add(button_DateienHinzufuegen, 3, 1);
             tableLayoutPanel1.Controls.Add(groupBox2, 1, 5);
+            tableLayoutPanel1.Controls.Add(label2, 3, 5);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 3, 4);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 3);
             tableLayoutPanel1.Margin = new Padding(0);
@@ -710,6 +721,54 @@
             button_DateienHinzufuegen.Text = "Dateien hinzufügen";
             button_DateienHinzufuegen.UseVisualStyleBackColor = true;
             button_DateienHinzufuegen.Click += button_DateienHinzufuegen_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(827, 250);
+            label2.Name = "label2";
+            label2.Size = new Size(23, 16);
+            label2.TabIndex = 21;
+            label2.Text = "";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(button2);
+            flowLayoutPanel1.Controls.Add(button3);
+            flowLayoutPanel1.Location = new Point(827, 193);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(154, 54);
+            flowLayoutPanel1.TabIndex = 22;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(151, 23);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(3, 32);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 1;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(3, 61);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 2;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -923,6 +982,7 @@
             groupBox4.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPageOverview.ResumeLayout(false);
             tabPageSettings.ResumeLayout(false);
@@ -998,5 +1058,10 @@
         private TextBox textBoxSearchTermFilePath;
         private Button buttonSettingsSaveSettings;
         private Button buttonSettingsLoadSettings;
+        private Label label2;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
