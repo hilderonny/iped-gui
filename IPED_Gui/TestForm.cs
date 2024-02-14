@@ -35,7 +35,10 @@ namespace IPED_Gui_WinForms
 
             contentPanel = new ContentPanel();
 
-            navigationPanel = new NavigationPanel();
+            navigationPanel = new NavigationPanel
+            {
+                Width = 320
+            };
 
             NavigationInfo.NavigationElements.ForEach(element => {
                 element.Button = new NavigationButton(element.Icon, element.Title);
@@ -65,7 +68,7 @@ namespace IPED_Gui_WinForms
             rootTableLayoutPanel.Controls.Add(contentPanel, 1, 0);
             rootTableLayoutPanel.ResumeLayout();
 
-            ClientSize = new Size(800, 600);
+            ClientSize = new Size(1200, 800);
             Controls.Add(rootTableLayoutPanel);
 
         }

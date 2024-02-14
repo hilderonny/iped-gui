@@ -36,10 +36,10 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             iconLabel = new Label
             {
                 BackColor = BackColor,
-                Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Regular, GraphicsUnit.Point),
+                Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Regular, GraphicsUnit.Point),
                 Margin = Padding.Empty,
                 Padding = Padding.Empty,
-                Size = new Size(48, 48),
+                Size = new Size(48, 40),
                 Text = iconChar.ToString(),
                 TextAlign = ContentAlignment.MiddleCenter
             };
@@ -50,7 +50,7 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             textLabel = new Label
             {
                 BackColor = BackColor,
-                Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point),
+                Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point),
                 Dock = DockStyle.Fill,
                 Margin = Padding.Empty,
                 Padding = new Padding(4, 0, 0, 0),
@@ -65,7 +65,7 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             {
                 BackColor = Color.Transparent,
                 ColumnCount = 2,
-                Height = 48,
+                Dock = DockStyle.Fill,
                 RowCount = 1
             };
             horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));

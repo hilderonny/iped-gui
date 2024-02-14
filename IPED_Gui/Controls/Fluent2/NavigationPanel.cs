@@ -23,10 +23,10 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             {
                 BackColor = Color.Transparent,
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Regular, GraphicsUnit.Point),
+                Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Regular, GraphicsUnit.Point),
                 Margin = Padding.Empty,
                 Padding = Padding.Empty,
-                Size = new Size(48, 48),
+                Size = new Size(48, 40),
                 Text = '\uE700'.ToString(),
                 UseVisualStyleBackColor = false
             };
@@ -54,9 +54,9 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
                 Padding = Padding.Empty,
                 RowCount = 3
             };
-            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
+            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             outerTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
+            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             outerTable.Controls.Add(hamburgerButton, 0, 0);
             outerTable.Controls.Add(navigationTable, 0, 1);
             outerTable.Controls.Add(SettingsButton, 0, 2);
@@ -78,7 +78,7 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             for (int i = 0; i < navigationButtonsToShow.Count; i++)
             {
                 navigationTable.Controls.Add(navigationButtonsToShow[i], 0, i);
-                navigationTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
+                navigationTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             }
             navigationTable.RowStyles.Add(new RowStyle());
             navigationTable.ResumeLayout();
