@@ -1,13 +1,8 @@
-﻿
-
-using System.Windows.Forms;
-
-namespace IPED_Gui_WinForms.Controls.Fluent2
+﻿namespace IPED_Gui_WinForms.Controls.Fluent2
 {
-    public class NavigationPanel : UserControl
+    public class NavigationPanel : TableLayoutPanel
     {
 
-        private readonly TableLayoutPanel outerTable;
         private readonly TableLayoutPanel navigationTable;
         private readonly Button hamburgerButton;
         private int otherWidth = 48;
@@ -15,7 +10,7 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
 
         public NavigationButton SettingsButton { get; private set; }
 
-        private List<NavigationButton> navigationButtons = new();
+        private readonly List<NavigationButton> navigationButtons = new();
 
         public NavigationPanel()
         {
@@ -46,26 +41,18 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
                 Padding = Padding.Empty
             };
 
-            outerTable = new TableLayoutPanel
-            {
-                ColumnCount = 1,
-                Dock = DockStyle.Fill,
-                Margin = Padding.Empty,
-                Padding = Padding.Empty,
-                RowCount = 3
-            };
-            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
-            outerTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            outerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
-            outerTable.Controls.Add(hamburgerButton, 0, 0);
-            outerTable.Controls.Add(navigationTable, 0, 1);
-            outerTable.Controls.Add(SettingsButton, 0, 2);
-
+            ColumnCount = 1;
             Dock = DockStyle.Fill;
             Margin = Padding.Empty;
             Padding = Padding.Empty;
+            RowCount = 3;
+            RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             Width = 200;
-            Controls.Add(outerTable);
+            Controls.Add(hamburgerButton, 0, 0);
+            Controls.Add(navigationTable, 0, 1);
+            Controls.Add(SettingsButton, 0, 2);
         }
 
         private void RebuildNavigationTable()

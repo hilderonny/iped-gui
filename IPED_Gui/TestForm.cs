@@ -13,22 +13,20 @@ namespace IPED_Gui_WinForms
 
             public static List<NavigationInfo> NavigationElements { get; } = new List<NavigationInfo>
             {
-                new NavigationInfo { Icon = '\uE80F', Title = "Home" },
-                new NavigationInfo { Icon = '\uE977', Title = "Local config" },
-                new NavigationInfo { Icon = '\uE734', Title = "Features" },
-                new NavigationInfo { Icon = '\uE762', Title = "Categories" },
-                new NavigationInfo { Icon = '\uEC50', Title = "File system" },
-                new NavigationInfo { Icon = '\uED1F', Title = "Audio translation" },
-                new NavigationInfo { Icon = '\uE8BA', Title = "Image classification" },
-                new NavigationInfo { Icon = '\uEA37', Title = "Protocol" },
+                new() { Icon = '\uE80F', Title = "Home" },
+                new() { Icon = '\uE977', Title = "Local config" },
+                new() { Icon = '\uE734', Title = "Features" },
+                new() { Icon = '\uE762', Title = "Categories" },
+                new() { Icon = '\uEC50', Title = "File system" },
+                new() { Icon = '\uED1F', Title = "Audio translation" },
+                new() { Icon = '\uE8BA', Title = "Image classification" },
+                new() { Icon = '\uEA37', Title = "Protocol" },
             };
         }
 
         private readonly TableLayoutPanel rootTableLayoutPanel;
         private readonly NavigationPanel navigationPanel;
         private readonly ContentPanel contentPanel;
-
-        private readonly NavigationButton homeNavigationButton;
 
         public TestForm()
         {

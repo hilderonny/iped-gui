@@ -5,10 +5,10 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Controls\Fluent2\NavigationButton.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\Fluent2\NavigationPanel.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>

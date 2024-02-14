@@ -1,12 +1,10 @@
-﻿
-using System.Drawing.Drawing2D;
+﻿using System.Drawing.Drawing2D;
 
 namespace IPED_Gui_WinForms.Controls.Fluent2
 {
-    public class NavigationButton : UserControl
+    public class NavigationButton : TableLayoutPanel
     {
 
-        private readonly TableLayoutPanel horizontalTable;
         private readonly Label iconLabel;
         private readonly Label textLabel;
         private Color originalBackColor = Color.Transparent;
@@ -61,27 +59,21 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
             textLabel.MouseLeave += Label_MouseLeave;
             textLabel.Click += Label_Click;
 
-            horizontalTable = new TableLayoutPanel
-            {
-                BackColor = Color.Transparent,
-                ColumnCount = 2,
-                Dock = DockStyle.Fill,
-                RowCount = 1
-            };
-            horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-            horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-            horizontalTable.Controls.Add(iconLabel, 0, 0);
-            horizontalTable.Controls.Add(textLabel, 1, 0);
-
             base.BackColor = Color.Transparent;
+            BackColor = Color.Transparent;
+            ColumnCount = 2;
+            ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             CornerRadius = 3;
             Dock = DockStyle.Fill;
             HoverColor = Color.FromArgb(20, Color.Black);
             Margin = Padding.Empty;
             Padding = Padding.Empty;
+            RowCount = 1;
             SelectedColor = Color.FromArgb(0, 95, 184);
             Type = ButtonType.IconAndText;
-            Controls.Add(horizontalTable);
+            Controls.Add(iconLabel, 0, 0);
+            Controls.Add(textLabel, 1, 0);
         }
 
         private void Label_Click(object? sender, EventArgs e)
