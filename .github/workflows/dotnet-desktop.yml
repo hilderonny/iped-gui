@@ -50,7 +50,7 @@ jobs:
     # Determine app version
     - name: Determine app version
       id: version
-      run: echo "::set-output name=version::$(('' + ([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui.csproj;$Data.Project.PropertyGroup.Version)).Trim())"
+      run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
 
     - name: Zip Folder
       run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-${{ steps.version.outputs.version }}.zip
