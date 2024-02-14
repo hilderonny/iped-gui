@@ -17,7 +17,7 @@ namespace IPED_Gui_WinForms
 
             public static List<NavigationInfo> NavigationElements { get; } = new List<NavigationInfo>
             {
-                new() { Icon = '\uE80F', Title = "Home" },
+                new() { Icon = '\uE80F', Title = "Home", Control = new HomeContentPanel() },
                 new() { Icon = '\uE977', Title = "Local config", Control = new SettingsUserControl(ConfigType.LocalConfig) },
                 new() { Icon = '\uE734', Title = "Features", Control = new SettingsUserControl(ConfigType.IPEDConfig) },
                 new() { Icon = '\uE762', Title = "Categories", Control = new CategoriesUserControl() },
@@ -71,6 +71,7 @@ namespace IPED_Gui_WinForms
             rootTableLayoutPanel.ResumeLayout();
 
             ClientSize = new Size(1200, 800);
+            DoubleBuffered = true;
             Controls.Add(rootTableLayoutPanel);
 
         }

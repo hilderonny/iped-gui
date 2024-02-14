@@ -10,6 +10,12 @@
     <Compile Update="Controls\Fluent2\NavigationPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Controls\Fluent2\SettingsCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\VerticalTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="MainFormOld.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -18,6 +24,9 @@
     </Compile>
     <Compile Update="UserControls\CategoriesUserControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\HomeContentPanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Update="UserControls\SettingsUserControl.cs">
       <SubType>UserControl</SubType>
