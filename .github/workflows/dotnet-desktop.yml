@@ -53,12 +53,12 @@ jobs:
       run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui.csproj;$Data.Project.PropertyGroup.Version)"
 
     - name: Zip Folder
-      run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI.zip
+      run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-${{ steps.version.outputs.version }}.zip
 
     - name: Create or update release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "./IPED-GUI.zip"
+        artifacts: "./IPED-GUI-${{ steps.version.outputs.version }}.zip"
         tag: v${{ steps.version.outputs.version }}
         allowUpdates: true
         name: ${{ steps.version.outputs.version }}
