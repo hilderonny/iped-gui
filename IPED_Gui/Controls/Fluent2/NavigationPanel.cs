@@ -68,11 +68,12 @@
                 navigationTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             }
             navigationTable.RowStyles.Add(new RowStyle());
-            navigationTable.ResumeLayout();
+            navigationTable.ResumeLayout(false);
         }
         
         private void HamburgerButton_Click(object? sender, EventArgs e)
         {
+            SuspendLayout();
             navigationTable.SuspendLayout();
             // Variablenwerte tauschen
             (Width, otherWidth) = (otherWidth, Width);
@@ -81,7 +82,8 @@
                 button.Type = collapsed ? NavigationButton.ButtonType.IconOnly : NavigationButton.ButtonType.IconAndText;
                 button.Invalidate();
             });
-            navigationTable.ResumeLayout();
+            navigationTable.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         public void AddNavigationButton(NavigationButton buttonToAdd)
@@ -98,7 +100,7 @@
                 button.Selected = button == sender;
                 button.Invalidate();
             });
-            navigationTable.ResumeLayout();
+            navigationTable.ResumeLayout(false);
         }
     }
 }

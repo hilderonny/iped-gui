@@ -22,6 +22,8 @@ namespace IPED_Gui_WinForms.Controls.Fluent2
         public bool Selected { get; set; }
         public new string? Text { get => textLabel.Text; set => textLabel.Text = value; }
         public ButtonType Type { get; set; }
+
+        public Control? ContentControl { get; set; }
         public override Color BackColor { get => originalBackColor; set {
                 originalBackColor = value;
                 iconLabel.BackColor = value;
