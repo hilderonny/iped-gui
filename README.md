@@ -1,8 +1,8 @@
 # IPED Gui
 
-Dieses Programm bietet eine grafische Oberfläche für [IPED](https://github.com/sepinf-inc/IPED).
+Dieses Programm bietet eine grafische Oberflï¿½che fï¿½r [IPED](https://github.com/sepinf-inc/IPED).
 Es dient zur komfortablen Einstellung von IPED-Programmparametern und zum Starten und Protokollieren
-von IPED-Programmdurchläufen.
+von IPED-Programmdurchlï¿½ufen.
 
 ![IPED GUI](Screenshot_Overview.png)
 
@@ -12,9 +12,11 @@ von IPED-Programmdurchläufen.
 
 ## Quick Start
 
-**TODO** Benutzung erklären
-- IPED Programmverzeichnis wählen
-- Einstellungen wählen
-- Tab Protokoll erklären
+**TODO** Benutzung erklï¿½ren
+- IPED Programmverzeichnis wï¿½hlen
+- Einstellungen wï¿½hlen
+- Tab Protokoll erklï¿½ren
 - Platzierung der Protokolldatei in ./log/IPED_Gui_YYYY_MM_DD__HH_mm_ss.log
 - Bei jedem Start neue Protokolldatei wie bei IPED selbst auch
+
+WIX Installieren: wix314.exe von https://github.com/wixtoolset/wix3/releases/tag/wix314rtm herunterladen und installieren (nicht die 4.0.x, die ist mit jpackage nicht kompatibel)
