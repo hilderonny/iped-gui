@@ -6,7 +6,7 @@
         public VerticalTableLayoutPanel()
         {
             AutoScroll = true;
-            BackColor = Color.Transparent;
+            BackColor = Color.LightPink;
             ColumnCount = 1;
             ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             Dock = DockStyle.Fill;
@@ -19,7 +19,7 @@
         public void AddControl(Control control)
         {
             RowCount++;
-            RowStyles.Insert(RowCount - 2, new RowStyle(SizeType.AutoSize));
+            RowStyles.Insert(RowCount - 2, new RowStyle());
             Controls.Add(control, 0, RowCount - 2);
         }
 

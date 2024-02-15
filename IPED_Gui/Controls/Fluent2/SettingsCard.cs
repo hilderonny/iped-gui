@@ -2,11 +2,15 @@
 {
     public class SettingsCard : Panel
     {
-        public char? Icon { get; set; }
-        public string? Title { get; set; }
-        public string? Description { get; set; }
-        public Control? ActionControl { get; set; }
+        public char? Icon { get => icon; set { icon = value; RebuildInnerTable(); } }
+        public string? Title { get => title; set { title = value; RebuildInnerTable(); } }
+        public string? Description { get => description; set { description = value; RebuildInnerTable(); } }
+        public Control? ActionControl { get => actionControl; set { actionControl = value; RebuildInnerTable(); } }
 
+        private char? icon;
+        private string? title;
+        private string? description;
+        private Control? actionControl;
         private readonly TableLayoutPanel horizontalTable;
         private readonly TableLayoutPanel textTable;
         private readonly Label iconLabel;
@@ -45,8 +49,9 @@
                 Dock = DockStyle.Fill,
                 RowCount = 1,
             };
-            horizontalTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            horizontalTable.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
+            AutoSize = true;
             BackColor = Color.LightGreen;
             BorderStyle = BorderStyle.FixedSingle;
             Dock = DockStyle.Fill;
@@ -70,6 +75,7 @@
 
             textTable.Controls.Clear();
             textTable.RowStyles.Clear();
+
 
             if (Icon != null)
             {

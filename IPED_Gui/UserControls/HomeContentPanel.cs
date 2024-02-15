@@ -7,6 +7,7 @@ namespace IPED_Gui_WinForms.UserControls
     {
         public HomeContentPanel()
         {
+            Padding = new Padding(0, 0, 54, 0);
 
             AddControl(new SettingsCard { Icon = 'C', Title = "Title", Description = "Description", ActionControl = new Button { Text = "Button" } });
 
