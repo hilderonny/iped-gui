@@ -4,6 +4,11 @@
     <groupId>com.tlka</groupId>
     <artifactId>ipedgui</artifactId>
     <version>2.0.0</version>
+    <organization>
+        <name>Ronny Hildebrandt</name>
+    </organization>
+    <inceptionYear>2024</inceptionYear>
+    <description>Graphical user interface for IPED</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
@@ -25,6 +30,7 @@
     </dependencies>
     <build>
         <plugins>
+            <!-- Copy JavaFX libraries to ./lib subfolder -->
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
@@ -39,6 +45,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Create self executable JAR file for application which is linked tom the ./lib folder -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -53,6 +60,34 @@
                     </archive>
                     <outputDirectory>${release.dir}</outputDirectory>
                 </configuration>
+            </plugin>
+            <!-- Create a Windows EXE file -->
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>2.5.0</version>
+                <executions>
+                    <execution>
+                        <id>jar-to-exe</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <jar>${release.dir}/${project.build.finalName}.jar</jar>
+                            <outfile>${release.dir}/${project.build.finalName}.exe</outfile>
+                            <classPath>
+                                <mainClass>com.tlka.ipedgui.App</mainClass>
+                            </classPath>
+                            <jre>
+                                <minVersion>1.8.0</minVersion>
+                                <path>${env.JAVA_HOME}</path>
+                            </jre>
+                            <headerType>gui</headerType>
+                            <icon>process.ico</icon>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
