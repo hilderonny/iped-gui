@@ -2,7 +2,7 @@ name: Package JavaFX
 
 on:
   push:
-    branches: [ "javafx" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
