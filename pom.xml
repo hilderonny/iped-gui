@@ -16,6 +16,18 @@
         <release.dir>${project.build.directory}/release</release.dir>
         <lib.dir>${release.dir}/lib</lib.dir>
     </properties>
+    <repositories>
+        <repository>
+        	<id>mvn-repo</id>
+        	<url>https://gitlab.com/iped-project/iped-maven/raw/master</url>
+        	<releases>
+            	<enabled>true</enabled>
+        	</releases>
+        	<snapshots>
+            	<enabled>true</enabled>
+        	</snapshots>
+    	</repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -41,6 +53,25 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${lib.dir}</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-jre</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>java</groupId>
+                                    <artifactId>jre</artifactId>
+                                    <version>11.0.13</version>
+                                    <type>zip</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${release.dir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
@@ -81,7 +112,7 @@
                             </classPath>
                             <jre>
                                 <minVersion>1.8.0</minVersion>
-                                <path>${env.JAVA_HOME}</path>
+                                <path>./jre</path>
                             </jre>
                             <headerType>gui</headerType>
                             <icon>process.ico</icon>
