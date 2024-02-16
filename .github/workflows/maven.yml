@@ -25,11 +25,11 @@ jobs:
 
     - name: Determine output file name
       id: outputFile
-      run: buildfilename=mvn help:evaluate -Dexpression=project.build.finalName -q -DforceStdout >> "$GITHUB_OUTPUT"
+      run: buildfilename=$(mvn help:evaluate -Dexpression=project.build.finalName -q -DforceStdout) >> "$GITHUB_OUTPUT"
 
     - name: Determine version
       id: version
-      run: version=mvn help:evaluate -Dexpression=project.version -q -DforceStdout >> "$GITHUB_OUTPUT"
+      run: version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout) >> "$GITHUB_OUTPUT"
 
     - name: Zip Folder
       run: zip ./${{ steps.outputFile.outputs.buildfilename }}.zip ./target/release/*
