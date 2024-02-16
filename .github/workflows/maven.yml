@@ -32,7 +32,7 @@ jobs:
       run: echo "version=mvn help:evaluate -Dexpression=project.version -q -DforceStdout" >> "$GITHUB_OUTPUT"
 
     - name: Zip Folder
-      run: Compress-Archive -Path ./target/release/* -DestinationPath ./${{ steps.outputFile.outputs.buildfilename }}.zip
+      run: zip ./${{ steps.outputFile.outputs.buildfilename }}.zip ./target/release/*
 
     - name: Create or update release
       uses: ncipollo/release-action@v1
