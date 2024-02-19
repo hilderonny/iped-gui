@@ -39,11 +39,8 @@ namespace IPED_Gui_WinForms.Helper
             return regex;
         }
 
-        internal static void WriteProfileToDisk(string profileName)
+        internal static void WriteProfileToPath(string profileDirectory)
         {
-            Settings settings = Settings.Default;
-            var ipedDirectory = Path.GetDirectoryName(settings.SettingsIpedExePath);
-            var profileDirectory = Path.Join(ipedDirectory, "profiles", profileName);
             var confDirectory = Path.Join(profileDirectory, "conf");
             Directory.CreateDirectory(confDirectory);
 
@@ -55,6 +52,14 @@ namespace IPED_Gui_WinForms.Helper
             {
                 File.WriteAllText(Path.Join(confDirectory, "RegexConfig.txt"), CreateRegexConfigTxt());
             }
+        }
+
+        internal static void WriteProfileToDisk(string profileName)
+        {
+            Settings settings = Settings.Default;
+            var ipedDirectory = Path.GetDirectoryName(settings.SettingsIpedExePath);
+            var profileDirectory = Path.Join(ipedDirectory, "profiles", profileName);
+            WriteProfileToPath(profileDirectory);
         }
 
     }
