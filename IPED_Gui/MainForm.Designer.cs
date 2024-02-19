@@ -84,6 +84,7 @@
             tabControl1 = new TabControl();
             tabPageOverview = new TabPage();
             tabPageSettings = new TabPage();
+            buttonExportProfile = new Button();
             buttonSettingsSaveSettings = new Button();
             buttonSettingsLoadSettings = new Button();
             textBoxSettingsIpedExePath = new TextBox();
@@ -124,7 +125,6 @@
             tabControl1.SuspendLayout();
             tabPageOverview.SuspendLayout();
             tabPageSettings.SuspendLayout();
-            tabPageCategories.SuspendLayout();
             tabPageAudioTranslation.SuspendLayout();
             tabPageImageClassification.SuspendLayout();
             tabPageProtocol.SuspendLayout();
@@ -742,6 +742,7 @@
             // 
             // tabPageSettings
             // 
+            tabPageSettings.Controls.Add(buttonExportProfile);
             tabPageSettings.Controls.Add(buttonSettingsSaveSettings);
             tabPageSettings.Controls.Add(buttonSettingsLoadSettings);
             tabPageSettings.Controls.Add(buttonSettingsIpedExePath);
@@ -754,6 +755,16 @@
             tabPageSettings.TabIndex = 10;
             tabPageSettings.Text = "Einstellungen";
             tabPageSettings.UseVisualStyleBackColor = true;
+            // 
+            // buttonExportProfile
+            // 
+            buttonExportProfile.Location = new Point(250, 157);
+            buttonExportProfile.Name = "buttonExportProfile";
+            buttonExportProfile.Size = new Size(213, 23);
+            buttonExportProfile.TabIndex = 13;
+            buttonExportProfile.Text = "Profil exportieren ...";
+            buttonExportProfile.UseVisualStyleBackColor = true;
+            buttonExportProfile.Click += buttonExportProfile_Click;
             // 
             // buttonSettingsSaveSettings
             // 
@@ -927,7 +938,6 @@
             tabPageOverview.ResumeLayout(false);
             tabPageSettings.ResumeLayout(false);
             tabPageSettings.PerformLayout();
-            tabPageCategories.ResumeLayout(false);
             tabPageAudioTranslation.ResumeLayout(false);
             tabPageImageClassification.ResumeLayout(false);
             tabPageProtocol.ResumeLayout(false);
@@ -998,5 +1008,6 @@
         private TextBox textBoxSearchTermFilePath;
         private Button buttonSettingsSaveSettings;
         private Button buttonSettingsLoadSettings;
+        private Button buttonExportProfile;
     }
 }
