@@ -19,44 +19,68 @@
 
         public SettingsCard()
         {
+
+            horizontalTable = new TableLayoutPanel
+            {
+                BackColor = Color.PaleGreen,
+                ColumnCount = 3,
+                Dock = DockStyle.Fill,
+                Margin = Padding.Empty,
+                RowCount = 1,
+            };
+            horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 36F));
+            horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            horizontalTable.ColumnStyles.Add(new ColumnStyle());
+            horizontalTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+
             iconLabel = new Label
             {
-                BackColor = Color.Red,
-                Size = new Size(48, 40),
-            };
-            titleLabel = new Label
-            {
-                BackColor = Color.Blue,
-            };
-            descriptionLabel = new Label
-            {
-                BackColor = Color.Green,
+                AutoSize = true,
+                BackColor = Color.Plum,
+                Dock = DockStyle.Fill,
+                Margin = Padding.Empty,
+                TextAlign = ContentAlignment.MiddleLeft,
             };
 
             textTable = new TableLayoutPanel
             {
-                BackColor = Color.LightGoldenrodYellow,
+                BackColor = Color.MistyRose,
                 ColumnCount = 1,
                 Dock = DockStyle.Fill,
-                RowCount = 0,
+                Margin = Padding.Empty,
+                RowCount = 2,
             };
-            textTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            textTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            textTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            textTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
 
-            horizontalTable = new TableLayoutPanel
+            titleLabel = new Label
             {
-                BackColor = Color.LightBlue,
-                ColumnCount = 0,
+                AutoSize = true,
+                BackColor = Color.Blue,
                 Dock = DockStyle.Fill,
-                RowCount = 1,
+                Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point),
+                Margin = Padding.Empty,
             };
-            horizontalTable.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-            AutoSize = true;
-            BackColor = Color.LightGreen;
+            descriptionLabel = new Label
+            {
+                AutoEllipsis = true,
+                BackColor = Color.Green,
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point),
+                ForeColor = Color.Gray,
+                Margin = Padding.Empty,
+            };
+
+            BackColor = Color.LightSteelBlue;
             BorderStyle = BorderStyle.FixedSingle;
             Dock = DockStyle.Fill;
-            Margin = new Padding(0, 0, 0, 4);
+            Margin = new Padding(0, 0, 0, 5);
             Padding = new Padding(16);
+
+            textTable.Controls.Add(titleLabel, 0, 0);
+            textTable.Controls.Add(descriptionLabel, 0, 1);
 
             Controls.Add(horizontalTable);
 
@@ -70,48 +94,25 @@
             textTable.SuspendLayout();
 
             horizontalTable.Controls.Clear();
-            horizontalTable.ColumnStyles.Clear();
-            horizontalTable.ColumnCount = 0;
-
-            textTable.Controls.Clear();
-            textTable.RowStyles.Clear();
-
+            horizontalTable.Controls.Add(textTable, 1, 0);
 
             if (Icon != null)
             {
                 iconLabel.Text = Icon.ToString();
-                horizontalTable.ColumnCount++;
                 horizontalTable.Controls.Add(iconLabel, 0, 0);
-                horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
             }
             if (Title != null)
             {
-                horizontalTable.ColumnCount++;
-                horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
                 titleLabel.Text = Title;
-                if (Description != null)
-                {
-                    descriptionLabel.Text = Description;
-                    textTable.Controls.Add(titleLabel, 0, 0);
-                    textTable.Controls.Add(descriptionLabel, 0, 1);
-                    horizontalTable.Controls.Add(textTable, 1, 0);
-                }
-                else
-                {
-                    horizontalTable.Controls.Add(titleLabel, 1, 0);
-                }
             }
-            else if (Description != null)
+            if (Description != null)
             {
-                horizontalTable.ColumnCount++;
-                horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
                 descriptionLabel.Text = Description;
-                horizontalTable.Controls.Add(descriptionLabel, 1, 0);
             }
             if (ActionControl != null)
             {
-                horizontalTable.ColumnCount++;
-                horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                ActionControl.Anchor = AnchorStyles.None;
+                ActionControl.Margin = new Padding(16, 0, 0, 0);
                 horizontalTable.Controls.Add(ActionControl, 2, 0);
             }
 

@@ -589,6 +589,16 @@ namespace IPED_Gui_WinForms
             }
         }
 
+        private void buttonExportProfile_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                ConfigHelper.WriteProfileToPath(selectedFolder);
+                MessageBox.Show("Profil gespeichert.");
+            }
+        }
+
         private void textBoxSearchTermFilePath_TextChanged(object sender, EventArgs e)
         {
             Settings.Default.GeneralSearchTermFilePath = textBoxSearchTermFilePath.Text;
