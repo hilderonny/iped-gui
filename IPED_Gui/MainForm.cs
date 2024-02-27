@@ -84,5 +84,15 @@ namespace IPED_Gui_WinForms
             contentPanel.ContentControl = button?.ContentControl;
             contentPanel.ResumeLayout();
         }
+
+        private void buttonExportProfile_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedFolder = folderBrowserDialog.SelectedPath;
+                ConfigHelper.WriteProfileToPath(selectedFolder);
+                MessageBox.Show("Profil gespeichert.");
+            }
+        }
     }
 }
