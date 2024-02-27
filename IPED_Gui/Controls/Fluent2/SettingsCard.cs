@@ -22,58 +22,53 @@
 
             horizontalTable = new TableLayoutPanel
             {
-                BackColor = Color.PaleGreen,
                 ColumnCount = 3,
                 Dock = DockStyle.Fill,
                 Margin = Padding.Empty,
                 RowCount = 1,
             };
-            horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 36F));
+            horizontalTable.ColumnStyles.Add(new ColumnStyle());
             horizontalTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             horizontalTable.ColumnStyles.Add(new ColumnStyle());
             horizontalTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
 
             iconLabel = new Label
             {
-                AutoSize = true,
-                BackColor = Color.Plum,
                 Dock = DockStyle.Fill,
+                Font = new Font("Segoe MDL2 Assets", 20F, FontStyle.Regular, GraphicsUnit.Point),
                 Margin = Padding.Empty,
+                Size = new Size(52, 47),
                 TextAlign = ContentAlignment.MiddleLeft,
             };
 
             textTable = new TableLayoutPanel
             {
-                BackColor = Color.MistyRose,
                 ColumnCount = 1,
                 Dock = DockStyle.Fill,
                 Margin = Padding.Empty,
                 RowCount = 2,
             };
             textTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            textTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            textTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            textTable.RowStyles.Add(new RowStyle());
+            textTable.RowStyles.Add(new RowStyle());
 
             titleLabel = new Label
             {
                 AutoSize = true,
-                BackColor = Color.Blue,
                 Dock = DockStyle.Fill,
-                Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point),
+                Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point),
                 Margin = Padding.Empty,
             };
 
             descriptionLabel = new Label
             {
                 AutoEllipsis = true,
-                BackColor = Color.Green,
                 Dock = DockStyle.Fill,
-                Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point),
+                Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point),
                 ForeColor = Color.Gray,
                 Margin = Padding.Empty,
             };
 
-            BackColor = Color.LightSteelBlue;
             BorderStyle = BorderStyle.FixedSingle;
             Dock = DockStyle.Fill;
             Margin = new Padding(0, 0, 0, 5);

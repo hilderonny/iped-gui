@@ -6,7 +6,6 @@
         public VerticalTableLayoutPanel()
         {
             AutoScroll = true;
-            BackColor = Color.LightPink;
             ColumnCount = 1;
             ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             Dock = DockStyle.Fill;
