@@ -7,9 +7,8 @@ namespace IPED_Gui_WinForms.UserControls
     {
         public HomeContentPanel()
         {
+            BackColor = Color.Cyan;
             Padding = new Padding(0, 0, 54, 0);
-            AutoScroll = true;
-            Dock = DockStyle.Fill;
 
             AddControl(new SettingsCard { Icon = 'C', Title = "Title", Description = "Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description ", ActionControl = new Button { Text = "Button" } });
             AddControl(new SettingsCard { Icon = 'C', Title = "Title", Description = "Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description ", ActionControl = new Button { Text = "Button" } });

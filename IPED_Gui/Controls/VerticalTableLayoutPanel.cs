@@ -13,13 +13,13 @@
             Margin = Padding.Empty;
             Padding = Padding.Empty;
             RowCount = 1;
-            RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            RowStyles.Add(new RowStyle());
         }
 
         public void AddControl(Control control)
         {
             RowCount++;
-            RowStyles.Insert(RowCount - 2, new RowStyle());
+            RowStyles.Add(new RowStyle());
             Controls.Add(control, 0, RowCount - 2);
         }
 
