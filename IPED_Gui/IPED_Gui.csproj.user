@@ -4,12 +4,6 @@
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\CategoriesUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="UserControls\SettingsUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="MainForm.resx">
