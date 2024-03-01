@@ -33,10 +33,18 @@
 
   <ItemGroup>
     <None Remove="AppData\html\index.html" />
+    <None Remove="AppData\html\script.mjs" />
+    <None Remove="AppData\html\styles.css" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="AppData\html\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\script.mjs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\styles.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="process.ico" />

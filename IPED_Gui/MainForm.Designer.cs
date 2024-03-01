@@ -45,7 +45,6 @@
             webView.Source = new Uri("https://local/index.html", UriKind.Absolute);
             webView.TabIndex = 0;
             webView.ZoomFactor = 1D;
-            webView.CoreWebView2InitializationCompleted += webView_CoreWebView2InitializationCompleted;
             // 
             // MainForm
             // 

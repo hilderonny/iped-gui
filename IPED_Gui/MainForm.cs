@@ -1,3 +1,4 @@
+using Microsoft.Web.WebView2.Core;
 using System.Reflection;
 
 namespace IPED_Gui_WinForms
@@ -16,18 +17,18 @@ namespace IPED_Gui_WinForms
 
         async void InitializeAsync()
         {
-            Console.WriteLine("InitializeAsync starting");
             await webView.EnsureCoreWebView2Async(null);
-            Console.WriteLine("InitializeAsync done");
-        }
-
-        private void webView_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
-        {
-
+            webView.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived; ;
             // https://stackoverflow.com/a/69870089
             webView.CoreWebView2.SetVirtualHostNameToFolderMapping(hostName: "local", folderPath: "AppData\\html", accessKind: Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow);
             webView.CoreWebView2.Navigate("https://local/index.html");
-
         }
+
+        private void CoreWebView2_WebMessageReceived(object? sender, CoreWebView2WebMessageReceivedEventArgs e)
+        {
+            String uri = e.TryGetWebMessageAsString();
+            webView.CoreWebView2.PostWebMessageAsString(uri);
+        }
+
     }
 }
