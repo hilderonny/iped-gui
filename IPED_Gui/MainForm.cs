@@ -20,7 +20,7 @@ namespace IPED_Gui_WinForms
         async void InitializeAsync()
         {
             await webView.EnsureCoreWebView2Async(null);
-            messageHandler = new MessageHandler(webView.CoreWebView2);
+            messageHandler = new MessageHandler(webView);
             webView.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived; ;
             // https://stackoverflow.com/a/69870089
             webView.CoreWebView2.SetVirtualHostNameToFolderMapping(hostName: "local", folderPath: "AppData\\html", accessKind: Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow);

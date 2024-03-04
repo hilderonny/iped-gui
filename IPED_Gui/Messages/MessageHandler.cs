@@ -1,4 +1,4 @@
-﻿using Microsoft.Web.WebView2.Core;
+﻿using Microsoft.Web.WebView2.WinForms;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -7,9 +7,9 @@ namespace IPED_Gui_WinForms.Messages
     public class MessageHandler
     {
 
-        private CoreWebView2 webView;
+        private WebView2 webView;
 
-        public MessageHandler(CoreWebView2 wv)
+        public MessageHandler(WebView2 wv)
         {
             webView = wv;
         }
@@ -72,11 +72,13 @@ namespace IPED_Gui_WinForms.Messages
                 StartInfo = new()
                 {
                     FileName = message.Program,
-                    UseShellExecute = true,
+                    UseShellExecute = false,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
-                    Arguments = message.ProgramArguments
-                }
+                    Arguments = message.ProgramArguments,
+                    WorkingDirectory = message.WorkingDirectory
+                },
+                EnableRaisingEvents = true
             };
             DataReceivedEventHandler dataReceivedEventHandler = (object sender, DataReceivedEventArgs args) =>
             {
@@ -87,7 +89,6 @@ namespace IPED_Gui_WinForms.Messages
                     Content = args.Data
                 };
                 PostMessage(response);
-
             };
             process.OutputDataReceived += dataReceivedEventHandler;
             process.ErrorDataReceived += dataReceivedEventHandler;
@@ -100,9 +101,22 @@ namespace IPED_Gui_WinForms.Messages
                 };
                 PostMessage(response);
             };
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
+            try
+            {
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+            }
+            catch (Exception ex)
+            {
+                WebClientMessage response = new()
+                {
+                    Id = message.Id,
+                    Type = "LogOutput",
+                    Content = ex.ToString()
+                };
+                PostMessage(response);
+            }
         }
 
         private void handleSelectFileMessage(WebClientMessage message)
@@ -172,8 +186,15 @@ namespace IPED_Gui_WinForms.Messages
 
         private void PostMessage(WebClientMessage message)
         {
-            string json = JsonSerializer.Serialize(message);
-            webView.PostWebMessageAsJson(json);
+            if (webView.InvokeRequired)
+            {
+                webView.Invoke(new MethodInvoker(() => PostMessage(message)));
+            }
+            else
+            {
+                string json = JsonSerializer.Serialize(message);
+                webView.CoreWebView2.PostWebMessageAsJson(json);
+            }
         }
 
     }
