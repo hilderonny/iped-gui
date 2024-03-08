@@ -29,6 +29,7 @@ body {
 .mainpanel {
     display: flex;
     flex: 1;
+    overflow: auto;
 }
 
 .navigationpanel {
@@ -53,6 +54,7 @@ body {
 
 .navigationpanel .navigationtable {
     flex: 1;
+    overflow: auto;
 }
 
 .navigationbutton {
@@ -105,9 +107,111 @@ body {
 }
 
 .contentpanel {
-    background-color: #ffffff;
+    background-color: #fbfbfb;
     border: solid rgba(0, 0, 0, .1);
     border-width: 1px 0 0 1px;
     border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    overflow: auto;
+    padding: 50px;
+}
+
+.contentpanel > .title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contentpanel > p {
+    margin-bottom: 10px;
+}
+
+.contentpanel > .description {
+    color: rgba(0, 0, 0, .5);
+}
+
+.settingscard {
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0, .07);
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 5px;
+    padding: 24px;
+}
+
+.settingscard .icon {
+    align-self: center;
+    font-family: 'Segoe MDL2 Assets';
+    font-size: 20px;
+    height: 20px;
+    line-height: 100%;
+    margin-right: 24px;
+}
+
+.settingscard .text {
+    align-self: center;
+    flex: 1;
+}
+
+.settingscard .text .title {
+    font-size: 15px;
+}
+
+.settingscard .text .description {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+}
+
+.settingscard .action {
+    align-self: center;
+    margin-left: 24px;
+}
+
+.settingscard .action button {
+    background-color: #005a9e;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 9px;
+}
+
+.settingscard .action select {
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px 9px;
+}
+
+.settingscard .action .toggle {
+    background-color: #F8F8F8;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 14px;
+    height: 26px;
+    position: relative;
+    width: 56px;
+}
+
+.settingscard .action .toggle::before {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 9px;
+    content: '';
+    display: block;
+    height: 18px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+    width: 18px;
+}
+
+.settingscard .action .toggle.on {
+    background-color: #005A9E;
+    border-color: #005A9E;
+}
+
+.settingscard .action .toggle.on::before {
+    background-color: #F8F8F8;
+    left: unset;
+    right: 4px;
 }
