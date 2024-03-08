@@ -1,31 +1,66 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<script type="module" src="script.mjs"></script>
-		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 	<body>
-		<p>Hallo WebView!</p>
 
-		<p>
-			<input type="text" id="filename" />
-			<button id="selectfilebutton">Select file</button>
-		</p>
+		<div class="rootpanel">
 
-		<p>
-			<input type="text" id="foldername" />
-			<button id="selectfolderbutton">Select folder</button>
-		</p>
+			<div class="toolbar">
 
-		<p>
-			<pre id="filecontent"></pre>
-			<button id="showfilecontentbutton">Show file content</button>
-		</p>
+				<div class="navigationbutton smalliconbutton">
+					<div class="icon">&#xE713</div>
+				</div>
 
-		<p>
-			<input type="text" id="program" value="D:\IPED\iped-4.1.5\iped.exe" />
-			<button id="runbutton">Run</button>
-		</p>
+			</div>
+
+			<div class="mainpanel">
+
+				<div class="navigationpanel">
+
+					<div class="navigationbutton smalliconbutton" onclick="document.querySelector('.navigationpanel').classList.toggle('collapsed');">
+						<div class="icon">&#xE700</div>
+					</div>
+	
+					<div class="navigationtable">
+	
+						<div class="navigationbutton">
+							<div class="icon">&#xE713</div>
+							<div class="label">Icon and text</div>
+						</div>
+	
+						<div class="navigationbutton">
+							<div class="icon">&#xE713</div>
+						</div>
+	
+						<div class="navigationbutton">
+							<div class="label">Text only</div>
+						</div>
+	
+						<div class="navigationbutton selected">
+							<div class="icon">&#xE713</div>
+							<div class="label">Icon and text</div>
+						</div>
+	
+					</div>
+	
+					<div class="settingsbutton navigationbutton">
+						<div class="icon">&#xE713</div>
+						<div class="label">Settings</div>
+					</div>
+	
+				</div>
+	
+				<div class="contentpanel">
+					
+				</div>
+	
+			</div>
+
+		</div>
 
 	</body>
 </html>
