@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="module" src="script.mjs"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+
+		<div class="rootpanel">
+
+			<div class="toolbar">
+
+				<div class="navigationbutton smalliconbutton">
+					<div class="icon">&#xE713</div>
+				</div>
+
+			</div>
+
+			<div class="mainpanel">
+
+				<div class="navigationpanel">
+
+					<div class="navigationbutton smalliconbutton" onclick="document.querySelector('.navigationpanel').classList.toggle('collapsed');">
+						<div class="icon">&#xE700</div>
+					</div>
+	
+					<div class="navigationtable">
+	
+						<div class="navigationbutton">
+							<div class="icon">&#xE713</div>
+							<div class="label">Icon and text</div>
+						</div>
+	
+						<div class="navigationbutton">
+							<div class="icon">&#xE713</div>
+						</div>
+	
+						<div class="navigationbutton">
+							<div class="label">Text only</div>
+						</div>
+	
+						<div class="navigationbutton selected">
+							<div class="icon">&#xE713</div>
+							<div class="label">Icon and text</div>
+						</div>
+	
+						<div class="navigationbutton" onclick="console.log(event, this)"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+
+					</div>
+	
+					<div class="settingsbutton navigationbutton">
+						<div class="icon">&#xE713</div>
+						<div class="label">Settings</div>
+					</div>
+	
+				</div>
+	
+				<div class="contentpanel">
+
+					<div class="title">Page Title</div>
+
+					<p class="description">SettingsCard is a control that can be used to display settings in your experience. It uses the default styling found in Windows 11 and is easy to use, meets all accessibility standards and will make your settings page look great! You can set the Header, Description, HeaderIcon and Content properties to create an easy to use experience, like so:</p>
+
+					<div class="settingscard">
+						<div class="icon">&#xE713</div>
+						<div class="text">
+							<div class="title">Long description and button</div>
+							<div class="description">SettingsCard is a control that can be used to display settings in your experience. It uses the default styling found in Windows 11 and is easy to use, meets all accessibility standards and will make your settings page look great! You can set the Header, Description, HeaderIcon and Content properties to create an easy to use experience, like so:</div>
+						</div>
+						<div class="action">
+							<button>Button</button>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="icon">&#xE713</div>
+						<div class="text">
+							<div class="title">Short Description and ComboBox</div>
+							<div class="description">Description</div>
+						</div>
+						<div class="action">
+							<select>
+								<option>Option 1</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="icon">&#xE713</div>
+						<div class="text">
+							<div class="title">No description and toggle switch</div>
+						</div>
+						<div class="action">
+							<div class="toggle"></div>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="icon">&#xE713</div>
+						<div class="text">
+							<div class="title">No description and toggle switch</div>
+						</div>
+						<div class="action">
+							<div class="toggle on"></div>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">Title only</div>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="description">Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only Description only</div>
+						</div>
+					</div>
+					
+				</div>
+	
+			</div>
+
+		</div>
+
+	</body>
+</html>

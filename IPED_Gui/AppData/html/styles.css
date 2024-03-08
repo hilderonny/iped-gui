@@ -59,6 +59,7 @@ body {
 
 .navigationbutton {
     border-radius: 4px;
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     margin-bottom: 5px;
@@ -67,7 +68,7 @@ body {
     position: relative;
 }
 
-.navigationbutton.smalliconbutton {
+.navigationbutton.homebutton {
     width: 20px;
 }
 
@@ -111,11 +112,15 @@ body {
     border: solid rgba(0, 0, 0, .1);
     border-width: 1px 0 0 1px;
     border-top-left-radius: 10px;
-    display: flex;
+    display: none;
     flex-direction: column;
     flex: 1;
     overflow: auto;
     padding: 50px;
+}
+
+.contentpanel.visible {
+    display: flex;
 }
 
 .contentpanel > .title {

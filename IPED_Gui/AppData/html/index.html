@@ -4,6 +4,16 @@
 		<meta charset="utf-8">
 		<script type="module" src="script.mjs"></script>
 		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script defer>
+
+			function handleNavigation(navigationButton, contentId) {
+				document.querySelectorAll(".contentpanel").forEach(element => element.classList.remove("visible"))
+				document.querySelector(".contentpanel." + contentId).classList.add("visible")
+				document.querySelectorAll(".navigationpanel .navigationbutton").forEach(element => element.classList.remove("selected"))
+				navigationButton.classList.add("selected")
+			}
+
+		</script>
 	</head>
 	<body>
 
@@ -21,70 +31,64 @@
 
 				<div class="navigationpanel">
 
-					<div class="navigationbutton smalliconbutton" onclick="document.querySelector('.navigationpanel').classList.toggle('collapsed');">
+					<div class="navigationbutton homebutton" onclick="document.querySelector('.navigationpanel').classList.toggle('collapsed');">
 						<div class="icon">&#xE700</div>
 					</div>
 	
 					<div class="navigationtable">
 	
-						<div class="navigationbutton">
-							<div class="icon">&#xE713</div>
-							<div class="label">Icon and text</div>
+						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-home')">
+							<div class="icon">&#xE80F</div>
+							<div class="label">Home</div>
 						</div>
 	
-						<div class="navigationbutton">
-							<div class="icon">&#xE713</div>
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-local-config')">
+							<div class="icon">&#xE977</div>
+							<div class="label">Local Config</div>
 						</div>
 	
-						<div class="navigationbutton">
-							<div class="label">Text only</div>
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-features')">
+							<div class="icon">&#xE734</div>
+							<div class="label">Features</div>
 						</div>
 	
-						<div class="navigationbutton selected">
-							<div class="icon">&#xE713</div>
-							<div class="label">Icon and text</div>
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-categories')">
+							<div class="icon">&#xE762</div>
+							<div class="label">Categories</div>
 						</div>
 	
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
-						<div class="navigationbutton"><div class="icon">&#xE713</div><div class="label">Icon and text</div></div>
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-file-system')">
+							<div class="icon">&#xEC50</div>
+							<div class="label">File System</div>
+						</div>
+	
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-audio-translation')">
+							<div class="icon">&#xEED1F</div>
+							<div class="label">Audio Translation</div>
+						</div>
+	
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-image-classification')">
+							<div class="icon">&#xE8BA</div>
+							<div class="label">Image Classification</div>
+						</div>
+	
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-protocol')">
+							<div class="icon">&#xEA37</div>
+							<div class="label">Protocol</div>
+						</div>
 
 					</div>
 	
-					<div class="settingsbutton navigationbutton">
+					<div class="settingsbutton navigationbutton" onclick="handleNavigation(this, 'content-settings')">
 						<div class="icon">&#xE713</div>
 						<div class="label">Settings</div>
 					</div>
 	
 				</div>
 	
-				<div class="contentpanel">
+				<div class="contentpanel content-home visible">
 
-					<div class="title">Page Title</div>
+					<div class="title">Home</div>
 
 					<p class="description">SettingsCard is a control that can be used to display settings in your experience. It uses the default styling found in Windows 11 and is easy to use, meets all accessibility standards and will make your settings page look great! You can set the Header, Description, HeaderIcon and Content properties to create an easy to use experience, like so:</p>
 
@@ -146,6 +150,42 @@
 					
 				</div>
 	
+				<div class="contentpanel content-local-config">
+					<div class="title">Local Config</div>
+				</div>
+	
+				<div class="contentpanel content-features">
+					<div class="title">Features</div>
+				</div>
+	
+				<div class="contentpanel content-categories">
+					<div class="title">Categories</div>
+				</div>
+	
+				<div class="contentpanel content-file-system">
+					<div class="title">File System</div>
+				</div>
+	
+				<div class="contentpanel content-local-config">
+					<div class="title">Local Config</div>
+				</div>
+	
+				<div class="contentpanel content-audio-translation">
+					<div class="title">Audio Translation</div>
+				</div>
+	
+				<div class="contentpanel content-image-classification">
+					<div class="title">Image Classification</div>
+				</div>
+	
+				<div class="contentpanel content-protocol">
+					<div class="title">Protocol</div>
+				</div>
+	
+				<div class="contentpanel content-settings">
+					<div class="title">Settings</div>
+				</div>
+
 			</div>
 
 		</div>
