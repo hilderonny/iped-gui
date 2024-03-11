@@ -42,7 +42,7 @@
 							<div class="label">Home</div>
 						</div>
 	
-						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-local-config')">
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-local-config')">
 							<div class="icon">&#xE977</div>
 							<div class="label">Local Config</div>
 						</div>
@@ -62,7 +62,7 @@
 							<div class="label">File System</div>
 						</div>
 	
-						<div class="navigationbutton" onclick="handleNavigation(this, 'content-audio-translation')">
+						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-audio-translation')">
 							<div class="icon">&#xED1F</div>
 							<div class="label">Audio Translation</div>
 						</div>
@@ -178,8 +178,6 @@
 						</div>
 					</div>
 
-					<p>&nbsp;</p>
-
 					<div class="subtitle">Prozess</div>
 
 					<div class="buttonbar">
@@ -188,10 +186,8 @@
 					
 				</div>
 	
-				<div class="contentpanel content-local-config visible">
-
+				<div class="contentpanel content-local-config">
 					<div class="title">Local Config</div>
-
 				</div>
 	
 				<div class="contentpanel content-features">
@@ -206,12 +202,81 @@
 					<div class="title">File System</div>
 				</div>
 	
-				<div class="contentpanel content-local-config">
-					<div class="title">Local Config</div>
-				</div>
-	
-				<div class="contentpanel content-audio-translation">
+				<div class="contentpanel content-audio-translation visible">
 					<div class="title">Audio Translation</div>
+
+					<div class="generated"></div>
+
+					<div class="subtitle">Lokale Verarbeitung</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">Dienstprogramm</div>
+							<div class="value">C:\....</div>
+						</div>
+						<div class="action">
+							<button>Auswählen</button>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">Verarbeitungsverzeichnis</div>
+							<div class="value">C:\....</div>
+						</div>
+						<div class="action">
+							<button>Auswählen</button>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">Faster Whisper Verzeichnis</div>
+							<div class="value">C:\....</div>
+						</div>
+						<div class="action">
+							<button>Auswählen</button>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">Argos Translate Verzeichnis</div>
+							<div class="value">C:\....</div>
+						</div>
+						<div class="action">
+							<button>Auswählen</button>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">Modellgröße</div>
+						</div>
+						<div class="action">
+							<select>
+								<option>tiny</option>
+								<option>base</option>
+								<option>small</option>
+								<option>medium</option>
+								<option>large-v2</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">GPU verwenden</div>
+						</div>
+						<div class="action">
+							<input type="checkbox" class="toggle"/>
+						</div>
+					</div>
+
+					<div class="buttonbar">
+						<button>Prozess starten</button>
+					</div>
+
 				</div>
 	
 				<div class="contentpanel content-image-classification">

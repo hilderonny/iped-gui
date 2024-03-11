@@ -14,7 +14,18 @@ const CONFIGTYPES = {
 			// tskJarPath wird hier nicht aufgenommen, da nur für Linux relevant
 			{ name: "pluginFolder", type: "directoryrelativetoipedexe", description: "Plugin folder for optional libs not embedded because of license restrictions. They will be dynamically loaded at runtime."}
 		]
-	}
+	},
+	AudioTranslation: {
+		filepath: "conf/AudioTranslation.txt",
+		elements: [
+			{ name: "inputDirectory", type: "directory", description: "Directory where the task puts the audio files to process."},
+			{ name: "outputDirectory", type: "directory", description: "Directory where the background task puts the results and where the tasks fetches them"},
+			{ name: "processVideo", type: "boolean", description: "Use video processing with caution. It can take very long if you analyze full length cinema movies"},
+			{ name: "useForensicTaskBridge", type: "boolean", description: "Use forensic task bridge server instead of loacal processing"},
+			{ name: "forensicTaskBridgeApiUrl", type: "string", description: "URL of the API of the forensic task bridge in the format http://127.0.0.1:30000/api/"},
+			{ name: "forensicTaskBridgeShareDirectory", type: "directory", description: "Directory where the task puts the audio files to process when a forensic task bridge server is used"},
+		]
+	},
 }
 
 function createSettingsCard(configElement) {
@@ -107,8 +118,7 @@ function createContentLayout(configTypeName, selector) {
 }
 
 createContentLayout("LocalConfig", ".content-local-config");
-
-
+createContentLayout("AudioTranslation", ".content-audio-translation .generated");
 
 
 messages.addMessageListener("selectfiledemo", message => document.getElementById("filename").value = message.Path)
