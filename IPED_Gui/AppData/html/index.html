@@ -21,7 +21,7 @@
 
 			<div class="toolbar">
 
-				<div class="navigationbutton smalliconbutton">
+				<div class="navigationbutton homebutton">
 					<div class="icon">&#xE713</div>
 				</div>
 
@@ -37,7 +37,7 @@
 	
 					<div class="navigationtable">
 	
-						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-home')">
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-home')">
 							<div class="icon">&#xE80F</div>
 							<div class="label">Home</div>
 						</div>
@@ -84,14 +84,14 @@
 
 					</div>
 	
-					<div class="settingsbutton navigationbutton" onclick="handleNavigation(this, 'content-settings')">
+					<div class="settingsbutton navigationbutton selected" onclick="handleNavigation(this, 'content-settings')">
 						<div class="icon">&#xE713</div>
 						<div class="label">Settings</div>
 					</div>
 	
 				</div>
 	
-				<div class="contentpanel content-home visible">
+				<div class="contentpanel content-home">
 
 					<div class="title">Home</div>
 
@@ -220,13 +220,41 @@
 					<div class="title">Protocol</div>
 				</div>
 	
-				<div class="contentpanel content-settings">
+				<div class="contentpanel content-settings visible">
+
 					<div class="title">Settings</div>
+
+					<div class="settingscard">
+						<div class="text">
+							<div class="title">Pfad zu iped.exe</div>
+							<div class="description">C:\...</div>
+						</div>
+						<div class="action">
+							<button>Auswählen ...</button>
+						</div>
+					</div>
+
+					<p>&nbsp;</p>
+
+					<div class="buttonbar">
+						<button>Einstellungen aus Datei laden ...</button>
+					</div>
+
+					<div class="buttonbar">
+						<button>Einstellungen in Datei speichern ...</button>
+					</div>
+
+					<p>&nbsp;</p>
+
+					<div class="buttonbar">
+						<button>Profil exportieren ...</button>
+					</div>
+
 				</div>
 	
 				<div class="contentpanel content-demo">
 
-					<div class="title">Home</div>
+					<div class="title">Demo</div>
 
 					<p class="description">SettingsCard is a control that can be used to display settings in your experience. It uses the default styling found in Windows 11 and is easy to use, meets all accessibility standards and will make your settings page look great! You can set the Header, Description, HeaderIcon and Content properties to create an easy to use experience, like so:</p>
 
