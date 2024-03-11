@@ -182,6 +182,7 @@ body {
 textarea.protocol {
     border-radius: 4px;
     flex: 1 1 0%;
+    font-family: monospace;
     padding: 4px;
     resize: none;
 }
