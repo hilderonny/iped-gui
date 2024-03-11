@@ -219,6 +219,12 @@ textarea.protocol {
     font-size: 12px;
 }
 
+.settingscard .text .value {
+    color: #0066ff;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
 .settingscard .action {
     align-self: center;
     margin-left: 24px;
@@ -239,6 +245,13 @@ textarea.protocol {
 }
 
 .settingscard .action select {
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px 9px;
+}
+
+.settingscard .action input {
     border: 1px solid rgba(0, 0, 0, .05);
     border-radius: 4px;
     font-size: 15px;

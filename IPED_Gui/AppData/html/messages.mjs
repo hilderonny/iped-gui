@@ -1,6 +1,6 @@
 ﻿const messageListeners = {}
 
-window.chrome.webview.addEventListener("message", event => {
+if (window.chrome?.webview) window.chrome.webview.addEventListener("message", event => {
 	const message = event.data
 	const id = message.Id
 	if (messageListeners[id]) {

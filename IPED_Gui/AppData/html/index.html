@@ -42,7 +42,7 @@
 							<div class="label">Home</div>
 						</div>
 	
-						<div class="navigationbutton" onclick="handleNavigation(this, 'content-local-config')">
+						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-local-config')">
 							<div class="icon">&#xE977</div>
 							<div class="label">Local Config</div>
 						</div>
@@ -72,7 +72,7 @@
 							<div class="label">Image Classification</div>
 						</div>
 	
-						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-protocol')">
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-protocol')">
 							<div class="icon">&#xEA37</div>
 							<div class="label">Protocol</div>
 						</div>
@@ -188,8 +188,10 @@
 					
 				</div>
 	
-				<div class="contentpanel content-local-config">
+				<div class="contentpanel content-local-config visible">
+
 					<div class="title">Local Config</div>
+
 				</div>
 	
 				<div class="contentpanel content-features">
@@ -216,7 +218,7 @@
 					<div class="title">Image Classification</div>
 				</div>
 	
-				<div class="contentpanel content-protocol visible">
+				<div class="contentpanel content-protocol">
 
 					<div class="title">Protocol</div>
 					
@@ -296,6 +298,7 @@
 						<div class="text">
 							<div class="title">Short Description and ComboBox</div>
 							<div class="description">Description</div>
+							<div class="value">C:\....</div>
 						</div>
 						<div class="action">
 							<select>
