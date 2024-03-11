@@ -178,6 +178,7 @@ body {
     border: none;
     border-radius: 4px;
     color: #ffffff;
+    cursor: pointer;
     font-size: 15px;
     padding: 5px 9px;
 }
@@ -190,33 +191,49 @@ body {
 }
 
 .settingscard .action .toggle {
-    background-color: #F8F8F8;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 14px;
-    height: 26px;
+    cursor: pointer;
+    display: block;
+    height: 28px;
     position: relative;
-    width: 56px;
+    visibility: hidden;
+    width: 58px;
 }
 
 .settingscard .action .toggle::before {
+    background-color: #F8F8F8;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 14px;
+    content: '';
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    left: 0;
+    position: absolute;
+    visibility: visible;
+    top: 0;
+    width: 56px;
+}
+
+.settingscard .action .toggle::after {
     background-color: rgba(0, 0, 0, .5);
     border-radius: 9px;
     content: '';
     display: block;
     height: 18px;
-    left: 4px;
+    left: 5px;
     position: absolute;
-    top: 4px;
+    top: 5px;
+    visibility: visible;
     width: 18px;
 }
 
-.settingscard .action .toggle.on {
+.settingscard .action .toggle:checked:before {
     background-color: #005A9E;
     border-color: #005A9E;
 }
 
-.settingscard .action .toggle.on::before {
+.settingscard .action .toggle:checked:after {
     background-color: #F8F8F8;
     left: unset;
-    right: 4px;
+    right: 5px;
 }
