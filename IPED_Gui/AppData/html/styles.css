@@ -141,6 +141,14 @@ body {
     color: rgba(0, 0, 0, .5);
 }
 
+.contentpanel > .error {
+    color: red;
+}
+
+.buttonbar {
+    margin-bottom: 2px;
+}
+
 .buttonbar button {
     background-color: #005a9e;
     border: none;
@@ -153,6 +161,11 @@ body {
 
 .buttonbar button:active {
     background-color: #004a83;
+}
+
+.buttonbar button:disabled {
+    background-color: #cccccc;
+    cursor: default;
 }
 
 .listbox {
