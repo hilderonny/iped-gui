@@ -128,12 +128,42 @@ body {
     margin-bottom: 10px;
 }
 
+.contentpanel > .subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 .contentpanel > p {
     margin-bottom: 10px;
 }
 
 .contentpanel > .description {
     color: rgba(0, 0, 0, .5);
+}
+
+.buttonbar button {
+    background-color: #005a9e;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px 9px;
+}
+
+.buttonbar button:active {
+    background-color: #004a83;
+}
+
+.listbox {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.listbox option {
+    border-radius: 4px;
+    margin: 2px;
+    padding: 4px 6px;
 }
 
 .settingscard {
@@ -181,6 +211,10 @@ body {
     cursor: pointer;
     font-size: 15px;
     padding: 5px 9px;
+}
+
+.settingscard .action button:active {
+    background-color: #004a83;
 }
 
 .settingscard .action select {
