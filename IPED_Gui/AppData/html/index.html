@@ -92,10 +92,10 @@
 					<div class="buttonbar">
 						<button>Verzeichnis hinzufügen</button>
 						<button>Dateien hinzufügen</button>
-						<button disabled>Entfernen</button>
+						<button disabled class="removebutton" onclick="document.querySelectorAll('.content-home .sources option').forEach(option => { if (option.selected) option.parentNode.removeChild(option) }); this.disabled = true">Entfernen</button>
 					</div>
 
-					<select class="listbox" size="10" multiple>
+					<select class="listbox sources" size="10" multiple onchange="if (this.value) document.querySelector('.content-home .removebutton').disabled = false">
 						<option>Spur 1</option>
 						<option>Spur 2</option>
 						<option>Spur 3</option>
