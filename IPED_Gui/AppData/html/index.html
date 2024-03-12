@@ -47,7 +47,7 @@
 							<div class="label">Local Config</div>
 						</div>
 	
-						<div class="navigationbutton" onclick="handleNavigation(this, 'content-features')">
+						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-features')">
 							<div class="icon">&#xE734</div>
 							<div class="label">Features</div>
 						</div>
@@ -57,7 +57,7 @@
 							<div class="label">Categories</div>
 						</div>
 	
-						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-file-system-config')">
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-file-system-config')">
 							<div class="icon">&#xEC50</div>
 							<div class="label">File System</div>
 						</div>
@@ -115,7 +115,7 @@
 						<div class="icon">&#xE78C</div>
 						<div class="text">
 							<div class="title">Ausgabeverzeichnis</div>
-							<div class="description"></div>
+							<div class="value"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen ...</button>
@@ -170,7 +170,7 @@
 						<div class="icon">&#xE8FD</div>
 						<div class="text">
 							<div class="title">Schlagwortliste</div>
-							<div class="description">C:\...</div>
+							<div class="value">C:\...</div>
 						</div>
 						<div class="action">
 							<button>Entfernen</button>
@@ -190,15 +190,17 @@
 					<div class="title">Local Config</div>
 				</div>
 	
-				<div class="contentpanel content-features">
+				<div class="contentpanel content-features visible">
+
 					<div class="title">Features</div>
+
 				</div>
 	
 				<div class="contentpanel content-categories">
 					<div class="title">Categories</div>
 				</div>
 	
-				<div class="contentpanel content-file-system-config visible">
+				<div class="contentpanel content-file-system-config">
 
 					<div class="title">File System</div>
 
@@ -351,9 +353,10 @@
 					<div class="title">Settings</div>
 
 					<div class="settingscard">
+						<div class="icon">&#xE9F5</div>
 						<div class="text">
 							<div class="title">Pfad zu iped.exe</div>
-							<div class="description">C:\...</div>
+							<div class="value">C:\...</div>
 						</div>
 						<div class="action">
 							<button>Auswählen ...</button>
