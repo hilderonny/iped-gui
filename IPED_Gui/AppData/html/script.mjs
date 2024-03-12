@@ -91,6 +91,159 @@ const CONFIGTYPES = {
 	},
 }
 
+const CATEGORIES = [
+	{ name: "Documents", image: "Documents.png", subCategories: [
+		{ name: "RTF Documents", image: "RTF Documents.png" },
+		{ name: "PDF Documents", image: "PDF Documents.png" },
+		{ name: "HTML Documents", image: "HTML Documents.png" },
+		{ name: "Text Documents", image: "Text Documents.png" },
+		{ name: "Other Documents", image: "Other Documents.png" },
+	]},
+	{ name: "XML Files", image: "XML Files.png" },
+	{ name: "Georeferenced Files", image: "Georeferenced Files.png" },
+	{ name: "Spreadsheets", image: "Spreadsheets.png" },
+	{ name: "Presentations", image: "Presentations.png" },
+	{ name: "OLE files", image: "OLE files.png" },
+	{ name: "Links", image: "Links.png", subCategories: [
+		{ name: "Link files", image: "Link files.png" },
+		{ name: "URL links", image: "URL links.png" },
+	]},
+	{ name: "Emails and Mailboxes", image: "Emails and Mailboxes.png", subCategories: [
+		{ name: "Mailboxes", image: "Mailboxes.png" },
+		{ name: "Emails", image: "Emails.png" },
+		{ name: "Appointments", image: "Appointments.png" },
+		{ name: "Win10 Mail App Additional Info", image: "Win10 Mail Info.png" },
+	]},
+	{ name: "Multimedia", image: "Multimedia.png", subCategories: [
+		{ name: "Audios", image: "Audios.png" },
+		{ name: "Videos", image: "Videos.png" },
+		{ name: "Video Thumbnails", image: "Video Thumbnails.png" },
+		{ name: "Images", image: "Images.png", subCategories: [
+			{ name: "Temporary Internet Images", image: "Temporary Internet Images.png" },
+			{ name: "Images in System Folders", image: "Images in System Folders.png" },
+			{ name: "Other Images", image: "Other Images.png" },
+			{ name: "Scanned Documents", image: "Scanned Documents.png" },
+		]},
+	]},
+	{ name: "Windows Artifacts", image: "Windows Artifacts.png", subCategories: [
+		{ name: "Event Files", image: "Event Files.png" },
+		{ name: "Event Records", image: "Event Records.png" },
+		{ name: "Prefetch and Superfetch", image: "Prefetch and Superfetch.png" },
+		{ name: "User Activities", image: "User Activities.png" },
+		{ name: "User Activities Entries", image: "User Activities Entries.png" },
+		{ name: "Windows Registry", image: "Windows Registry.png", subCategories: [
+			{ name: "Main Registry Files", image: "Main Registry Files.png" },
+			{ name: "Other Registry Files", image: "Other Registry Files.png" },
+			{ name: "Registry Full Reports", image: "Registry Full Reports.png" },
+			{ name: "Registry Custom Reports", image: "Registry Custom Reports.png", subCategories: [
+				{ name: "Registry OS Info", image: "Registry OS Info.png" },
+				{ name: "Registry Installed Apps", image: "Registry Installed Apps.png" },
+				{ name: "Registry Network Info", image: "Registry Network Info.png" },
+				{ name: "Registry Storage Info", image: "Registry Storage Info.png" },
+				{ name: "Registry Device Info", image: "Registry Device Info.png" },
+				{ name: "Registry Program Run", image: "Registry Program Run.png" },
+				{ name: "Registry Auto Run", image: "Registry Auto Run.png" },
+				{ name: "Registry Log Info", image: "Registry Log Info.png" },
+				{ name: "Registry Malware Info", image: "Registry Malware Info.png" },
+				{ name: "Registry Web Info", image: "Registry Web Info.png" },
+				{ name: "Registry User Info", image: "Registry User Info.png", subCategories: [
+					{ name: "Registry User Accounts", image: "Registry User Accounts.png" },
+					{ name: "Registry User Activity", image: "Registry User Activity.png" },
+					{ name: "Registry User Files", image: "Registry User Files.png" },
+					{ name: "Registry User Network Activity", image: "Registry User Network Activity.png" },
+					{ name: "Registry User Config", image: "Registry User Config.png" },
+					{ name: "Registry User Virtualization", image: "Registry User Virtualization.png" },
+					{ name: "Registry User Communication", image: "Registry User Communication.png" },
+				]},
+			]},
+		]},
+	]},
+	{ name: "Google Drive", image: "Google Drive.png", subCategories: [
+		{ name: "GDrive Synced Files", image: "GDrive Synced Files.png" },
+		{ name: "GDrive File Entries", image: "GDrive File Entries.png" },
+	]},
+	{ name: "Databases", image: "Databases.png" },
+	{ name: "Compressed Archives", image: "Compressed Archives.png" },
+	{ name: "Contacts", image: "Contacts.png" },
+	{ name: "Chats", image: "Chats.png", subCategories: [
+		{ name: "WhatsApp", image: "Whatsapp.png" },
+		{ name: "Messenger", image: "Messenger.png" },
+		{ name: "Skype", image: "Skype.png" },
+		{ name: "Telegram", image: "Telegram.png" },
+		{ name: "Jabber", image: "Jabber.png" },
+		{ name: "Facebook", image: "Facebook.png" },
+		{ name: "Instagram", image: "Instagram.png" },
+		{ name: "Discord", image: "Discord.png" },
+		{ name: "Chat Activities", image: "Chat Activities.png" },
+		{ name: "Others Chats", image: "Others Chats.png" },
+	]},
+	{ name: "USN Journal", image: "USN Journal.png" },
+	{ name: "Programs and Libraries", image: "Programs and Libraries.png" },
+	{ name: "Unallocated", image: "Unallocated.png" },
+	{ name: "File Slacks", image: "File Slacks.png" },
+	{ name: "Plain Texts", image: "Plain Texts.png", subCategories: [
+		{ name: "Temporary Internet Texts", image: "Temporary Internet Texts.png" },
+		{ name: "Texts in System Folders", image: "Texts in System Folders.png" },
+		{ name: "Other Texts", image: "Other Texts.png" },
+	]},
+	{ name: "Other files", image: "Other files.png" },
+	{ name: "Peer-to-peer", image: "Peer-to-peer.png", subCategories: [
+		{ name: "Ares Galaxy", image: "Ares Galaxy.png" },
+		{ name: "E-Mule", image: "E-Mule.png" },
+		{ name: "Shareaza", image: "Shareaza.png" },
+		{ name: "Torrent", image: "Torrent.png" },
+		{ name: "Other Peer-to-peer", image: "Peer-to-peer.png" },
+	]},
+	{ name: "Browser Artifacts", image: "Browser Artifacts.png", subCategories: [
+		{ name: "Internet History", image: "Internet History.png" },
+		{ name: "Internet History Entries", image: "Internet History Entries.png" },
+		{ name: "Web Bookmarks", image: "Web Bookmarks.png" },
+		{ name: "Mozilla Firefox Saved Session", image: "Mozilla Firefox Saved Session.png" },
+		{ name: "TorTCFragment", image: "TorTCFragment.png" },
+	]},
+	{ name: "Image Disks", image: "Image Disks.png", subCategories: [
+		{ name: "ISO disks", image: "ISO disks.png" },
+		{ name: "Virtual disks", image: "Virtual disks.png" },
+		{ name: "Other disks", image: "Other disks.png" },
+	]},
+	{ name: "Extraction Summary", image: "Extraction Summary.png" },
+	{ name: "Calls", image: "Calls.png" },
+	{ name: "SMS Messages", image: "SMS Messages.png" },
+	{ name: "MMS Messages", image: "MMS Messages.png" },
+	{ name: "Instant Messages", image: "Instant Messages.png" },
+	{ name: "Bluetooth Devices", image: "Bluetooth Devices.png" },
+	{ name: "SIM Data", image: "SIM Data.png" },
+	{ name: "Calendar", image: "Calendar.png" },
+	{ name: "Logs", image: "Logs.png" },
+	{ name: "User Accounts", image: "User Accounts.png" },
+	{ name: "Searches", image: "Searches.png" },
+	{ name: "Notes", image: "Notes.png" },
+	{ name: "Wireless Networks", image: "Wireless Networks.png" },
+	{ name: "Notifications", image: "Notifications.png" },
+	{ name: "Locations", image: "Locations.png" },
+	{ name: "Cookies", image: "Cookies.png" },
+	{ name: "Configuration", image: "Configuration.png" },
+	{ name: "Passwords", image: "Passwords.png" },
+	{ name: "Autofill", image: "Autofill.png" },
+	{ name: "Cell Towers", image: "Cell Towers.png" },
+	{ name: "Power Events", image: "Power Events.png" },
+	{ name: "User Dictionaries", image: "User Dictionaries.png" },
+	{ name: "IP Connections", image: "IP Connections.png" },
+	{ name: "Recordings", image: "Recordings.png" },
+	{ name: "Mobile Cards", image: "Mobile Cards.png" },
+	{ name: "Applications Usage", image: "Applications Usage.png" },
+	{ name: "Device Information", image: "Device Information.png" },
+	{ name: "Activities Sensor", image: "Activities Sensor.png" },
+	{ name: "Credit Cards", image: "Credit Cards.png" },
+	{ name: "Device Connectivity", image: "Device Connectivity.png" },
+	{ name: "Device Events", image: "Device Events.png" },
+	{ name: "File Downloads", image: "File Downloads.png" },
+	{ name: "Journeys", image: "Journeys.png" },
+	{ name: "Networks Usage", image: "Networks Usage.png" },
+	{ name: "Recognized Devices", image: "Recognized Devices.png" },
+	{ name: "Social Media Activities", image: "Social Media Activities.png" },
+]
+
 function createSettingsCard(configElement) {
 	const settingsCardDiv = document.createElement("div")
 	settingsCardDiv.classList.add("settingscard")
@@ -186,11 +339,51 @@ function createContentLayout(configTypeName, selector) {
 	}
 }
 
+function createCategory(categoryDefinition) {
+	const categoryDiv = document.createElement("div")
+	categoryDiv.classList.add("category")
+	const actionDiv = document.createElement("div")
+	actionDiv.classList.add("action")
+	const toggleInput = document.createElement("input")
+	toggleInput.type = "checkbox"
+	toggleInput.classList.add("toggle")
+	actionDiv.appendChild(toggleInput)
+	categoryDiv.appendChild(actionDiv)
+	const imageDiv = document.createElement("div")
+	categoryDiv.appendChild(imageDiv)
+	const imageTag = document.createElement("img")
+	imageTag.src = "./images/" + categoryDefinition.image
+	imageDiv.appendChild(imageTag)
+	const infoDiv = document.createElement("div")
+	infoDiv.classList.add("info")
+	categoryDiv.appendChild(infoDiv)
+	const titleDiv = document.createElement("div")
+	titleDiv.classList.add("title")
+	titleDiv.innerHTML = categoryDefinition.name
+	infoDiv.appendChild(titleDiv)
+	if (categoryDefinition.subCategories) {
+		for (const subCategoryDefinition of categoryDefinition.subCategories) {
+			const subCategoryDiv = createCategory(subCategoryDefinition)
+			infoDiv.appendChild(subCategoryDiv)
+		}
+	}
+	return categoryDiv
+}
+
+function createCategoryLayout(selector) {
+	const parentElement = document.querySelector(selector)
+	for (const categoryDefinition of CATEGORIES) {
+		const categoryDiv = createCategory(categoryDefinition, 0)
+		parentElement.appendChild(categoryDiv)
+	}
+}
+
 createContentLayout("LocalConfig", ".content-local-config");
 createContentLayout("IPEDConfig", ".content-features");
 createContentLayout("FileSystemConfig", ".content-file-system-config");
 createContentLayout("AudioTranslation", ".content-audio-translation .generated");
 createContentLayout("ImageClassification", ".content-image-classification .generated");
+createCategoryLayout(".content-categories")
 
 
 messages.addMessageListener("selectfiledemo", message => document.getElementById("filename").value = message.Path)

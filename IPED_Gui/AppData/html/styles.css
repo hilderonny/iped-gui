@@ -259,7 +259,7 @@ textarea.protocol {
     padding: 5px 9px;
 }
 
-.settingscard .action .toggle {
+.toggle {
     cursor: pointer;
     display: block;
     height: 28px;
@@ -268,7 +268,7 @@ textarea.protocol {
     width: 58px;
 }
 
-.settingscard .action .toggle::before {
+.toggle::before {
     background-color: #F8F8F8;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 14px;
@@ -283,7 +283,7 @@ textarea.protocol {
     width: 56px;
 }
 
-.settingscard .action .toggle::after {
+.toggle::after {
     background-color: rgba(0, 0, 0, .5);
     border-radius: 9px;
     content: '';
@@ -296,13 +296,32 @@ textarea.protocol {
     width: 18px;
 }
 
-.settingscard .action .toggle:checked:before {
+.toggle:checked:before {
     background-color: #005A9E;
     border-color: #005A9E;
 }
 
-.settingscard .action .toggle:checked:after {
+.toggle:checked:after {
     background-color: #F8F8F8;
     left: unset;
     right: 5px;
+}
+
+.category {
+    display: flex;
+    margin-top: 4px;
+}
+
+.category .action {
+    padding-right: 10px;
+    padding-top: 2px;
+}
+
+.category .info {
+    padding-left: 10px;
+}
+
+.category .title {
+    font-size: 17px;
+    padding: 5px 0px;
 }

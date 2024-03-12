@@ -32,6 +32,163 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AppData\html\demo-events.html" />
+    <None Remove="AppData\html\demo-ui.html" />
+    <None Remove="AppData\html\images\Activities Sensor.png" />
+    <None Remove="AppData\html\images\Android Applications.png" />
+    <None Remove="AppData\html\images\Application Usage.png" />
+    <None Remove="AppData\html\images\Applications Usage.png" />
+    <None Remove="AppData\html\images\Appointments.png" />
+    <None Remove="AppData\html\images\Ares Galaxy.png" />
+    <None Remove="AppData\html\images\Audios.png" />
+    <None Remove="AppData\html\images\Autofill.png" />
+    <None Remove="AppData\html\images\blank.png" />
+    <None Remove="AppData\html\images\Bluetooth Devices.png" />
+    <None Remove="AppData\html\images\Brazilian Software.png" />
+    <None Remove="AppData\html\images\Browser Artifacts.png" />
+    <None Remove="AppData\html\images\Calendar.png" />
+    <None Remove="AppData\html\images\Calls.png" />
+    <None Remove="AppData\html\images\Categories.png" />
+    <None Remove="AppData\html\images\Cell Towers.png" />
+    <None Remove="AppData\html\images\Chat Activities.png" />
+    <None Remove="AppData\html\images\Chats.png" />
+    <None Remove="AppData\html\images\Cloud Drives.png" />
+    <None Remove="AppData\html\images\Compressed Archives.png" />
+    <None Remove="AppData\html\images\Configuration.png" />
+    <None Remove="AppData\html\images\Contacts.png" />
+    <None Remove="AppData\html\images\Cookies.png" />
+    <None Remove="AppData\html\images\Credit Cards.png" />
+    <None Remove="AppData\html\images\Databases.png" />
+    <None Remove="AppData\html\images\Device Connectivity.png" />
+    <None Remove="AppData\html\images\Device Events.png" />
+    <None Remove="AppData\html\images\Device Information.png" />
+    <None Remove="AppData\html\images\Discord.png" />
+    <None Remove="AppData\html\images\Documents.png" />
+    <None Remove="AppData\html\images\E-Mule.png" />
+    <None Remove="AppData\html\images\Emails and Mailboxes.png" />
+    <None Remove="AppData\html\images\Emails.png" />
+    <None Remove="AppData\html\images\Empty Files.png" />
+    <None Remove="AppData\html\images\Event Files.png" />
+    <None Remove="AppData\html\images\Event Records.png" />
+    <None Remove="AppData\html\images\Extraction Summary.png" />
+    <None Remove="AppData\html\images\Facebook.png" />
+    <None Remove="AppData\html\images\File Downloads.png" />
+    <None Remove="AppData\html\images\File Slacks.png" />
+    <None Remove="AppData\html\images\File Uploads.png" />
+    <None Remove="AppData\html\images\Financial Accounts.png" />
+    <None Remove="AppData\html\images\Folders.png" />
+    <None Remove="AppData\html\images\Fuzzy Data.png" />
+    <None Remove="AppData\html\images\GDrive File Entries.png" />
+    <None Remove="AppData\html\images\GDrive Synced Files.png" />
+    <None Remove="AppData\html\images\Georeferenced Files.png" />
+    <None Remove="AppData\html\images\Google Drive.png" />
+    <None Remove="AppData\html\images\HTML Documents.png" />
+    <None Remove="AppData\html\images\Icon1.ico" />
+    <None Remove="AppData\html\images\Image Disks.png" />
+    <None Remove="AppData\html\images\Images in System Folders.png" />
+    <None Remove="AppData\html\images\Images.png" />
+    <None Remove="AppData\html\images\Instagram.png" />
+    <None Remove="AppData\html\images\Instant Messages.png" />
+    <None Remove="AppData\html\images\Internal Revenue of Brazil.png" />
+    <None Remove="AppData\html\images\Internet History Entries.png" />
+    <None Remove="AppData\html\images\Internet History.png" />
+    <None Remove="AppData\html\images\IP Connections.png" />
+    <None Remove="AppData\html\images\iPhone Backup.png" />
+    <None Remove="AppData\html\images\ISO disks.png" />
+    <None Remove="AppData\html\images\Jabber.png" />
+    <None Remove="AppData\html\images\Journeys.png" />
+    <None Remove="AppData\html\images\Link files.png" />
+    <None Remove="AppData\html\images\Links.png" />
+    <None Remove="AppData\html\images\Locations.png" />
+    <None Remove="AppData\html\images\Logs.png" />
+    <None Remove="AppData\html\images\Mailboxes.png" />
+    <None Remove="AppData\html\images\Main Registry Files.png" />
+    <None Remove="AppData\html\images\Messenger.png" />
+    <None Remove="AppData\html\images\MMS Messages.png" />
+    <None Remove="AppData\html\images\Mobile Cards.png" />
+    <None Remove="AppData\html\images\Mozilla Firefox Saved Session.png" />
+    <None Remove="AppData\html\images\Multimedia.png" />
+    <None Remove="AppData\html\images\Networks Usage.png" />
+    <None Remove="AppData\html\images\Notes.png" />
+    <None Remove="AppData\html\images\Notifications.png" />
+    <None Remove="AppData\html\images\OLE files.png" />
+    <None Remove="AppData\html\images\Other disks.png" />
+    <None Remove="AppData\html\images\Other Documents.png" />
+    <None Remove="AppData\html\images\Other files.png" />
+    <None Remove="AppData\html\images\Other Images.png" />
+    <None Remove="AppData\html\images\Other Registry Files.png" />
+    <None Remove="AppData\html\images\Other Texts.png" />
+    <None Remove="AppData\html\images\Others Chats.png" />
+    <None Remove="AppData\html\images\Passwords.png" />
+    <None Remove="AppData\html\images\PDF Documents.png" />
+    <None Remove="AppData\html\images\Peer-to-peer.png" />
+    <None Remove="AppData\html\images\Plain Texts.png" />
+    <None Remove="AppData\html\images\Power Events.png" />
+    <None Remove="AppData\html\images\Prefetch and Superfetch.png" />
+    <None Remove="AppData\html\images\Presentations.png" />
+    <None Remove="AppData\html\images\Profile Pictures.png" />
+    <None Remove="AppData\html\images\Programs and Libraries.png" />
+    <None Remove="AppData\html\images\Recognized Devices.png" />
+    <None Remove="AppData\html\images\Recordings.png" />
+    <None Remove="AppData\html\images\Registry Auto Run.png" />
+    <None Remove="AppData\html\images\Registry Custom Reports.png" />
+    <None Remove="AppData\html\images\Registry Device Info.png" />
+    <None Remove="AppData\html\images\Registry Full Reports.png" />
+    <None Remove="AppData\html\images\Registry Installed Apps.png" />
+    <None Remove="AppData\html\images\Registry Log Info.png" />
+    <None Remove="AppData\html\images\Registry Malware Info.png" />
+    <None Remove="AppData\html\images\Registry Network Info.png" />
+    <None Remove="AppData\html\images\Registry OS Info.png" />
+    <None Remove="AppData\html\images\Registry Program Run.png" />
+    <None Remove="AppData\html\images\Registry Storage Info.png" />
+    <None Remove="AppData\html\images\Registry User Accounts.png" />
+    <None Remove="AppData\html\images\Registry User Activity.png" />
+    <None Remove="AppData\html\images\Registry User Communication.png" />
+    <None Remove="AppData\html\images\Registry User Config.png" />
+    <None Remove="AppData\html\images\Registry User Files.png" />
+    <None Remove="AppData\html\images\Registry User Info.png" />
+    <None Remove="AppData\html\images\Registry User Network Activity.png" />
+    <None Remove="AppData\html\images\Registry User Virtualization.png" />
+    <None Remove="AppData\html\images\Registry Web Info.png" />
+    <None Remove="AppData\html\images\RTF Documents.png" />
+    <None Remove="AppData\html\images\Scanned Documents.png" />
+    <None Remove="AppData\html\images\Searches.png" />
+    <None Remove="AppData\html\images\Shareaza.png" />
+    <None Remove="AppData\html\images\SIM Data.png" />
+    <None Remove="AppData\html\images\Skype.png" />
+    <None Remove="AppData\html\images\SMS Messages.png" />
+    <None Remove="AppData\html\images\Social Media Activities.png" />
+    <None Remove="AppData\html\images\Social Security and CAIXA Bank.png" />
+    <None Remove="AppData\html\images\Spreadsheets.png" />
+    <None Remove="AppData\html\images\Telegram.png" />
+    <None Remove="AppData\html\images\Temporary Internet Images.png" />
+    <None Remove="AppData\html\images\Temporary Internet Texts.png" />
+    <None Remove="AppData\html\images\Text Documents.png" />
+    <None Remove="AppData\html\images\Texts in System Folders.png" />
+    <None Remove="AppData\html\images\Threema.png" />
+    <None Remove="AppData\html\images\Tor.png" />
+    <None Remove="AppData\html\images\Torchat.png" />
+    <None Remove="AppData\html\images\Torrent.png" />
+    <None Remove="AppData\html\images\TorTCFragment.png" />
+    <None Remove="AppData\html\images\Unallocated.png" />
+    <None Remove="AppData\html\images\URL links.png" />
+    <None Remove="AppData\html\images\User Accounts.png" />
+    <None Remove="AppData\html\images\User Activities Entries.png" />
+    <None Remove="AppData\html\images\User Activities.png" />
+    <None Remove="AppData\html\images\User Dictionaries.png" />
+    <None Remove="AppData\html\images\USN Journal.png" />
+    <None Remove="AppData\html\images\Video Thumbnails.png" />
+    <None Remove="AppData\html\images\Videos.png" />
+    <None Remove="AppData\html\images\Virtual disks.png" />
+    <None Remove="AppData\html\images\Web Addresses.png" />
+    <None Remove="AppData\html\images\Web Bookmarks.png" />
+    <None Remove="AppData\html\images\Whatsapp.png" />
+    <None Remove="AppData\html\images\Win10 Mail Info.png" />
+    <None Remove="AppData\html\images\Windows Artifacts.png" />
+    <None Remove="AppData\html\images\Windows Recycle.png" />
+    <None Remove="AppData\html\images\Windows Registry.png" />
+    <None Remove="AppData\html\images\Wireless Networks.png" />
+    <None Remove="AppData\html\images\XML Files.png" />
     <None Remove="AppData\html\index.html" />
     <None Remove="AppData\html\messages.mjs" />
     <None Remove="AppData\html\script.mjs" />
@@ -39,17 +196,488 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="AppData\html\demo-events.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\demo-ui.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Activities Sensor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Android Applications.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Application Usage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Applications Usage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Appointments.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Ares Galaxy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Audios.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Autofill.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\blank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Bluetooth Devices.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Brazilian Software.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Browser Artifacts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Calendar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Calls.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Categories.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Cell Towers.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Chat Activities.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Chats.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Cloud Drives.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Compressed Archives.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Configuration.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Contacts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Cookies.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Credit Cards.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Databases.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Device Connectivity.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Device Events.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Device Information.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Discord.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Documents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\E-Mule.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Emails and Mailboxes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Emails.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Empty Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Event Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Event Records.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Extraction Summary.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Facebook.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\File Downloads.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\File Slacks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\File Uploads.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Financial Accounts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Folders.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Fuzzy Data.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\GDrive File Entries.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\GDrive Synced Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Georeferenced Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Google Drive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\HTML Documents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Icon1.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Image Disks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Images in System Folders.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Images.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Instagram.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Instant Messages.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Internal Revenue of Brazil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Internet History Entries.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Internet History.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\IP Connections.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\iPhone Backup.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\ISO disks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Jabber.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Journeys.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Link files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Links.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Locations.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Logs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Mailboxes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Main Registry Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Messenger.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\MMS Messages.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Mobile Cards.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Mozilla Firefox Saved Session.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Multimedia.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Networks Usage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Notes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Notifications.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\OLE files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Other disks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Other Documents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Other files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Other Images.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Other Registry Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Other Texts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Others Chats.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Passwords.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\PDF Documents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Peer-to-peer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Plain Texts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Power Events.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Prefetch and Superfetch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Presentations.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Profile Pictures.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Programs and Libraries.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Recognized Devices.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Recordings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Auto Run.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Custom Reports.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Device Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Full Reports.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Installed Apps.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Log Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Malware Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Network Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry OS Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Program Run.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Storage Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Accounts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Activity.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Communication.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Config.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Network Activity.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry User Virtualization.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Registry Web Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\RTF Documents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Scanned Documents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Searches.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Shareaza.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\SIM Data.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Skype.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\SMS Messages.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Social Media Activities.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Social Security and CAIXA Bank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Spreadsheets.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Telegram.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Temporary Internet Images.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Temporary Internet Texts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Text Documents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Texts in System Folders.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Threema.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Tor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Torchat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Torrent.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\TorTCFragment.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Unallocated.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\URL links.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\User Accounts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\User Activities Entries.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\User Activities.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\User Dictionaries.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\USN Journal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Video Thumbnails.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Videos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Virtual disks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Web Addresses.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Web Bookmarks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Whatsapp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Win10 Mail Info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Windows Artifacts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Windows Recycle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Windows Registry.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\Wireless Networks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\html\images\XML Files.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="AppData\html\index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AppData\html\messages.mjs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AppData\html\script.mjs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AppData\html\styles.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="process.ico" />
   </ItemGroup>
