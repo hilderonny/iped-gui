@@ -1,5 +1,15 @@
 ﻿import * as messages from './messages.mjs'
+import SETTINGS from './defaultsettings.json' assert {type: 'json'};
 
+// TODO: Overwrite settings from local file
+// TODO: Handle all file and directory selections
+
+SETTINGS.save = () => {
+	// TODO: Save to local file
+	console.log(SETTINGS)
+}
+
+window.SETTINGS = SETTINGS
 
 const CONFIGTYPES = {
 	LocalConfig: {
@@ -244,7 +254,7 @@ const CATEGORIES = [
 	{ name: "Social Media Activities", image: "Social Media Activities.png" },
 ]
 
-function createSettingsCard(configElement) {
+function createSettingsCard(configElement, configSettings) {
 	const settingsCardDiv = document.createElement("div")
 	settingsCardDiv.classList.add("settingscard")
 	if (configElement.icon) {
@@ -267,13 +277,18 @@ function createSettingsCard(configElement) {
 	actionDiv.classList.add("action")
 	settingsCardDiv.appendChild(actionDiv)
 	let descriptionTextDiv, valueDiv, button
+	const defaultValue = configSettings[configElement.name]
 	switch (configElement.type) {
 		case "stringlist":
 			descriptionDiv.innerHTML = configElement.description
 			const selectBox = document.createElement("select")
+			selectBox.addEventListener("change", () => { configSettings[configElement.name] = selectBox.value; SETTINGS.save() })
 			for (const entry of configElement.listElements) {
 				const option = document.createElement("option")
 				option.innerHTML = entry
+				if (defaultValue === entry) {
+					option.selected = true
+				}
 				selectBox.appendChild(option)
 			}
 			actionDiv.appendChild(selectBox)
@@ -285,6 +300,7 @@ function createSettingsCard(configElement) {
 			textDiv.appendChild(descriptionTextDiv)
 			valueDiv = document.createElement("div")
 			valueDiv.classList.add("value")
+			valueDiv.innerText = defaultValue
 			textDiv.appendChild(valueDiv)
 			button = document.createElement("button")
 			button.innerHTML = "Auswählen ..."
@@ -294,12 +310,16 @@ function createSettingsCard(configElement) {
 			descriptionDiv.innerHTML = configElement.description
 			const toggleInput = document.createElement("input")
 			toggleInput.type = "checkbox"
+			toggleInput.checked = defaultValue
+			toggleInput.addEventListener("change", () => { configSettings[configElement.name] = toggleInput.checked; SETTINGS.save() })
 			toggleInput.classList.add("toggle")
 			actionDiv.appendChild(toggleInput)
 			break
 		case "string":
 			descriptionDiv.innerHTML = configElement.description
 			const textInput = document.createElement("input")
+			textInput.value = defaultValue
+			textInput.addEventListener("change", () => { configSettings[configElement.name] = textInput.value; SETTINGS.save() })
 			actionDiv.appendChild(textInput)
 			break
 		case "file":
@@ -309,6 +329,7 @@ function createSettingsCard(configElement) {
 			textDiv.appendChild(descriptionTextDiv)
 			valueDiv = document.createElement("div")
 			valueDiv.classList.add("value")
+			valueDiv.innerText = defaultValue
 			textDiv.appendChild(valueDiv)
 			button = document.createElement("button")
 			button.innerHTML = "Auswählen ..."
@@ -321,6 +342,7 @@ function createSettingsCard(configElement) {
 			textDiv.appendChild(descriptionTextDiv)
 			valueDiv = document.createElement("div")
 			valueDiv.classList.add("value")
+			valueDiv.innerText = defaultValue
 			textDiv.appendChild(valueDiv)
 			button = document.createElement("button")
 			button.innerHTML = "Auswählen ..."
@@ -332,9 +354,10 @@ function createSettingsCard(configElement) {
 
 function createContentLayout(configTypeName, selector) {
 	const configType = CONFIGTYPES[configTypeName]
+	const configSettings = SETTINGS.configTypes[configType.filepath]
 	const targetDiv = document.querySelector(selector)
 	for (const element of configType.elements) {
-		const settingsCard = createSettingsCard(element)
+		const settingsCard = createSettingsCard(element, configSettings)
 		targetDiv.appendChild(settingsCard)
 	}
 }
@@ -346,6 +369,8 @@ function createCategory(categoryDefinition) {
 	actionDiv.classList.add("action")
 	const toggleInput = document.createElement("input")
 	toggleInput.type = "checkbox"
+	toggleInput.checked = SETTINGS.categoriesToExport[categoryDefinition.name]
+	toggleInput.addEventListener("change", () => { SETTINGS.categoriesToExport[categoryDefinition.name] = toggleInput.checked; SETTINGS.save() })
 	toggleInput.classList.add("toggle")
 	actionDiv.appendChild(toggleInput)
 	categoryDiv.appendChild(actionDiv)
@@ -385,6 +410,23 @@ createContentLayout("AudioTranslation", ".content-audio-translation .generated")
 createContentLayout("ImageClassification", ".content-image-classification .generated");
 createCategoryLayout(".content-categories")
 
+document.querySelector(".content-home .outputdirectory").innerText = SETTINGS.settings.general.outputDirectory
+document.querySelector(".content-home .appendproject").checked = SETTINGS.settings.general.append
+document.querySelector(".content-home .continueproject").checked = SETTINGS.settings.general.continue
+document.querySelector(".content-home .portable").checked = SETTINGS.settings.general.portable
+document.querySelector(".content-home .downloadinternetdata").checked = SETTINGS.settings.general.downloadInternetData
+document.querySelector(".content-home .keywordlist").innerText = SETTINGS.settings.general.keywordList
+document.querySelector(".content-audio-translation .serviceprogram").innerText = SETTINGS.settings.audioTranslation.serviceProgram
+document.querySelector(".content-audio-translation .processingdirectory").innerText = SETTINGS.settings.audioTranslation.processingDirectory
+document.querySelector(".content-audio-translation .fasterwhisperdirectory").innerText = SETTINGS.settings.audioTranslation.fasterWhisperDirectory
+document.querySelector(".content-audio-translation .argostranslatedirectory").innerText = SETTINGS.settings.audioTranslation.argosTranslateDirectory
+document.querySelector(".content-audio-translation .modelsize").value = SETTINGS.settings.audioTranslation.modelSize
+document.querySelector(".content-audio-translation .usegpu").checked = SETTINGS.settings.audioTranslation.useGpu
+document.querySelector(".content-image-classification .serviceprogram").innerText = SETTINGS.settings.imageClassification.serviceProgram
+document.querySelector(".content-image-classification .processingdirectory").innerText = SETTINGS.settings.imageClassification.processingDirectory
+document.querySelector(".content-image-classification .mobilenetdirectory").innerText = SETTINGS.settings.imageClassification.mobileNetDirectory
+document.querySelector(".content-image-classification .language").value = SETTINGS.settings.imageClassification.language
+document.querySelector(".content-settings .ipedexepath").innerText = SETTINGS.settings.settings.ipedExePath
 
 messages.addMessageListener("selectfiledemo", message => document.getElementById("filename").value = message.Path)
 messages.addMessageListener("showfilecontentdemo", message => document.getElementById("filecontent").innerText = message.Content)

@@ -37,7 +37,7 @@
 	
 					<div class="navigationtable">
 	
-						<div class="navigationbutton" onclick="handleNavigation(this, 'content-home')">
+						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-home')">
 							<div class="icon">&#xE80F</div>
 							<div class="label">Home</div>
 						</div>
@@ -52,7 +52,7 @@
 							<div class="label">Features</div>
 						</div>
 	
-						<div class="navigationbutton selected" onclick="handleNavigation(this, 'content-categories')">
+						<div class="navigationbutton" onclick="handleNavigation(this, 'content-categories')">
 							<div class="icon">&#xE762</div>
 							<div class="label">Categories</div>
 						</div>
@@ -91,7 +91,7 @@
 	
 				</div>
 	
-				<div class="contentpanel content-home">
+				<div class="contentpanel content-home visible">
 
 					<div class="title">Home</div>
 
@@ -115,7 +115,7 @@
 						<div class="icon">&#xE78C</div>
 						<div class="text">
 							<div class="title">Ausgabeverzeichnis</div>
-							<div class="value"></div>
+							<div class="value outputdirectory"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen ...</button>
@@ -132,7 +132,7 @@
 							<div class="title">Bestehendes Projekt erweitern</div>
 						</div>
 						<div class="action">
-							<input type="checkbox" class="toggle"/>
+							<input type="checkbox" class="toggle appendproject" onchange="if (this.checked) { document.querySelector('.content-home .continueproject').checked = SETTINGS.settings.general.continue = false; } SETTINGS.settings.general.append = this.checked; SETTINGS.save()"/>
 						</div>
 					</div>
 
@@ -142,7 +142,7 @@
 							<div class="title">Nach Abbruch fortsetzen</div>
 						</div>
 						<div class="action">
-							<input type="checkbox" class="toggle"/>
+							<input type="checkbox" class="toggle continueproject" onchange="if (this.checked) { document.querySelector('.content-home .appendproject').checked = SETTINGS.settings.general.append = false; } SETTINGS.settings.general.continue = this.checked; SETTINGS.save()"/>
 						</div>
 					</div>
 
@@ -152,7 +152,7 @@
 							<div class="title">Portabel</div>
 						</div>
 						<div class="action">
-							<input type="checkbox" class="toggle"/>
+							<input type="checkbox" class="toggle portable" onchange="SETTINGS.settings.general.portable = this.checked; SETTINGS.save()"/>
 						</div>
 					</div>
 
@@ -162,7 +162,7 @@
 							<div class="title">Internetdaten laden</div>
 						</div>
 						<div class="action">
-							<input type="checkbox" class="toggle"/>
+							<input type="checkbox" class="toggle downloadinternetdata" onchange="SETTINGS.settings.general.downloadInternetData = this.checked; SETTINGS.save()"/>
 						</div>
 					</div>
 
@@ -170,10 +170,10 @@
 						<div class="icon">&#xE8FD</div>
 						<div class="text">
 							<div class="title">Schlagwortliste</div>
-							<div class="value">C:\...</div>
+							<div class="value keywordlist"></div>
 						</div>
 						<div class="action">
-							<button>Entfernen</button>
+							<button onclick="document.querySelector('.content-home .keywordlist').innerText = SETTINGS.settings.general.keywordList = ''; SETTINGS.save()">Entfernen</button>
 							<button>Auswählen ...</button>
 						</div>
 					</div>
@@ -181,7 +181,7 @@
 					<div class="subtitle">Prozess</div>
 
 					<div class="buttonbar">
-						<button>Starten</button>
+						<button onclick="console.log(SETTINGS)">Starten</button>
 					</div>
 					
 				</div>
@@ -196,7 +196,7 @@
 
 				</div>
 	
-				<div class="contentpanel content-categories visible">
+				<div class="contentpanel content-categories">
 
 					<div class="title">Categories</div>
 
@@ -219,7 +219,7 @@
 					<div class="settingscard">
 						<div class="text">
 							<div class="title">Dienstprogramm</div>
-							<div class="value">C:\....</div>
+							<div class="value serviceprogram"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen</button>
@@ -229,7 +229,7 @@
 					<div class="settingscard">
 						<div class="text">
 							<div class="title">Verarbeitungsverzeichnis</div>
-							<div class="value">C:\....</div>
+							<div class="value processingdirectory"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen</button>
@@ -239,7 +239,7 @@
 					<div class="settingscard">
 						<div class="text">
 							<div class="title">Faster Whisper Verzeichnis</div>
-							<div class="value">C:\....</div>
+							<div class="value fasterwhisperdirectory"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen</button>
@@ -249,7 +249,7 @@
 					<div class="settingscard">
 						<div class="text">
 							<div class="title">Argos Translate Verzeichnis</div>
-							<div class="value">C:\....</div>
+							<div class="value argostranslatedirectory"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen</button>
@@ -261,7 +261,7 @@
 							<div class="title">Modellgröße</div>
 						</div>
 						<div class="action">
-							<select>
+							<select class="modelsize" onchange="SETTINGS.settings.audioTranslation.modelSize = value; SETTINGS.save()">
 								<option>tiny</option>
 								<option>base</option>
 								<option>small</option>
@@ -276,7 +276,7 @@
 							<div class="title">GPU verwenden</div>
 						</div>
 						<div class="action">
-							<input type="checkbox" class="toggle"/>
+							<input type="checkbox" class="toggle usegpu" onchange="SETTINGS.settings.audioTranslation.useGpu = this.checked; SETTINGS.save()"/>
 						</div>
 					</div>
 
@@ -297,7 +297,7 @@
 					<div class="settingscard">
 						<div class="text">
 							<div class="title">Dienstprogramm</div>
-							<div class="value">C:\....</div>
+							<div class="value serviceprogram"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen</button>
@@ -307,7 +307,7 @@
 					<div class="settingscard">
 						<div class="text">
 							<div class="title">Verarbeitungsverzeichnis</div>
-							<div class="value">C:\....</div>
+							<div class="value processingdirectory"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen</button>
@@ -317,7 +317,7 @@
 					<div class="settingscard">
 						<div class="text">
 							<div class="title">MobileNet Verzeichnis</div>
-							<div class="value">C:\....</div>
+							<div class="value mobilenetdirectory"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen</button>
@@ -329,7 +329,7 @@
 							<div class="title">Sprache</div>
 						</div>
 						<div class="action">
-							<select>
+							<select class="language" onchange="SETTINGS.settings.imageClassification.language = value; SETTINGS.save()">
 								<option>de</option>
 								<option>en</option>
 							</select>
@@ -358,7 +358,7 @@
 						<div class="icon">&#xE9F5</div>
 						<div class="text">
 							<div class="title">Pfad zu iped.exe</div>
-							<div class="value">C:\...</div>
+							<div class="value ipedexepath"></div>
 						</div>
 						<div class="action">
 							<button>Auswählen ...</button>

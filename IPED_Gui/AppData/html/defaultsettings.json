@@ -5,7 +5,8 @@
             "continue": false,
             "portable": true,
             "downloadInternetData": false,
-            "outputDirectory": ""
+            "outputDirectory": "",
+            "keywordList": ""
         },
         "settings": {
             "ipedExePath": ""
