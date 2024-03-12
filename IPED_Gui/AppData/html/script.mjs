@@ -15,6 +15,19 @@ const CONFIGTYPES = {
 			{ name: "pluginFolder", type: "directoryrelativetoipedexe", description: "Plugin folder for optional libs not embedded because of license restrictions. They will be dynamically loaded at runtime."}
 		]
 	},
+	FileSystemConfig: {
+		filepath: "conf/FileSystemConfig.txt",
+		elements: [
+            { name: "robustImageReading", type: "boolean", description: "Uses auxiliary processes to read file contents in images. If Sleuthkit crashes, only the auxiliary processes are killed and restarted. Increases RAM usage often in about ~500MB per process. Increases up to 3x the processing speed of compressed E01 images, APFS containers or images in network."},
+            { name: "numImageReaders", type: "string", description: "Number of auxiliary image reading processes. 'auto' uses 1/4 of the number of logical CPU cores. You can decrease the value if it uses too much RAM. Increasing the value is not efficient, because often IO devices can not handle many reading requests simultaneously."},
+            { name: "addUnallocated", type: "boolean", description: "Add and process unallocated areas of images."},
+            { name: "addFileSlacks", type: "boolean", description: "Add and process file slacks."},
+            { name: "minOrphanSizeToIgnore", type: "string", description: "Ignore orphan files bigger than this value in bytes. Default -1 means disabled. In rare cases, Sleuthkit can recover thousands of large corrupted orphan files pointing to the same disk areas, making the processing not feasible."},
+            { name: "unallocatedFragSize", type: "string", description: "Size in bytes of the unallocated space segments. In cases where the carving of videos is important, it may be useful to increase this value to minimize missing items that cross segment boundaries, but processing may take longer if this value is too large."},
+            { name: "ignoreHardLinks", type: "boolean", description: "Ignores HFS+ hard links pointing to items already processed. The hard links are added to the case, but their content is not processed (indexed, expanded, carved, etc). Optimizes HFS+ image processing containing millions of hard links (such as Time Machine volumes)."},
+            { name: "skipFolderRegex", type: "string", description: "Regex pattern to skip matched folder trees when processing. Just works if processing mounted folders currently. Matched folders are ignored and not included in case."},
+		]
+	},
 	AudioTranslation: {
 		filepath: "conf/AudioTranslation.txt",
 		elements: [
@@ -128,6 +141,7 @@ function createContentLayout(configTypeName, selector) {
 }
 
 createContentLayout("LocalConfig", ".content-local-config");
+createContentLayout("FileSystemConfig", ".content-file-system-config");
 createContentLayout("AudioTranslation", ".content-audio-translation .generated");
 createContentLayout("ImageClassification", ".content-image-classification .generated");
 

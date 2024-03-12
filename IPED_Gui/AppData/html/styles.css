@@ -246,14 +246,14 @@ textarea.protocol {
 }
 
 .settingscard .action select {
-    border: 1px solid rgba(0, 0, 0, .05);
+    border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 4px;
     font-size: 15px;
     padding: 5px 9px;
 }
 
 .settingscard .action input {
-    border: 1px solid rgba(0, 0, 0, .05);
+    border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 4px;
     font-size: 15px;
     padding: 5px 9px;
