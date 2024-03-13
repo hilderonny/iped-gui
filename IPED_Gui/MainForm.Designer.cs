@@ -41,14 +41,14 @@
             webView.Location = new Point(0, 0);
             webView.Margin = new Padding(0);
             webView.Name = "webView";
-            webView.Size = new Size(1184, 761);
+            webView.Size = new Size(1893, 1069);
             webView.Source = new Uri("https://local/index.html", UriKind.Absolute);
             webView.TabIndex = 0;
             webView.ZoomFactor = 1D;
             // 
             // MainForm
             // 
-            ClientSize = new Size(1184, 761);
+            ClientSize = new Size(1893, 1069);
             Controls.Add(webView);
             Name = "MainForm";
             ((System.ComponentModel.ISupportInitialize)webView).EndInit();

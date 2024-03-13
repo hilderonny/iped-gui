@@ -172,6 +172,7 @@ body {
 .listbox {
     font-size: 15px;
     margin-bottom: 10px;
+    min-height: 300px;
 }
 
 .listbox option {

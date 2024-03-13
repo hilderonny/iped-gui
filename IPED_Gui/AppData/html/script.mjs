@@ -1,12 +1,21 @@
 ﻿import * as messages from './messages.mjs'
 import SETTINGS from './defaultsettings.json' assert {type: 'json'};
 
-// TODO: Overwrite settings from local file
-// TODO: Handle all file and directory selections
+messages.readFile("readlocalsettings", "currentsettings.ipedsettings")
+messages.addMessageListener("readlocalsettings", message => {
+	try {
+		const fileSettings = JSON.parse(message.Content)
+		for (const [key, value] of Object.entries(fileSettings)) {
+			SETTINGS[key] = value
+		}
+	} catch (ex) {
+		console.log(ex)
+	}
+	initContent()
+})
 
 SETTINGS.save = () => {
-	// TODO: Save to local file
-	console.log(SETTINGS)
+	messages.writeFile("writelocalsettings", "currentsettings.ipedsettings", JSON.stringify(SETTINGS))
 }
 
 window.SETTINGS = SETTINGS
@@ -254,7 +263,7 @@ const CATEGORIES = [
 	{ name: "Social Media Activities", image: "Social Media Activities.png" },
 ]
 
-function createSettingsCard(configElement, configSettings) {
+function createSettingsCard(configElement, configSettings, messageprefix) {
 	const settingsCardDiv = document.createElement("div")
 	settingsCardDiv.classList.add("settingscard")
 	if (configElement.icon) {
@@ -304,6 +313,13 @@ function createSettingsCard(configElement, configSettings) {
 			textDiv.appendChild(valueDiv)
 			button = document.createElement("button")
 			button.innerHTML = "Auswählen ..."
+			button.addEventListener("click", () => {
+				messages.showSelectPathDialog(messageprefix + configElement.name)
+			})
+			messages.addMessageListener(messageprefix + configElement.name, message => {
+				valueDiv.innerText = configSettings[configElement.name] = message.Path
+				SETTINGS.save()
+			})
 			actionDiv.appendChild(button)
 			break
 		case "boolean":
@@ -333,6 +349,13 @@ function createSettingsCard(configElement, configSettings) {
 			textDiv.appendChild(valueDiv)
 			button = document.createElement("button")
 			button.innerHTML = "Auswählen ..."
+			button.addEventListener("click", () => {
+				messages.showSelectFileDialog(messageprefix + configElement.name, configElement.fileFilter)
+			})
+			messages.addMessageListener(messageprefix + configElement.name, message => {
+				valueDiv.innerText = configSettings[configElement.name] = message.Path
+				SETTINGS.save()
+			})
 			actionDiv.appendChild(button)
 			break
 		case "directoryrelativetoipedexe":
@@ -346,6 +369,13 @@ function createSettingsCard(configElement, configSettings) {
 			textDiv.appendChild(valueDiv)
 			button = document.createElement("button")
 			button.innerHTML = "Auswählen ..."
+			button.addEventListener("click", () => {
+				messages.showSelectPathDialog(messageprefix + configElement.name)
+			})
+			messages.addMessageListener(messageprefix + configElement.name, message => {
+				valueDiv.innerText = configSettings[configElement.name] = message.Path
+				SETTINGS.save()
+			})
 			actionDiv.appendChild(button)
 			break
 	}
@@ -357,7 +387,7 @@ function createContentLayout(configTypeName, selector) {
 	const configSettings = SETTINGS.configTypes[configType.filepath]
 	const targetDiv = document.querySelector(selector)
 	for (const element of configType.elements) {
-		const settingsCard = createSettingsCard(element, configSettings)
+		const settingsCard = createSettingsCard(element, configSettings, configType.filepath)
 		targetDiv.appendChild(settingsCard)
 	}
 }
@@ -403,53 +433,163 @@ function createCategoryLayout(selector) {
 	}
 }
 
-createContentLayout("LocalConfig", ".content-local-config");
-createContentLayout("IPEDConfig", ".content-features");
-createContentLayout("FileSystemConfig", ".content-file-system-config");
-createContentLayout("AudioTranslation", ".content-audio-translation .generated");
-createContentLayout("ImageClassification", ".content-image-classification .generated");
-createCategoryLayout(".content-categories")
+function initContent() {
+	createContentLayout("LocalConfig", ".content-local-config");
+	createContentLayout("IPEDConfig", ".content-features");
+	createContentLayout("FileSystemConfig", ".content-file-system-config");
+	createContentLayout("AudioTranslation", ".content-audio-translation .generated");
+	createContentLayout("ImageClassification", ".content-image-classification .generated");
+	createCategoryLayout(".content-categories")
 
-document.querySelector(".content-home .outputdirectory").innerText = SETTINGS.settings.general.outputDirectory
-document.querySelector(".content-home .appendproject").checked = SETTINGS.settings.general.append
-document.querySelector(".content-home .continueproject").checked = SETTINGS.settings.general.continue
-document.querySelector(".content-home .portable").checked = SETTINGS.settings.general.portable
-document.querySelector(".content-home .downloadinternetdata").checked = SETTINGS.settings.general.downloadInternetData
-document.querySelector(".content-home .keywordlist").innerText = SETTINGS.settings.general.keywordList
-document.querySelector(".content-audio-translation .serviceprogram").innerText = SETTINGS.settings.audioTranslation.serviceProgram
-document.querySelector(".content-audio-translation .processingdirectory").innerText = SETTINGS.settings.audioTranslation.processingDirectory
-document.querySelector(".content-audio-translation .fasterwhisperdirectory").innerText = SETTINGS.settings.audioTranslation.fasterWhisperDirectory
-document.querySelector(".content-audio-translation .argostranslatedirectory").innerText = SETTINGS.settings.audioTranslation.argosTranslateDirectory
-document.querySelector(".content-audio-translation .modelsize").value = SETTINGS.settings.audioTranslation.modelSize
-document.querySelector(".content-audio-translation .usegpu").checked = SETTINGS.settings.audioTranslation.useGpu
-document.querySelector(".content-image-classification .serviceprogram").innerText = SETTINGS.settings.imageClassification.serviceProgram
-document.querySelector(".content-image-classification .processingdirectory").innerText = SETTINGS.settings.imageClassification.processingDirectory
-document.querySelector(".content-image-classification .mobilenetdirectory").innerText = SETTINGS.settings.imageClassification.mobileNetDirectory
-document.querySelector(".content-image-classification .language").value = SETTINGS.settings.imageClassification.language
-document.querySelector(".content-settings .ipedexepath").innerText = SETTINGS.settings.settings.ipedExePath
+	document.querySelector(".content-home .outputdirectory").innerText = SETTINGS.settings.general.outputDirectory
+	document.querySelector(".content-home .appendproject").checked = SETTINGS.settings.general.append
+	document.querySelector(".content-home .continueproject").checked = SETTINGS.settings.general.continue
+	document.querySelector(".content-home .portable").checked = SETTINGS.settings.general.portable
+	document.querySelector(".content-home .downloadinternetdata").checked = SETTINGS.settings.general.downloadInternetData
+	document.querySelector(".content-home .keywordlist").innerText = SETTINGS.settings.general.keywordList
+	document.querySelector(".content-audio-translation .serviceprogram").innerText = SETTINGS.settings.audioTranslation.serviceProgram
+	document.querySelector(".content-audio-translation .processingdirectory").innerText = SETTINGS.settings.audioTranslation.processingDirectory
+	document.querySelector(".content-audio-translation .fasterwhisperdirectory").innerText = SETTINGS.settings.audioTranslation.fasterWhisperDirectory
+	document.querySelector(".content-audio-translation .argostranslatedirectory").innerText = SETTINGS.settings.audioTranslation.argosTranslateDirectory
+	document.querySelector(".content-audio-translation .modelsize").value = SETTINGS.settings.audioTranslation.modelSize
+	document.querySelector(".content-audio-translation .usegpu").checked = SETTINGS.settings.audioTranslation.useGpu
+	document.querySelector(".content-image-classification .serviceprogram").innerText = SETTINGS.settings.imageClassification.serviceProgram
+	document.querySelector(".content-image-classification .processingdirectory").innerText = SETTINGS.settings.imageClassification.processingDirectory
+	document.querySelector(".content-image-classification .mobilenetdirectory").innerText = SETTINGS.settings.imageClassification.mobileNetDirectory
+	document.querySelector(".content-image-classification .language").value = SETTINGS.settings.imageClassification.language
+	document.querySelector(".content-settings .ipedexepath").innerText = SETTINGS.settings.settings.ipedExePath
 
-messages.addMessageListener("selectfiledemo", message => document.getElementById("filename").value = message.Path)
-messages.addMessageListener("showfilecontentdemo", message => document.getElementById("filecontent").innerText = message.Content)
-messages.addMessageListener("selectfolderdemo", message => document.getElementById("foldername").value = message.Path)
-messages.addMessageListener("rundemo", message => {
-	console.log(message)
-})
+	// Home
+	document.querySelector(".content-home .selectsourcedirectory").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectsourcedirectory")
+	})
+	messages.addMessageListener("selectsourcedirectory", message => {
+		const option = document.createElement("option")
+		option.innerText = message.Path
+		document.querySelector(".content-home .sources").appendChild(option)
+	})
+	document.querySelector(".content-home .selectsourcefile").addEventListener("click", () => {
+		messages.showSelectFileDialog("selectsourcefile", "All files|*.*")
+	})
+	messages.addMessageListener("selectsourcefile", message => {
+		const option = document.createElement("option")
+		option.innerText = message.Path
+		document.querySelector(".content-home .sources").appendChild(option)
+	})
+	document.querySelector(".content-home .selectprojectoutputdirectory").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectprojectoutputdirectory")
+	})
+	messages.addMessageListener("selectprojectoutputdirectory", message => {
+		document.querySelector(".content-home .outputdirectory").innerText = SETTINGS.settings.general.outputDirectory = message.Path
+		SETTINGS.save()
+	})
+	document.querySelector(".content-home .selectkeywordlist").addEventListener("click", () => {
+		messages.showSelectFileDialog("selectkeywordlist", "All files|*.*")
+	})
+	messages.addMessageListener("selectkeywordlist", message => {
+		document.querySelector(".content-home .keywordlist").innerText = SETTINGS.settings.general.keywordList = message.Path
+		SETTINGS.save()
+	})
+
+	// Audio translation
+	document.querySelector(".content-audio-translation .selectaudiotranslationserviceprogram").addEventListener("click", () => {
+		messages.showSelectFileDialog("selectaudiotranslationserviceprogram", "All files|*.*")
+	})
+	messages.addMessageListener("selectaudiotranslationserviceprogram", message => {
+		document.querySelector(".content-audio-translation .serviceprogram").innerText = SETTINGS.settings.audioTranslation.serviceProgram = message.Path
+		SETTINGS.save()
+	})
+	document.querySelector(".content-audio-translation .selectaudiotranslationprocessingdirectory").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectaudiotranslationprocessingdirectory")
+	})
+	messages.addMessageListener("selectaudiotranslationprocessingdirectory", message => {
+		document.querySelector(".content-audio-translation .processingdirectory").innerText = SETTINGS.settings.audioTranslation.processingDirectory = message.Path
+		SETTINGS.save()
+	})
+	document.querySelector(".content-audio-translation .selectaudiotranslationfasterwhisperdirectory").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectaudiotranslationfasterwhisperdirectory")
+	})
+	messages.addMessageListener("selectaudiotranslationfasterwhisperdirectory", message => {
+		document.querySelector(".content-audio-translation .fasterwhisperdirectory").innerText = SETTINGS.settings.audioTranslation.fasterWhisperDirectory = message.Path
+		SETTINGS.save()
+	})
+	document.querySelector(".content-audio-translation .selectaudiotranslationargostranslatedirectory").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectaudiotranslationargostranslatedirectory")
+	})
+	messages.addMessageListener("selectaudiotranslationargostranslatedirectory", message => {
+		document.querySelector(".content-audio-translation .argostranslatedirectory").innerText = SETTINGS.settings.audioTranslation.argosTranslateDirectory = message.Path
+		SETTINGS.save()
+	})
+
+	// Image classification
+	document.querySelector(".content-image-classification .selectimageclassificationserviceprogram").addEventListener("click", () => {
+		messages.showSelectFileDialog("selectimageclassificationserviceprogram", "All files|*.*")
+	})
+	messages.addMessageListener("selectimageclassificationserviceprogram", message => {
+		document.querySelector(".content-image-classification .serviceprogram").innerText = SETTINGS.settings.imageClassification.serviceProgram = message.Path
+		SETTINGS.save()
+	})
+	document.querySelector(".content-image-classification .selectimageclassificationprocessingdirectory").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectimageclassificationprocessingdirectory")
+	})
+	messages.addMessageListener("selectimageclassificationprocessingdirectory", message => {
+		document.querySelector(".content-image-classification .processingdirectory").innerText = SETTINGS.settings.imageClassification.processingDirectory = message.Path
+		SETTINGS.save()
+	})
+	document.querySelector(".content-image-classification .selectimageclassificationmobilenetdirectory").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectimageclassificationmobilenetdirectory")
+	})
+	messages.addMessageListener("selectimageclassificationmobilenetdirectory", message => {
+		document.querySelector(".content-image-classification .mobilenetdirectory").innerText = SETTINGS.settings.imageClassification.mobileNetDirectory = message.Path
+		SETTINGS.save()
+	})
+
+	// Settings
+	document.querySelector(".content-settings .selectsettingsipedexepath").addEventListener("click", () => {
+		messages.showSelectFileDialog("selectsettingsipedexepath", "IPED executable|iped.exe")
+	})
+	messages.addMessageListener("selectsettingsipedexepath", message => {
+		document.querySelector(".content-settings .ipedexepath").innerText = SETTINGS.settings.settings.ipedExePath = message.Path
+		SETTINGS.save()
+	})
+	document.querySelector(".content-settings .loadsettingsfromfile").addEventListener("click", () => {
+		messages.readFileWithDialog("loadsettingsfromfile", "Settings|*.ipedsettings")
+	})
+	messages.addMessageListener("loadsettingsfromfile", message => {
+		const fileSettings = JSON.parse(message.Content)
+		for (const [key, value] of Object.entries(fileSettings)) {
+			SETTINGS[key] = value
+		}
+		SETTINGS.save()
+		alert("Settings loaded.")
+	})
+	document.querySelector(".content-settings .savesettingstofile").addEventListener("click", () => {
+		messages.writeFileWithDialog("savesettingstofile", "Settings|*.ipedsettings", JSON.stringify(SETTINGS))
+	})
+	messages.addMessageListener("savesettingstofile", () => {
+		alert("Settings saved.")
+	})
+	document.querySelector(".content-settings .selectprofilexportpath").addEventListener("click", () => {
+		messages.showSelectPathDialog("selectprofilexportpath")
+	})
+	messages.addMessageListener("selectprofilexportpath", () => {
+		SETTINGS.save()
+		messages.exportProfile("exportprofile")
+	})
+	messages.addMessageListener("exportprofile", () => {
+		alert("Profile exported.")
+	})
+}
 
 /*
-document.getElementById("selectfilebutton").addEventListener("click", () => {
-	messages.showSelectFileDialog("selectfiledemo", "Text|*.txt")
-})
 
-document.getElementById("showfilecontentbutton").addEventListener("click", () => {
-	messages.readFileWithDialog("showfilecontentdemo", "Text|*.txt")
-})
-
-document.getElementById("selectfolderbutton").addEventListener("click", () => {
-	messages.showSelectPathDialog("selectfolderdemo")
+messages.addMessageListener("rundemo", message => {
+	console.log(message)
 })
 
 document.getElementById("runbutton").addEventListener("click", () => {
 	const program = document.getElementById("program").value
 	messages.runProgram("rundemo", program)
 })
+
 */

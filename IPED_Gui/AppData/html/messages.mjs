@@ -17,15 +17,22 @@ export function addMessageListener(messageid, listener) {
 	messageListeners[messageid].push(listener)
 }
 
+export function exportProfile(messageid) {
+	window.chrome?.webview?.postMessage({
+		Id: messageid,
+		Type: "ExportProfile"
+	})
+}
+
 export function showSelectPathDialog(messageid) {
-	window.chrome.webview.postMessage({
+	window.chrome?.webview?.postMessage({
 		Id: messageid,
 		Type: "SelectPath"
 	})
 }
 
 export function showSelectFileDialog(messageid, filter) {
-	window.chrome.webview.postMessage({
+	window.chrome?.webview?.postMessage({
 		Id: messageid,
 		Type: "SelectFile",
 		FileFilter: filter
@@ -33,7 +40,7 @@ export function showSelectFileDialog(messageid, filter) {
 }
 
 export function readFile(messageid, path) {
-	window.chrome.webview.postMessage({
+	window.chrome?.webview?.postMessage({
 		Id: messageid,
 		Type: "ReadTextFile",
 		Path: path
@@ -41,7 +48,7 @@ export function readFile(messageid, path) {
 }
 
 export function readFileWithDialog(messageid, filter) {
-	window.chrome.webview.postMessage({
+	window.chrome?.webview?.postMessage({
 		Id: messageid,
 		Type: "ReadTextFileDialog",
 		Filter: filter
@@ -49,7 +56,7 @@ export function readFileWithDialog(messageid, filter) {
 }
 
 export function writeFile(messageid, path, content) {
-	window.chrome.webview.postMessage({
+	window.chrome?.webview?.postMessage({
 		Id: messageid,
 		Type: "WriteTextFile",
 		Path: path,
@@ -58,7 +65,7 @@ export function writeFile(messageid, path, content) {
 }
 
 export function writeFileWithDialog(messageid, filter, content) {
-	window.chrome.webview.postMessage({
+	window.chrome?.webview?.postMessage({
 		Id: messageid,
 		Type: "WriteTextFileDialog",
 		Filter: filter,
@@ -67,7 +74,7 @@ export function writeFileWithDialog(messageid, filter, content) {
 }
 
 export function runProgram(messageid, program, args, workingDirectory) {
-	window.chrome.webview.postMessage({
+	window.chrome?.webview?.postMessage({
 		Id: messageid,
 		Type: "RunProgram",
 		Program: program,

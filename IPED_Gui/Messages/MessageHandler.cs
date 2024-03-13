@@ -21,6 +21,7 @@ namespace IPED_Gui_WinForms.Messages
             {
                 switch (parsedMessage.Type)
                 {
+                    case "ExportProfile": handleExportProfileMessage(parsedMessage); break;
                     case "ReadTextFile": handleReadTextFileMessage(parsedMessage); break;
                     case "ReadTextFileDialog": handleReadTextFileDialogMessage(parsedMessage); break;
                     case "RunProgram": handleRunProgramMessage(parsedMessage); break;
@@ -32,19 +33,28 @@ namespace IPED_Gui_WinForms.Messages
             }
         }
 
+        private void handleExportProfileMessage(WebClientMessage message)
+        {
+            // TODO: Export profile
+            WebClientMessage response = new()
+            {
+                Id = message.Id
+            };
+            PostMessage(response);
+        }
+
         private void handleReadTextFileMessage(WebClientMessage message)
         {
             string? filePath = message.Path;
+            WebClientMessage response = new()
+            {
+                Id = message.Id
+            };
             if (File.Exists(filePath))
             {
-                string fileContent = File.ReadAllText(filePath);
-                WebClientMessage response = new()
-                {
-                    Id = message.Id,
-                    Content = fileContent
-                };
-                PostMessage(response);
+                response.Content = File.ReadAllText(filePath);
             }
+            PostMessage(response);
         }
 
         private void handleReadTextFileDialogMessage(WebClientMessage message)

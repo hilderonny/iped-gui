@@ -90,8 +90,8 @@
 					<div class="subtitle">Spuren</div>
 
 					<div class="buttonbar">
-						<button>Verzeichnis hinzufügen</button>
-						<button>Dateien hinzufügen</button>
+						<button class="selectsourcedirectory">Verzeichnis hinzufügen</button>
+						<button class="selectsourcefile">Dateien hinzufügen</button>
 						<button disabled class="removebutton" onclick="document.querySelectorAll('.content-home .sources option').forEach(option => { if (option.selected) option.parentNode.removeChild(option) }); this.disabled = true">Entfernen</button>
 					</div>
 
@@ -110,11 +110,9 @@
 							<div class="value outputdirectory"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen ...</button>
+							<button class="selectprojectoutputdirectory">Auswählen ...</button>
 						</div>
 					</div>
-
-					<p class="error">Das Ausgabeverzeichnis ...</p>
 
 					<div class="subtitle">Optionen</div>
 
@@ -166,7 +164,7 @@
 						</div>
 						<div class="action">
 							<button onclick="document.querySelector('.content-home .keywordlist').innerText = SETTINGS.settings.general.keywordList = ''; SETTINGS.save()">Entfernen</button>
-							<button>Auswählen ...</button>
+							<button class="selectkeywordlist">Auswählen ...</button>
 						</div>
 					</div>
 
@@ -214,7 +212,7 @@
 							<div class="value serviceprogram"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen</button>
+							<button class="selectaudiotranslationserviceprogram">Auswählen</button>
 						</div>
 					</div>
 
@@ -224,7 +222,7 @@
 							<div class="value processingdirectory"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen</button>
+							<button class="selectaudiotranslationprocessingdirectory">Auswählen</button>
 						</div>
 					</div>
 
@@ -234,7 +232,7 @@
 							<div class="value fasterwhisperdirectory"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen</button>
+							<button class="selectaudiotranslationfasterwhisperdirectory">Auswählen</button>
 						</div>
 					</div>
 
@@ -244,7 +242,7 @@
 							<div class="value argostranslatedirectory"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen</button>
+							<button class="selectaudiotranslationargostranslatedirectory">Auswählen</button>
 						</div>
 					</div>
 
@@ -292,7 +290,7 @@
 							<div class="value serviceprogram"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen</button>
+							<button class="selectimageclassificationserviceprogram">Auswählen</button>
 						</div>
 					</div>
 
@@ -302,7 +300,7 @@
 							<div class="value processingdirectory"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen</button>
+							<button class="selectimageclassificationprocessingdirectory">Auswählen</button>
 						</div>
 					</div>
 
@@ -312,7 +310,7 @@
 							<div class="value mobilenetdirectory"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen</button>
+							<button class="selectimageclassificationmobilenetdirectory">Auswählen</button>
 						</div>
 					</div>
 
@@ -353,24 +351,24 @@
 							<div class="value ipedexepath"></div>
 						</div>
 						<div class="action">
-							<button>Auswählen ...</button>
+							<button class="selectsettingsipedexepath">Auswählen ...</button>
 						</div>
 					</div>
 
 					<p>&nbsp;</p>
 
 					<div class="buttonbar">
-						<button>Einstellungen aus Datei laden ...</button>
+						<button class="loadsettingsfromfile">Einstellungen aus Datei laden ...</button>
 					</div>
 
 					<div class="buttonbar">
-						<button>Einstellungen in Datei speichern ...</button>
+						<button class="savesettingstofile">Einstellungen in Datei speichern ...</button>
 					</div>
 
 					<p>&nbsp;</p>
 
 					<div class="buttonbar">
-						<button>Profil exportieren ...</button>
+						<button class="selectprofilexportpath">Profil exportieren ...</button>
 					</div>
 
 				</div>
