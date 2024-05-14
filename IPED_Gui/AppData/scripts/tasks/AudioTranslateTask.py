@@ -92,9 +92,15 @@ class AudioTranslateTask:
         hash = item.getHash()
         if (hash is None) or (len(hash) < 1):
             return
+            
+        # Process only audio and video
         media_type = item.getMediaType().toString()
-
         if not (media_type.startswith('audio') or (PROCESS_VIDEO and media_type.startswith('video'))):
+            return
+            
+        # Process only if no metadata is set
+        meta_data = item.getMetadata()
+        if meta_data.get("audio:translation") == "done":
             return
         
         logging.info("Processing item %s of media type %s with hash %s", item_name, media_type, hash)
@@ -104,7 +110,7 @@ class AudioTranslateTask:
         else:
             result = self.process_locally(item, hash)
 
-        meta_data = item.getMetadata()
+        meta_data.set("audio:translation", "done")
         if "language" in result:
             meta_data.set("audio:translation:language", result["language"])
         if "original" in result:
@@ -150,9 +156,9 @@ class AudioTranslateTask:
         share_file_path = os.path.join(API_SHARE_DIR, hash)
         shutil.copy(source_file_path, share_file_path)
         # Add transcription task
-        response = requests.post(f"{API_URL}tasks/transcribe/add/{hash}/large-v2")
+        response = requests.post(f"{API_URL}tasks/transcribe/add/{hash}/large-v2/de")
         if response.status_code != 200:
-            logging.error(f"Cannot access {API_URL}tasks/transcribe/add/{hash}/large-v2")
+            logging.error(f"Cannot access {API_URL}tasks/transcribe/add/{hash}/large-v2/de")
             return result
         add_transcribe_json_result = response.json()
         print(add_transcribe_json_result)
@@ -165,28 +171,35 @@ class AudioTranslateTask:
         if "error" in transcribe_result["result"]:
             result["error"] = transcribe_result["result"]["error"]
         else:
-            # Add translate task
-            add_translate_json_result = requests.post(f"{API_URL}tasks/translate/add/en/de", json=transcribe_result["result"]["en"]).json()
-            print(add_translate_json_result)
-            translate_task_id = add_translate_json_result["id"]
-            # Wait for translation completion
-            while requests.get(f"{API_URL}tasks/status/{translate_task_id}").json()["status"] != "done":
-                time.sleep(5)
-            # Collect results
-            translate_result = requests.get(f"{API_URL}tasks/result/{translate_task_id}").json()
-            print(translate_result)
-            if "error" in translate_result["result"]:
-                result["error"] = translate_result["result"]["error"]
-            else:
-                result["language"] = transcribe_result["result"]["language"]
-                result["original"] = { "segments" : transcribe_result["result"]["original"]["segments"], "fulltext" : ' '.join(map(lambda segment: segment['text'], transcribe_result["result"]["original"]["segments"])) }
-                result["en"] = { "segments" : transcribe_result["result"]["en"]["segments"], "fulltext" : ' '.join(map(lambda segment: segment['text'], transcribe_result["result"]["en"]["segments"])) }
-                result["de"] = { "segments" : translate_result["result"]["segments"], "fulltext" : ' '.join(map(lambda segment: segment['text'], translate_result["result"]["segments"])) }
+            result["language"] = transcribe_result["result"]["language"]
+            result["original"] = { "segments" : transcribe_result["result"]["original"]["segments"], "fulltext" : ' '.join(map(lambda segment: segment['text'], transcribe_result["result"]["original"]["segments"])) }
+            # Add translate task if neccessary
+            detected_language = transcribe_result["result"]["language"]
+            if (not detected_language == "de"):
+                print("Detected language is not german, translating required")
+                data_to_translate = transcribe_result["result"]["original"]
+                if not detected_language == "en":
+                    print("Detected language is not english, using english translation")
+                    data_to_translate = transcribe_result["result"]["en"]
+                add_translate_json_result = requests.post(f"{API_URL}tasks/translate/add/en/de", json=data_to_translate).json()
+                print(add_translate_json_result)
+                translate_task_id = add_translate_json_result["id"]
+                # Wait for translation completion
+                while requests.get(f"{API_URL}tasks/status/{translate_task_id}").json()["status"] != "done":
+                    time.sleep(5)
+                # Collect results
+                translate_result = requests.get(f"{API_URL}tasks/result/{translate_task_id}").json()
+                print(translate_result)
+                if "error" in translate_result["result"]:
+                    result["error"] = translate_result["result"]["error"]
+                else:
+                    result["en"] = { "segments" : data_to_translate["segments"], "fulltext" : ' '.join(map(lambda segment: segment['text'], data_to_translate["segments"])) }
+                    result["de"] = { "segments" : translate_result["result"]["segments"], "fulltext" : ' '.join(map(lambda segment: segment['text'], translate_result["result"]["segments"])) }
+                # Delete tasks from bridge
+                delete_result = requests.delete(f"{API_URL}tasks/remove/{translate_task_id}")
+                print(delete_result)
         # Delete tasks from bridge
         delete_result = requests.delete(f"{API_URL}tasks/remove/{transcribe_task_id}")
-        print(delete_result)
-        # Delete tasks from bridge
-        delete_result = requests.delete(f"{API_URL}tasks/remove/{translate_task_id}")
         print(delete_result)
         print(result)
         return result
