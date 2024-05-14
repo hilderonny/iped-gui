@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPED_Gui", "IPED_Gui\IPED_G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPED_Gui_Test", "IPED_Gui_Test\IPED_Gui_Test.csproj", "{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPED_Gui_Simple", "IPED_Gui_Simple\IPED_Gui_Simple.csproj", "{21FD0906-1514-4697-B98A-CB548B3D5925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1B3FCB5-65D5-43B2-B8E9-3925DAF99166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FD0906-1514-4697-B98A-CB548B3D5925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FD0906-1514-4697-B98A-CB548B3D5925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FD0906-1514-4697-B98A-CB548B3D5925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FD0906-1514-4697-B98A-CB548B3D5925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

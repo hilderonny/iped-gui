@@ -48,20 +48,24 @@ jobs:
         Configuration: ${{ matrix.configuration }}
 
     # Determine app version
-    - name: Determine app version
-      id: version
+    - name: Determine app version of normal GUI
+      id: versiongui
       run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
+    - name: Determine app version of simple GUI
+      id: versionguisimple
+      run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui_Simple.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
 
-    - name: Zip Folder
-      run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-${{ steps.version.outputs.version }}.zip
+    - name: Zip Folders
+      run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-${{ steps.versiongui.outputs.version }}.zip
+      run: Compress-Archive -Path ./IPED_Gui_Simple/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-SIMPLE-${{ steps.versionguisimple.outputs.version }}.zip
 
     - name: Create or update release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "./IPED-GUI-${{ steps.version.outputs.version }}.zip"
-        tag: v${{ steps.version.outputs.version }}
+        artifacts: "./IPED-GUI-${{ steps.version.outputs.version }}.zip,./IPED-GUI-SIMPLE-${{ steps.version.outputs.version }}.zip"
+        tag: v${{ steps.versiongui.outputs.version }}
         allowUpdates: true
-        name: ${{ steps.version.outputs.version }}
+        name: ${{ steps.versiongui.outputs.version }}
         bodyFile: RELEASENOTES.md
         removeArtifact: true
         replacesArtifacts: true
