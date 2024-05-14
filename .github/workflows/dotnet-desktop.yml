@@ -59,7 +59,7 @@ jobs:
       run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-${{ steps.versiongui.outputs.version }}.zip
 
     - name: Zip Simple Folder
-      run: Compress-Archive -Path ./IPED_Gui_Simple/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-SIMPLE-${{ steps.versionguisimple.outputs.version }}.zip
+      run: Compress-Archive -Path ./IPED_Gui_Simple/bin/Release/net6.0-windows7.0/* -DestinationPath ./IPED-GUI-SIMPLE-${{ steps.versionguisimple.outputs.version }}.zip
 
     - name: Create or update release
       uses: ncipollo/release-action@v1
