@@ -53,7 +53,7 @@ jobs:
       run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
     - name: Determine app version of simple GUI
       id: versionguisimple
-      run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui_Simple.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
+      run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui_Simple/IPED_Gui_Simple.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
 
     - name: Zip GUI Folder
       run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-${{ steps.versiongui.outputs.version }}.zip
