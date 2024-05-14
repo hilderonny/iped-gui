@@ -1,2 +1,2 @@
-# 1.8.0
-- Export der Einstellungen als Profil ermöglicht
+# 1.9.0
+- Simple GUI App fuer lokale Ausfuehrung erstellt: IPED_GUI_SIMPLE
