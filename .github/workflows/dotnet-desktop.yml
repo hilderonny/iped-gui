@@ -51,20 +51,14 @@ jobs:
     - name: Determine app version of normal GUI
       id: versiongui
       run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui/IPED_Gui.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
-    - name: Determine app version of simple GUI
-      id: versionguisimple
-      run: echo "::set-output name=version::$([xml]$Data=Get-Content ./IPED_Gui_Simple/IPED_Gui_Simple.csproj;('' + $Data.Project.PropertyGroup.Version).Trim())"
 
     - name: Zip GUI Folder
       run: Compress-Archive -Path ./IPED_Gui/bin/Release/net6.0-windows/* -DestinationPath ./IPED-GUI-${{ steps.versiongui.outputs.version }}.zip
 
-    - name: Zip Simple Folder
-      run: Compress-Archive -Path ./IPED_Gui_Simple/bin/Release/net6.0-windows7.0/* -DestinationPath ./IPED-GUI-SIMPLE-${{ steps.versionguisimple.outputs.version }}.zip
-
     - name: Create or update release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "./IPED-GUI-${{ steps.versiongui.outputs.version }}.zip,./IPED-GUI-SIMPLE-${{ steps.versionguisimple.outputs.version }}.zip"
+        artifacts: "./IPED-GUI-${{ steps.versiongui.outputs.version }}.zip"
         tag: v${{ steps.versiongui.outputs.version }}
         allowUpdates: true
         name: ${{ steps.versiongui.outputs.version }}
