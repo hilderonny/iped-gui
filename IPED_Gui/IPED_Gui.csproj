@@ -12,10 +12,10 @@
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <ApplicationIcon>process.ico</ApplicationIcon>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-    <AssemblyVersion>1.9.0.0</AssemblyVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>0.0.0.0</FileVersion>
     <IncrementVersionOnBuild>1.yyyy.Mdd.Hmm</IncrementVersionOnBuild>
-    <Version>1.9.0</Version>
+    <Version>2.0.0</Version>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 

@@ -12,7 +12,7 @@ namespace IPED_Gui_WinForms.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -109,30 +109,6 @@ namespace IPED_Gui_WinForms.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationInputDirectory {
-            get {
-                return ((string)(this["AudioTranslationInputDirectory"]));
-            }
-            set {
-                this["AudioTranslationInputDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationOutputDirectory {
-            get {
-                return ((string)(this["AudioTranslationOutputDirectory"]));
-            }
-            set {
-                this["AudioTranslationOutputDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool AudioTranslationProcessVideo {
             get {
@@ -140,30 +116,6 @@ namespace IPED_Gui_WinForms.Properties {
             }
             set {
                 this["AudioTranslationProcessVideo"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ImageClassificationInputDirectory {
-            get {
-                return ((string)(this["ImageClassificationInputDirectory"]));
-            }
-            set {
-                this["ImageClassificationInputDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ImageClassificationOutputDirectory {
-            get {
-                return ((string)(this["ImageClassificationOutputDirectory"]));
-            }
-            set {
-                this["ImageClassificationOutputDirectory"] = value;
             }
         }
         
@@ -260,126 +212,6 @@ namespace IPED_Gui_WinForms.Properties {
             }
             set {
                 this["LocalConfigPluginFolder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationServiceProgram {
-            get {
-                return ((string)(this["AudioTranslationServiceProgram"]));
-            }
-            set {
-                this["AudioTranslationServiceProgram"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationProcessingDirectory {
-            get {
-                return ((string)(this["AudioTranslationProcessingDirectory"]));
-            }
-            set {
-                this["AudioTranslationProcessingDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationFasterWhisperDirectory {
-            get {
-                return ((string)(this["AudioTranslationFasterWhisperDirectory"]));
-            }
-            set {
-                this["AudioTranslationFasterWhisperDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationArgosTranslateDirectory {
-            get {
-                return ((string)(this["AudioTranslationArgosTranslateDirectory"]));
-            }
-            set {
-                this["AudioTranslationArgosTranslateDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("large-v2")]
-        public string AudioTranslationModelSize {
-            get {
-                return ((string)(this["AudioTranslationModelSize"]));
-            }
-            set {
-                this["AudioTranslationModelSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AudioTranslationUseGPU {
-            get {
-                return ((bool)(this["AudioTranslationUseGPU"]));
-            }
-            set {
-                this["AudioTranslationUseGPU"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ImageClassificationServiceProgram {
-            get {
-                return ((string)(this["ImageClassificationServiceProgram"]));
-            }
-            set {
-                this["ImageClassificationServiceProgram"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ImageClassificationProcessingDirectory {
-            get {
-                return ((string)(this["ImageClassificationProcessingDirectory"]));
-            }
-            set {
-                this["ImageClassificationProcessingDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ImageClassificationMobileNetDirectory {
-            get {
-                return ((string)(this["ImageClassificationMobileNetDirectory"]));
-            }
-            set {
-                this["ImageClassificationMobileNetDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("de")]
-        public string ImageClassificationLanguage {
-            get {
-                return ((string)(this["ImageClassificationLanguage"]));
-            }
-            set {
-                this["ImageClassificationLanguage"] = value;
             }
         }
         
@@ -2509,73 +2341,25 @@ namespace IPED_Gui_WinForms.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AudioTranslationUseForensicTaskBridge {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AudioTranslationTaskBridgeUrl {
             get {
-                return ((bool)(this["AudioTranslationUseForensicTaskBridge"]));
+                return ((string)(this["AudioTranslationTaskBridgeUrl"]));
             }
             set {
-                this["AudioTranslationUseForensicTaskBridge"] = value;
+                this["AudioTranslationTaskBridgeUrl"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationForensicTaskBridgeApiUrl {
+        public string ImageClassificationTaskBridgeUrl {
             get {
-                return ((string)(this["AudioTranslationForensicTaskBridgeApiUrl"]));
+                return ((string)(this["ImageClassificationTaskBridgeUrl"]));
             }
             set {
-                this["AudioTranslationForensicTaskBridgeApiUrl"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string AudioTranslationForensicTaskBridgeShareDirectory {
-            get {
-                return ((string)(this["AudioTranslationForensicTaskBridgeShareDirectory"]));
-            }
-            set {
-                this["AudioTranslationForensicTaskBridgeShareDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ImageClassificationUseForensicTaskBridge {
-            get {
-                return ((bool)(this["ImageClassificationUseForensicTaskBridge"]));
-            }
-            set {
-                this["ImageClassificationUseForensicTaskBridge"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ImageClassificationForensicTaskBridgeApiUrl {
-            get {
-                return ((string)(this["ImageClassificationForensicTaskBridgeApiUrl"]));
-            }
-            set {
-                this["ImageClassificationForensicTaskBridgeApiUrl"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ImageClassificationForensicTaskBridgeShareDirectory {
-            get {
-                return ((string)(this["ImageClassificationForensicTaskBridgeShareDirectory"]));
-            }
-            set {
-                this["ImageClassificationForensicTaskBridgeShareDirectory"] = value;
+                this["ImageClassificationTaskBridgeUrl"] = value;
             }
         }
     }
