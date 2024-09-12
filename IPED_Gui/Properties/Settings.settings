@@ -23,20 +23,8 @@
     <Setting Name="General_Portable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="AudioTranslationInputDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AudioTranslationOutputDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="AudioTranslationProcessVideo" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="ImageClassificationInputDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ImageClassificationOutputDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SettingsIpedExePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -61,36 +49,6 @@
     </Setting>
     <Setting Name="LocalConfigPluginFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AudioTranslationServiceProgram" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AudioTranslationProcessingDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AudioTranslationFasterWhisperDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AudioTranslationArgosTranslateDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AudioTranslationModelSize" Type="System.String" Scope="User">
-      <Value Profile="(Default)">large-v2</Value>
-    </Setting>
-    <Setting Name="AudioTranslationUseGPU" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ImageClassificationServiceProgram" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ImageClassificationProcessingDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ImageClassificationMobileNetDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ImageClassificationLanguage" Type="System.String" Scope="User">
-      <Value Profile="(Default)">de</Value>
     </Setting>
     <Setting Name="FileSystemConfigAddUnallocated" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -623,22 +581,10 @@
     <Setting Name="GeneralSearchTermFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AudioTranslationUseForensicTaskBridge" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="AudioTranslationForensicTaskBridgeApiUrl" Type="System.String" Scope="User">
+    <Setting Name="AudioTranslationTaskBridgeUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AudioTranslationForensicTaskBridgeShareDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ImageClassificationUseForensicTaskBridge" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ImageClassificationForensicTaskBridgeApiUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ImageClassificationForensicTaskBridgeShareDirectory" Type="System.String" Scope="User">
+    <Setting Name="ImageClassificationTaskBridgeUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

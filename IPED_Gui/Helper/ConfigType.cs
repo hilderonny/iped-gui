@@ -75,20 +75,12 @@ namespace IPED_Gui_WinForms.Helper
         });
 
         public static readonly ConfigType AudioTranslation = new("conf/AudioTranslation.txt", new ConfigElement[] {
-            new("inputDirectory", "AudioTranslationInputDirectory", ConfigElementType.Directory, "Directory where the task puts the audio files to process."),
-            new("outputDirectory", "AudioTranslationOutputDirectory", ConfigElementType.Directory, "Directory where the background task puts the results and where the tasks fetches them"),
             new("processVideo", "AudioTranslationProcessVideo", ConfigElementType.Boolean, "Use video processing with caution. It can take very long if you analyze full length cinema movies"),
-            new("useForensicTaskBridge", "AudioTranslationUseForensicTaskBridge", ConfigElementType.Boolean, "Use forensic task bridge server instead of loacal processing"),
-            new("forensicTaskBridgeApiUrl", "AudioTranslationForensicTaskBridgeApiUrl", ConfigElementType.String, "URL of the API of the forensic task bridge in the format http://127.0.0.1:30000/api/"),
-            new("forensicTaskBridgeShareDirectory", "AudioTranslationForensicTaskBridgeShareDirectory", ConfigElementType.Directory, "Directory where the task puts the audio files to process when a forensic task bridge server is used"),
+            new("taskBridgeUrl", "AudioTranslationTaskBridgeUrl", ConfigElementType.String, "URL of the task bridge in the format http://127.0.0.1:42000/"),
         });
 
         public static readonly ConfigType ImageClassification = new("conf/ImageClassification.txt", new ConfigElement[] {
-            new("inputDirectory", "ImageClassificationInputDirectory", ConfigElementType.Directory, "Directory where the task puts the files to process"),
-            new("outputDirectory", "ImageClassificationOutputDirectory", ConfigElementType.Directory, "Directory where the background task puts the results and where the tasks fetches them"),
-            new("useForensicTaskBridge", "ImageClassificationUseForensicTaskBridge", ConfigElementType.Boolean, "Use forensic task bridge server instead of loacal processing"),
-            new("forensicTaskBridgeApiUrl", "ImageClassificationForensicTaskBridgeApiUrl", ConfigElementType.String, "URL of the API of the forensic task bridge in the format http://127.0.0.1:30000/api/"),
-            new("forensicTaskBridgeShareDirectory", "ImageClassificationForensicTaskBridgeShareDirectory", ConfigElementType.Directory, "Directory where the task puts the audio files to process when a forensic task bridge server is used"),
+            new("taskBridgeUrl", "ImageClassificationTaskBridgeUrl", ConfigElementType.String, "URL of the task bridge in the format http://127.0.0.1:42000/"),
         });
 
         public readonly string FilePath;
